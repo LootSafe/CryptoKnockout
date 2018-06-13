@@ -9,6 +9,7 @@ public class Game : MonoBehaviour {
     public int lives = 2;
     private bool host = true;
 
+    private NetworkHandler network;
     private static Game instance;
     private static Player localPlayer;
     private State state = State.STARTING;
@@ -17,6 +18,7 @@ public class Game : MonoBehaviour {
 
     void Start()
     {
+        network = new NetworkHandler();
         instance = this;
         localPlayer = new Player(new TestCharacter());
 
@@ -43,6 +45,11 @@ public class Game : MonoBehaviour {
         return host;
     }
 
+    public NetworkHandler GetNetworkHandler()
+    {
+        return network;
+    }
+
     public State GetState()
     {
         return state;
@@ -51,11 +58,19 @@ public class Game : MonoBehaviour {
 
     /*************************************************************************/
 
+    /// <summary>
+    /// Used to get the local instance of a player
+    /// </summary>
+    /// <returns> Local Player -> 1 Per Client </returns>
     public static Player GetPlayer()
     {
         return localPlayer;
     }
 
+    /// <summary>
+    /// Get's Game Singleton
+    /// </summary>
+    /// <returns> Single instance of the client game</returns>
     public static Game GetInstance()
     {
         return instance;
