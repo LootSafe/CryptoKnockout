@@ -43,6 +43,11 @@ public class Game : MonoBehaviour {
         return host;
     }
 
+    public State GetState()
+    {
+        return state;
+    }
+
 
     /*************************************************************************/
 
@@ -58,10 +63,27 @@ public class Game : MonoBehaviour {
 
     void Update()
     {
-
+        //TODO Updates based on inputs and notifications - Biggest being death notfication
+        switch (state)
+        {
+            case State.FIGHTING:
+                break;
+            case State.PAUSED:
+                break;
+            case State.STARTING:
+                break;
+            case State.ROUND_BEGINING:
+                break;
+            case State.ROUND_ENDING:
+                break;
+            case State.COMPLETED:
+                break;
+            case State.SUMMARIZING:
+                break;
+        }
     }
     /*************************************************************************/
-    enum State
+    public enum State
     {
         PAUSED,
         STARTING,
