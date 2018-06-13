@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public float maxHealth;
-    
-    private float lives;
-    private bool alive;
-    private float health;
+    private float lives = 1;
+    private bool alive = false;
+    private float health = 50;
     private Game game;
     private Character character;
 

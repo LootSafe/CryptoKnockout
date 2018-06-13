@@ -15,6 +15,6 @@ public class TestCharacter : Character{
 
     public override float CalculateDamage(float damage)
     {
-        throw new System.NotImplementedException();
+        return 1;
     }
 }
