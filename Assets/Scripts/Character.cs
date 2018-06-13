@@ -6,6 +6,12 @@ public abstract class Character : MonoBehaviour {
 
     protected float health, defence, strength, moveSpeed;
 
+    /// <summary>
+    /// This should be implemented to calculate damage taken based on characters special attributes, strength,
+    /// defence, and a small bit of chance. 
+    /// </summary>
+    /// <param name="damage"></param>
+    /// <returns></returns>
     abstract public float CalculateDamage(float damage);
 
     public float GetHealth()
