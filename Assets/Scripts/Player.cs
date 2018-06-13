@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    private static Player instance;
-    
+
     public float maxHealth;
-    private float health;
-    public float lives;
+   
+    private float lives;
     private bool alive;
-    
-    void Start()
+    private float health;
+    private Game game;
+
+    public Player(Character character)
     {
-        instance = this;
+        health = character.GetHealth();
+        game = Game.GetInstance();
+        lives = game.GetLives();
     }
+
 
     public void TakeDamage(float damage)
     {
@@ -25,10 +29,6 @@ public class Player : MonoBehaviour {
         return alive;
     }
 
-    public static Player getInstance()
-    {
-        return instance;
-    }
     
     
     
