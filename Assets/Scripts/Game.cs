@@ -10,6 +10,7 @@ public class Game : MonoBehaviour {
     private bool host = true;
 
     private NetworkHandler network;
+    
     private static Game instance;
     private static Player localPlayer;
     private State state = State.STARTING;
@@ -25,6 +26,10 @@ public class Game : MonoBehaviour {
     }
     /*************************************************************************/
 
+    /// <summary>
+    /// Notifies game of a player death - If not hosting Notifies host
+    /// </summary>
+    /// <param name="player"></param>
     public void TriggerDeath(Player player)
     {
         Debug.Log("Player " + player.name + " has died");
