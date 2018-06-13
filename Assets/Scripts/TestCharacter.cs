@@ -10,9 +10,11 @@ public class TestCharacter : Character{
         this.strength = 10;
         this.defence = 10;
         this.moveSpeed = 1;
-
+        this.name = "Bitcoin Boiiiii";
     }
 
-
-
+    public override float CalculateDamage(float damage)
+    {
+        throw new System.NotImplementedException();
+    }
 }

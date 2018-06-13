@@ -6,10 +6,7 @@ public abstract class Character : MonoBehaviour {
 
     protected float health, defence, strength, moveSpeed;
 
-    public float CalculateDamage()
-    {
-        return 0f;
-    }
+    abstract public float CalculateDamage(float damage);
 
     public float GetHealth()
     {

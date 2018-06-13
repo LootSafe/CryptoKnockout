@@ -27,6 +27,12 @@ public class Game : MonoBehaviour {
     {
         return rounds;
     }
+
+    public void TriggerDeath(Player player)
+    {
+        Debug.Log("Player " + player.name + " has died");
+    }
+    /***************************************************************************/
     public static Player GetPlayer()
     {
         return localPlayer;
