@@ -7,13 +7,13 @@ public class Player : NetworkBehaviour {
 
     private float lives = 1;
     private bool alive = false;
-    private float health = 50;
+    public float health = 50;
     private Game game;
     private Character character;
 
-    public Player(Character character)
+    void start()
     {
-        this.character = character;
+        this.character = new TestCharacter() ;
         health = character.GetHealth();
         game = Game.GetInstance();
         lives = game.GetLives();

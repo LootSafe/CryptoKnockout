@@ -6,7 +6,7 @@ public class TestCharacter : Character{
 
     public TestCharacter()
     {
-        this.health = 10;
+        this.health = 50;
         this.strength = 10;
         this.defence = 10;
         this.moveSpeed = 1;
@@ -15,6 +15,6 @@ public class TestCharacter : Character{
 
     public override float CalculateDamage(float damage)
     {
-        return 1;
+        return damage;
     }
 }
