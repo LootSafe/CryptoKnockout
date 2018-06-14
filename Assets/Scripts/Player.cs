@@ -4,24 +4,31 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour {
-
+    [SyncVar]
     private float lives = 1;
+    [SyncVar]
     private bool alive = false;
-    public float health = 50;
+    [SyncVar]
+    public float health = 5000;
     private Game game;
     private Character character;
 
-    void start()
+    void Start()
     {
-        this.character = new TestCharacter() ;
+        this.character = new TestCharacter();
         health = character.GetHealth();
         game = Game.GetInstance();
         lives = game.GetLives();
         //this.name = character.name;
     }
 
+
+    //To be done only by server
     public void TakeDamage(float damage)
     {
+        if (!isServer) return;
+        
+        Debug.Log("Taking Damage");
         float damageTake = character.CalculateDamage(damage);
         if(health - damageTake <= 0 )
         {
@@ -37,6 +44,10 @@ public class Player : NetworkBehaviour {
         return alive;
     }
 
+    public float GetHealth()
+    {
+        return health;
+    }
     
     public void notifyDeath()
     {
