@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Player : MonoBehaviour {
+public class Player : NetworkBehaviour {
 
     private float lives = 1;
     private bool alive = false;

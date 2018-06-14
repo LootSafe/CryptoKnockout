@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Game : MonoBehaviour {
+public class Game : NetworkBehaviour {
 
     
     public int rounds = 3;
