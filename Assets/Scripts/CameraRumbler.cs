@@ -55,7 +55,7 @@ public class CameraRumbler : MonoBehaviour
         }
     }
 
-    void standardAttack()
+    public void standardAttack()
     {
         if (shakeState == SHAKESTATE.SHAKING)
         {
