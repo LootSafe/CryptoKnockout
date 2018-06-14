@@ -17,7 +17,7 @@ public class Player : NetworkBehaviour {
         health = character.GetHealth();
         game = Game.GetInstance();
         lives = game.GetLives();
-        this.name = character.name;
+        //this.name = character.name;
     }
 
     public void TakeDamage(float damage)

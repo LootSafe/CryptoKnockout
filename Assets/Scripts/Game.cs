@@ -20,9 +20,9 @@ public class Game : NetworkBehaviour {
 
     void Start()
     {
-        network = new NetworkHandler();
+        //network = new NetworkHandler();
         instance = this;
-        localPlayer = new Player(new TestCharacter());
+        //localPlayer = GameObject.AddComponent<>() Player(new TestCharacter());
 
     }
     /*************************************************************************/
