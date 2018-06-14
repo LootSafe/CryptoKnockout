@@ -9,7 +9,7 @@ public class TestCharacter : Character{
         this.health = 50;
         this.strength = 10;
         this.defence = 10;
-        this.moveSpeed = 1;
+        this.moveSpeed = 0.1f;
         //this.name = "Bitcoin Boiiiii";
     }
 

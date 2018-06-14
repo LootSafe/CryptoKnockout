@@ -76,11 +76,11 @@ GameObject:
   - component: {fileID: 114886340538789656}
   - component: {fileID: 114985243175711498}
   - component: {fileID: 114186994662308574}
+  - component: {fileID: 114037795989249596}
   - component: {fileID: 50825129052665634}
   - component: {fileID: 212298209694372100}
   - component: {fileID: 61258840985077550}
   - component: {fileID: 95906605965611374}
-  - component: {fileID: 114037795989249596}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e781097f1ad0141aba434601b80b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!114 &114200031213907758
 MonoBehaviour:
   m_ObjectHideFlags: 1

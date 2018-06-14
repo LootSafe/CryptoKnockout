@@ -48,7 +48,11 @@ public class Player : NetworkBehaviour {
     {
         return health;
     }
-    
+
+    public float GetMoveSpeed()
+    {
+       return character.GetMoveSpeed();
+    }
     public void notifyDeath()
     {
         game.TriggerDeath(this);
