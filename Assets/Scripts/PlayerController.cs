@@ -43,7 +43,7 @@ public class PlayerController : NetworkBehaviour
         if(jump > 0)
         {
             //Vertical movement
-            transform.position = new Vector3(transform.position.x , transform.position.y + (player.GetMoveSpeed() *yMovement), transform.position.z);
+            transform.position = new Vector3(transform.position.x , transform.position.y + (player.GetMoveSpeed() * jump), transform.position.z);
         }
 
         
