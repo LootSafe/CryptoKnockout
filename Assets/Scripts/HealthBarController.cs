@@ -25,7 +25,6 @@ public class HealthBarController : MonoBehaviour {
     float special = 0;
 
     HEALTHSTATE currentHealthstate;
-    SPECIALSTATE currentSpecialstate;
 
     void Awake()
     {
@@ -38,7 +37,6 @@ public class HealthBarController : MonoBehaviour {
         startPosition_specialbarImage = specialBar.transform.position;
 
         currentHealthstate = HEALTHSTATE.NOTANIMATING;
-        currentSpecialstate = SPECIALSTATE.NOTANIMATING;
 
         ResetBars();
     }
@@ -95,10 +93,6 @@ public class HealthBarController : MonoBehaviour {
                 damagebarRect.sizeDelta = new Vector2(nextWidth, damagebarRect.sizeDelta.y);
             }
         }
-
-        /* Animate Special Bar */
-
-        // Animate Upwards here...
     }
 
     public void TakeDamageMeter(int damagePercentOutof100)
@@ -131,14 +125,13 @@ public class HealthBarController : MonoBehaviour {
 
     public void IncreaseSpecialMeter(int fillPercentage)
     {
-        special += fillPercentage;
-
-        float increasePercentage = (specialbarRect.sizeDelta.x / 100 * special);
-
-        specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta = new Vector3(increasePercentage, specialbarRect.GetChild(0).transform.position.y);
-        specialbarRect.GetChild(0).transform.position = new Vector3(increasePercentage / 2, specialbarRect.transform.position.y);
-
-        currentSpecialstate = SPECIALSTATE.ANIMATING;
+        if (special + fillPercentage <= 100)
+        {
+            special += fillPercentage;
+            float increasePercentage = (specialbarRect.sizeDelta.x / 100 * special);
+            specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta = new Vector3(increasePercentage, specialbarRect.GetChild(0).transform.position.y);
+            specialbarRect.GetChild(0).transform.position = new Vector3(increasePercentage / 2, specialbarRect.transform.position.y);
+        }
     }
 
     public void ClearSpecialMeter()
