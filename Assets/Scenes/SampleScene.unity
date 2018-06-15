@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a63001f4c1d71d44ac4d2ddc07b880d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugging: 1
+  debugging: 0
   healthBar: {fileID: 1565098755}
   damageBar: {fileID: 1393472034}
   specialBar: {fileID: 2082127744}
