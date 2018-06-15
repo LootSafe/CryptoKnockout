@@ -21,7 +21,7 @@ public class HealthBarSystem : MonoBehaviour {
 
     /* Player One */
 
-    public void playerone_PercentageDamge(int damagePercentage)
+    public void playerone_PercentageDamage(int damagePercentage)
     {
         playerone.TakeDamageMeter(damagePercentage);
     }
@@ -33,7 +33,7 @@ public class HealthBarSystem : MonoBehaviour {
 
     /* Player Two */
 
-    public void playertwo_PercentageDamgePlayerTwo(int damagePercentage)
+    public void playertwo_PercentageDamage(int damagePercentage)
     {
         playertwo.TakeDamageMeter(damagePercentage);
     }
