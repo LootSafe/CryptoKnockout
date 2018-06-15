@@ -19,8 +19,6 @@ public class Player : NetworkBehaviour {
         health = character.GetHealth();
         game = Game.GetInstance();
         lives = game.GetLives();
-        if (!isLocalPlayer) return;
-        game.setLocalPlayer(this);
         //this.name = character.name;
     }
 

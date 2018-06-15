@@ -13,7 +13,7 @@ public class Game : NetworkBehaviour {
     private NetworkHandler network;
     
     private static Game instance;
-    private Player localPlayer;
+    private static Player localPlayer;
     private State state = State.STARTING;
     
 
@@ -26,12 +26,7 @@ public class Game : NetworkBehaviour {
 
     }
     /*************************************************************************/
-    public void setLocalPlayer(Player player)
-    {
-        if (!isLocalPlayer) return;
-        Debug.Log("Local player Updated");
-        localPlayer = player;
-    }
+
     /// <summary>
     /// Notifies game of a player death - If not hosting Notifies host
     /// </summary>
@@ -73,7 +68,7 @@ public class Game : NetworkBehaviour {
     /// Used to get the local instance of a player
     /// </summary>
     /// <returns> Local Player -> 1 Per Client </returns>
-    public Player GetPlayer()
+    public static Player GetPlayer()
     {
         return localPlayer;
     }
