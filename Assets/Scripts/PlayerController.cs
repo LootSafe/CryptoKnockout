@@ -18,8 +18,7 @@ public class PlayerController : NetworkBehaviour
         float xMovement = Input.GetAxis("Horizontal");
         float yMovement = Input.GetAxis("Vertical");
         float jump = Input.GetAxis("Jump");
-        Debug.Log("Jump" + jump);
-        
+        transform.Rotate(0, xMovement, 0);
         //Horizontal Changes
         if (xMovement != 0)
         {
@@ -33,10 +32,11 @@ public class PlayerController : NetworkBehaviour
             {
                 updatedHeading = new Vector3(rotation.x * -1, rotation.y, rotation.z);
                 lastHeading = quotient;
+                transform.localScale = updatedHeading;
             }
             //Horizontal Movement
             transform.position = new Vector3(transform.position.x + (xMovement * player.GetMoveSpeed()), transform.position.y, transform.position.z);
-            transform.localScale = updatedHeading;
+            
         }
 
         //Vertical Changes
