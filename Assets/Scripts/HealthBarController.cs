@@ -32,9 +32,9 @@ public class HealthBarController : MonoBehaviour {
         damagebarRect = damageBar.transform.GetComponent<RectTransform>();
         specialbarRect = specialBar.transform.GetComponent<RectTransform>();
 
-        startPosition_healthbarImage = healthBar.transform.position;
-        startPosition_damageImage = damageBar.transform.position;
-        startPosition_specialbarImage = specialBar.transform.position;
+        startPosition_healthbarImage = healthBar.transform.localPosition;
+        startPosition_damageImage = damageBar.transform.localPosition;
+        startPosition_specialbarImage = specialBar.transform.localPosition;
 
         currentHealthstate = HEALTHSTATE.NOTANIMATING;
 
@@ -87,9 +87,9 @@ public class HealthBarController : MonoBehaviour {
             {
                 nextWidth = currentWidth + animateSpeed * (Mathf.Abs(0 - currentWidth) / (0 - currentWidth));                
                 difference = currentWidth - nextWidth;
-                difference = damageBar.transform.position.x - (difference / 2);
+                difference = damageBar.transform.localPosition.x - (difference / 2);
 
-                damageBar.transform.position = new Vector3(difference, damageBar.transform.position.y);
+                damageBar.transform.localPosition = new Vector3(difference, damageBar.transform.localPosition.y);
                 damagebarRect.sizeDelta = new Vector2(nextWidth, damagebarRect.sizeDelta.y);
             }
         }
@@ -100,12 +100,12 @@ public class HealthBarController : MonoBehaviour {
         /* Health Bar Logic */
 
         float healthBarSize = healthbarRect.sizeDelta.x;
-        float currentXPosition = healthbarRect.position.x;
+        float currentXPosition = healthbarRect.localPosition.x;
 
         xPos = healthBarSize / 100 * damagePercentOutof100;
 
         currentXPosition -= xPos;
-        healthBar.transform.position = new Vector2(currentXPosition, healthBar.transform.position.y);
+        healthBar.transform.localPosition = new Vector2(currentXPosition, healthBar.transform.localPosition.y);
 
         /*  Damage Bar Logic */
 
@@ -118,9 +118,9 @@ public class HealthBarController : MonoBehaviour {
             currentHealthstate = HEALTHSTATE.ANIMATING;
         }
 
-        damageBarPos = healthBar.transform.position.x + startPosition_healthbarImage.x + (xPos / 2);
+        damageBarPos = healthBar.transform.localPosition.x + startPosition_healthbarImage.x + (xPos / 2);
         damagebarRect.sizeDelta = new Vector2(xPos, damagebarRect.sizeDelta.y);
-        damageBar.transform.position = new Vector3(damageBarPos, damageBar.transform.position.y);
+        damageBar.transform.localPosition = new Vector3(damageBarPos, damageBar.transform.localPosition.y);
     }
 
     public void IncreaseSpecialMeter(int fillPercentage)
@@ -129,8 +129,8 @@ public class HealthBarController : MonoBehaviour {
         {
             special += fillPercentage;
             float increasePercentage = (specialbarRect.sizeDelta.x / 100 * special);
-            specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta = new Vector3(increasePercentage, specialbarRect.GetChild(0).transform.position.y);
-            specialbarRect.GetChild(0).transform.position = new Vector3(increasePercentage / 2, specialbarRect.transform.position.y);
+            specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta = new Vector3(increasePercentage, 5.0f);
+            specialbarRect.GetChild(0).transform.localPosition = new Vector3(increasePercentage / 2, -4.8f);
         }
     }
 
@@ -139,13 +139,13 @@ public class HealthBarController : MonoBehaviour {
         if (special != 0)
         {
             special = 0;
-            specialbarRect.GetChild(0).transform.position = new Vector3(-(specialbarRect.sizeDelta.x), specialbarRect.transform.position.y);
+            specialbarRect.GetChild(0).transform.localPosition = new Vector3(-(specialbarRect.sizeDelta.x), -0.3f);
         }
     }
 
     public void ResetBars()
     {
-        healthBar.transform.position = startPosition_healthbarImage;
+        healthBar.transform.localPosition = startPosition_healthbarImage;
         damagebarRect.sizeDelta = new Vector2(0, damagebarRect.sizeDelta.y);
         ClearSpecialMeter();
     }
