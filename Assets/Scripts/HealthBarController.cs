@@ -129,8 +129,8 @@ public class HealthBarController : MonoBehaviour {
         {
             special += fillPercentage;
             float increasePercentage = (specialbarRect.sizeDelta.x / 100 * special);
-            specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta = new Vector3(increasePercentage, 5.0f);
-            specialbarRect.GetChild(0).transform.localPosition = new Vector3(increasePercentage / 2, -4.8f);
+            specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta = new Vector3(increasePercentage, specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta.y);
+            specialbarRect.GetChild(0).transform.position = new Vector3(increasePercentage / 2, specialbarRect.GetChild(0).transform.position.y);
         }
     }
 
@@ -139,7 +139,7 @@ public class HealthBarController : MonoBehaviour {
         if (special != 0)
         {
             special = 0;
-            specialbarRect.GetChild(0).transform.localPosition = new Vector3(-(specialbarRect.sizeDelta.x), -0.3f);
+            specialbarRect.GetChild(0).transform.position = new Vector3(-(specialbarRect.sizeDelta.x), specialbarRect.GetChild(0).transform.position.y);
         }
     }
 
