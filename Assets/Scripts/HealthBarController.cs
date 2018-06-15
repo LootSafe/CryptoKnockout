@@ -2,8 +2,6 @@
 
 public class HealthBarController : MonoBehaviour {
 
-    public bool debugging = true;
-
     public GameObject healthBar;
     public GameObject damageBar;
     public GameObject specialBar;
@@ -34,39 +32,14 @@ public class HealthBarController : MonoBehaviour {
 
         startPosition_healthbarImage = healthBar.transform.localPosition;
         startPosition_damageImage = damageBar.transform.localPosition;
-        startPosition_specialbarImage = specialBar.transform.localPosition;
+
+        startPosition_specialbarImage = specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().localPosition;
+
+        print(startPosition_specialbarImage.x);
 
         currentHealthstate = HEALTHSTATE.NOTANIMATING;
 
         ResetBars();
-    }
-
-    void Update()
-    {
-        /* Debug */
-
-        if (debugging)
-        {
-            if (Input.GetKeyUp(KeyCode.W))
-            {
-                TakeDamageMeter(20);
-            }
-
-            if (Input.GetKeyUp(KeyCode.S))
-            {
-                ResetBars();
-            }
-
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                ClearSpecialMeter();
-            }
-
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                IncreaseSpecialMeter(20);
-            }
-        }
     }
 
     void FixedUpdate()
@@ -130,7 +103,7 @@ public class HealthBarController : MonoBehaviour {
             special += fillPercentage;
             float increasePercentage = (specialbarRect.sizeDelta.x / 100 * special);
             specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta = new Vector3(increasePercentage, specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta.y);
-            specialbarRect.GetChild(0).transform.position = new Vector3(increasePercentage / 2, specialbarRect.GetChild(0).transform.position.y);
+            specialbarRect.GetChild(0).transform.localPosition = new Vector3(increasePercentage / 2, specialbarRect.GetChild(0).transform.localPosition.y);
         }
     }
 
@@ -139,7 +112,8 @@ public class HealthBarController : MonoBehaviour {
         if (special != 0)
         {
             special = 0;
-            specialbarRect.GetChild(0).transform.position = new Vector3(-(specialbarRect.sizeDelta.x), specialbarRect.GetChild(0).transform.position.y);
+            specialbarRect.GetChild(0).transform.localPosition = new Vector3(startPosition_specialbarImage.x, specialbarRect.GetChild(0).transform.localPosition.y);
+            specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta = new Vector2(0, specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().sizeDelta.y);
         }
     }
 
