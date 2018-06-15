@@ -26,7 +26,7 @@ public class HealthBarController : MonoBehaviour {
 
     HEALTHSTATE currentHealthstate;
 
-    void Awake()
+    void Start()
     {
         healthbarRect = healthBar.transform.GetComponent<RectTransform>();
         damagebarRect = damageBar.transform.GetComponent<RectTransform>();
