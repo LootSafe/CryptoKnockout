@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour {
-    [SyncVar]
+    [SyncVar (hook = "OnChangeHealth")]
     private float lives = 1;
     [SyncVar]
     private bool alive = false;
