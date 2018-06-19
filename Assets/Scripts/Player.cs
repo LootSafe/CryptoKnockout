@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour {
-    [SyncVar (hook = "OnChangeHealth")]
+    [SyncVar]
     private float lives = 1;
     [SyncVar]
     private bool alive = false;
     [SyncVar]
-    public float health = 5000;
+    public float health = 0;
     private Game game;
     private Character character;
 
@@ -19,7 +19,7 @@ public class Player : NetworkBehaviour {
         health = character.GetHealth();
         game = Game.GetInstance();
         lives = game.GetLives();
-        //this.name = character.name;
+        this.name = character.GetName();
     }
 
 
@@ -37,6 +37,10 @@ public class Player : NetworkBehaviour {
         {
             health -= damageTake;
         }
+    }
+    public void onHealthChange()
+    {
+
     }
 	
     public bool IsAlive()

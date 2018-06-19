@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Character {
 
     protected float health, defence, strength, moveSpeed;
+    protected string name;
 
     /// <summary>
     /// This should be implemented to calculate damage taken based on characters special attributes, strength,
@@ -33,4 +34,10 @@ public abstract class Character {
     {
         return moveSpeed;
     }
+
+    public string GetName()
+    {
+        return name;
+    }
+
 }
