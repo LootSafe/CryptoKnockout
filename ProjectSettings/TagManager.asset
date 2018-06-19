@@ -54,6 +54,9 @@ TagManager:
   - name: Player Layer
     uniqueID: 972668547
     locked: 0
+  - name: Platforms
+    uniqueID: 598434433
+    locked: 0
   - name: Foreground
     uniqueID: 3088902055
     locked: 0
