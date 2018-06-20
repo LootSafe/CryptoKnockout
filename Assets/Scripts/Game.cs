@@ -8,21 +8,22 @@ public class Game : NetworkBehaviour {
     
     public int rounds = 3;
     public int lives = 2;
-    private bool host = true;
+    public int MaxPlayers = 2;
+    private bool host = false;
 
     private NetworkHandler network;
     
     private static Game instance;
     private static Player localPlayer;
+    private static List<Player> players;
     private State state = State.STARTING;
     
 
 
     void Start()
     {
-        //network = new NetworkHandler();
+        players = new List<Player>();
         instance = this;
-        //localPlayer = GameObject.AddComponent<>() Player(new TestCharacter());
 
     }
     /*************************************************************************/
@@ -34,6 +35,20 @@ public class Game : NetworkBehaviour {
     public void TriggerDeath(Player player)
     {
         Debug.Log("Player " + player.name + " has died");
+    }
+
+    public void RegisterPlayer(Player player)
+    {
+        if (players.Count < MaxPlayers)
+        {
+            players.Add(player);
+        }
+    }
+
+    public void UnregisterPlayer(Player player)
+    {
+        players.Remove(player);
+
     }
 
     public int GetLives()
@@ -63,12 +78,22 @@ public class Game : NetworkBehaviour {
 
 
     /*************************************************************************/
+    /// <summary>
+    /// Retrieves registered Players from the game. Provide a player number. Players
+    /// are registered in order as they come.
+    /// </summary>
+    /// <param name="playerNumber"></param>
+    /// <returns></returns>
+    public Player GetPlayer(int playerNumber)
+    {
+        return players[playerNumber];
+    }
 
     /// <summary>
     /// Used to get the local instance of a player
     /// </summary>
     /// <returns> Local Player -> 1 Per Client </returns>
-    public static Player GetPlayer()
+    public static Player GetLocalPlayer()
     {
         return localPlayer;
     }

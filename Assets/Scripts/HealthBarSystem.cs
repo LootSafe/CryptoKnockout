@@ -42,4 +42,5 @@ public class HealthBarSystem : MonoBehaviour {
     {
         playertwo_IncreaseSpecialMeter(addPercentageOfHundred);
     }
+
 }

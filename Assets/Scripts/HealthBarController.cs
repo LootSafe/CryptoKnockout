@@ -5,6 +5,7 @@ public class HealthBarController : MonoBehaviour {
     public GameObject healthBar;
     public GameObject damageBar;
     public GameObject specialBar;
+    public int playerNumber;
 
     enum HEALTHSTATE { ANIMATING, NOTANIMATING };
     enum SPECIALSTATE { ANIMATING, NOTANIMATING };
@@ -122,5 +123,13 @@ public class HealthBarController : MonoBehaviour {
         healthBar.transform.localPosition = startPosition_healthbarImage;
         damagebarRect.sizeDelta = new Vector2(0, damagebarRect.sizeDelta.y);
         ClearSpecialMeter();
+    }
+
+    public void Update()
+    {
+        Player player = Game.GetInstance().GetPlayer(playerNumber);
+        //If Not attached to a player instead render "disabled"
+        if (!player) return;
+        //TODO If it is attached to a player animate accordingly
     }
 }

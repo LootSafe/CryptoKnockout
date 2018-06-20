@@ -20,6 +20,7 @@ public class Player : NetworkBehaviour {
         game = Game.GetInstance();
         lives = game.GetLives();
         this.name = character.GetName();
+        game.RegisterPlayer(this);
     }
 
 
