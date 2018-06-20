@@ -33,6 +33,7 @@ public class Player : NetworkBehaviour {
         float damageTake = character.CalculateDamage(damage);
         if(health - damageTake <= 0 )
         {
+            health = 0;
             notifyDeath();
         } else
         {
@@ -61,8 +62,13 @@ public class Player : NetworkBehaviour {
     public void notifyDeath()
     {
         game.TriggerDeath(this);
+        respawn();
     }
     
+    public void respawn()
+    {
+        health = character.GetHealth();
+    }
     // Update is called once per frame
 	void Update () {
 		
