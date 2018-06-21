@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
 public enum MOVESTATE { LEFT, RIGHT, CENTERAL };
 
-public class Parallax : NetworkBehaviour
+public class Parallax : MonoBehaviour
 {
-
     public List<GameObject> parralaxSprites;
     public float baseIncrement = 0.01f;
     public float speed = 0.01f;
@@ -15,9 +13,7 @@ public class Parallax : NetworkBehaviour
     MOVESTATE movestate;
 
     void Update () {
-
-        if (!isLocalPlayer) return;
-
+        
         /* State Logic */
 
         if (Input.GetKey(KeyCode.A))
