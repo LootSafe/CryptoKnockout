@@ -50,7 +50,7 @@ public class Game : NetworkBehaviour {
         Debug.Log("Player " + player.name + " has died");
     }
 
-    public void RegisterPlayer(Player player, NetworkIdentity id)
+    public void RegisterPlayer(NetworkIdentity id)
     {
         if (!isServer) return;
         if (networkPlayers.Count < MaxPlayers)
@@ -59,7 +59,7 @@ public class Game : NetworkBehaviour {
         }
     }
 
-    public void UnregisterPlayer(Player player, NetworkIdentity id)
+    public void UnregisterPlayer(NetworkIdentity id)
     {
         if (!isServer) return;
         networkPlayers.Remove(new PlayerRecord(id));
