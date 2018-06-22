@@ -15,16 +15,15 @@ public class Game : NetworkBehaviour {
     
     private static Game instance;
     private static Player localPlayer;
-    private static List<Player> players;
+    public List<Player> players;
     private State state = State.STARTING;
     
 
 
-    void Start()
+    public void Awake()
     {
         players = new List<Player>();
         instance = this;
-
     }
     /*************************************************************************/
 
@@ -80,15 +79,20 @@ public class Game : NetworkBehaviour {
     /*************************************************************************/
     /// <summary>
     /// Retrieves registered Players from the game. Provide a player number. Players
-    /// are registered in order as they come.
+    /// are registered in order as they come. null if that player is unavailable
     /// </summary>
     /// <param name="playerNumber"></param>
     /// <returns></returns>
     public Player GetPlayer(int playerNumber)
     {
+        if (playerNumber >= players.Count) return null;
         return players[playerNumber];
     }
 
+    public int GetNumberOfPlayers()
+    {
+        return players.Count;
+    }
     /// <summary>
     /// Used to get the local instance of a player
     /// </summary>
@@ -104,6 +108,11 @@ public class Game : NetworkBehaviour {
     /// <returns> Single instance of the client game</returns>
     public static Game GetInstance()
     {
+        if (!instance)
+        {
+            Debug.Log("Game was not properly instantiated");
+        }
+        Debug.Log("Offering Game");
         return instance;
     }
 

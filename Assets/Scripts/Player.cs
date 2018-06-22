@@ -10,6 +10,8 @@ public class Player : NetworkBehaviour {
     private bool alive = false;
     [SyncVar]
     public float health = 0;
+
+    private float maxHealth;
     private Game game;
     private Character character;
 
@@ -17,6 +19,7 @@ public class Player : NetworkBehaviour {
     {
         this.character = new TestCharacter();
         health = character.GetHealth();
+        maxHealth = character.GetHealth();
         game = Game.GetInstance();
         lives = game.GetLives();
         this.name = character.GetName();
@@ -53,6 +56,10 @@ public class Player : NetworkBehaviour {
     public float GetHealth()
     {
         return health;
+    }
+    public float GetMaxHealth()
+    {
+        return maxHealth;
     }
 
     public float GetMoveSpeed()
