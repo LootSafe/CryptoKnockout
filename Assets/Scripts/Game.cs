@@ -31,13 +31,11 @@ public class Game : NetworkBehaviour {
 
     [SyncVar]
     public SyncListPlayerRecord networkPlayers = new SyncListPlayerRecord();
-    public List<Player> players;
     private State state = State.STARTING;
     
 
     public void Awake()
     {
-        players = new List<Player>();
         GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
         instance = this;
     }
@@ -55,17 +53,15 @@ public class Game : NetworkBehaviour {
     public void RegisterPlayer(Player player, NetworkIdentity id)
     {
         if (!isServer) return;
-        if (players.Count < MaxPlayers)
+        if (networkPlayers.Count < MaxPlayers)
         {
             networkPlayers.Add(new PlayerRecord(id));
-            players.Add(player);
         }
     }
 
     public void UnregisterPlayer(Player player, NetworkIdentity id)
     {
         if (!isServer) return;
-        players.Remove(player);
         networkPlayers.Remove(new PlayerRecord(id));
 
     }
@@ -107,7 +103,7 @@ public class Game : NetworkBehaviour {
     /// <returns></returns>
     public Player GetPlayer(int playerNumber)
     {
-        if (playerNumber >= players.Count) return null;
+        if (playerNumber >= networkPlayers.Count) return null;
         GameObject player = ClientScene.FindLocalObject(networkPlayers[playerNumber].id.netId);
         Debug.Log(networkPlayers[playerNumber].id.netId.ToString());
         Player result = player.GetComponent<Player>();
@@ -116,7 +112,7 @@ public class Game : NetworkBehaviour {
 
     public int GetNumberOfPlayers()
     {
-        return players.Count;
+        return networkPlayers.Count;
     }
     /// <summary>
     /// Used to get the local instance of a player
