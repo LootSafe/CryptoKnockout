@@ -18,13 +18,11 @@ public class PlayerController : NetworkBehaviour
         float xMovement = Input.GetAxis("Horizontal");
         float yMovement = Input.GetAxis("Vertical");
         float jump = Input.GetAxis("Jump");
-        Debug.Log("Jump" + jump);
         
         //Horizontal Changes
         if (xMovement != 0)
         {
             //vars
-            Debug.Log(xMovement);
             Vector3 rotation = transform.localScale;
             Vector3 updatedHeading = rotation;
             float quotient = xMovement / Mathf.Abs(xMovement);
