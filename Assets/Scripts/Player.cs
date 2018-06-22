@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+[ExecuteInEditMode()]
 public class Player : NetworkBehaviour {
     [SyncVar]
     private float lives = 1;
@@ -26,6 +27,10 @@ public class Player : NetworkBehaviour {
         game.RegisterPlayer(this);
     }
 
+    public void OnDestroy()
+    {
+        game.UnregisterPlayer(this);
+    }
 
     //To be done only by server
     public void TakeDamage(float damage)
