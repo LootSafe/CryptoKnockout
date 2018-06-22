@@ -15,6 +15,22 @@ public class Game : NetworkBehaviour {
     
     private static Game instance;
     private static Player localPlayer;
+    public struct PlayerRecord
+    {
+        public NetworkIdentity id;
+        public PlayerRecord(NetworkIdentity id)
+        {
+            this.id = id;
+        }
+    }
+
+    public class SyncListPlayerRecord : SyncListStruct<PlayerRecord>
+    {
+
+    }
+
+    [SyncVar]
+    public SyncListPlayerRecord networkPlayers = new SyncListPlayerRecord();
     public List<Player> players;
     private State state = State.STARTING;
     
@@ -36,19 +52,21 @@ public class Game : NetworkBehaviour {
         Debug.Log("Player " + player.name + " has died");
     }
 
-    public void RegisterPlayer(Player player)
+    public void RegisterPlayer(Player player, NetworkIdentity id)
     {
         if (!isServer) return;
         if (players.Count < MaxPlayers)
         {
+            networkPlayers.Add(new PlayerRecord(id));
             players.Add(player);
         }
     }
 
-    public void UnregisterPlayer(Player player)
+    public void UnregisterPlayer(Player player, NetworkIdentity id)
     {
         if (!isServer) return;
         players.Remove(player);
+        networkPlayers.Remove(new PlayerRecord(id));
 
     }
 
@@ -78,6 +96,8 @@ public class Game : NetworkBehaviour {
     }
 
 
+
+
     /*************************************************************************/
     /// <summary>
     /// Retrieves registered Players from the game. Provide a player number. Players
@@ -88,7 +108,10 @@ public class Game : NetworkBehaviour {
     public Player GetPlayer(int playerNumber)
     {
         if (playerNumber >= players.Count) return null;
-        return players[playerNumber];
+        GameObject player = ClientScene.FindLocalObject(networkPlayers[playerNumber].id.netId);
+        Debug.Log(networkPlayers[playerNumber].id.netId.ToString());
+        Player result = player.GetComponent<Player>();
+        return result;
     }
 
     public int GetNumberOfPlayers()
