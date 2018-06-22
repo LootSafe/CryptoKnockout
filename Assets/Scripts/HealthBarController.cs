@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBarController : MonoBehaviour {
 
     public GameObject healthBar;
     public GameObject damageBar;
     public GameObject specialBar;
+    public Text healthDisplay;
     public int playerNumber;
+
     private Game game;
+    private float lastUpdatetime;
+    private float lastUpdateHealth;
 
     enum HEALTHSTATE { ANIMATING, NOTANIMATING };
     enum SPECIALSTATE { ANIMATING, NOTANIMATING };
@@ -132,9 +137,25 @@ public class HealthBarController : MonoBehaviour {
     {
         if (!game) Debug.Log("Game Was Not Initialized");
         Player player = game.GetPlayer(playerNumber);
-        if (!player) return;
-        TakeDamageMeter(player.health / player.GetMaxHealth() * 100);
-        Debug.Log(player.GetHealth());
+        if (player)
+        {
+            //Current Health
+            Debug.Log("Last Update " + lastUpdateHealth);
+            if(player.GetHealth() != lastUpdateHealth)
+            {
+                float range = player.GetHealth() - lastUpdateHealth;
+                //If health decreased
+                    //Rudementary -- To Be replaced by damage calculator and "hit Streak variables"
+                    TakeDamageMeter(range / player.GetMaxHealth());
+                    Debug.Log("Range: " + range + " Calc - " + range / player.GetMaxHealth());
+                    lastUpdateHealth = player.GetHealth();
+
+            }
+            
+            Debug.Log(player.GetHealth());
+            healthDisplay.text = "" + player.GetHealth();
+            
+        }
     }
    
 
