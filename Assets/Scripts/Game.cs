@@ -19,10 +19,10 @@ public class Game : NetworkBehaviour {
     private State state = State.STARTING;
     
 
-
     public void Awake()
     {
         players = new List<Player>();
+        GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
         instance = this;
     }
     /*************************************************************************/
@@ -38,6 +38,7 @@ public class Game : NetworkBehaviour {
 
     public void RegisterPlayer(Player player)
     {
+        if (!isServer) return;
         if (players.Count < MaxPlayers)
         {
             players.Add(player);
@@ -46,6 +47,7 @@ public class Game : NetworkBehaviour {
 
     public void UnregisterPlayer(Player player)
     {
+        if (!isServer) return;
         players.Remove(player);
 
     }

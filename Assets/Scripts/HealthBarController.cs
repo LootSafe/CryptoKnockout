@@ -33,7 +33,7 @@ public class HealthBarController : MonoBehaviour {
 
     void Start()
     {
-
+        
         game = Game.GetInstance();
         healthbarRect = healthBar.transform.GetComponent<RectTransform>();
         damagebarRect = damageBar.transform.GetComponent<RectTransform>();
@@ -53,28 +53,7 @@ public class HealthBarController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        /* Animate Damage Bar */
-
-        float nextWidth, difference;
-        float currentWidth = damagebarRect.sizeDelta.x;
-
-        if (currentWidth != 0)
-        {
-            if (Mathf.Abs(0 - currentWidth) < animateSpeed)
-            {
-                nextWidth = 0;
-                currentHealthstate = HEALTHSTATE.NOTANIMATING;
-            }
-            else
-            {
-                nextWidth = currentWidth + animateSpeed * (Mathf.Abs(0 - currentWidth) / (0 - currentWidth));
-                difference = currentWidth - nextWidth;
-                difference = damageBar.transform.localPosition.x - (difference / 2);
-
-                damageBar.transform.localPosition = new Vector3(difference, damageBar.transform.localPosition.y);
-                damagebarRect.sizeDelta = new Vector2(nextWidth, damagebarRect.sizeDelta.y);
-            }
-        }
+        
     }
 
     public void TakeDamageMeter(float damagePercentOutof100)
@@ -135,7 +114,8 @@ public class HealthBarController : MonoBehaviour {
 
     public void Update()
     {
-        if (!game) Debug.Log("Game Was Not Initialized");
+        //healthDisplay.text = "Player UNV";
+        if (!game) healthDisplay.text  = "Game Was Not Initialized";
         Player player = game.GetPlayer(playerNumber);
         if (player)
         {
@@ -154,7 +134,34 @@ public class HealthBarController : MonoBehaviour {
             
             Debug.Log(player.GetHealth());
             healthDisplay.text = "" + player.GetHealth();
-            
+
+        } else
+        {
+            healthDisplay.text = "Player Unavailable";
+        }
+
+        //Animate
+        /* Animate Damage Bar */
+
+        float nextWidth, difference;
+        float currentWidth = damagebarRect.sizeDelta.x;
+
+        if (currentWidth != 0)
+        {
+            if (Mathf.Abs(0 - currentWidth) < animateSpeed)
+            {
+                nextWidth = 0;
+                currentHealthstate = HEALTHSTATE.NOTANIMATING;
+            }
+            else
+            {
+                nextWidth = currentWidth + animateSpeed * (Mathf.Abs(0 - currentWidth) / (0 - currentWidth));
+                difference = currentWidth - nextWidth;
+                difference = damageBar.transform.localPosition.x - (difference / 2);
+
+                damageBar.transform.localPosition = new Vector3(difference, damageBar.transform.localPosition.y);
+                damagebarRect.sizeDelta = new Vector2(nextWidth, damagebarRect.sizeDelta.y);
+            }
         }
     }
    
