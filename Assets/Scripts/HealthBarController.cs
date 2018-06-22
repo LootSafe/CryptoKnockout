@@ -6,6 +6,7 @@ public class HealthBarController : MonoBehaviour {
     public GameObject damageBar;
     public GameObject specialBar;
     public int playerNumber;
+    private Game game;
 
     enum HEALTHSTATE { ANIMATING, NOTANIMATING };
     enum SPECIALSTATE { ANIMATING, NOTANIMATING };
@@ -27,6 +28,8 @@ public class HealthBarController : MonoBehaviour {
 
     void Start()
     {
+
+        game = Game.GetInstance();
         healthbarRect = healthBar.transform.GetComponent<RectTransform>();
         damagebarRect = damageBar.transform.GetComponent<RectTransform>();
         specialbarRect = specialBar.transform.GetComponent<RectTransform>();
@@ -59,7 +62,7 @@ public class HealthBarController : MonoBehaviour {
             }
             else
             {
-                nextWidth = currentWidth + animateSpeed * (Mathf.Abs(0 - currentWidth) / (0 - currentWidth));                
+                nextWidth = currentWidth + animateSpeed * (Mathf.Abs(0 - currentWidth) / (0 - currentWidth));
                 difference = currentWidth - nextWidth;
                 difference = damageBar.transform.localPosition.x - (difference / 2);
 
@@ -69,7 +72,7 @@ public class HealthBarController : MonoBehaviour {
         }
     }
 
-    public void TakeDamageMeter(int damagePercentOutof100)
+    public void TakeDamageMeter(float damagePercentOutof100)
     {
         /* Health Bar Logic */
 
@@ -83,7 +86,7 @@ public class HealthBarController : MonoBehaviour {
 
         /*  Damage Bar Logic */
 
-        if(currentHealthstate == HEALTHSTATE.ANIMATING)
+        if (currentHealthstate == HEALTHSTATE.ANIMATING)
         {
             xPos += damagebarRect.sizeDelta.x;
         }
@@ -127,9 +130,13 @@ public class HealthBarController : MonoBehaviour {
 
     public void Update()
     {
-        Player player = Game.GetInstance().GetPlayer(playerNumber);
-        //If Not attached to a player instead render "disabled"
+        if (!game) Debug.Log("Game Was Not Initialized");
+        Player player = game.GetPlayer(playerNumber);
         if (!player) return;
-        //TODO If it is attached to a player animate accordingly
+        TakeDamageMeter(player.health / player.GetMaxHealth() * 100);
+        Debug.Log(player.GetHealth());
     }
+   
+
+    
 }
