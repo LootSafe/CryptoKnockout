@@ -76,7 +76,6 @@ MonoBehaviour:
   rounds: 3
   lives: 2
   MaxPlayers: 2
-  players: []
 --- !u!212 &212558005969853780
 SpriteRenderer:
   m_ObjectHideFlags: 1
