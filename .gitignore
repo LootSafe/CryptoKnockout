@@ -35,4 +35,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-!./Builds/**
+!Builds/
+!Builds/*/
+!/Builds/**
+
