@@ -52,7 +52,8 @@ public class Game : NetworkBehaviour {
 
     public void RegisterPlayer(NetworkIdentity id)
     {
-        if (!isServer) return;
+       //if (!isServer) return;
+        Debug.Log("Registering Player with game id = " + id.netId.ToString());
         if (networkPlayers.Count < MaxPlayers)
         {
             networkPlayers.Add(new PlayerRecord(id));
@@ -139,6 +140,11 @@ public class Game : NetworkBehaviour {
 
     void Update()
     {
+        Debug.Log("Players - " + networkPlayers.Count + " " + networkPlayers[0]);
+        foreach (PlayerRecord record in networkPlayers)
+        {
+            Debug.Log("I have a player - " + record.id.netId.ToString());
+        }
         //TODO Updates based on inputs and notifications - Biggest being death notfication
         switch (state)
         {

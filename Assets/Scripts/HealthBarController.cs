@@ -117,6 +117,7 @@ public class HealthBarController : MonoBehaviour {
         //healthDisplay.text = "Player UNV";
         if (!game) healthDisplay.text  = "Game Was Not Initialized";
         Player player = game.GetPlayer(playerNumber);
+        //Debug.Log("Trying to Get Player Number " + playerNumber);
         if (player)
         {
             //Current Health
