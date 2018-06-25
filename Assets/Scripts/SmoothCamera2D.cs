@@ -3,7 +3,7 @@
 public class SmoothCamera2D : MonoBehaviour
 {
     public float dampTime = 0.15f;
-    public float offSetY = 0.2f;
+    public float offSetY = 3.0f;
 
     const float center = 0.5f;
 
@@ -13,21 +13,19 @@ public class SmoothCamera2D : MonoBehaviour
 
     void Start()
     {
-        cam = Camera.main;    
+        cam = Camera.main;
+        target = gameObject;
     }
 
     void Update()
-    {
-        if(target == null)
+    { 
+        if (target != null)
         {
-
-        }
-        else
-        {
-            Vector3 point = cam.WorldToViewportPoint(transform.position);
-            Vector3 delta = transform.position - cam.ViewportToWorldPoint(new Vector3(center, center + offSetY, point.z));
-            Vector3 destination = transform.position + delta;
-            transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+            Vector3 point = cam.WorldToViewportPoint(target.transform.position);
+            Vector3 delta = transform.position - cam.ViewportToWorldPoint(new Vector3(center, center, point.z));
+            Vector3 destination = target.transform.position + delta;
+            Vector3 bestPosition = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+            cam.transform.position = new Vector3(bestPosition.x, bestPosition.y += offSetY, -10.0f);
         }
     }
 }
