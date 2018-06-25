@@ -5,11 +5,22 @@ public class PlayerAnimatorController : MonoBehaviour {
 	public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED};
     public enum ANIMATION_STATE { IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
 
-    // Animation logic will be handled here
+    /* Animator Object */
+
+    Animator playerAnimator;
+
+    /* State Vars */
 
     GROUNDED_STATE groundedState;
     ANIMATION_STATE currentAnimationState;
-    
+
+    /* Basic Methods */
+
+    public void Start()
+    {
+        playerAnimator.GetComponent<Animator>();
+    }
+
     /* Animation State */
 
     public ANIMATION_STATE GetCurrentAnimationState()
