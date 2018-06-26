@@ -2,6 +2,9 @@
 
 public class PlayerAnimatorController : MonoBehaviour {
 
+    public bool DEBUG = true;
+    bool IDLE = true;
+
 	public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED};
     public enum DEAD_STATE { DEAD, ALIVE };
     public enum ANIMATION_STATE { IDLE, WALKING, RUNNING, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
@@ -18,9 +21,23 @@ public class PlayerAnimatorController : MonoBehaviour {
 
     /* Basic Methods */
 
-    public void Start()
+    void Start()
     {
         playerAnimator.GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        print("HERE");
+
+        SetAnimationState(ANIMATION_STATE.IDLE);
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            // Right
+
+        }
+
     }
 
     /* Animation State */
@@ -37,6 +54,7 @@ public class PlayerAnimatorController : MonoBehaviour {
             switch (animationState)
             {
                 case ANIMATION_STATE.IDLE:
+                    playerAnimator.SetTrigger("IDLE");
                     return true;
                 case ANIMATION_STATE.WALKING:
                     return true;
