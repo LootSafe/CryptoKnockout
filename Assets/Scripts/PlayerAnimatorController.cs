@@ -2,7 +2,7 @@
 
 public class PlayerAnimatorController : MonoBehaviour {
 
-    public bool DEBUG = true;
+    bool DEBUG = false; // REMOVE ME LATER
     bool IDLE = true;
 
 	public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED};
@@ -23,19 +23,45 @@ public class PlayerAnimatorController : MonoBehaviour {
 
     void Start()
     {
-        playerAnimator.GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
+
+        deadState = DEAD_STATE.ALIVE;
+        SetAnimationState(ANIMATION_STATE.IDLE);
     }
 
     void Update()
     {
-        print("HERE");
-
-        SetAnimationState(ANIMATION_STATE.IDLE);
-
-        if (Input.GetKeyDown(KeyCode.D))
+        if (DEBUG)
         {
-            // Right
+            if (Input.GetKeyUp(KeyCode.Q))
+            {
+                SetAnimationState(ANIMATION_STATE.HURT);
+            }
 
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                SetAnimationState(ANIMATION_STATE.DEAD);
+            }
+
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                SetAnimationState(ANIMATION_STATE.JUMP);
+            }
+
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                //SetAnimationState(ANIMATION_STATE.WALKING);
+            }
+
+            if (Input.GetKeyUp(KeyCode.T))
+            {
+                //SetAnimationState(ANIMATION_STATE.RUNNING);
+            }
+
+            if (Input.GetKeyUp(KeyCode.Y))
+            {
+                //SetAnimationState(ANIMATION_STATE.);
+            }
         }
 
     }
@@ -53,18 +79,25 @@ public class PlayerAnimatorController : MonoBehaviour {
         {
             switch (animationState)
             {
+                case ANIMATION_STATE.DEAD:
+                    SetDeadState(DEAD_STATE.DEAD);
+                    return true;
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("IDLE");
                     return true;
                 case ANIMATION_STATE.WALKING:
+                    playerAnimator.SetTrigger("WALKING");
                     return true;
                 case ANIMATION_STATE.RUNNING:
+                    playerAnimator.SetTrigger("RUNNING");
                     return true;
                 case ANIMATION_STATE.BLOCK:
                     return true;
                 case ANIMATION_STATE.JUMP:
+                    playerAnimator.SetTrigger("JUMP");
                     return true;
                 case ANIMATION_STATE.HURT:
+                    playerAnimator.SetTrigger("HURT");
                     return true;
                 case ANIMATION_STATE.LOWPUNCH:
                     return true;
@@ -88,9 +121,9 @@ public class PlayerAnimatorController : MonoBehaviour {
 
     /* State Helpers */
 
-    public void SetDeadState(bool isDead)
+    public void SetDeadState(DEAD_STATE state)
     {
-        if (isDead)
+        if (state == DEAD_STATE.DEAD)
         {
             playerAnimator.SetBool("DEAD", true);
             currentAnimationState = ANIMATION_STATE.DEAD;

@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: 8a5bd242fb0d6ed4597678cdd7afa9c9
+guid: 30046de5a260dee42a33e714d053f701
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bjorn_Walk_0
-    21300002: bjorn_Walk_1
-    21300004: bjorn_Walk_2
-    21300006: bjorn_Walk_3
+    21300000: bjorn_Sprint_0
+    21300002: bjorn_Sprint_1
+    21300004: bjorn_Sprint_2
+    21300006: bjorn_Sprint_3
+    21300008: bjorn_Sprint_4
+    21300010: bjorn_Sprint_5
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -86,13 +88,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bjorn_Walk_0
+      name: bjorn_Sprint_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2148
-        width: 1390
-        height: 2148
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,19 +102,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8ac1fdf331e3954eb2ec2cb21e96885
+      spriteID: 792067a195675db4481a2da50387887f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bjorn_Walk_1
+      name: bjorn_Sprint_1
       rect:
         serializedVersion: 2
-        x: 1390
-        y: 2148
-        width: 1390
-        height: 2148
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,19 +122,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd30ea717b6ee5f4cab5f51612e581ec
+      spriteID: a91a1d70386d0c34daba96ca2b2e1b99
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bjorn_Walk_2
+      name: bjorn_Sprint_2
+      rect:
+        serializedVersion: 2
+        x: 5100
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297386c075bdc7b4e830a24c81655d45
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bjorn_Sprint_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1390
-        height: 2148
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,19 +162,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7324e4399fc6cac4d81d221a48390e45
+      spriteID: 56f696f265b4303468ef1989b260b38d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bjorn_Walk_3
+      name: bjorn_Sprint_4
       rect:
         serializedVersion: 2
-        x: 1390
+        x: 2550
         y: 0
-        width: 1390
-        height: 2148
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,7 +182,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3685cd9ba7aa0c14788a116045c217b4
+      spriteID: 362718d22321c9940a1efc0d07c233db
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bjorn_Sprint_5
+      rect:
+        serializedVersion: 2
+        x: 5100
+        y: 0
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4ab93a5ba23914d9e0a7c6f0419331
       vertices: []
       indices: 
       edges: []
@@ -168,7 +210,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d7f45485033b6eb408f39d91fcc21f7d
+    spriteID: c07d54d4ada34174d90eed022eff6e73
     vertices: []
     indices: 
     edges: []
