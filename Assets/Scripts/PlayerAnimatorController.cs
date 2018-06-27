@@ -2,7 +2,8 @@
 
 public class PlayerAnimatorController : MonoBehaviour {
 
-    bool DEBUG = false; // REMOVE ME LATER
+    public bool DEBUG = false; // REMOVE ME LATER
+
     bool IDLE = false;
 
 	public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED};
