@@ -3,7 +3,7 @@
 public class PlayerAnimatorController : MonoBehaviour {
 
     bool DEBUG = false; // REMOVE ME LATER
-    bool IDLE = true;
+    bool IDLE = false;
 
 	public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED};
     public enum DEAD_STATE { DEAD, ALIVE };
@@ -50,17 +50,12 @@ public class PlayerAnimatorController : MonoBehaviour {
 
             if (Input.GetKeyUp(KeyCode.R))
             {
-                //SetAnimationState(ANIMATION_STATE.WALKING);
+                SetAnimationState(ANIMATION_STATE.WALKING);
             }
 
             if (Input.GetKeyUp(KeyCode.T))
             {
-                //SetAnimationState(ANIMATION_STATE.RUNNING);
-            }
-
-            if (Input.GetKeyUp(KeyCode.Y))
-            {
-                //SetAnimationState(ANIMATION_STATE.);
+                SetAnimationState(ANIMATION_STATE.RUNNING);
             }
         }
 
