@@ -39,3 +39,4 @@ sysinfo.txt
 !Builds/*/
 !/Builds/**
 
+Assets/StreamingAssets/build_info.txt
