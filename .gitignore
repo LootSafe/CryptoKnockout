@@ -4,6 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/StreamingAssets
+Assets/StreamingAssets/*
 
 # Visual Studio cache directory
 .vs/
@@ -39,4 +41,3 @@ sysinfo.txt
 !Builds/*/
 !/Builds/**
 
-Assets/StreamingAssets/build_info.txt
