@@ -34,29 +34,29 @@ public class PlayerAnimatorController : MonoBehaviour {
     {
         if (DEBUG)
         {
-            if (Input.GetKeyUp(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 SetAnimationState(ANIMATION_STATE.HURT);
             }
-
-            if (Input.GetKeyUp(KeyCode.W))
+            else if (Input.GetKeyDown(KeyCode.W))
             {
                 SetAnimationState(ANIMATION_STATE.DEAD);
             }
-
-            if (Input.GetKeyUp(KeyCode.E))
+            else if (Input.GetKeyDown(KeyCode.E))
             {
                 SetAnimationState(ANIMATION_STATE.JUMP);
             }
-
-            if (Input.GetKeyUp(KeyCode.R))
+            else if (Input.GetKeyDown(KeyCode.R))
             {
                 SetAnimationState(ANIMATION_STATE.WALKING);
             }
-
-            if (Input.GetKeyUp(KeyCode.T))
+            else if (Input.GetKeyDown(KeyCode.T))
             {
                 SetAnimationState(ANIMATION_STATE.RUNNING);
+            }
+            else
+            {
+                SetAnimationState(ANIMATION_STATE.IDLE);
             }
         }
 
