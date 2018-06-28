@@ -43,6 +43,36 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Parallax_10_Background
+    uniqueID: 4180191203
+    locked: 0
+  - name: Parallax_9
+    uniqueID: 1622207645
+    locked: 0
+  - name: Parallax_8
+    uniqueID: 3067528217
+    locked: 0
+  - name: Parallax_7
+    uniqueID: 779530339
+    locked: 0
+  - name: Parallax_6
+    uniqueID: 2349144987
+    locked: 0
+  - name: Parallax_5
+    uniqueID: 299803469
+    locked: 0
+  - name: Parallax_4
+    uniqueID: 268274165
+    locked: 0
+  - name: Parallax_3
+    uniqueID: 806769089
+    locked: 0
+  - name: Parallax_2
+    uniqueID: 2245641701
+    locked: 0
+  - name: Parallax_1
+    uniqueID: 2708950765
+    locked: 0
   - name: Background
     uniqueID: 2394614357
     locked: 0
