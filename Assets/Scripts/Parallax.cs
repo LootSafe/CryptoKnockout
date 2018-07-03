@@ -32,17 +32,15 @@ public class Parallax : MonoBehaviour
     void Update ()
     {
         float xMovement = Input.GetAxis("Horizontal");
-        float yMovement = transform.position.y;
 
         xCurrentPos = transform.position.x;
         yCurrentPos = transform.position.y;
 
-        if(HasPositionChanged())
+        if(HasPositionChanged() && inBounds())
         {
             for (int i = 0; i <= pSprites.Count - 1; i++)
             {
                 float xIncrement = 0;
-                float yIncrement = 0;
                 
                 Vector3 current = pSprites[i].transform.position;
 
@@ -59,31 +57,6 @@ public class Parallax : MonoBehaviour
 
                     current.x += xIncrement;
                 }
-                       
-                /*
-                if (lastPosY != yCurrentPos)
-                {
-                   if (yMovement > 0)
-                   {
-                        yIncrement += (incrementBetweenSprites * speed) * (i + 1) / 100;
-
-                        if (pSpritesOrgPos[i].y <= (current.y += yIncrement))
-                        {
-                            current.y += yIncrement;
-                        }
-                   }
-                   
-                    else
-                    {
-                        yIncrement -= (incrementBetweenSprites * speed) * (i + 1) / 100;
-
-                        if (pSpritesOrgPos[i].y <= (current.y -= yIncrement))
-                        {
-                            current.y += yIncrement;
-                        }
-                    }
-                }
-                */
 
                 pSprites[i].transform.position = new Vector3(current.x, current.y, current.z);
             }
@@ -101,6 +74,13 @@ public class Parallax : MonoBehaviour
             return true;
 
         return false;
+    }
+
+    bool inBounds()
+    {
+        // Logic for walls
+
+        return true;
     }
 
 }

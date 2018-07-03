@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Build from GHOST at 7/3/2018 12:05:36 PM
-=======
-Build from AS-D1 at 6/28/2018 4:35:21 PM
->>>>>>> a321a1722c0deec76f7e0ef9ada427bb8f3b0664
+Build from GHOST at 7/3/2018 12:34:57 PM
