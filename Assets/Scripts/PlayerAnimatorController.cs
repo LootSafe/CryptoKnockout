@@ -59,7 +59,6 @@ public class PlayerAnimatorController : MonoBehaviour {
                 SetAnimationState(ANIMATION_STATE.IDLE);
             }
         }
-
     }
 
     /* Animation State */
