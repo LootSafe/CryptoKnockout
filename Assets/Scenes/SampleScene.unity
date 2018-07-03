@@ -249,7 +249,7 @@ Transform:
   - {fileID: 1038951492}
   - {fileID: 1526629793}
   m_Father: {fileID: 682696520}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &102401084
 GameObject:
@@ -637,8 +637,9 @@ GameObject:
   m_Component:
   - component: {fileID: 312179404}
   - component: {fileID: 312179405}
+  - component: {fileID: 312179406}
   m_Layer: 0
-  m_Name: 2_cart
+  m_Name: Minecart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,11 +652,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 312179403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.41, y: -13.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -12.78, y: -5.398, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
-  m_Father: {fileID: 1079891192}
-  m_RootOrder: 7
+  m_Father: {fileID: 682696520}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &312179405
 SpriteRenderer:
@@ -702,6 +703,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &312179406
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312179403}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3edbd36ea0a286446893ae62595774f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &353480375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,6 +1224,7 @@ Transform:
   m_LocalPosition: {x: 0.74737275, y: 1.2119803, z: 0.06166146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 312179404}
   - {fileID: 1122013722}
   - {fileID: 27330081}
   - {fileID: 1079891192}
@@ -1969,10 +1989,9 @@ Transform:
   - {fileID: 149742305}
   - {fileID: 920764429}
   - {fileID: 1301487710}
-  - {fileID: 312179404}
   - {fileID: 1808449336}
   m_Father: {fileID: 682696520}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1079891193
 SpriteRenderer:
@@ -2204,7 +2223,7 @@ GameObject:
   - component: {fileID: 1122013723}
   - component: {fileID: 1122013724}
   m_Layer: 0
-  m_Name: Clouds 0
+  m_Name: Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2217,13 +2236,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1122013721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.61, y: -0.74, z: 0}
+  m_LocalPosition: {x: -7.1, y: -0.74, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 2053515121}
   - {fileID: 261669762}
   m_Father: {fileID: 682696520}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1122013723
 SpriteRenderer:
@@ -3194,7 +3213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1079891192}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1808449337
 SpriteRenderer:
