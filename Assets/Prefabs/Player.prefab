@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   incrementBetweenSprites: 0.1
+  deadZoneOffset: 2
 --- !u!114 &114886340538789656
 MonoBehaviour:
   m_ObjectHideFlags: 1
