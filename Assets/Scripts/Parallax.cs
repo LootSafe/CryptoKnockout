@@ -7,14 +7,18 @@ public class Parallax : MonoBehaviour
 {    
     public float speed;
     public float incrementBetweenSprites = 0.01f;
+    public float deadZoneOffset = 2.0f;
 
     List<GameObject> pSprites;
     List<Vector3> pSpritesOrgPos;
     float xCurrentPos, yCurrentPos, lastPosX, lastPosY;
+    GameObject leftBoundarySprite, rightBoundarySprite, daddyLax;
 
     void Awake()
     {
-        GameObject daddyLax = GameObject.Find("Parrallax");
+        daddyLax = GameObject.Find("Parrallax");
+        leftBoundarySprite = GameObject.FindGameObjectWithTag("LeftBoundary");
+        rightBoundarySprite = GameObject.FindGameObjectWithTag("RightBoundary");
 
         pSprites = new List<GameObject>();
         pSpritesOrgPos = new List<Vector3>();
@@ -78,7 +82,15 @@ public class Parallax : MonoBehaviour
 
     bool inBounds()
     {
-        // Logic for walls
+        float leftX = leftBoundarySprite.transform.position.x;
+        float rightX = rightBoundarySprite.transform.position.x;
+        float playerX = transform.position.x;
+
+        if (leftX + deadZoneOffset >= playerX)
+            return false;
+
+        if (rightX - deadZoneOffset <= playerX)
+            return false;
 
         return true;
     }
