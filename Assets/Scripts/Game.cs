@@ -12,23 +12,11 @@ public class Game : NetworkBehaviour {
     private bool host = false;
 
     private NetworkHandler network;
-    
+    private GameMode gameMode;
     private static Game instance;
     private static Player localPlayer;
-    public struct PlayerRecord
-    {
-        public NetworkIdentity id;
-        public PlayerRecord(NetworkIdentity id)
-        {
-            this.id = id;
-        }
-    }
 
-    public class SyncListPlayerRecord : SyncListStruct<PlayerRecord>
-    {
-
-    }
-
+    public class SyncListPlayerRecord : SyncListStruct<PlayerRecord>{}
     [SyncVar]
     public SyncListPlayerRecord networkPlayers = new SyncListPlayerRecord();
     private State state = State.STARTING;
@@ -36,7 +24,10 @@ public class Game : NetworkBehaviour {
 
     public void Awake()
     {
+        //Network Test Object
         GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+
+        gameMode = GameMode.LOCALMULTIPLAYER;
         instance = this;
     }
     /*************************************************************************/
@@ -90,6 +81,11 @@ public class Game : NetworkBehaviour {
     public State GetState()
     {
         return state;
+    }
+
+    public GameMode GetGameMode()
+    {
+        return gameMode;
     }
 
 
@@ -174,6 +170,22 @@ public class Game : NetworkBehaviour {
         ROUND_ENDING,
         SUMMARIZING,
         COMPLETED
+    }
+
+    public enum GameMode
+    {
+        SINGLEPLAYER,
+        LOCALMULTIPLAYER,
+        NETWORKMULTIPLAYER
+    }
+
+    public struct PlayerRecord
+    {
+        public NetworkIdentity id;
+        public PlayerRecord(NetworkIdentity id)
+        {
+            this.id = id;
+        }
     }
 
 
