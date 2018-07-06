@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public enum MOVESTATE { LEFT, RIGHT, CENTERAL };
-
 public class Parallax : MonoBehaviour
 {    
     public float speed;
@@ -14,8 +12,12 @@ public class Parallax : MonoBehaviour
     float xCurrentPos, yCurrentPos, lastPosX, lastPosY;
     GameObject leftBoundarySprite, rightBoundarySprite, daddyLax;
 
+    Game game;
+    Game.GameMode gamemode;
+
     void Awake()
     {
+        game = Game.GetInstance();
         daddyLax = GameObject.Find("Parrallax");
         leftBoundarySprite = GameObject.FindGameObjectWithTag("LeftBoundary");
         rightBoundarySprite = GameObject.FindGameObjectWithTag("RightBoundary");
@@ -29,6 +31,15 @@ public class Parallax : MonoBehaviour
             pSpritesOrgPos.Add(childLax.gameObject.transform.position);
         }
 
+        if (Game.GetInstance().GetPlayer(1) != null)
+        {
+            gamemode = Game.GetInstance().GetGameMode();
+        }
+        else
+        {
+            gamemode = Game.GameMode.SINGLEPLAYER;
+        }
+
         lastPosX = transform.position.x;
         lastPosY = transform.position.y;
     }
@@ -36,16 +47,24 @@ public class Parallax : MonoBehaviour
     void Update ()
     {
         float xMovement = Input.GetAxis("Horizontal");
+        
+        if (gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
+        {
+            xCurrentPos = transform.position.x;
+            yCurrentPos = transform.position.y;
+        }
+        else
+        {
+            xCurrentPos = GetMidPoint().x;
+            yCurrentPos = GetMidPoint().y;
+        }
 
-        xCurrentPos = transform.position.x;
-        yCurrentPos = transform.position.y;
-
-        if(HasPositionChanged() && inBounds())
+        if (HasPositionChanged() && inBounds())
         {
             for (int i = 0; i <= pSprites.Count - 1; i++)
             {
                 float xIncrement = 0;
-                
+
                 Vector3 current = pSprites[i].transform.position;
 
                 if (lastPosX != xCurrentPos)
@@ -64,10 +83,20 @@ public class Parallax : MonoBehaviour
 
                 pSprites[i].transform.position = new Vector3(current.x, current.y, current.z);
             }
-        }        
 
-        lastPosX = transform.position.x;
-        lastPosY = transform.position.y;
+        }
+
+        if (gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
+        {
+            lastPosX = transform.position.x;
+            lastPosY = transform.position.y;
+        }
+        else
+        {
+            lastPosX = GetMidPoint().x;
+            lastPosY = GetMidPoint().y;
+        }
+
     }
 
     bool HasPositionChanged()
@@ -84,7 +113,17 @@ public class Parallax : MonoBehaviour
     {
         float leftX = leftBoundarySprite.transform.position.x;
         float rightX = rightBoundarySprite.transform.position.x;
-        float playerX = transform.position.x;
+
+        float playerX;
+
+        if (gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
+        {
+            playerX = transform.position.x;
+        }
+        else
+        {            
+            playerX = GetMidPoint().x;
+        }
 
         if (leftX + deadZoneOffset >= playerX)
             return false;
@@ -95,4 +134,10 @@ public class Parallax : MonoBehaviour
         return true;
     }
 
+    Vector3 GetMidPoint()
+    {
+        Player p1 = Game.GetInstance().GetPlayer(0);
+        Player p2 = Game.GetInstance().GetPlayer(1);
+        return p1.gameObject.transform.position - (p2.gameObject.transform.position / 2);
+    }
 }
