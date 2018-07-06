@@ -29,6 +29,7 @@ public class Player : NetworkBehaviour {
 
     public void OnDestroy()
     {
+        if (!game) return;
         game.UnregisterPlayer(GetComponent<NetworkIdentity>());
     }
 
