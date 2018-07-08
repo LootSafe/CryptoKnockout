@@ -45,8 +45,6 @@ GameObject:
   - component: {fileID: 95906605965611374}
   - component: {fileID: 114186994662308574}
   - component: {fileID: 114037795989249596}
-  - component: {fileID: 114821032264722484}
-  - component: {fileID: 114523378776915502}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -192,33 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
---- !u!114 &114523378776915502
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729820886990980}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f9e1fa16a33a440b42b1cc72410441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dampTime: 1
-  offSetY: 2
---- !u!114 &114821032264722484
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729820886990980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 394f517db8c639a419ebff9e42fa1890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  incrementBetweenSprites: 0.1
-  deadZoneOffset: 2
 --- !u!114 &114886340538789656
 MonoBehaviour:
   m_ObjectHideFlags: 1
