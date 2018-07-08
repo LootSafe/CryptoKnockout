@@ -7,6 +7,9 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
     float p1lastHeading = 1;
     float p2lastHeading = 1;
     Game game;
+    Player player1;
+    Player player2;
+
 
     // Use this for initialization
     void Start () {
@@ -20,6 +23,12 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             Destroy(this);
         }
+
+        if (!player1 || !player2)
+        {
+            player1 = game.GetPlayer(0);
+            player2 = game.GetPlayer(2);
+        }    
         //Get Inputs
         float xMovement = Input.GetAxis("Horizontal");
         float yMovement = Input.GetAxis("Vertical");
@@ -83,4 +92,4 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
     }
 }
-}
+
