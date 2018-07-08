@@ -102,6 +102,7 @@ public class Game : NetworkBehaviour {
     {
         if (playerNumber >= networkPlayers.Count) return null;
         GameObject player = ClientScene.FindLocalObject(networkPlayers[playerNumber].id.netId);
+        if (!player) return null;
         Debug.Log(networkPlayers[playerNumber].id.netId.ToString());
         Player result = player.GetComponent<Player>();
         return result;
@@ -136,7 +137,7 @@ public class Game : NetworkBehaviour {
 
     void Update()
     {
-        Debug.Log("Players - " + networkPlayers.Count + " " + networkPlayers[0]);
+        Debug.Log("Players - " + networkPlayers.Count );
         foreach (PlayerRecord record in networkPlayers)
         {
             Debug.Log("I have a player - " + record.id.netId.ToString());
