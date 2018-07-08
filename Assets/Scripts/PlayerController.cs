@@ -15,9 +15,9 @@ public class PlayerController : NetworkBehaviour
         if (!isLocalPlayer) return;
 
         //Get Inputs
-        float xMovement = Input.GetAxis("Horizontal");
-        float yMovement = Input.GetAxis("Vertical");
-        float jump = Input.GetAxis("Jump");
+        float xMovement = Input.GetAxis("P1_Horizontal");
+        float yMovement = Input.GetAxis("P1_Vertical");
+        float jump = Input.GetAxis("P1_Jump");
         
         //Horizontal Changes
         if (xMovement != 0)
