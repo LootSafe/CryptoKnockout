@@ -48,7 +48,7 @@ public class Parallax : MonoBehaviour
     {
         float xMovement = Input.GetAxis("Horizontal");
         
-        if (gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
+        if (onePlayerOnScreen())
         {
             xCurrentPos = transform.position.x;
             yCurrentPos = transform.position.y;
@@ -86,7 +86,7 @@ public class Parallax : MonoBehaviour
 
         }
 
-        if (gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
+        if (onePlayerOnScreen())
         {
             lastPosX = transform.position.x;
             lastPosY = transform.position.y;
@@ -97,6 +97,18 @@ public class Parallax : MonoBehaviour
             lastPosY = GetMidPoint().y;
         }
 
+    }
+
+    bool onePlayerOnScreen()
+    {
+        if(gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     bool HasPositionChanged()
