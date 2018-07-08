@@ -30,9 +30,9 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             player2 = game.GetPlayer(2);
         }    
         //Get Inputs
-        float xMovement = Input.GetAxis("Horizontal");
-        float yMovement = Input.GetAxis("Vertical");
-        float jump = Input.GetAxis("Jump");
+        float xMovement = Input.GetAxis("P1_Horizontal");
+        float yMovement = Input.GetAxis("P1_Vertical");
+        float jump = Input.GetAxis("P1_Jump");
 
         //Horizontal Changes
         if (xMovement != 0)
@@ -48,7 +48,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                 p1lastHeading = quotient;
             }
             //Horizontal Movement
-            transform.position = new Vector3(transform.position.x + (xMovement * player.GetMoveSpeed()), transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (xMovement * player1.GetMoveSpeed()), transform.position.y, transform.position.z);
             transform.localScale = updatedHeading;
         }
 
@@ -56,13 +56,13 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         if (jump > 0)
         {
             //Vertical movement
-            transform.position = new Vector3(transform.position.x, transform.position.y + (player.GetMoveSpeed() * jump), transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + (player1.GetMoveSpeed() * jump), transform.position.z);
         }
 
         //Player 2 Get Inputs
-        float p2xMovement = Input.GetAxis("P1_Horizontal");
-        float p2yMovement = Input.GetAxis("P1_Vertical");
-        float p2jump = Input.GetAxis("P1_p2jump");
+        float p2xMovement = Input.GetAxis("P2_Horizontal");
+        float p2yMovement = Input.GetAxis("P2_Vertical");
+        float p2jump = Input.GetAxis("P2_Jump");
 
         //Horizontal Changes
         if (p2xMovement != 0)
@@ -78,7 +78,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                 p2lastHeading = quotient;
             }
             //Horizontal Movement
-            transform.position = new Vector3(transform.position.x + (p2xMovement * player.GetMoveSpeed()), transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (p2xMovement * player2.GetMoveSpeed()), transform.position.y, transform.position.z);
             transform.localScale = updatedHeading;
         }
 
@@ -86,7 +86,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         if (p2jump > 0)
         {
             //Vertical movement
-            transform.position = new Vector3(transform.position.x, transform.position.y + (player.GetMoveSpeed() * p2jump), transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + (player2.GetMoveSpeed() * p2jump), transform.position.z);
         }
 
 
