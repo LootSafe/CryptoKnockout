@@ -10962,7 +10962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394f517db8c639a419ebff9e42fa1890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
   incrementBetweenSprites: 0.01
   deadZoneOffset: 2
 --- !u!4 &952017389

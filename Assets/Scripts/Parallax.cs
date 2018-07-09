@@ -43,8 +43,6 @@ public class Parallax : MonoBehaviour
 
         if (AtLeastOnePlayer())
         {
-            float xMovement = Input.GetAxis("Horizontal");
-
             if (IsMultiplayer())
             {
                 xCurrentPos = GetMidMultiplayer().x;
@@ -60,8 +58,6 @@ public class Parallax : MonoBehaviour
 
             if (HasPositionChanged() && InBounds())
             {
-                Logger.Instance.Message(DEVELOPER.ANDY, "MOVING");
-
                 for (int i = 0; i <= pSprites.Count - 1; i++)
                 {
                     float xIncrement = 0;
@@ -70,7 +66,7 @@ public class Parallax : MonoBehaviour
 
                     if (lastPosX != xCurrentPos)
                     {
-                        if (xMovement < 0)
+                        if (lastPosX > xCurrentPos)
                         {
                             xIncrement += (incrementBetweenSprites * speed) * (i + 1) / 10;
                         }
@@ -91,7 +87,6 @@ public class Parallax : MonoBehaviour
             {
                 lastPosX = GetMidMultiplayer().x;
                 lastPosY = GetMidMultiplayer().y;
-
             }
             else
             {
