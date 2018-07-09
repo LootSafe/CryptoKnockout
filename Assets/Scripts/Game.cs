@@ -130,7 +130,7 @@ public class Game : NetworkBehaviour {
         {
             Debug.Log("Game was not properly instantiated");
         }
-        Debug.Log("Offering Game");
+        //Debug.Log("Offering Game");
         return instance;
     }
 
