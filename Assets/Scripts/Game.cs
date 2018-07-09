@@ -45,8 +45,10 @@ public class Game : MonoBehaviour {
             //Spawn Players 1 and 2
             GameObject p1 = Instantiate(playerPrefab, spawnP1.position, spawnP1.rotation);
             localP1 = p1.GetComponent<Player>();
+            localP1.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player1Char));
             GameObject p2 = Instantiate(playerPrefab,spawnP2.position, spawnP2.rotation);
             localP2 = p2.GetComponent<Player>();
+            localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
             Vector3 p2LS = p2.GetComponentInParent<Transform>().localScale;
             p2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * p2LS.x, p2LS.y, p2LS.z);
 
