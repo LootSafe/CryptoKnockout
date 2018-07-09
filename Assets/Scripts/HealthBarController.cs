@@ -121,7 +121,6 @@ public class HealthBarController : MonoBehaviour {
         if (player)
         {
             //Current Health
-            Debug.Log("Last Update " + lastUpdateHealth);
             if(player.GetHealth() != lastUpdateHealth)
             {
                 float range = player.GetHealth() - lastUpdateHealth;

@@ -137,10 +137,9 @@ public class Game : NetworkBehaviour {
 
     void Update()
     {
-        Debug.Log("Players - " + networkPlayers.Count );
         foreach (PlayerRecord record in networkPlayers)
         {
-            Debug.Log("I have a player - " + record.id.netId.ToString());
+            //Debug.Log("I have a player - " + record.id.netId.ToString());
         }
         //TODO Updates based on inputs and notifications - Biggest being death notfication
         switch (state)

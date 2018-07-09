@@ -24,10 +24,10 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Run Only if Local Multiplayer
         if (game.GetGameMode() != Game.GameMode.LOCALMULTIPLAYER)
         {
+            Debug.Log("Game is not in Local Multiplayer Mode");
             Destroy(this);
             return;
         }
-        Debug.Log("Game is in Local Multiplayer Mode");
 
         if (!player1 || !player2)
         {

@@ -11,7 +11,6 @@ public class PlayerDamage : MonoBehaviour {
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("Triggered");
         if(other.tag == "Player" && other!= player)
         {
             other.GetComponent<Player>().TakeDamage(10);
