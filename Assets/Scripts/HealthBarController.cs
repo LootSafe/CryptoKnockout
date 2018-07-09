@@ -44,7 +44,7 @@ public class HealthBarController : MonoBehaviour {
 
         startPosition_specialbarImage = specialbarRect.GetChild(0).transform.GetComponent<RectTransform>().localPosition;
 
-        print(startPosition_specialbarImage.x);
+        //print(startPosition_specialbarImage.x);
 
         currentHealthstate = HEALTHSTATE.NOTANIMATING;
 
