@@ -18,13 +18,17 @@ public class Player : NetworkBehaviour {
 
     void Start()
     {
-        this.character = new TestCharacter();
-        health = character.GetHealth();
-        maxHealth = character.GetHealth();
         game = Game.GetInstance();
         lives = game.GetLives();
-        this.name = character.GetName();
         game.RegisterPlayer(this, GetComponent<NetworkIdentity>());
+    }
+
+    public void InitializeWithCharacter(Character character)
+    {
+        this.character = character;
+        health = character.GetHealth();
+        maxHealth = character.GetHealth();
+        this.name = character.GetName();
     }
 
     public void OnDestroy()
