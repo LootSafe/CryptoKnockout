@@ -17,6 +17,7 @@ public class ButtonHandler : MonoBehaviour {
 
     public void BtnLocalPlay()
     {
+        
         SceneManager.LoadScene("CharacterSelect");
     }
 
