@@ -17,7 +17,8 @@ public class ButtonHandler : MonoBehaviour {
 
     public void BtnLocalPlay()
     {
-        
+
+        GlobalGameData.GetInstance().selectedGameMode = Game.GameMode.LOCALMULTIPLAYER;
         SceneManager.LoadScene("CharacterSelect");
     }
 
