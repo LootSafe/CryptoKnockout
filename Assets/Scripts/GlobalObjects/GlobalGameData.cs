@@ -6,8 +6,8 @@ public class GlobalGameData : MonoBehaviour {
 
     public Game.GameMode selectedGameMode = Game.GameMode.LOCALMULTIPLAYER;
     public string selectedLevel = "Denver";
-    public string player1Char = "Bjorn";
-    public string player2Char = "Doge";
+    public Character.Characters player1Char = Character.Characters.BJORN;
+    public Character.Characters player2Char = Character.Characters.DOGE;
 
 
     private static bool created = false;

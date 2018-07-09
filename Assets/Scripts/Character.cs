@@ -40,4 +40,24 @@ public abstract class Character {
         return name;
     }
 
+    public enum Characters
+    {
+        BJORN,
+        BITCOINBOY,
+        DOGE,
+        MONERO
+    }
+
+    public static Character Get(Characters c)
+    {
+        switch (c)
+        {
+            case Characters.BJORN:
+                return new Bjorn();
+            case Characters.DOGE:
+                return new Doge();
+            default:
+                return new Doge();
+        }
+    }
 }
