@@ -126,7 +126,7 @@ public class HealthBarController : MonoBehaviour {
                 float range = player.GetHealth() - lastUpdateHealth;
                 //If health decreased
                     //Rudementary -- To Be replaced by damage calculator and "hit Streak variables"
-                    TakeDamageMeter(range / player.GetMaxHealth());
+                    TakeDamageMeter( (range / player.GetMaxHealth()) * 100);
                     lastUpdateHealth = player.GetHealth();
 
             }
