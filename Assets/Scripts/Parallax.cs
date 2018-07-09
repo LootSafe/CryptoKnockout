@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Parallax : MonoBehaviour
@@ -30,78 +31,84 @@ public class Parallax : MonoBehaviour
             pSprites.Add(childLax.gameObject);
             pSpritesOrgPos.Add(childLax.gameObject.transform.position);
         }
-
-        if (Game.GetInstance().GetPlayer(1) != null)
-        {
-            gamemode = Game.GetInstance().GetGameMode();
-        }
-        else
-        {
-            gamemode = Game.GameMode.SINGLEPLAYER;
-        }
-
-        lastPosX = transform.position.x;
-        lastPosY = transform.position.y;
     }
 
     void Update ()
     {
-        float xMovement = Input.GetAxis("Horizontal");
-        
-        if (onePlayerOnScreen())
-        {
-            xCurrentPos = transform.position.x;
-            yCurrentPos = transform.position.y;
-        }
-        else
-        {
-            xCurrentPos = GetMidPoint().x;
-            yCurrentPos = GetMidPoint().y;
-        }
+        /* Listening for a player to join */
 
-        if (HasPositionChanged() && inBounds())
+        gamemode = Game.GetInstance().GetGameMode();
+
+        /* Parallax Stuff */
+
+        if (AtLeastOnePlayer())
         {
-            for (int i = 0; i <= pSprites.Count - 1; i++)
+            float xMovement = Input.GetAxis("Horizontal");
+
+            if (IsMultiplayer())
             {
-                float xIncrement = 0;
+                //lastPosX = GetMidPointMultiplayer().x;
+                //lastPosY = GetMidPointMultiplayer().y;
 
-                Vector3 current = pSprites[i].transform.position;
+                xCurrentPos = GetMidMultiplayer().x;
+                yCurrentPos = GetMidMultiplayer().y;
+            }
+            else
+            {
+                //lastPosX = Game.GetInstance().GetPlayer(0).gameObject.transform.position.x;
+                //lastPosY = Game.GetInstance().GetPlayer(0).gameObject.transform.position.y;
 
-                if (lastPosX != xCurrentPos)
-                {
-                    if (xMovement < 0)
-                    {
-                        xIncrement += (incrementBetweenSprites * speed) * (i + 1) / 10;
-                    }
-                    else
-                    {
-                        xIncrement -= (incrementBetweenSprites * speed) * (i + 1) / 10;
-                    }
-
-                    current.x += xIncrement;
-                }
-
-                pSprites[i].transform.position = new Vector3(current.x, current.y, current.z);
+                xCurrentPos = GetMidSingleplayer().x;
+                yCurrentPos = GetMidSingleplayer().y;
             }
 
-        }
+            /* Sprite Movement Logic */
 
-        if (onePlayerOnScreen())
-        {
-            lastPosX = transform.position.x;
-            lastPosY = transform.position.y;
-        }
-        else
-        {
-            lastPosX = GetMidPoint().x;
-            lastPosY = GetMidPoint().y;
+            if (HasPositionChanged() && InBounds())
+            {
+                for (int i = 0; i <= pSprites.Count - 1; i++)
+                {
+                    float xIncrement = 0;
+
+                    Vector3 current = pSprites[i].transform.position;
+
+                    if (lastPosX != xCurrentPos)
+                    {
+                        if (xMovement < 0)
+                        {
+                            xIncrement += (incrementBetweenSprites * speed) * (i + 1) / 10;
+                        }
+                        else
+                        {
+                            xIncrement -= (incrementBetweenSprites * speed) * (i + 1) / 10;
+                        }
+
+                        current.x += xIncrement;
+                    }
+
+                    pSprites[i].transform.position = new Vector3(current.x, current.y, current.z);
+                }
+
+            }
+
+            if (IsMultiplayer())
+            {
+                lastPosX = GetMidMultiplayer().x;
+                lastPosY = GetMidMultiplayer().y;
+
+            }
+            else
+            {
+                lastPosX = GetMidSingleplayer().x;
+                lastPosY = GetMidSingleplayer().y;
+            }
         }
 
     }
 
-    bool onePlayerOnScreen()
+    private bool AtLeastOnePlayer()
     {
-        if(gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
+        if (Game.GetInstance().GetNumberOfPlayers() > 0)
         {
             return true;
         }
@@ -111,7 +118,22 @@ public class Parallax : MonoBehaviour
         }
     }
 
-    bool HasPositionChanged()
+    private bool IsMultiplayer()
+    {
+        if (Game.GetInstance().GetNumberOfPlayers() > 1)
+        {
+            Logger.Instance.Message(DEVELOPER.ANDY, "My awesome debug message");
+            //("MULTIPLAYER");
+            return true;
+        }
+        else
+        {
+            print("NOT MULTIPLAYER 1");
+            return false;
+        }
+    }
+
+    private bool HasPositionChanged()
     {
         if (lastPosX != xCurrentPos)
             return true;
@@ -121,7 +143,7 @@ public class Parallax : MonoBehaviour
         return false;
     }
 
-    bool inBounds()
+    private bool InBounds()
     {
         float leftX = leftBoundarySprite.transform.position.x;
         float rightX = rightBoundarySprite.transform.position.x;
@@ -130,11 +152,11 @@ public class Parallax : MonoBehaviour
 
         if (gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
         {
-            playerX = transform.position.x;
+            playerX = GetMidSingleplayer().x;
         }
         else
         {            
-            playerX = GetMidPoint().x;
+            playerX = GetMidMultiplayer().x;
         }
 
         if (leftX + deadZoneOffset >= playerX)
@@ -146,7 +168,12 @@ public class Parallax : MonoBehaviour
         return true;
     }
 
-    Vector3 GetMidPoint()
+    private Vector3 GetMidSingleplayer()
+    {
+        return Game.GetInstance().GetPlayer(0).gameObject.transform.position;
+    }
+
+    private Vector3 GetMidMultiplayer()
     {
         Player p1 = Game.GetInstance().GetPlayer(0);
         Player p2 = Game.GetInstance().GetPlayer(1);
