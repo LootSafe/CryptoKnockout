@@ -16,10 +16,8 @@ public class NetworkHandler : NetworkManager
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
     {
         if (!game) return;
-        if(Game.GetInstance().GetGameMode() == Game.GameMode.LOCALMULTIPLAYER)
-        {
-            return;
-        }
+        if(Game.GetInstance().GetGameMode() == Game.GameMode.LOCALMULTIPLAYER) return;
+        
         var player = (GameObject)GameObject.Instantiate(playerPrefab, playerSpawnPos, Quaternion.identity);
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         Logger.Instance.Message(DEVELOPER.ADAM, "Player is being spawned");

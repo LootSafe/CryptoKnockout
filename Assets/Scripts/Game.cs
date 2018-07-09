@@ -10,9 +10,11 @@ public class Game : MonoBehaviour {
     public int lives = 2;
     public int MaxPlayers = 2;
     private bool host = false;
+    public GlobalGameData globalDataPrefab;
 
     private NetworkHandler network;
     private GameMode gameMode;
+    private NetworkGameData networkGameData;
     private static Game instance;
     private static Player localPlayer;
 
@@ -21,9 +23,7 @@ public class Game : MonoBehaviour {
     private Player localP1;
     private Player localP2;
 
-    public class SyncListPlayerRecord : SyncListStruct<PlayerRecord>{}
-    [SyncVar]
-    public SyncListPlayerRecord networkPlayers = new SyncListPlayerRecord();
+   
     private State state = State.STARTING;
     
 
@@ -31,13 +31,11 @@ public class Game : MonoBehaviour {
     {
         //Network Test Object
         GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        if (!GlobalGameData.GetInstance()) Instantiate(globalDataPrefab);
         gameMode = GlobalGameData.GetInstance().selectedGameMode;
         instance = this;
-    }
 
-    public void Start()
-    {
-       if(gameMode == GameMode.LOCALMULTIPLAYER)
+        if (gameMode == GameMode.LOCALMULTIPLAYER)
         {
             //Spawn Players 1 and 2
             GameObject p1 = Instantiate(playerPrefab);
@@ -46,6 +44,11 @@ public class Game : MonoBehaviour {
             localP2 = p2.GetComponent<Player>();
 
         }
+    }
+
+    public void Start()
+    {
+
     }
     /*************************************************************************/
 
@@ -64,9 +67,9 @@ public class Game : MonoBehaviour {
         if (gameMode == GameMode.LOCALMULTIPLAYER) return;
 
         Debug.Log("Registering Player with game id = " + id.netId.ToString());
-        if (networkPlayers.Count < MaxPlayers)
+        if (networkGameData.networkPlayers.Count < MaxPlayers)
         {
-            networkPlayers.Add(new PlayerRecord(id));
+            networkGameData.networkPlayers.Add(new NetworkGameData.PlayerRecord(id));
         }
     }
 
@@ -75,7 +78,7 @@ public class Game : MonoBehaviour {
         //Temp
         if (gameMode == GameMode.LOCALMULTIPLAYER) return;
 
-        networkPlayers.Remove(new PlayerRecord(id));
+        networkGameData.networkPlayers.Remove(new NetworkGameData.PlayerRecord(id));
 
     }
 
@@ -137,8 +140,8 @@ public class Game : MonoBehaviour {
         }
 
 
-        if (playerNumber >= networkPlayers.Count) return null;
-        GameObject player = ClientScene.FindLocalObject(networkPlayers[playerNumber].id.netId);
+        if (playerNumber >= networkGameData.networkPlayers.Count) return null;
+        GameObject player = ClientScene.FindLocalObject(networkGameData.networkPlayers[playerNumber].id.netId);
         if (!player) return null;
         Player result = player.GetComponent<Player>();
         return result;
@@ -148,7 +151,7 @@ public class Game : MonoBehaviour {
     {
         if (gameMode == GameMode.LOCALMULTIPLAYER) return 2;
 
-        return networkPlayers.Count;
+        return networkGameData.networkPlayers.Count;
     }
     /// <summary>
     /// Used to get the local instance of a player
@@ -165,7 +168,7 @@ public class Game : MonoBehaviour {
     /// <returns> Single instance of the client game</returns>
     public static Game GetInstance()
     {
-        if (!instance)
+        if (instance == null)
         {
             Debug.Log("Game was not properly instantiated");
         }
@@ -175,7 +178,7 @@ public class Game : MonoBehaviour {
 
     void Update()
     {
-        foreach (PlayerRecord record in networkPlayers)
+        foreach (NetworkGameData.PlayerRecord record in networkGameData.networkPlayers)
         {
             //Debug.Log("I have a player - " + record.id.netId.ToString());
         }
@@ -217,14 +220,7 @@ public class Game : MonoBehaviour {
         NETWORKMULTIPLAYER
     }
 
-    public struct PlayerRecord
-    {
-        public NetworkIdentity id;
-        public PlayerRecord(NetworkIdentity id)
-        {
-            this.id = id;
-        }
-    }
+    
 
 
 }

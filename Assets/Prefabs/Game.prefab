@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114556840364831134}
   - component: {fileID: 222988028712984182}
   - component: {fileID: 212558005969853780}
+  - component: {fileID: 114943004052392900}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -76,8 +77,21 @@ MonoBehaviour:
   rounds: 3
   lives: 2
   MaxPlayers: 2
+  globalDataPrefab: {fileID: 114664089178248270, guid: 77d32bb0ffd267041a0c34d293e5b267,
+    type: 2}
   playerPrefab: {fileID: 1729820886990980, guid: 715c02c2e3375e7418da3da2e1d99b67,
     type: 2}
+--- !u!114 &114943004052392900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546431173773974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f8c2014c9f22c488689cc7164cd0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212558005969853780
 SpriteRenderer:
   m_ObjectHideFlags: 1

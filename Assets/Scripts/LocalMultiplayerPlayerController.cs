@@ -109,7 +109,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             if (p2jump > 0)
             {
                 //Vertical movement
-                p2Transform.position = new Vector3(transform.position.x, p2Transform.position.y + (player2.GetMoveSpeed() * p2jump), p2Transform.position.z);
+                p2Transform.position = new Vector3(p2Transform.position.x, p2Transform.position.y + (player2.GetMoveSpeed() * p2jump), p2Transform.position.z);
             }
         }
 
