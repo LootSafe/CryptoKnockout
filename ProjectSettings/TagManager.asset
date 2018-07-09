@@ -9,6 +9,8 @@ TagManager:
   - LeftBoundary
   - RightBoundary
   - GlobalData
+  - P1Spawn
+  - P2Spawn
   layers:
   - Default
   - TransparentFX
