@@ -5413,8 +5413,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: BtnQuit
+      - m_Target: {fileID: 1331916346}
+        m_MethodName: BtnPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

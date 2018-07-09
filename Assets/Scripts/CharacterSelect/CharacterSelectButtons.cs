@@ -19,4 +19,9 @@ public class CharacterSelectButtons : MonoBehaviour {
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void BtnPlay()
+    {
+        SceneManager.LoadScene("Denver");
+    }
 }
