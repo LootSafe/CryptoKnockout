@@ -8,6 +8,7 @@ TagManager:
   - PlayerCamera
   - LeftBoundary
   - RightBoundary
+  - GlobalData
   layers:
   - Default
   - TransparentFX

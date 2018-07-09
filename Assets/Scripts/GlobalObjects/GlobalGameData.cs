@@ -11,14 +11,21 @@ public class GlobalGameData : MonoBehaviour {
 
 
     private static bool created = false;
+    private static GlobalGameData instance;
     void Awake()
     {
         if (!created)
         {
             DontDestroyOnLoad(this.gameObject);
+            instance = this;
             created = true;
             Debug.Log("Awake: " + this.gameObject);
         }
+    }
+
+    public static GlobalGameData GetInstance()
+    {
+        return instance;
     }
 
 }
