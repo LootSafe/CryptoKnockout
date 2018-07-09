@@ -103,7 +103,6 @@ public class Game : NetworkBehaviour {
         if (playerNumber >= networkPlayers.Count) return null;
         GameObject player = ClientScene.FindLocalObject(networkPlayers[playerNumber].id.netId);
         if (!player) return null;
-        Debug.Log(networkPlayers[playerNumber].id.netId.ToString());
         Player result = player.GetComponent<Player>();
         return result;
     }
