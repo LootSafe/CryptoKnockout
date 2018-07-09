@@ -5,7 +5,7 @@ using UnityEngine;
 public class LocalMultiplayerPlayerController : MonoBehaviour {
 
     float p1lastHeading = 1;
-    float p2lastHeading = 1;
+    float p2lastHeading = -1;
     Game game;
     Player player1;
     Player player2;
