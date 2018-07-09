@@ -47,17 +47,11 @@ public class Parallax : MonoBehaviour
 
             if (IsMultiplayer())
             {
-                //lastPosX = GetMidPointMultiplayer().x;
-                //lastPosY = GetMidPointMultiplayer().y;
-
                 xCurrentPos = GetMidMultiplayer().x;
                 yCurrentPos = GetMidMultiplayer().y;
             }
             else
             {
-                //lastPosX = Game.GetInstance().GetPlayer(0).gameObject.transform.position.x;
-                //lastPosY = Game.GetInstance().GetPlayer(0).gameObject.transform.position.y;
-
                 xCurrentPos = GetMidSingleplayer().x;
                 yCurrentPos = GetMidSingleplayer().y;
             }
@@ -66,6 +60,8 @@ public class Parallax : MonoBehaviour
 
             if (HasPositionChanged() && InBounds())
             {
+                Logger.Instance.Message(DEVELOPER.ANDY, "MOVING");
+
                 for (int i = 0; i <= pSprites.Count - 1; i++)
                 {
                     float xIncrement = 0;
@@ -122,13 +118,10 @@ public class Parallax : MonoBehaviour
     {
         if (Game.GetInstance().GetNumberOfPlayers() > 1)
         {
-            Logger.Instance.Message(DEVELOPER.ANDY, "My awesome debug message");
-            //("MULTIPLAYER");
             return true;
         }
         else
         {
-            print("NOT MULTIPLAYER 1");
             return false;
         }
     }
@@ -150,13 +143,13 @@ public class Parallax : MonoBehaviour
 
         float playerX;
 
-        if (gamemode == Game.GameMode.NETWORKMULTIPLAYER || gamemode == Game.GameMode.SINGLEPLAYER)
+        if (IsMultiplayer())
         {
-            playerX = GetMidSingleplayer().x;
+            playerX = GetMidMultiplayer().x;
         }
         else
-        {            
-            playerX = GetMidMultiplayer().x;
+        {
+            playerX = GetMidSingleplayer().x;
         }
 
         if (leftX + deadZoneOffset >= playerX)

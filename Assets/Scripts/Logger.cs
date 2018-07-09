@@ -26,13 +26,13 @@ public class Logger : MonoBehaviour
         switch (state)
         {
             case DEVELOPER.ADAM:
-                print(debugMessage);
+                print("[ADAM]: " + debugMessage);
                 break;
             case DEVELOPER.ANDY:
-                print(debugMessage);
+                print("[ANDY]: " + debugMessage);
                 break;
             case DEVELOPER.BOTH:
-                print(debugMessage);
+                print("[BOTH]: " + debugMessage);
                 break;
             case DEVELOPER.NONE:
                 break;
