@@ -127,14 +127,11 @@ public class HealthBarController : MonoBehaviour {
                 //If health decreased
                     //Rudementary -- To Be replaced by damage calculator and "hit Streak variables"
                     TakeDamageMeter(range / player.GetMaxHealth());
-                    Debug.Log("Range: " + range + " Calc - " + range / player.GetMaxHealth());
                     lastUpdateHealth = player.GetHealth();
 
             }
-            
-            Debug.Log(player.GetHealth());
+           
             healthDisplay.text = "" + player.GetHealth();
-
         } else
         {
             healthDisplay.text = "Player Unavailable";
