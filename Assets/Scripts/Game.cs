@@ -22,6 +22,8 @@ public class Game : MonoBehaviour {
     public GameObject playerPrefab;
     private Player localP1;
     private Player localP2;
+    Transform spawnP1;
+    Transform spawnP2;
 
    
     private State state = State.STARTING;
@@ -35,13 +37,18 @@ public class Game : MonoBehaviour {
         gameMode = GlobalGameData.GetInstance().selectedGameMode;
         instance = this;
 
+        //Temp
+        spawnP1 = GameObject.FindGameObjectWithTag("P1Spawn").GetComponent<Transform>();
+        spawnP2 = GameObject.FindGameObjectWithTag("P2Spawn").GetComponent<Transform>();
         if (gameMode == GameMode.LOCALMULTIPLAYER)
         {
             //Spawn Players 1 and 2
-            GameObject p1 = Instantiate(playerPrefab);
+            GameObject p1 = Instantiate(playerPrefab, spawnP1.position, spawnP1.rotation);
             localP1 = p1.GetComponent<Player>();
-            GameObject p2 = Instantiate(playerPrefab);
+            GameObject p2 = Instantiate(playerPrefab,spawnP2.position, spawnP2.rotation);
             localP2 = p2.GetComponent<Player>();
+            Vector3 p2LS = p2.GetComponentInParent<Transform>().localScale;
+            p2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * p2LS.x, p2LS.y, p2LS.z);
 
         }
     }
@@ -178,10 +185,11 @@ public class Game : MonoBehaviour {
 
     void Update()
     {
-        foreach (NetworkGameData.PlayerRecord record in networkGameData.networkPlayers)
+        /*foreach (NetworkGameData.PlayerRecord record in networkGameData.networkPlayers)
         {
             //Debug.Log("I have a player - " + record.id.netId.ToString());
         }
+        */
         //TODO Updates based on inputs and notifications - Biggest being death notfication
         switch (state)
         {
