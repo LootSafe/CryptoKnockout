@@ -6015,10 +6015,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a63001f4c1d71d44ac4d2ddc07b880d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  damageBar: {fileID: 0}
-  specialBar: {fileID: 0}
-  healthDisplay: {fileID: 0}
+  healthBar: {fileID: 905586831}
+  damageBar: {fileID: 1141280460}
+  specialBar: {fileID: 921723065}
+  healthDisplay: {fileID: 1957216796}
   playerNumber: 0
 --- !u!1 &771006117
 GameObject:
@@ -11734,10 +11734,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a63001f4c1d71d44ac4d2ddc07b880d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  damageBar: {fileID: 0}
-  specialBar: {fileID: 0}
-  healthDisplay: {fileID: 0}
+  healthBar: {fileID: 2016324987}
+  damageBar: {fileID: 1793938268}
+  specialBar: {fileID: 1573353810}
+  healthDisplay: {fileID: 952316239}
   playerNumber: 0
 --- !u!1 &1301487709
 GameObject:
