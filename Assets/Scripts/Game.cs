@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Game : NetworkBehaviour {
+public class Game : MonoBehaviour {
 
     
     public int rounds = 3;
@@ -16,6 +16,11 @@ public class Game : NetworkBehaviour {
     private static Game instance;
     private static Player localPlayer;
 
+    //Temp
+    public GameObject playerPrefab;
+    private Player localP1;
+    private Player localP2;
+
     public class SyncListPlayerRecord : SyncListStruct<PlayerRecord>{}
     [SyncVar]
     public SyncListPlayerRecord networkPlayers = new SyncListPlayerRecord();
@@ -26,9 +31,21 @@ public class Game : NetworkBehaviour {
     {
         //Network Test Object
         GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
-
-        gameMode = GameMode.LOCALMULTIPLAYER;
+        gameMode = GlobalGameData.GetInstance().selectedGameMode;
         instance = this;
+    }
+
+    public void Start()
+    {
+       if(gameMode == GameMode.LOCALMULTIPLAYER)
+        {
+            //Spawn Players 1 and 2
+            GameObject p1 = Instantiate(playerPrefab);
+            localP1 = p1.GetComponent<Player>();
+            GameObject p2 = Instantiate(playerPrefab);
+            localP2 = p2.GetComponent<Player>();
+
+        }
     }
     /*************************************************************************/
 
@@ -41,9 +58,11 @@ public class Game : NetworkBehaviour {
         Debug.Log("Player " + player.name + " has died");
     }
 
-    public void RegisterPlayer(NetworkIdentity id)
+    public void RegisterPlayer(Player player, NetworkIdentity id)
     {
-       //if (!isServer) return;
+        //Temp
+        if (gameMode == GameMode.LOCALMULTIPLAYER) return;
+
         Debug.Log("Registering Player with game id = " + id.netId.ToString());
         if (networkPlayers.Count < MaxPlayers)
         {
@@ -51,9 +70,11 @@ public class Game : NetworkBehaviour {
         }
     }
 
-    public void UnregisterPlayer(NetworkIdentity id)
+    public void UnregisterPlayer(Player player, NetworkIdentity id)
     {
-        if (!isServer) return;
+        //Temp
+        if (gameMode == GameMode.LOCALMULTIPLAYER) return;
+
         networkPlayers.Remove(new PlayerRecord(id));
 
     }
@@ -100,6 +121,22 @@ public class Game : NetworkBehaviour {
     /// <returns></returns>
     public Player GetPlayer(int playerNumber)
     {
+        //Temp
+        if(gameMode == GameMode.LOCALMULTIPLAYER)
+        {
+            switch (playerNumber)
+            {
+                case 0:
+                    return localP1;
+                case 1:
+                    return localP2;
+                default:
+                    return null;
+
+            }
+        }
+
+
         if (playerNumber >= networkPlayers.Count) return null;
         GameObject player = ClientScene.FindLocalObject(networkPlayers[playerNumber].id.netId);
         if (!player) return null;
@@ -109,6 +146,8 @@ public class Game : NetworkBehaviour {
 
     public int GetNumberOfPlayers()
     {
+        if (gameMode == GameMode.LOCALMULTIPLAYER) return 2;
+
         return networkPlayers.Count;
     }
     /// <summary>

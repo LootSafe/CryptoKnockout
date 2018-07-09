@@ -24,13 +24,13 @@ public class Player : NetworkBehaviour {
         game = Game.GetInstance();
         lives = game.GetLives();
         this.name = character.GetName();
-        game.RegisterPlayer(GetComponent<NetworkIdentity>());
+        game.RegisterPlayer(this, GetComponent<NetworkIdentity>());
     }
 
     public void OnDestroy()
     {
         if (!game) return;
-        game.UnregisterPlayer(GetComponent<NetworkIdentity>());
+        game.UnregisterPlayer(this, GetComponent<NetworkIdentity>());
     }
 
     //To be done only by server

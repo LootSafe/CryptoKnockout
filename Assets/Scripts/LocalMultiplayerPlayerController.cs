@@ -22,6 +22,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         //Run Only if Local Multiplayer
+        if (!game) return;
         if (game.GetGameMode() != Game.GameMode.LOCALMULTIPLAYER)
         {
             Debug.Log("Game is not in Local Multiplayer Mode");
