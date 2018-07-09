@@ -6018,7 +6018,7 @@ MonoBehaviour:
   damageBar: {fileID: 1141280460}
   specialBar: {fileID: 921723065}
   healthDisplay: {fileID: 1957216796}
-  playerNumber: 0
+  playerNumber: 1
 --- !u!1 &771006117
 GameObject:
   m_ObjectHideFlags: 0
