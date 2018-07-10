@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Parallax : MonoBehaviour
-{    
+{
+    Game.GameMode currentGameMode;
+
     /* Parallax Vars */
 
     float deadZoneOffset = 2.0f;
@@ -18,7 +20,6 @@ public class Parallax : MonoBehaviour
 
     float minZoom = 4.0f;
     float maxZoom = 5.0f;
-
     float distance, midpointX;
 
     /* Methods */
@@ -38,7 +39,11 @@ public class Parallax : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (AtLeastOnePlayer() && IsMultiplayer())
+        /* Listening for a player to join */
+
+        currentGameMode = Game.GetInstance().GetGameMode();
+
+        if (IsMultiplayer())
         {
             distance = Vector3.Distance(GetPlayerPosition(0), GetPlayerPosition(1)) / 2;
 
@@ -49,88 +54,100 @@ public class Parallax : MonoBehaviour
             {
                 Camera.main.orthographicSize = distance;
             }
+
         }
+
     }
 
     void Update ()
     {
-        /* Listening for a player to join */
-
-        Game.GameMode gamemode = Game.GetInstance().GetGameMode();
-
         /* Parallax Stuff */
 
-        if (AtLeastOnePlayer())
+        if (IsMultiplayer())
         {
-            if (IsMultiplayer())
-            {
-                //xCurrentPos = GetMidMultiplayer().x;
-                //yCurrentPos = GetMidMultiplayer().y;
-            }
-            else
-            {
-                xCurrentPos = GetMidSingleplayer().x;
-                yCurrentPos = GetMidSingleplayer().y;
-            }
+            //xCurrentPos = GetMidMultiplayer().x;
+            //yCurrentPos = GetMidMultiplayer().y;
+        }
+        else
+        {
+            Vector3 p1Position = GetPlayerPosition(0);
 
-            /* Sprite Movement Logic */
+            xCurrentPos = p1Position.x;
+            yCurrentPos = p1Position.y;
+        }
 
-            if (HasPositionChanged() && InBounds())
+        /* Sprite Movement Logic */
+
+        if (HasPositionChanged() && InBounds())
+        {
+            for (int i = 0; i <= parallaxSprites.Count - 1; i++)
             {
-                for (int i = 0; i <= parallaxSprites.Count - 1; i++)
+                float xIncrement = 0;
+
+                Vector3 current = parallaxSprites[i].transform.position;
+
+                if (lastPosX != xCurrentPos)
                 {
-                    float xIncrement = 0;
-
-                    Vector3 current = parallaxSprites[i].transform.position;
-
-                    if (lastPosX != xCurrentPos)
+                    if (lastPosX > xCurrentPos)
                     {
-                        if (lastPosX > xCurrentPos)
-                        {
-                            xIncrement += (incrementBetweenSprites * speed) * (i + 1) / 10;
-                        }
-                        else
-                        {
-                            xIncrement -= (incrementBetweenSprites * speed) * (i + 1) / 10;
-                        }
-
-                        current.x += xIncrement;
+                        xIncrement += (incrementBetweenSprites * speed) * (i + 1) / 10;
+                    }
+                    else
+                    {
+                        xIncrement -= (incrementBetweenSprites * speed) * (i + 1) / 10;
                     }
 
-                    parallaxSprites[i].transform.position = new Vector3(current.x, current.y, current.z);
+                    current.x += xIncrement;
                 }
 
+                parallaxSprites[i].transform.position = new Vector3(current.x, current.y, current.z);
             }
 
-            if (IsMultiplayer())
-            {
-                //lastPosX = GetMidMultiplayer().x;
-                //lastPosY = GetMidMultiplayer().y;
-            }
-            else
-            {
-                lastPosX = GetMidSingleplayer().x;
-                lastPosY = GetMidSingleplayer().y;
-            }
+        }
+
+        if (IsMultiplayer())
+        {
+            //lastPosX = GetMidMultiplayer().x;
+            //lastPosY = GetMidMultiplayer().y;
+        }
+        else
+        {
+            Vector3 p1Position = GetPlayerPosition(0);
+
+            lastPosX = p1Position.x;
+            lastPosY = p1Position.y;
         }
 
     }
 
-    private bool AtLeastOnePlayer()
+    private bool InBounds()
     {
-        if (Game.GetInstance().GetNumberOfPlayers() > 0)
+        float leftX = leftBoundarySprite.transform.position.x;
+        float rightX = rightBoundarySprite.transform.position.x;
+
+        float playerX = 0f;
+
+        if (IsMultiplayer())
         {
-            return true;
+            //playerX = GetMidMultiplayer().x;
         }
         else
         {
-            return false;
+            playerX = GetPlayerPosition(0).x;
         }
+
+        if (leftX + deadZoneOffset >= playerX)
+            return false;
+
+        if (rightX - deadZoneOffset <= playerX)
+            return false;
+
+        return true;
     }
 
     private bool IsMultiplayer()
     {
-        if (Game.GetInstance().GetNumberOfPlayers() > 1)
+        if (currentGameMode == Game.GameMode.NETWORKMULTIPLAYER && currentGameMode == Game.GameMode.LOCALMULTIPLAYER)
         {
             return true;
         }
@@ -149,36 +166,6 @@ public class Parallax : MonoBehaviour
 
         return false;
     }
-
-    private bool InBounds()
-    {
-        float leftX = leftBoundarySprite.transform.position.x;
-        float rightX = rightBoundarySprite.transform.position.x;
-
-        float playerX = 0f;
-
-        if (IsMultiplayer())
-        {
-            //playerX = GetMidMultiplayer().x;
-        }
-        else
-        {
-            playerX = GetMidSingleplayer().x;
-        }
-
-        if (leftX + deadZoneOffset >= playerX)
-            return false;
-
-        if (rightX - deadZoneOffset <= playerX)
-            return false;
-
-        return true;
-    }
-
-    private Vector3 GetMidSingleplayer()
-    {
-        return Game.GetInstance().GetPlayer(0).gameObject.transform.position;
-    }
     
     private Player GetPlayer(int index)
     {
@@ -189,4 +176,5 @@ public class Parallax : MonoBehaviour
     {
         return Game.GetInstance().GetPlayer(index).gameObject.transform.position;
     }
+
 }
