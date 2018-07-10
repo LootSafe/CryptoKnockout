@@ -766,7 +766,7 @@ MonoBehaviour:
   hueIntensity: 0.7
   playerNumber: 0
   healthShowBar: {fileID: 224167670278690134}
-  healthAnimateSpeed: 1
+  healthAnimateSpeed: 500
   damageIndicator: {fileID: 224545615283451356}
   damageAnimateSpeed: 0
   specialBar: {fileID: 224318018351995900}
@@ -840,7 +840,7 @@ MonoBehaviour:
   hueIntensity: 0.7
   playerNumber: 1
   healthShowBar: {fileID: 224113030553003006}
-  healthAnimateSpeed: 1
+  healthAnimateSpeed: 25
   damageIndicator: {fileID: 224774844443383998}
   damageAnimateSpeed: 1
   specialBar: {fileID: 224291051131380874}
