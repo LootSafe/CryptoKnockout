@@ -14,49 +14,55 @@ public class Parallax : MonoBehaviour
 
     List<GameObject> parallaxSprites;
     GameObject leftBoundarySprite, rightBoundarySprite;
-    float xCurrentPos, yCurrentPos, lastPosX, lastPosY;
+    float xCurrentPos, lastPosX;
 
     /* Camera Vars */
 
     float minZoom = 4.0f;
     float maxZoom = 5.0f;
     float distance, midpointX;
+    Vector3 cameraStartPos;
 
     /* Methods */
 
     void Awake()
     {
+        cameraStartPos = Camera.main.transform.position;
+
         leftBoundarySprite = GameObject.FindGameObjectWithTag("LeftBoundary");
         rightBoundarySprite = GameObject.FindGameObjectWithTag("RightBoundary");
-
         parallaxSprites = new List<GameObject>();
 
         foreach (Transform childLax in GameObject.Find("Parrallax").transform)
         {
             parallaxSprites.Add(childLax.gameObject);
         }
+
+        /* REMOVE ME LATER */
+
+        currentGameMode = Game.GameMode.LOCALMULTIPLAYER;
     }
 
     void FixedUpdate()
     {
         /* Listening for a player to join */
 
-        currentGameMode = Game.GetInstance().GetGameMode();
+        /* Uncomment me later */
+
+        //currentGameMode = Game.GetInstance().GetGameMode();
 
         if (IsMultiplayer())
         {
             distance = Vector3.Distance(GetPlayerPosition(0), GetPlayerPosition(1)) / 2;
 
             midpointX = GetPlayerPosition(0).x + (GetPlayerPosition(1).x - GetPlayerPosition(0).x) / 2;
-            Camera.main.transform.position = new Vector3(midpointX, 0, -10);
+            Camera.main.transform.position = new Vector3(midpointX, cameraStartPos.y, -10);
 
             if (distance < maxZoom && distance > minZoom)
             {
                 Camera.main.orthographicSize = distance;
             }
-
         }
-
     }
 
     void Update ()
@@ -65,15 +71,11 @@ public class Parallax : MonoBehaviour
 
         if (IsMultiplayer())
         {
-            //xCurrentPos = GetMidMultiplayer().x;
-            //yCurrentPos = GetMidMultiplayer().y;
+            xCurrentPos = GetMultiMidpointX();
         }
         else
         {
-            Vector3 p1Position = GetPlayerPosition(0);
-
-            xCurrentPos = p1Position.x;
-            yCurrentPos = p1Position.y;
+            xCurrentPos = GetPlayerPosition(0).x;
         }
 
         /* Sprite Movement Logic */
@@ -102,22 +104,17 @@ public class Parallax : MonoBehaviour
 
                 parallaxSprites[i].transform.position = new Vector3(current.x, current.y, current.z);
             }
-
         }
 
         if (IsMultiplayer())
         {
-            //lastPosX = GetMidMultiplayer().x;
-            //lastPosY = GetMidMultiplayer().y;
+            lastPosX = GetMultiMidpointX();
         }
         else
         {
             Vector3 p1Position = GetPlayerPosition(0);
-
             lastPosX = p1Position.x;
-            lastPosY = p1Position.y;
         }
-
     }
 
     private bool InBounds()
@@ -129,7 +126,7 @@ public class Parallax : MonoBehaviour
 
         if (IsMultiplayer())
         {
-            //playerX = GetMidMultiplayer().x;
+            playerX = GetMultiMidpointX();
         }
         else
         {
@@ -147,7 +144,7 @@ public class Parallax : MonoBehaviour
 
     private bool IsMultiplayer()
     {
-        if (currentGameMode == Game.GameMode.NETWORKMULTIPLAYER && currentGameMode == Game.GameMode.LOCALMULTIPLAYER)
+        if (currentGameMode == Game.GameMode.NETWORKMULTIPLAYER || currentGameMode == Game.GameMode.LOCALMULTIPLAYER)
         {
             return true;
         }
@@ -161,8 +158,6 @@ public class Parallax : MonoBehaviour
     {
         if (lastPosX != xCurrentPos)
             return true;
-        if (lastPosY != yCurrentPos)
-            return true;
 
         return false;
     }
@@ -175,6 +170,11 @@ public class Parallax : MonoBehaviour
     private Vector3 GetPlayerPosition(int index)
     {
         return Game.GetInstance().GetPlayer(index).gameObject.transform.position;
+    }
+
+    private float GetMultiMidpointX()
+    {
+        return GetPlayerPosition(0).x + (GetPlayerPosition(1).x - GetPlayerPosition(0).x) / 2;
     }
 
 }
