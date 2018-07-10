@@ -16,6 +16,8 @@ public class Player : NetworkBehaviour {
     private Game game;
     private Character character;
 
+    private float lastHit;
+
     void Start()
     {
         game = Game.GetInstance();
@@ -51,6 +53,7 @@ public class Player : NetworkBehaviour {
         } else
         {
             health -= damageTake;
+            lastHit = Time.time;
         }
     }
     public void onHealthChange()
@@ -72,6 +75,10 @@ public class Player : NetworkBehaviour {
         return maxHealth;
     }
 
+    public float GetLastHit()
+    {
+        return lastHit;
+    }
     public float GetMoveSpeed()
     {
        return character.GetMoveSpeed();
