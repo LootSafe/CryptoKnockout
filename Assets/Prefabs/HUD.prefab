@@ -768,7 +768,8 @@ MonoBehaviour:
   healthShowBar: {fileID: 224167670278690134}
   healthAnimateSpeed: 500
   damageIndicator: {fileID: 224545615283451356}
-  damageAnimateSpeed: 0
+  damageAnimateSpeed: 5
+  damageBarDelay: 0.3
   specialBar: {fileID: 224318018351995900}
   specialAnimateSpeed: 0
   healthTextDisplay: {fileID: 114299491852338402}
@@ -842,7 +843,8 @@ MonoBehaviour:
   healthShowBar: {fileID: 224113030553003006}
   healthAnimateSpeed: 25
   damageIndicator: {fileID: 224774844443383998}
-  damageAnimateSpeed: 1
+  damageAnimateSpeed: 5
+  damageBarDelay: 0.3
   specialBar: {fileID: 224291051131380874}
   specialAnimateSpeed: 1
   healthTextDisplay: {fileID: 114143272594784506}
@@ -1187,8 +1189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -2.7999878, y: -2.2000122}
-  m_SizeDelta: {x: 2, y: 6}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 10}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224318018351995900
 RectTransform:
@@ -1336,8 +1338,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -301.8, y: -5.2}
-  m_SizeDelta: {x: 2, y: 6}
+  m_AnchoredPosition: {x: -150, y: -5}
+  m_SizeDelta: {x: 300.01, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224969076155300044
 RectTransform:
