@@ -26,6 +26,7 @@ public class HealthBarUpdater : MonoBehaviour {
     Game game;
     Player player;
     float containerWidth;
+    float lastHit;
 
 	
 	void Start () {
@@ -45,6 +46,7 @@ public class HealthBarUpdater : MonoBehaviour {
         }
 
         UpdateHealthBar();
+        UpdateDamageBar();
         if (healthTextDisplay) UpdateHealthText();
     }
 
@@ -87,5 +89,29 @@ public class HealthBarUpdater : MonoBehaviour {
     private void UpdateHealthText()
     {
         healthTextDisplay.text = "" + player.GetHealth();
+    }
+
+    private void UpdateDamageBar()
+    {
+        Vector2 currentSize = damageIndicator.sizeDelta;
+
+        float healthPercent = player.GetHealth() / player.GetMaxHealth();
+        float currentWidth = currentSize.x;
+        float targetWidth = containerWidth * healthPercent;
+        float newWidth = currentWidth;
+
+        if (currentWidth != targetWidth)
+        {
+            if (Mathf.Abs(targetWidth - currentWidth) < healthAnimateSpeed)
+            {
+                newWidth = targetWidth;
+            }
+            else
+            {
+                newWidth = currentWidth + healthAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
+            }
+            healthShowBar.sizeDelta = new Vector2(newWidth, currentSize.y);
+
+        }
     }
 }
