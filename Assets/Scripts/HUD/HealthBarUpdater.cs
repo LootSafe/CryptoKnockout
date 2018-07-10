@@ -46,6 +46,7 @@ public class HealthBarUpdater : MonoBehaviour {
 
         UpdateHealthBar();
         UpdateDamageBar();
+        updateSpecialBar();
         if (healthTextDisplay) UpdateHealthText();
     }
 
@@ -117,6 +118,29 @@ public class HealthBarUpdater : MonoBehaviour {
                 }
                 damageIndicator.sizeDelta = new Vector2(newWidth, currentSize.y);
             }
+        }
+    }
+
+    private void updateSpecialBar()
+    {
+        Vector2 currentSize = specialBar.sizeDelta;
+
+        float specialPercent = player.GetSpecial() / player.GetMaxSpecial();
+        float currentWidth = currentSize.x;
+        float targetWidth = containerWidth * specialPercent;
+        float newWidth = currentWidth;
+
+        if (currentWidth != targetWidth)
+        {
+            if (Mathf.Abs(targetWidth - currentWidth) < specialAnimateSpeed)
+            {
+                newWidth = targetWidth;
+            }
+            else
+            {
+                newWidth = currentWidth + specialAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
+            }
+            specialBar.sizeDelta = new Vector2(newWidth, currentSize.y);
         }
     }
 }
