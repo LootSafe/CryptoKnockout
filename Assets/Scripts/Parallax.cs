@@ -14,7 +14,7 @@ public class Parallax : MonoBehaviour
 
     List<GameObject> parallaxSprites;
     GameObject leftBoundarySprite, rightBoundarySprite;
-    float xCurrentPos, yCurrentPos, lastPosX, lastPosY;
+    float xCurrentPos, lastPosX;
 
     /* Camera Vars */
 
@@ -54,9 +54,7 @@ public class Parallax : MonoBehaviour
             {
                 Camera.main.orthographicSize = distance;
             }
-
         }
-
     }
 
     void Update ()
@@ -65,15 +63,11 @@ public class Parallax : MonoBehaviour
 
         if (IsMultiplayer())
         {
-            //xCurrentPos = GetMidMultiplayer().x;
-            //yCurrentPos = GetMidMultiplayer().y;
+            xCurrentPos = GetMultiMidpointX();
         }
         else
         {
-            Vector3 p1Position = GetPlayerPosition(0);
-
-            xCurrentPos = p1Position.x;
-            yCurrentPos = p1Position.y;
+            xCurrentPos = GetPlayerPosition(0).x;
         }
 
         /* Sprite Movement Logic */
@@ -102,22 +96,17 @@ public class Parallax : MonoBehaviour
 
                 parallaxSprites[i].transform.position = new Vector3(current.x, current.y, current.z);
             }
-
         }
 
         if (IsMultiplayer())
         {
-            //lastPosX = GetMidMultiplayer().x;
-            //lastPosY = GetMidMultiplayer().y;
+            lastPosX = GetMultiMidpointX();
         }
         else
         {
             Vector3 p1Position = GetPlayerPosition(0);
-
             lastPosX = p1Position.x;
-            lastPosY = p1Position.y;
         }
-
     }
 
     private bool InBounds()
@@ -129,7 +118,7 @@ public class Parallax : MonoBehaviour
 
         if (IsMultiplayer())
         {
-            //playerX = GetMidMultiplayer().x;
+            playerX = GetMultiMidpointX();
         }
         else
         {
@@ -161,8 +150,6 @@ public class Parallax : MonoBehaviour
     {
         if (lastPosX != xCurrentPos)
             return true;
-        if (lastPosY != yCurrentPos)
-            return true;
 
         return false;
     }
@@ -177,4 +164,8 @@ public class Parallax : MonoBehaviour
         return Game.GetInstance().GetPlayer(index).gameObject.transform.position;
     }
 
+    private float GetMultiMidpointX()
+    {
+        return GetPlayerPosition(0).x + (GetPlayerPosition(1).x - GetPlayerPosition(0).x) / 2;
+    }
 }
