@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6431373}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -655,9 +655,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae3286a99c4cfa46a508774399d044a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
-  maxAlpha: 1
+  speed: 0.04
+  maxAlpha: 0.9
   minAlpha: 0.2
+  delay: 0.06
   graphic: {fileID: 1705377492}
 --- !u!1 &1992923980
 GameObject:
