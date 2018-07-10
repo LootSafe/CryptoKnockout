@@ -21,34 +21,42 @@ public class Parallax : MonoBehaviour
     float minZoom = 4.0f;
     float maxZoom = 5.0f;
     float distance, midpointX;
+    Vector3 cameraStartPos;
 
     /* Methods */
 
     void Awake()
     {
+        cameraStartPos = Camera.main.transform.position;
+
         leftBoundarySprite = GameObject.FindGameObjectWithTag("LeftBoundary");
         rightBoundarySprite = GameObject.FindGameObjectWithTag("RightBoundary");
-
         parallaxSprites = new List<GameObject>();
 
         foreach (Transform childLax in GameObject.Find("Parrallax").transform)
         {
             parallaxSprites.Add(childLax.gameObject);
         }
+
+        /* REMOVE ME LATER */
+
+        currentGameMode = Game.GameMode.LOCALMULTIPLAYER;
     }
 
     void FixedUpdate()
     {
         /* Listening for a player to join */
 
-        currentGameMode = Game.GetInstance().GetGameMode();
+        /* Uncomment me later */
+
+        //currentGameMode = Game.GetInstance().GetGameMode();
 
         if (IsMultiplayer())
         {
             distance = Vector3.Distance(GetPlayerPosition(0), GetPlayerPosition(1)) / 2;
 
             midpointX = GetPlayerPosition(0).x + (GetPlayerPosition(1).x - GetPlayerPosition(0).x) / 2;
-            Camera.main.transform.position = new Vector3(midpointX, 0, -10);
+            Camera.main.transform.position = new Vector3(midpointX, cameraStartPos.y, -10);
 
             if (distance < maxZoom && distance > minZoom)
             {
@@ -136,7 +144,7 @@ public class Parallax : MonoBehaviour
 
     private bool IsMultiplayer()
     {
-        if (currentGameMode == Game.GameMode.NETWORKMULTIPLAYER && currentGameMode == Game.GameMode.LOCALMULTIPLAYER)
+        if (currentGameMode == Game.GameMode.NETWORKMULTIPLAYER || currentGameMode == Game.GameMode.LOCALMULTIPLAYER)
         {
             return true;
         }
@@ -168,4 +176,5 @@ public class Parallax : MonoBehaviour
     {
         return GetPlayerPosition(0).x + (GetPlayerPosition(1).x - GetPlayerPosition(0).x) / 2;
     }
+
 }
