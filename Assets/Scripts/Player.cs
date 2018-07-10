@@ -11,7 +11,8 @@ public class Player : NetworkBehaviour {
     private bool alive = false;
     [SyncVar]
     public float health = 0;
-
+    private float special = 0;
+    private float maxSpecial = 100;
     private float maxHealth;
     private Game game;
     private Character character;
@@ -29,8 +30,10 @@ public class Player : NetworkBehaviour {
     {
         this.character = character;
         health = character.GetHealth();
+        maxSpecial = character.GetSpecial();
         maxHealth = character.GetHealth();
         this.name = character.GetName();
+        
     }
 
     public void OnDestroy()
@@ -74,6 +77,17 @@ public class Player : NetworkBehaviour {
     {
         return maxHealth;
     }
+
+    public float GetSpecial()
+    {
+        return special;
+    }
+
+    public float GetMaxSpecial()
+    {
+        return maxSpecial;
+    }
+
 
     public float GetLastHit()
     {

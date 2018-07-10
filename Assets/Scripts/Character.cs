@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Character {
 
-    protected float health, defence, strength, moveSpeed;
+    protected float health, special, defence, strength, moveSpeed;
     protected string name;
 
     /// <summary>
@@ -38,6 +38,11 @@ public abstract class Character {
     public string GetName()
     {
         return name;
+    }
+
+    public float GetSpecial()
+    {
+        return special;
     }
 
     public enum Characters
