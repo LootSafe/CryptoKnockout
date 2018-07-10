@@ -770,7 +770,7 @@ MonoBehaviour:
   damageIndicator: {fileID: 224545615283451356}
   damageAnimateSpeed: 5
   damageBarDelay: 0.3
-  specialBar: {fileID: 224318018351995900}
+  specialBar: {fileID: 224884321402406920}
   specialAnimateSpeed: 0
   healthTextDisplay: {fileID: 114299491852338402}
 --- !u!114 &114770489973533696
