@@ -15,10 +15,9 @@ public class HealthBarUpdater : MonoBehaviour {
 
     public RectTransform damageIndicator;
     public float damageAnimateSpeed;
-    Vector2 damageIndicatorSize;
+    public float damageBarDelay = 0.1f;
 
     public RectTransform specialBar;
-    Vector2 specialBarSize;
     public float specialAnimateSpeed;
 
     public Text healthTextDisplay;
@@ -72,6 +71,8 @@ public class HealthBarUpdater : MonoBehaviour {
             }
             healthShowBar.sizeDelta = new Vector2(newWidth, currentSize.y);
 
+            /*Color Update*/
+            /*
             if (targetWidth < currentWidth)
             {
                 float saturation = 1 - ((targetWidth - currentWidth) / (targetWidth - currentWidth) * hueIntensity);
@@ -82,6 +83,7 @@ public class HealthBarUpdater : MonoBehaviour {
             {
                 healthShowBar.GetComponentInParent<Image>().color = originalHealthColor;
             }
+            */
 
         }
     }
@@ -91,6 +93,7 @@ public class HealthBarUpdater : MonoBehaviour {
         healthTextDisplay.text = "" + player.GetHealth();
     }
 
+    /*Update Damage Bar*/
     private void UpdateDamageBar()
     {
         Vector2 currentSize = damageIndicator.sizeDelta;
@@ -102,16 +105,18 @@ public class HealthBarUpdater : MonoBehaviour {
 
         if (currentWidth != targetWidth)
         {
-            if (Mathf.Abs(targetWidth - currentWidth) < healthAnimateSpeed)
+            if (Time.time >= player.GetLastHit() + damageBarDelay)
             {
-                newWidth = targetWidth;
+                if (Mathf.Abs(targetWidth - currentWidth) < damageAnimateSpeed)
+                {
+                    newWidth = targetWidth;
+                }
+                else
+                {
+                    newWidth = currentWidth + damageAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
+                }
+                damageIndicator.sizeDelta = new Vector2(newWidth, currentSize.y);
             }
-            else
-            {
-                newWidth = currentWidth + healthAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
-            }
-            healthShowBar.sizeDelta = new Vector2(newWidth, currentSize.y);
-
         }
     }
 }
