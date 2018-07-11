@@ -7,4 +7,8 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: Doge
   m_Controller: {fileID: 9100000, guid: bb2a6cd947ba1ce4391a7be9cfcdb15f, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 066b87d56cf3dbf40b8de9e32b3755b1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f6c97e49b9ce3bc4c92697e6a296c04e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 20169f6b8d80ea64d961b217e2b4ab4f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4eb888f7d26d8db4c866382874326ab9, type: 2}
