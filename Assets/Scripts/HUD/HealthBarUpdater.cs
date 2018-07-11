@@ -106,17 +106,26 @@ public class HealthBarUpdater : MonoBehaviour {
 
         if (currentWidth != targetWidth)
         {
-            if (Time.time >= player.GetLastHit() + damageBarDelay)
+            //Check if health has gone up - hard reset to new position
+            if (targetWidth > currentWidth)
             {
-                if (Mathf.Abs(targetWidth - currentWidth) < damageAnimateSpeed)
-                {
-                    newWidth = targetWidth;
-                }
-                else
-                {
-                    newWidth = currentWidth + damageAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
-                }
+                newWidth = targetWidth;
                 damageIndicator.sizeDelta = new Vector2(newWidth, currentSize.y);
+            }
+            else
+            {
+                if (Time.time >= player.GetLastHit() + damageBarDelay)
+                {
+                    if (Mathf.Abs(targetWidth - currentWidth) < damageAnimateSpeed)
+                    {
+                        newWidth = targetWidth;
+                    }
+                    else
+                    {
+                        newWidth = currentWidth + damageAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
+                    }
+                    damageIndicator.sizeDelta = new Vector2(newWidth, currentSize.y);
+                }
             }
         }
     }
