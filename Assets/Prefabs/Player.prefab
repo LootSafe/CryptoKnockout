@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114985243175711498}
   - component: {fileID: 212298209694372100}
   - component: {fileID: 61258840985077550}
+  - component: {fileID: 58103943271811376}
   - component: {fileID: 50825129052665634}
   - component: {fileID: 95906605965611374}
   - component: {fileID: 114186994662308574}
@@ -59,8 +60,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729820886990980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.25, y: -2.69, z: 0.035}
-  m_LocalScale: {x: 0.19019666, y: 0.17489505, z: 0.11368963}
+  m_LocalPosition: {x: -4.3812256, y: -3.169962, z: 0.035}
+  m_LocalScale: {x: 0.1901967, y: 0.17489505, z: 0.11368963}
   m_Children:
   - {fileID: 4573846463191074}
   m_Father: {fileID: 0}
@@ -74,7 +75,7 @@ Transform:
   m_GameObject: {fileID: 1633664159556462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.61, y: 3.22, z: 0}
-  m_LocalScale: {x: 0.33103478, y: 0.31384182, z: 1}
+  m_LocalScale: {x: 0.3310348, y: 0.31384182, z: 1}
   m_Children: []
   m_Father: {fileID: 4468873815217638}
   m_RootOrder: 0
@@ -99,6 +100,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58103943271811376
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729820886990980}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.67, y: -5.7}
+  serializedVersion: 2
+  m_Radius: 4.1
 --- !u!61 &61224117933492688
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -136,7 +152,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.6727014, y: -0.10752487}
+  m_Offset: {x: -1.6937181, y: 2.0730047}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -147,7 +163,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 8.338687, y: 19.991198}
+  m_Size: {x: 8.128501, y: 15.6301365}
   m_EdgeRadius: 0
 --- !u!95 &95906605965611374
 Animator:
