@@ -54,6 +54,7 @@ public class PlayerAnimatorController : MonoBehaviour {
                     playerAnimator.SetBool("WALKING", true);
                     return true;
                 case ANIMATION_STATE.RUNNING:
+                    playerAnimator.SetBool("RUNNING", true);
                     playerAnimator.SetTrigger("RUNNING");
                     return true;
                 case ANIMATION_STATE.JUMP:
