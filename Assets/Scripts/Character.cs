@@ -6,7 +6,7 @@ public abstract class Character {
 
     protected float health, special, defence, strength, moveSpeed, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
     protected string name;
-    private Player player;
+    protected Player player;
 
     /// <summary>
     /// This should be implemented to calculate damage taken based on characters special attributes, strength,
@@ -15,10 +15,11 @@ public abstract class Character {
     /// <param name="damage"></param>
     /// <returns></returns>
     abstract public float CalculateDamage(float damage);
+
     public void initializePlayer(Player player)
     {
-        if (player != null) return;
         this.player = player;
+        Debug.Log("Player reference has been updated for " + name);
     }
     public float GetHealth()
     {

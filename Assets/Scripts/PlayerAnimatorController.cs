@@ -105,6 +105,7 @@ public class PlayerAnimatorController : MonoBehaviour {
                 case ANIMATION_STATE.SPECIALATTACKONE:
                     return true;
                 default:
+                    playerAnimator.SetTrigger("IDLE");
                     return true;
             }
         }

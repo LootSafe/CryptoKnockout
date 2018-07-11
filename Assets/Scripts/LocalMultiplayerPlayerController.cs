@@ -55,7 +55,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
         float yMovement = Input.GetAxis("P" + playerNumber + "_Vertical");
         float jump = Input.GetAxis("P" + playerNumber + "_Jump");
-        float punch = Input.GetAxis("P" + playerNumber + "_Jump");
+        float punch = Input.GetAxis("P" + playerNumber + "_Punch");
         float kick = Input.GetAxis("P" + playerNumber + "_Kick");
 
         //Horizontal Changes
@@ -74,6 +74,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             //Horizontal Movement
             transform.position = new Vector3(transform.position.x + (lastHeadings[playerNumber -1] * player2.GetMoveSpeed()), transform.position.y, transform.position.z);
             transform.localScale = updatedHeading;
+            player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.WALKING);
         }
 
         //Vertical Changes
@@ -81,6 +82,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             //Vertical movement
             transform.position = new Vector3(transform.position.x, transform.position.y + (player2.GetMoveSpeed() * jump), transform.position.z);
+            player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
         }
 
 
@@ -88,7 +90,8 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Punch
         if(punch != 0)
         {
-            player.GetCharacter().MovePunch(player);
+            player.GetCharacter().MovePunch();
+            player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
         }
         //Kick
 

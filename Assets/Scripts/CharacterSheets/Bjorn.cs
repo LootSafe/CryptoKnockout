@@ -31,7 +31,7 @@ public class Bjorn : Character {
 
     public override void MovePunch()
     {
-        throw new System.NotImplementedException();
+        player.fist.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
     public override void MoveSpecial1()

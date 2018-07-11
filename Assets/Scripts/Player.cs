@@ -34,14 +34,13 @@ public class Player : NetworkBehaviour {
 
         //Animation Controller
         GetComponent<Animator>().runtimeAnimatorController = character.GetAnimationController();
+        Debug.Log("Test");
         character.initializePlayer(this);
         this.character = character;
         health = character.GetHealth();
         maxSpecial = character.GetSpecial();
         maxHealth = character.GetHealth();
-        this.name = character.GetName();
-        
-        
+        this.name = character.GetName();        
     }
 
     public void OnDestroy()
