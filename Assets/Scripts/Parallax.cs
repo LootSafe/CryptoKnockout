@@ -8,9 +8,9 @@ public class Parallax : MonoBehaviour
 
     /* Parallax Vars */
 
-    float deadZoneOffset = 2.0f;
-    float incrementBetweenSprites = 0.02f;
-    float speed = 1;
+    public float deadZoneOffset = 2.0f;
+    public float incrementBetweenSprites = 0.01f;
+    public float speed = 0.2f;
 
     List<GameObject> parallaxSprites;
     GameObject leftBoundarySprite, rightBoundarySprite;
@@ -92,11 +92,11 @@ public class Parallax : MonoBehaviour
                 {
                     if (lastPosX > xCurrentPos)
                     {
-                        xIncrement += (incrementBetweenSprites * speed) * (i + 1) / 10;
+                        xIncrement += ((incrementBetweenSprites * speed) * (i + 1)) / 100;
                     }
                     else
                     {
-                        xIncrement -= (incrementBetweenSprites * speed) * (i + 1) / 10;
+                        xIncrement -= ((incrementBetweenSprites * speed) * (i + 1)) / 100;
                     }
 
                     current.x += xIncrement;
