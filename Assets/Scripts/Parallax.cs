@@ -53,7 +53,7 @@ public class Parallax : MonoBehaviour
 
         if (IsMultiplayer())
         {
-            distance = Vector3.Distance(GetPlayerPosition(0), GetPlayerPosition(1)) / 2;
+            distance = Vector2.Distance(GetPlayerPosition(0), GetPlayerPosition(1)) / 2;
 
             midpointX = GetPlayerPosition(0).x + (GetPlayerPosition(1).x - GetPlayerPosition(0).x) / 2;
             Camera.main.transform.position = new Vector3(midpointX, cameraStartPos.y, -10);
