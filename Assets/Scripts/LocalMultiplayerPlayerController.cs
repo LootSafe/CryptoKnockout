@@ -55,6 +55,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
         float yMovement = Input.GetAxis("P" + playerNumber + "_Vertical");
         float jump = Input.GetAxis("P" + playerNumber + "_Jump");
+        float punch = Input.GetAxis("P" + playerNumber + "_Jump");
         float kick = Input.GetAxis("P" + playerNumber + "_Kick");
 
         //Horizontal Changes
