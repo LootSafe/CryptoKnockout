@@ -30,37 +30,6 @@ public class PlayerAnimatorController : MonoBehaviour {
         SetAnimationState(ANIMATION_STATE.IDLE);
     }
 
-    void Update()
-    {
-        if (DEBUG)
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                SetAnimationState(ANIMATION_STATE.HURT);
-            }
-            else if (Input.GetKeyDown(KeyCode.W))
-            {
-                SetAnimationState(ANIMATION_STATE.DEAD);
-            }
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
-                SetAnimationState(ANIMATION_STATE.JUMP);
-            }
-            else if (Input.GetKeyDown(KeyCode.R))
-            {
-                SetAnimationState(ANIMATION_STATE.WALKING);
-            }
-            else if (Input.GetKeyDown(KeyCode.T))
-            {
-                SetAnimationState(ANIMATION_STATE.RUNNING);
-            }
-            else
-            {
-                SetAnimationState(ANIMATION_STATE.IDLE);
-            }
-        }
-    }
-
     /* Animation State */
 
     public ANIMATION_STATE GetCurrentAnimationState()
@@ -79,20 +48,21 @@ public class PlayerAnimatorController : MonoBehaviour {
                     return true;
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("GROUNDED");
+                    playerAnimator.SetBool("WALKING", false);
                     return true;
                 case ANIMATION_STATE.WALKING:
-                    playerAnimator.SetTrigger("WALKING");
+                    playerAnimator.SetBool("WALKING", true);
                     return true;
                 case ANIMATION_STATE.RUNNING:
                     playerAnimator.SetTrigger("RUNNING");
-                    return true;
-                case ANIMATION_STATE.BLOCK:
                     return true;
                 case ANIMATION_STATE.JUMP:
                     playerAnimator.SetTrigger("JUMP");
                     return true;
                 case ANIMATION_STATE.HURT:
                     playerAnimator.SetTrigger("HURT");
+                    return true;
+                case ANIMATION_STATE.BLOCK:
                     return true;
                 case ANIMATION_STATE.LOWPUNCH:
                     return true;

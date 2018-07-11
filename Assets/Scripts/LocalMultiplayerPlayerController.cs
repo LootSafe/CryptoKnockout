@@ -76,6 +76,10 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             transform.localScale = updatedHeading;
             player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.WALKING);
         }
+        else
+        {
+            player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
+        }
 
         //Vertical Changes
         if (jump > 0)
