@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class LocalMultiplayerPlayerController : MonoBehaviour {
 
-    float p1lastHeading = 1;
-    float p2lastHeading = -1;
+    float[] lastHeadings;
     Game game;
     Player player1;
     Player player2;
-    Transform p1Transform;
-    Transform p2Transform;
 
 
     // Use this for initialization
     void Start () {
         game = Game.GetInstance();
         Debug.Log("Starting Up Game Controller");
+
+
+        //Initialize Player Headings
+        lastHeadings = new float[8];
+        //P1
+        lastHeadings[0] = 1;
+        //P2
+        lastHeadings[1] = -1;
 	}
 
     // Update is called once per frame
     void Update() {
+
         //Run Only if Local Multiplayer
         if (!game) return;
         if (game.GetGameMode() != Game.GameMode.LOCALMULTIPLAYER)
@@ -33,85 +39,60 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         if (!player1 || !player2)
         {
             player1 = game.GetPlayer(0);
-            if (player1)
-            {
-                p1Transform = player1.GetComponentInParent<Transform>();
-            }
             player2 = game.GetPlayer(1);
-            if (player2)
-            {
-                p2Transform = player2.GetComponentInParent<Transform>();
-            }
-
         }
 
-        if (player1) {
-            /*********************************************/
-            //Player 1 Get Inputs
-            float xMovement = Input.GetAxis("P1_Horizontal");
-            float yMovement = Input.GetAxis("P1_Vertical");
-            float jump = Input.GetAxis("P1_Jump");
+        updatePlayer(player1, 1);
+        updatePlayer(player2, 2);
+    }
 
-            //Horizontal Changes
-            if (xMovement != 0)
-            {
-                //vars
-                Vector3 rotation = p1Transform.localScale;
-                Vector3 updatedHeading = rotation;
-                float quotient = xMovement / Mathf.Abs(xMovement);
-                //Rotation
-                if (quotient != p1lastHeading)
-                {
-                    updatedHeading = new Vector3(rotation.x * -1, rotation.y, rotation.z);
-                    p1lastHeading = quotient;
-                }
-                //Horizontal Movement
-                p1Transform.position = new Vector3(p1Transform.position.x + (xMovement * player1.GetMoveSpeed()), p1Transform.position.y, p1Transform.position.z);
-                p1Transform.localScale = updatedHeading;
-            }
+    private void updatePlayer(Player player, int playerNumber)
+    {
+        if (!player) return;
+        
+        Transform transform = player.GetComponentInParent<Transform>();
 
-            //Vertical Changes
-            if (jump > 0)
-            {
-                //Vertical movement
-                p1Transform.position = new Vector3(p1Transform.position.x, p1Transform.position.y + (player1.GetMoveSpeed() * jump), p1Transform.position.z);
-            }
-        }
+        float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
+        float yMovement = Input.GetAxis("P" + playerNumber + "_Vertical");
+        float jump = Input.GetAxis("P" + playerNumber + "_Jump");
+        float kick = Input.GetAxis("P" + playerNumber + "_Kick");
 
-
-        if (player2)
+        //Horizontal Changes
+        if (xMovement != 0)
         {
-            /*********************************************/
-            //Player 2 Get Inputs
-            float p2xMovement = Input.GetAxis("P2_Horizontal");
-            float p2yMovement = Input.GetAxis("P2_Vertical");
-            float p2jump = Input.GetAxis("P2_Jump");
-
-            //Horizontal Changes
-            if (p2xMovement != 0)
+            //vars
+            Vector3 rotation = transform.localScale;
+            Vector3 updatedHeading = rotation;
+            float quotient = xMovement / Mathf.Abs(xMovement);
+            //Rotation
+            if (quotient != lastHeadings[playerNumber-1])
             {
-                //vars
-                Vector3 rotation = p2Transform.localScale;
-                Vector3 updatedHeading = rotation;
-                float quotient = p2xMovement / Mathf.Abs(p2xMovement);
-                //Rotation
-                if (quotient != p2lastHeading)
-                {
-                    updatedHeading = new Vector3(rotation.x * -1, rotation.y, rotation.z);
-                    p2lastHeading = quotient;
-                }
-                //Horizontal Movement
-                p2Transform.position = new Vector3(p2Transform.position.x + (p2xMovement * player2.GetMoveSpeed()), p2Transform.position.y, p2Transform.position.z);
-                p2Transform.localScale = updatedHeading;
+                updatedHeading = new Vector3(rotation.x * -1, rotation.y, rotation.z);
+                lastHeadings[playerNumber - 1] = quotient;
             }
-
-            //Vertical Changes
-            if (p2jump > 0)
-            {
-                //Vertical movement
-                p2Transform.position = new Vector3(p2Transform.position.x, p2Transform.position.y + (player2.GetMoveSpeed() * p2jump), p2Transform.position.z);
-            }
+            //Horizontal Movement
+            transform.position = new Vector3(transform.position.x + (lastHeadings[playerNumber -1] * player2.GetMoveSpeed()), transform.position.y, transform.position.z);
+            transform.localScale = updatedHeading;
         }
+
+        //Vertical Changes
+        if (jump > 0)
+        {
+            //Vertical movement
+            transform.position = new Vector3(transform.position.x, transform.position.y + (player2.GetMoveSpeed() * jump), transform.position.z);
+        }
+
+
+        /*Player Moves*/
+        //Punch
+
+        //Kick
+
+        //Special1
+
+        //Special2
+
+        //Ultra
 
     }
 }
