@@ -20,6 +20,7 @@ public class Bjorn : Character {
 
     public override AnimatorOverrideController GetAnimationController()
     {
-        return (AnimatorOverrideController)Resources.Load("Animator/Characters/Bjorn");
+        AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/Bjorn", typeof(AnimatorOverrideController));
+        return p;
     }
 }
