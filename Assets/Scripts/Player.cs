@@ -34,11 +34,13 @@ public class Player : NetworkBehaviour {
 
         //Animation Controller
         GetComponent<Animator>().runtimeAnimatorController = character.GetAnimationController();
+        character.initializePlayer(this);
         this.character = character;
         health = character.GetHealth();
         maxSpecial = character.GetSpecial();
         maxHealth = character.GetHealth();
         this.name = character.GetName();
+        
         
     }
 
@@ -102,6 +104,10 @@ public class Player : NetworkBehaviour {
     public float GetMoveSpeed()
     {
        return character.GetMoveSpeed();
+    }
+    public Character GetCharacter()
+    {
+        return character;
     }
     public void notifyDeath()
     {

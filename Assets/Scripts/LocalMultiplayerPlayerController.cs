@@ -86,7 +86,10 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
         /*Player Moves*/
         //Punch
-
+        if(punch != 0)
+        {
+            player.GetCharacter().MovePunch(player);
+        }
         //Kick
 
         //Special1

@@ -25,27 +25,27 @@ public class Doge : Character {
         return p;
     }
 
-    public override void moveKick()
+    public override void MoveKick()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void movePunch()
+    public override void MovePunch()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void special1()
+    public override void MoveSpecial1()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void special2()
+    public override void MoveSpecial2()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void ultra()
+    public override void MoveUltra()
     {
         throw new System.NotImplementedException();
     }
