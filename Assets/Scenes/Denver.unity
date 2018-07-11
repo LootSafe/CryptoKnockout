@@ -144,7 +144,7 @@ Transform:
   - {fileID: 1038951492}
   - {fileID: 1526629793}
   m_Father: {fileID: 682696520}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261669761
 GameObject:
@@ -5328,8 +5328,9 @@ Transform:
   m_LocalPosition: {x: 0.74737275, y: 1.2119803, z: 0.06166146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 952017389}
+  - {fileID: 920764429}
   - {fileID: 1079891192}
+  - {fileID: 952017389}
   - {fileID: 2126845051}
   - {fileID: 27330081}
   - {fileID: 1452815166}
@@ -10332,13 +10333,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 920764428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9, y: -5.1200004, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.6, y: -2.048, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 844166149}
   - {fileID: 415076802}
-  m_Father: {fileID: 1079891192}
-  m_RootOrder: 3
+  m_Father: {fileID: 682696520}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &920764430
 SpriteRenderer:
@@ -10414,7 +10415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadZoneOffset: 4
   incrementBetweenSprites: 2
-  speed: 0.1
+  speed: 0.05
 --- !u!4 &952017389
 Transform:
   m_ObjectHideFlags: 0
@@ -10426,7 +10427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 682696520}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038951488
 GameObject:
@@ -10569,7 +10570,6 @@ Transform:
   - {fileID: 771006118}
   - {fileID: 363716029}
   - {fileID: 1105763349}
-  - {fileID: 920764429}
   m_Father: {fileID: 682696520}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11174,7 +11174,7 @@ Transform:
   - {fileID: 753476080}
   - {fileID: 1122013722}
   m_Father: {fileID: 682696520}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1526629792
 GameObject:
@@ -11903,7 +11903,7 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 682696520}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2126845052
 SpriteRenderer:
