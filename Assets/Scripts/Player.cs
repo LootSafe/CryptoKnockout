@@ -16,6 +16,9 @@ public class Player : NetworkBehaviour {
     private float maxHealth;
     private Game game;
     private Character character;
+    public GameObject fist;
+    public GameObject foot;
+    public GameObject specialSource;
 
     private float lastHit;
 

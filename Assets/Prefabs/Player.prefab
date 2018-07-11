@@ -319,6 +319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  fist: {fileID: 1493002108899744}
+  foot: {fileID: 1633664159556462}
+  specialSource: {fileID: 1420809114905940}
 --- !u!114 &114586626465333196
 MonoBehaviour:
   m_ObjectHideFlags: 1
