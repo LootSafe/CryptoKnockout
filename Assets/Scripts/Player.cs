@@ -28,6 +28,9 @@ public class Player : NetworkBehaviour {
 
     public void InitializeWithCharacter(Character character)
     {
+
+        //Animation Controller
+        GetComponent<Animator>().runtimeAnimatorController = character.GetAnimationController();
         this.character = character;
         health = character.GetHealth();
         maxSpecial = character.GetSpecial();

@@ -6,7 +6,7 @@ public class Doge : Character {
 
     public Doge()
     {
-        this.health = 1000;
+        this.health = 500;
         this.strength = 10;
         this.defence = 10;
         this.moveSpeed = 0.1f;
@@ -16,5 +16,12 @@ public class Doge : Character {
     public override float CalculateDamage(float damage)
     {
         return damage;
+    }
+
+    public override AnimatorOverrideController GetAnimationController()
+    {
+        AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/Doge", typeof(AnimatorOverrideController));
+        
+        return p;
     }
 }

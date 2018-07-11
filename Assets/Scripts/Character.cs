@@ -35,6 +35,8 @@ public abstract class Character {
         return moveSpeed;
     }
 
+    public abstract AnimatorOverrideController GetAnimationController();
+
     public string GetName()
     {
         return name;

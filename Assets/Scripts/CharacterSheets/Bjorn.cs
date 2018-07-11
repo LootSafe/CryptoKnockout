@@ -18,4 +18,8 @@ public class Bjorn : Character {
         return damage;
     }
 
+    public override AnimatorOverrideController GetAnimationController()
+    {
+        return (AnimatorOverrideController)Resources.Load("Animator/Characters/Bjorn");
+    }
 }
