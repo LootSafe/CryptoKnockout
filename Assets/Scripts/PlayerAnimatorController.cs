@@ -78,7 +78,7 @@ public class PlayerAnimatorController : MonoBehaviour {
                     SetDeadState(DEAD_STATE.DEAD);
                     return true;
                 case ANIMATION_STATE.IDLE:
-                    playerAnimator.SetTrigger("IDLE");
+                    playerAnimator.SetTrigger("GROUNDED");
                     return true;
                 case ANIMATION_STATE.WALKING:
                     playerAnimator.SetTrigger("WALKING");
@@ -99,13 +99,15 @@ public class PlayerAnimatorController : MonoBehaviour {
                 case ANIMATION_STATE.LOWKICK:
                     return true;
                 case ANIMATION_STATE.HIGHPUNCH:
+                    Debug.Log("I'm here yay");
+                    playerAnimator.SetTrigger("PUNCHING");
                     return true;
                 case ANIMATION_STATE.HIGHKICK:
                     return true;
                 case ANIMATION_STATE.SPECIALATTACKONE:
                     return true;
                 default:
-                    playerAnimator.SetTrigger("IDLE");
+                    playerAnimator.SetTrigger("GROUNDED");
                     return true;
             }
         }
