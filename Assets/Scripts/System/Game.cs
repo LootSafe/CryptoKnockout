@@ -213,8 +213,6 @@ public class Game : MonoBehaviour {
                 break;
 
             case State.FIGHTING:
-                Debug.Log("Now Fighting");
-                Debug.Log(roundStartTime + maxRoundTime + "start " + Time.time + "current");
                 if(Time.time >= roundStartTime + maxRoundTime)
                 {
                     //Begin Round End
