@@ -194,6 +194,7 @@ public class Game : MonoBehaviour {
                 break;
 
             case State.STARTING:
+                Debug.Log("Now Starting a new Match!");
                 currentRound = 0;
                 spawnOpponents();
                 //Make sure all players are loaded
@@ -203,10 +204,12 @@ public class Game : MonoBehaviour {
             case State.ROUND_BEGINING:
                 currentRound++;
                 state = State.FIGHTING;
+                roundStartTime = Time.time;
                 break;
 
             case State.FIGHTING:
-                roundStartTime = Time.time;
+                Debug.Log("Now Fighting");
+                
                 if(roundStartTime + maxRoundTime >= Time.time)
                 {
                     //Begin Round End
