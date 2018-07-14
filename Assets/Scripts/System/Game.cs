@@ -115,6 +115,11 @@ public class Game : MonoBehaviour {
         return gameMode;
     }
 
+    public float GetRemainingRoundTime()
+    {
+        return maxRoundTime - (Time.time - roundStartTime) ;
+    }
+
 
 
 
@@ -209,10 +214,11 @@ public class Game : MonoBehaviour {
 
             case State.FIGHTING:
                 Debug.Log("Now Fighting");
-                
-                if(roundStartTime + maxRoundTime >= Time.time)
+                Debug.Log(roundStartTime + maxRoundTime + "start " + Time.time + "current");
+                if(Time.time >= roundStartTime + maxRoundTime)
                 {
                     //Begin Round End
+                    
                     state = State.ROUND_ENDING;
                     roundEndTimer = Time.time;
                 }
