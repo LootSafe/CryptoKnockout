@@ -12,6 +12,11 @@ public class GameStateUpdate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        GetComponent<Text>().text = Game.GetInstance().GetState().ToString();
-	}
+        string state = Game.GetInstance().GetState().ToString();
+ 
+        state = state + " Remaining Time: " + Game.GetInstance().GetRemainingRoundTime();
+
+        GetComponent<Text>().text = state;
+
+    }
 }
