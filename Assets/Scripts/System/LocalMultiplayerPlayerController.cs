@@ -29,6 +29,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
         //Run Only if Local Multiplayer
         if (!game) return;
+
         if (game.GetGameMode() != Game.GameMode.LOCALMULTIPLAYER)
         {
             Debug.Log("Game is not in Local Multiplayer Mode");
@@ -49,7 +50,8 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
     private void updatePlayer(Player player, int playerNumber)
     {
         if (!player) return;
-        
+        if (game.GetState() != Game.State.FIGHTING) return;
+
         Transform transform = player.GetComponentInParent<Transform>();
 
         float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
