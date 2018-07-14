@@ -66,10 +66,6 @@ public class Player : NetworkBehaviour {
             lastHit = Time.time;
         }
     }
-    public void onHealthChange()
-    {
-
-    }
 	
     public bool IsAlive()
     {
@@ -116,7 +112,10 @@ public class Player : NetworkBehaviour {
     
     public void respawn()
     {
+        lives--;
         health = character.GetHealth();
+        special = 0;
+
     }
     // Update is called once per frame
 	void Update () {
