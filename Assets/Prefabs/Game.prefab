@@ -74,6 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9affc8c74119a43abc41763f458984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRoundTime: 300
+  roundEndDelay: 3
   rounds: 3
   lives: 2
   MaxPlayers: 2
