@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 [ExecuteInEditMode()]
 public class Game : MonoBehaviour {
 
-    public float maxRoundTime = 300;
+    public float maxRoundTime = 120;
     public float roundEndDelay = 3;
     public int rounds = 3;
     public int lives = 2;
@@ -94,6 +94,10 @@ public class Game : MonoBehaviour {
     {
         return rounds;
     }
+    public int GetCurrentRound()
+    {
+        return currentRound;
+    }
 
     public bool IsHost()
     {
@@ -117,7 +121,16 @@ public class Game : MonoBehaviour {
 
     public float GetRemainingRoundTime()
     {
-        return maxRoundTime - (Time.time - roundStartTime) ;
+        float remainingTime = maxRoundTime - (Time.time - roundStartTime);
+
+        if(state == State.FIGHTING || state == State.ROUND_ENDING)
+        {
+            return remainingTime;
+        } else
+        {
+            if (remainingTime <= 0) return 0;
+            return maxRoundTime;
+        }
     }
 
 
