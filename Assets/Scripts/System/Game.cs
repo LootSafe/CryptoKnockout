@@ -228,6 +228,7 @@ public class Game : MonoBehaviour {
                 break;
 
             case State.ROUND_BEGINING:
+                respawnOpponents();
                 if (GetRemainingCountDownTime() > 0) break;
                 currentRound++;
                 state = State.FIGHTING;
@@ -290,7 +291,7 @@ public class Game : MonoBehaviour {
             localP2 = p2.GetComponent<Player>();
             localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
             Vector3 p2LS = p2.GetComponentInParent<Transform>().localScale;
-            p2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * p2LS.x, p2LS.y, p2LS.z);
+            p2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
 
         }
     }
@@ -301,7 +302,7 @@ public class Game : MonoBehaviour {
         localP1.GetComponent<Transform>().position = spawnP1.position;
         localP2.GetComponent<Transform>().position = spawnP2.position;
         Vector3 p2LS = localP2.GetComponentInParent<Transform>().localScale;
-        localP2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * p2LS.x, p2LS.y, p2LS.z);
+        localP2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
     }
     /*************************************************************************/
     public enum State
