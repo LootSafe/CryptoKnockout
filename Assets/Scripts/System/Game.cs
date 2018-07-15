@@ -32,8 +32,10 @@ public class Game : MonoBehaviour {
    //State
     private State state = State.STARTING;
     private int currentRound = 0;
-    private float roundStartTime = 0;
     private float countDownTimer = 0;
+
+
+    private float roundStartTime = 0;
     private float roundEndTimer = 0;
 
 
@@ -133,6 +135,11 @@ public class Game : MonoBehaviour {
         }
     }
 
+    public float GetRemainingCountDownTime()
+    {
+        return 5 - (Time.time - countDownTimer);
+    }
+
 
 
 
@@ -217,9 +224,11 @@ public class Game : MonoBehaviour {
                 spawnOpponents();
                 //Make sure all players are loaded
                 state = State.ROUND_BEGINING;
+                countDownTimer = Time.time;
                 break;
 
             case State.ROUND_BEGINING:
+                if (GetRemainingCountDownTime() > 0) break;
                 currentRound++;
                 state = State.FIGHTING;
                 roundStartTime = Time.time;
@@ -244,6 +253,7 @@ public class Game : MonoBehaviour {
                 } else
                 {
                     state = State.ROUND_BEGINING;
+                    countDownTimer = Time.time;
                 }
                 break;
 
