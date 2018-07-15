@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-
+[ExecuteInEditMode()]
 public class Game : MonoBehaviour {
 
     public float maxRoundTime = 300;

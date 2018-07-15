@@ -52,19 +52,25 @@ public class Player : NetworkBehaviour {
     //To be done only by server
     public void TakeDamage(float damage)
     {
-        if (!isServer) return;
-        
-        Debug.Log("Taking Damage");
-        float damageTake = character.CalculateDamage(damage);
-        if(health - damageTake <= 0 )
+        //Temp
+
+        if(game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER || isServer)
         {
-            health = 0;
-            notifyDeath();
-        } else
-        {
-            health -= damageTake;
-            lastHit = Time.time;
+            float damageTake = character.CalculateDamage(damage);
+            if (health - damageTake <= 0)
+            {
+                health = 0;
+                lastHit = Time.time;
+                notifyDeath();
+            }
+            else
+            {
+                Debug.Log("Ouch!");
+                health -= damageTake;
+                lastHit = Time.time;
+            }
         }
+
     }
 	
     public bool IsAlive()
