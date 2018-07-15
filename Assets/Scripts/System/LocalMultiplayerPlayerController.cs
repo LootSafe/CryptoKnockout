@@ -5,6 +5,7 @@ using UnityEngine;
 public class LocalMultiplayerPlayerController : MonoBehaviour {
 
     float[] lastHeadings;
+    bool[,] controlLocks;
     Game game;
     Player player1;
     Player player2;
@@ -22,6 +23,10 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         lastHeadings[0] = 1;
         //P2
         lastHeadings[1] = -1;
+
+
+        //Initialize Control Locks
+        controlLocks = new bool[8, 4];
 	}
 
     // Update is called once per frame
@@ -56,8 +61,11 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
         float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
         float yMovement = Input.GetAxis("P" + playerNumber + "_Vertical");
+        //0
         float jump = Input.GetAxis("P" + playerNumber + "_Jump");
+        //1
         float punch = Input.GetAxis("P" + playerNumber + "_Punch");
+        //2
         float kick = Input.GetAxis("P" + playerNumber + "_Kick");
 
         //Horizontal Changes
@@ -94,10 +102,20 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
         /*Player Moves*/
         //Punch
-        if(punch != 0)
+
+        if (punch != 0 )
         {
-            player.GetCharacter().MovePunch();
-            player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
+            if (controlLocks[playerNumber - 1, 1] == false)
+            {
+                controlLocks[playerNumber - 1, 1] = true;
+                player.GetCharacter().MovePunch();
+                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
+                controlLocks[playerNumber - 1, 1] = true;
+            }
+        }
+        else
+        {
+            controlLocks[playerNumber - 1, 1] = false;
         }
         //Kick
 
