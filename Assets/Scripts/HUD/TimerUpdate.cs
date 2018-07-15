@@ -18,13 +18,28 @@ public class TimerUpdate : MonoBehaviour {
             game = Game.GetInstance();
             return;
         }
+        string displayString = "";
 
             int secondsLeft = (int)game.GetRemainingRoundTime();
             if(secondsLeft < 1)
             {
                 secondsLeft = 0;
             }
-            display.text = secondsLeft + "";
+        int minutes = secondsLeft / 60;
+        int seconds = secondsLeft % 60;
+
+        displayString = minutes + ":";
+        if(seconds < 10)
+        {
+            displayString = displayString + "0" + seconds;
+        } else
+        {
+            displayString = displayString + seconds;
+        }
+
+        display.text = displayString;
+        
+
         
 	}
 }
