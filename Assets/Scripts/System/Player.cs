@@ -71,6 +71,8 @@ public class Player : NetworkBehaviour {
             }
         }
 
+        GetComponent<DamageAnimator>().TriggerSmallHit();
+
     }
 	
     public bool IsAlive()
