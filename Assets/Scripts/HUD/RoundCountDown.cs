@@ -21,8 +21,16 @@ public class RoundCountDown : MonoBehaviour {
 
 		if(game.GetState() == Game.State.ROUND_BEGINING)
         {
-            display.gameObject.SetActive(true);
-            display.text = (int)game.GetRemainingCountDownTime() + "";
+            if ((int)game.GetRemainingCountDownTime() < 1)
+            {
+                //Temp
+                display.text = "FIGHT";
+            }
+            else
+            {
+                display.gameObject.SetActive(true);
+                display.text = (int)game.GetRemainingCountDownTime() + "";
+            }
         } else
         {
             display.gameObject.SetActive(false);
