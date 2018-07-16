@@ -33,7 +33,7 @@ public class PlayerDamage : MonoBehaviour {
         {
             float damageDealt = other.GetComponent<Player>().TakeDamage(10, player);
             gameObject.SetActive(false);
-            player.AddToScore(damageDealt);
+            if(player) player.AddToScore(damageDealt);
         }
     }
 }
