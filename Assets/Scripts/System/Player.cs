@@ -118,14 +118,13 @@ public class Player : NetworkBehaviour {
     public void notifyDeath()
     {
         game.TriggerDeath(this);
-        GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
-        respawn();
     }
     
     public void respawn()
     {
         lives--;
         health = character.GetHealth();
+        GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
         special = 0;
 
     }
