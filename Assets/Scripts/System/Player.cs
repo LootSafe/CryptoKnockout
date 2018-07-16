@@ -63,12 +63,14 @@ public class Player : NetworkBehaviour {
                 health = 0;
                 lastHit = Time.time;
                 notifyDeath();
+                GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DEAD);
             }
             else
             {
                 Debug.Log("Ouch!");
                 health -= damageTake;
                 lastHit = Time.time;
+                GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HURT);
             }
         }
 
@@ -116,6 +118,7 @@ public class Player : NetworkBehaviour {
     public void notifyDeath()
     {
         game.TriggerDeath(this);
+        GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
         respawn();
     }
     
