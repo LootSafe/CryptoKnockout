@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeathTrapScript : MonoBehaviour {
 
     public Player player;
+    public float damage = 10f;
     float lastHit;
     public float delay = .02f;
 
@@ -26,7 +27,7 @@ public class DeathTrapScript : MonoBehaviour {
     {
         if (other.tag == "Player" && other != player)
         {
-            float damageDealt = other.GetComponent<Player>().TakeDamage(10, player);
+            float damageDealt = other.GetComponent<Player>().TakeDamage(damage, player);
             if (player) player.AddToScore(damageDealt);
         }
     }
