@@ -16,6 +16,7 @@ public class Player : NetworkBehaviour {
     private float maxHealth;
     private Game game;
     private Character character;
+
     public GameObject fist;
     public GameObject foot;
     public GameObject specialSource;
@@ -53,6 +54,8 @@ public class Player : NetworkBehaviour {
     //To be done only by server
     public float TakeDamage(float damage, Player source)
     {
+
+        if (!alive) return 0;
         //Temp
         float damageTake = character.CalculateDamage(damage);
 
@@ -133,12 +136,14 @@ public class Player : NetworkBehaviour {
     }
     public void notifyDeath()
     {
+        lives--;
+        alive = false;
         game.TriggerDeath(this);
     }
     
     public void respawn()
     {
-        lives--;
+        alive = true;
         health = character.GetHealth();
         GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
         special = 0;
