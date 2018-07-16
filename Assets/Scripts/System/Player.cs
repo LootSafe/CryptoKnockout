@@ -21,6 +21,7 @@ public class Player : NetworkBehaviour {
     public GameObject specialSource;
 
     private float lastHit;
+    private float damageDealt;
 
     void Start()
     {
@@ -50,7 +51,7 @@ public class Player : NetworkBehaviour {
     }
 
     //To be done only by server
-    public void TakeDamage(float damage)
+    public float TakeDamage(float damage, Player source)
     {
         //Temp
         float damageTake = character.CalculateDamage(damage);
@@ -71,11 +72,26 @@ public class Player : NetworkBehaviour {
                 health -= damageTake;
                 lastHit = Time.time;
                 GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HURT);
+                
+                if(source.GetComponent<Transform>().position.x < transform.position.x)
+                {
+                    transform.position = new Vector2(transform.position.x + 2, transform.position.y);
+                } else
+                {
+                    transform.position = new Vector2(transform.position.x - 2, transform.position.y);
+                }
             }
         }
 
         GetComponent<DamageAnimator>().TriggerSmallHit(damageTake);
+        return damageTake;
 
+    }
+
+    public void AddToScore(float damageDealt)
+    {
+        special += 1;
+        this.damageDealt += damageDealt;
     }
 	
     public bool IsAlive()

@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRoundTime: 300
-  roundEndDelay: 3
+  roundEndDelay: 5
   rounds: 3
   lives: 2
   MaxPlayers: 2

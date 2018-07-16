@@ -64,6 +64,7 @@ public class Game : MonoBehaviour {
     {
         Debug.Log("Player " + player.name + " has died");
         state = State.ROUND_ENDING;
+        roundEndTimer = Time.time;
     }
 
     public void RegisterPlayer(Player player, NetworkIdentity id)
@@ -246,7 +247,7 @@ public class Game : MonoBehaviour {
                 break;
 
             case State.ROUND_ENDING:
-                if (roundEndTimer + roundEndDelay >= Time.time) break;
+                if (Time.time - roundEndTimer < roundEndDelay) break;
 
                 if(currentRound >= rounds)
                 {
@@ -303,6 +304,9 @@ public class Game : MonoBehaviour {
         localP2.GetComponent<Transform>().position = spawnP2.position;
         Vector3 p2LS = localP2.GetComponentInParent<Transform>().localScale;
         localP2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
+
+        localP1.respawn();
+        localP2.respawn();
     }
     /*************************************************************************/
     public enum State
