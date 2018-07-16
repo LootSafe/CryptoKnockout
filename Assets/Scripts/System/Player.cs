@@ -53,10 +53,11 @@ public class Player : NetworkBehaviour {
     public void TakeDamage(float damage)
     {
         //Temp
+        float damageTake = character.CalculateDamage(damage);
 
-        if(game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER || isServer)
+        if (game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER || isServer)
         {
-            float damageTake = character.CalculateDamage(damage);
+            
             if (health - damageTake <= 0)
             {
                 health = 0;
@@ -71,7 +72,7 @@ public class Player : NetworkBehaviour {
             }
         }
 
-        GetComponent<DamageAnimator>().TriggerSmallHit();
+        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake);
 
     }
 	
