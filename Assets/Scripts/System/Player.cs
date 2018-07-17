@@ -24,6 +24,8 @@ public class Player : NetworkBehaviour {
     private float lastHit;
     private float damageDealt;
 
+    private bool grounded = false;
+
     void Start()
     {
         game = Game.GetInstance();
@@ -51,8 +53,26 @@ public class Player : NetworkBehaviour {
         game.UnregisterPlayer(this, GetComponent<NetworkIdentity>());
     }
 
-    //To be done only by server
-    public float TakeDamage(float damage, Player source)
+    //Check For Grounded
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Floor")
+        {
+            grounded = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Floor")
+        {
+            grounded = false;
+        }
+    }
+
+
+            //To be done only by server
+            public float TakeDamage(float damage, Player source)
     {
 
         if (!alive) return 0;
@@ -104,6 +124,13 @@ public class Player : NetworkBehaviour {
     public bool IsAlive()
     {
         return alive;
+    }
+
+
+
+    public bool IsGrounded()
+    {
+        return grounded;
     }
 
     public float GetHealth()

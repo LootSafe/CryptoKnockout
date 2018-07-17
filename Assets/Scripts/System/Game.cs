@@ -19,9 +19,6 @@ public class Game : MonoBehaviour {
     private static Game instance;
     private static Player localPlayer;
 
-
-
-
     //Temp
     public GameObject playerPrefab;
     private Player localP1;
@@ -106,6 +103,7 @@ public class Game : MonoBehaviour {
     {
         return host;
     }
+
 
     public NetworkHandler GetNetworkHandler()
     {

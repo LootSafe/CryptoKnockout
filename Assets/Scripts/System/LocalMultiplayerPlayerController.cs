@@ -96,11 +96,21 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         }
 
         //Vertical Changes
-        if (jump > 0)
+        if (jump != 0)
         {
-            //Vertical movement
-            transform.position = new Vector3(transform.position.x, transform.position.y + (player2.GetMoveSpeed() * jump), transform.position.z);
-            player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
+            if (controlLocks[playerNumber - 1, 0] == false)
+            {
+                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
+                rigidbody.AddForce(new Vector2(0, 350));
+                controlLocks[playerNumber - 1, 0] = true;
+            }
+        }
+        else
+        {
+            if (player.IsGrounded())
+            {
+                controlLocks[playerNumber - 1, 0] = false;
+            }
         }
 
 
@@ -111,7 +121,6 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             if (controlLocks[playerNumber - 1, 1] == false)
             {
-                controlLocks[playerNumber - 1, 1] = true;
                 player.GetCharacter().MovePunch();
                 player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
                 controlLocks[playerNumber - 1, 1] = true;
@@ -128,7 +137,6 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             if (controlLocks[playerNumber - 1, 2] == false)
             {
-                controlLocks[playerNumber - 1, 2] = true;
                 player.GetCharacter().MoveKick();
                 player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LOWKICK);
                 controlLocks[playerNumber - 1, 2] = true;
@@ -144,7 +152,6 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             if (controlLocks[playerNumber - 1, 3] == false)
             {
-                controlLocks[playerNumber - 1, 3] = true;
                 player.GetCharacter().MoveBlock();
                 player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.BLOCK);
                 controlLocks[playerNumber - 1, 3] = true;
