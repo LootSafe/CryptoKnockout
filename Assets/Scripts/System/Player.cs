@@ -75,20 +75,24 @@ public class Player : NetworkBehaviour {
                 health -= damageTake;
                 lastHit = Time.time;
                 GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HURT);
-                
-                if(source.GetComponent<Transform>().position.x < transform.position.x)
-                {
-                    transform.position = new Vector2(transform.position.x + 2, transform.position.y);
-                } else
-                {
-                    transform.position = new Vector2(transform.position.x - 2, transform.position.y);
-                }
+                KnockBack(source.GetComponent<Transform>().position.x);
             }
         }
 
         GetComponent<DamageAnimator>().TriggerSmallHit(damageTake);
         return damageTake;
 
+    }
+
+    void KnockBack(float sourcePositionX)
+    {
+        if(sourcePositionX < transform.position.x)
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(300, 100));
+        } else
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(-300, 100));
+        }
     }
 
     public void AddToScore(float damageDealt)

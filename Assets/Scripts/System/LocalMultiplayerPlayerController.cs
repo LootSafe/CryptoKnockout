@@ -30,7 +30,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
 
         //Run Only if Local Multiplayer
         if (!game) return;
@@ -48,16 +48,17 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             player2 = game.GetPlayer(1);
         }
 
-        updatePlayer(player1, 1);
-        updatePlayer(player2, 2);
+        UpdatePlayer(player1, 1);
+        UpdatePlayer(player2, 2);
     }
 
-    private void updatePlayer(Player player, int playerNumber)
+    private void UpdatePlayer(Player player, int playerNumber)
     {
         if (!player) return;
         if (game.GetState() != Game.State.FIGHTING) return;
 
         Transform transform = player.GetComponentInParent<Transform>();
+        Rigidbody2D rigidbody = player.GetComponentInParent<Rigidbody2D>();
 
         float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
         float yMovement = Input.GetAxis("P" + playerNumber + "_Vertical");
@@ -82,7 +83,8 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                 lastHeadings[playerNumber - 1] = quotient;
             }
             //Horizontal Movement
-            transform.position = new Vector3(transform.position.x + (lastHeadings[playerNumber -1] * player2.GetMoveSpeed()), transform.position.y, transform.position.z);
+            //transform.position = new Vector3(transform.position.x + (lastHeadings[playerNumber -1] * player.GetMoveSpeed()), transform.position.y, transform.position.z);
+            rigidbody.AddForce(new Vector2(xMovement * player.GetMoveSpeed(), 0));
             transform.localScale = updatedHeading;
             player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.WALKING);
         }
