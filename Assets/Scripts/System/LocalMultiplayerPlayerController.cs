@@ -6,6 +6,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
     float[] lastHeadings;
     bool[,] controlLocks;
+    float[] lastMovements;
     Game game;
     Player player1;
     Player player2;
@@ -27,6 +28,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
         //Initialize Control Locks
         controlLocks = new bool[8, 4];
+        lastMovements = new float[8];
 	}
 
     // Update is called once per frame
@@ -59,7 +61,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
         Transform transform = player.GetComponentInParent<Transform>();
         Rigidbody2D rigidbody = player.GetComponentInParent<Rigidbody2D>();
-
+        
         float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
         float yMovement = Input.GetAxis("P" + playerNumber + "_Vertical");
         //0
@@ -74,21 +76,25 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Horizontal Changes
         if (xMovement != 0)
         {
-            //vars
-            Vector3 rotation = transform.localScale;
-            Vector3 updatedHeading = rotation;
-            float quotient = xMovement / Mathf.Abs(xMovement);
-            //Rotation
-            if (quotient != lastHeadings[playerNumber-1])
+            if (Time.time - lastMovements[playerNumber - 1] >= 0.01) 
             {
-                updatedHeading = new Vector3(rotation.x * -1, rotation.y, rotation.z);
-                lastHeadings[playerNumber - 1] = quotient;
+                //vars
+                Vector3 rotation = transform.localScale;
+                Vector3 updatedHeading = rotation;
+                float quotient = xMovement / Mathf.Abs(xMovement);
+                //Rotation
+                if (quotient != lastHeadings[playerNumber - 1])
+                {
+                    updatedHeading = new Vector3(rotation.x * -1, rotation.y, rotation.z);
+                    lastHeadings[playerNumber - 1] = quotient;
+                }
+                //Horizontal Movement
+                //transform.position = new Vector3(transform.position.x + (lastHeadings[playerNumber -1] * player.GetMoveSpeed()), transform.position.y, transform.position.z);
+                rigidbody.AddForce(new Vector2(xMovement * player.GetMoveSpeed(), 0));
+                transform.localScale = updatedHeading;
+                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.WALKING);
+                lastMovements[playerNumber - 1] = Time.time;
             }
-            //Horizontal Movement
-            //transform.position = new Vector3(transform.position.x + (lastHeadings[playerNumber -1] * player.GetMoveSpeed()), transform.position.y, transform.position.z);
-            rigidbody.AddForce(new Vector2(xMovement * player.GetMoveSpeed(), 0));
-            transform.localScale = updatedHeading;
-            player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.WALKING);
         }
         else
         {
