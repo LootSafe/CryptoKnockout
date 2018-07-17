@@ -11,6 +11,7 @@ public class Parallax : MonoBehaviour
     public float deadZoneOffset = 2.0f;
     public float incrementBetweenSprites = 0.01f;
     public float speed = 0.2f;
+    Game game;
 
     List<GameObject> parallaxSprites;
     GameObject leftBoundarySprite, rightBoundarySprite;
@@ -50,7 +51,11 @@ public class Parallax : MonoBehaviour
         /* Uncomment me later */
 
         //currentGameMode = Game.GetInstance().GetGameMode();
-
+        if (!game || game.GetState() != Game.State.FIGHTING)
+        {
+            game = Game.GetInstance();
+            return;
+        }
         if (IsMultiplayer())
         {
             distance = Vector2.Distance(GetPlayerPosition(0), GetPlayerPosition(1)) / 2;
@@ -67,6 +72,11 @@ public class Parallax : MonoBehaviour
 
     void Update ()
     {
+        if (!game || game.GetState() != Game.State.FIGHTING)
+        {
+            game = Game.GetInstance();
+            return;
+        }
         /* Parallax Stuff */
 
         if (IsMultiplayer())
@@ -164,12 +174,12 @@ public class Parallax : MonoBehaviour
     
     private Player GetPlayer(int index)
     {
-        return Game.GetInstance().GetPlayer(index);
+        return game.GetPlayer(index);
     }
 
     private Vector3 GetPlayerPosition(int index)
     {
-        return Game.GetInstance().GetPlayer(index).gameObject.transform.position;
+        return game.GetPlayer(index).gameObject.transform.position;
     }
 
     private float GetMultiMidpointX()
