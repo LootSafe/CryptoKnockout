@@ -42,6 +42,7 @@ public abstract class Character {
     }
 
     public abstract void MovePunch();
+    public abstract void MoveBlock();
     public abstract void MoveKick();
     public abstract void MoveSpecial1();
     public abstract void MoveSpecial2();

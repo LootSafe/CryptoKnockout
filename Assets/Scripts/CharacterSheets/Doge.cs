@@ -30,6 +30,10 @@ public class Doge : Character {
         player.foot.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
+    public override void MoveBlock()
+    {
+        
+    }
     public override void MovePunch()
     {
         player.fist.GetComponent<PlayerDamage>().TriggerEnable();

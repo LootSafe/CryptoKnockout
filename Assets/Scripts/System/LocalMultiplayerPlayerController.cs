@@ -138,7 +138,22 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             controlLocks[playerNumber - 1, 2] = false;
         }
-        //Special1
+
+        //Block
+        if (block != 0)
+        {
+            if (controlLocks[playerNumber - 1, 3] == false)
+            {
+                controlLocks[playerNumber - 1, 3] = true;
+                player.GetCharacter().MoveBlock();
+                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.BLOCK);
+                controlLocks[playerNumber - 1, 3] = true;
+            }
+        }
+        else
+        {
+            controlLocks[playerNumber - 1, 3] = false;
+        }
 
         //Special2
 
