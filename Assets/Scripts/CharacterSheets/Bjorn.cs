@@ -37,12 +37,12 @@ public class Bjorn : Character {
     public override void MoveBlock()
     {
         
-}
     }
 
     public override void MoveSpecial1()
     {
         throw new System.NotImplementedException();
+
     }
 
     public override void MoveSpecial2()
