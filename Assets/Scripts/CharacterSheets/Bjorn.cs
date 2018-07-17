@@ -26,7 +26,7 @@ public class Bjorn : Character {
 
     public override void MoveKick()
     {
-        throw new System.NotImplementedException();
+        player.foot.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
     public override void MovePunch()

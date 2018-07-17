@@ -68,6 +68,8 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         float punch = Input.GetAxis("P" + playerNumber + "_Punch");
         //2
         float kick = Input.GetAxis("P" + playerNumber + "_Kick");
+        //3
+        float block = Input.GetAxis("P" + playerNumber + "_Block");
 
         //Horizontal Changes
         if (xMovement != 0)
@@ -119,8 +121,23 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             controlLocks[playerNumber - 1, 1] = false;
         }
+        
+        
         //Kick
-
+        if (kick != 0)
+        {
+            if (controlLocks[playerNumber - 1, 2] == false)
+            {
+                controlLocks[playerNumber - 1, 2] = true;
+                player.GetCharacter().MoveKick();
+                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LOWKICK);
+                controlLocks[playerNumber - 1, 2] = true;
+            }
+        }
+        else
+        {
+            controlLocks[playerNumber - 1, 2] = false;
+        }
         //Special1
 
         //Special2
