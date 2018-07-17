@@ -95,7 +95,10 @@ public class Player : NetworkBehaviour {
                 health -= damageTake;
                 lastHit = Time.time;
                 GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HURT);
-                KnockBack(source.GetComponent<Transform>().position.x);
+                if (source)
+                {
+                    KnockBack(source.GetComponent<Transform>().position.x);
+                }
             }
         }
 
