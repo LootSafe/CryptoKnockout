@@ -16,11 +16,15 @@ public class Player : NetworkBehaviour {
     private float maxHealth;
     private Game game;
     private Character character;
+
     public GameObject fist;
     public GameObject foot;
     public GameObject specialSource;
 
     private float lastHit;
+    private float damageDealt;
+
+    private bool grounded = false;
 
     void Start()
     {
@@ -49,31 +53,87 @@ public class Player : NetworkBehaviour {
         game.UnregisterPlayer(this, GetComponent<NetworkIdentity>());
     }
 
-    //To be done only by server
-    public void TakeDamage(float damage)
+    //Check For Grounded
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isServer) return;
-        
-        Debug.Log("Taking Damage");
-        float damageTake = character.CalculateDamage(damage);
-        if(health - damageTake <= 0 )
+        if (other.tag == "Floor")
         {
-            health = 0;
-            notifyDeath();
-        } else
-        {
-            health -= damageTake;
-            lastHit = Time.time;
+            grounded = true;
         }
     }
-    public void onHealthChange()
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Floor")
+        {
+            grounded = false;
+        }
+    }
+
+
+            //To be done only by server
+            public float TakeDamage(float damage, Player source)
     {
 
+        if (!alive) return 0;
+        //Temp
+        float damageTake = character.CalculateDamage(damage);
+
+        if (game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER || isServer)
+        {
+            
+            if (health - damageTake <= 0)
+            {
+                health = 0;
+                lastHit = Time.time;
+                notifyDeath();
+                GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DEAD);
+            }
+            else
+            {
+                Debug.Log("Ouch!");
+                health -= damageTake;
+                lastHit = Time.time;
+                GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HURT);
+                if (source)
+                {
+                    KnockBack(source.GetComponent<Transform>().position.x);
+                }
+            }
+        }
+
+        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake);
+        return damageTake;
+
+    }
+
+    void KnockBack(float sourcePositionX)
+    {
+        if(sourcePositionX < transform.position.x)
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(300, 100));
+        } else
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(-300, 100));
+        }
+    }
+
+    public void AddToScore(float damageDealt)
+    {
+        special += 1;
+        this.damageDealt += damageDealt;
     }
 	
     public bool IsAlive()
     {
         return alive;
+    }
+
+
+
+    public bool IsGrounded()
+    {
+        return grounded;
     }
 
     public float GetHealth()
@@ -110,13 +170,18 @@ public class Player : NetworkBehaviour {
     }
     public void notifyDeath()
     {
+        lives--;
+        alive = false;
         game.TriggerDeath(this);
-        respawn();
     }
     
     public void respawn()
     {
+        alive = true;
         health = character.GetHealth();
+        GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
+        special = 0;
+
     }
     // Update is called once per frame
 	void Update () {

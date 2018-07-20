@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[ExecuteInEditMode()]
 public class PlayerDamage : MonoBehaviour {
-    Player player;
+    public Player player;
     float lastHit;
     public float delay = .02f;
 
     void Start()
     {
-        player = GetComponentInParent<Player>();
+        player = gameObject.GetComponentInParent<Player>();
     }
 
     void Update()
@@ -31,8 +31,9 @@ public class PlayerDamage : MonoBehaviour {
     {
         if(other.tag == "Player" && other!= player)
         {
-            other.GetComponent<Player>().TakeDamage(10);
+            float damageDealt = other.GetComponent<Player>().TakeDamage(10, player);
             gameObject.SetActive(false);
+            if(player) player.AddToScore(damageDealt);
         }
     }
 }

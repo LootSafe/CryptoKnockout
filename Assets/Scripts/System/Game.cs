@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-
+[ExecuteInEditMode()]
 public class Game : MonoBehaviour {
 
-    
+    public float maxRoundTime = 120;
+    public float roundEndDelay = 3;
     public int rounds = 3;
     public int lives = 2;
     public int MaxPlayers = 2;
@@ -25,9 +26,15 @@ public class Game : MonoBehaviour {
     Transform spawnP1;
     Transform spawnP2;
 
-   
+   //State
     private State state = State.STARTING;
-    
+    private int currentRound = 0;
+    private float countDownTimer = 0;
+
+
+    private float roundStartTime = 0;
+    private float roundEndTimer = 0;
+
 
     public void Awake()
     {
@@ -38,26 +45,11 @@ public class Game : MonoBehaviour {
         instance = this;
 
         //Temp
-        spawnP1 = GameObject.FindGameObjectWithTag("P1Spawn").GetComponent<Transform>();
-        spawnP2 = GameObject.FindGameObjectWithTag("P2Spawn").GetComponent<Transform>();
-        if (gameMode == GameMode.LOCALMULTIPLAYER)
-        {
-            //Spawn Players 1 and 2
-            GameObject p1 = Instantiate(playerPrefab, spawnP1.position, spawnP1.rotation);
-            localP1 = p1.GetComponent<Player>();
-            localP1.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player1Char));
-            GameObject p2 = Instantiate(playerPrefab,spawnP2.position, spawnP2.rotation);
-            localP2 = p2.GetComponent<Player>();
-            localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
-            Vector3 p2LS = p2.GetComponentInParent<Transform>().localScale;
-            p2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * p2LS.x, p2LS.y, p2LS.z);
-
-        }
     }
 
     public void Start()
     {
-
+        state = State.STARTING;
     }
     /*************************************************************************/
 
@@ -68,6 +60,8 @@ public class Game : MonoBehaviour {
     public void TriggerDeath(Player player)
     {
         Debug.Log("Player " + player.name + " has died");
+        state = State.ROUND_ENDING;
+        roundEndTimer = Time.time;
     }
 
     public void RegisterPlayer(Player player, NetworkIdentity id)
@@ -100,11 +94,16 @@ public class Game : MonoBehaviour {
     {
         return rounds;
     }
+    public int GetCurrentRound()
+    {
+        return currentRound;
+    }
 
     public bool IsHost()
     {
         return host;
     }
+
 
     public NetworkHandler GetNetworkHandler()
     {
@@ -119,6 +118,25 @@ public class Game : MonoBehaviour {
     public GameMode GetGameMode()
     {
         return gameMode;
+    }
+
+    public float GetRemainingRoundTime()
+    {
+        float remainingTime = maxRoundTime - (Time.time - roundStartTime);
+
+        if(state == State.FIGHTING || state == State.ROUND_ENDING)
+        {
+            return remainingTime;
+        } else
+        {
+            if (remainingTime <= 0) return 0;
+            return maxRoundTime;
+        }
+    }
+
+    public float GetRemainingCountDownTime()
+    {
+        return 6 - (Time.time - countDownTimer);
     }
 
 
@@ -195,21 +213,98 @@ public class Game : MonoBehaviour {
         //TODO Updates based on inputs and notifications - Biggest being death notfication
         switch (state)
         {
-            case State.FIGHTING:
-                break;
             case State.PAUSED:
+                //Need To Save Round Time
                 break;
+
             case State.STARTING:
+                Debug.Log("Now Starting a new Match!");
+                currentRound = 0;
+                spawnOpponents();
+                //Make sure all players are loaded
+                state = State.ROUND_BEGINING;
+                countDownTimer = Time.time;
                 break;
+
             case State.ROUND_BEGINING:
+                respawnOpponents();
+                if (GetRemainingCountDownTime() > 0) break;
+                currentRound++;
+                state = State.FIGHTING;
+                roundStartTime = Time.time;
                 break;
+
+            case State.FIGHTING:
+                if(Time.time >= roundStartTime + maxRoundTime)
+                {
+                    //Begin Round End
+                    
+                    state = State.ROUND_ENDING;
+                    roundEndTimer = Time.time;
+                }
+                break;
+
             case State.ROUND_ENDING:
+                if (Time.time - roundEndTimer < roundEndDelay) break;
+
+                if(currentRound >= rounds)
+                {
+                    state = State.COMPLETED;
+                } else
+                {
+                    state = State.ROUND_BEGINING;
+                    countDownTimer = Time.time;
+                }
                 break;
+
             case State.COMPLETED:
+                //Process any needed network transactions
+                state = State.SUMMARIZING;
                 break;
+
             case State.SUMMARIZING:
+                //Display Stats To Player and option to quit
+                //Temp Send To Match begining
                 break;
         }
+    }
+
+
+
+    private void spawnOpponents()
+    {
+        if(localP1 || localP2)
+        {
+            Destroy(localP1.GetComponent<GameObject>());
+            Destroy(localP2.GetComponent<GameObject>());
+        }
+        spawnP1 = GameObject.FindGameObjectWithTag("P1Spawn").GetComponent<Transform>();
+        spawnP2 = GameObject.FindGameObjectWithTag("P2Spawn").GetComponent<Transform>();
+        if (gameMode == GameMode.LOCALMULTIPLAYER)
+        {
+            //Spawn Players 1 and 2
+            GameObject p1 = Instantiate(playerPrefab, spawnP1.position, spawnP1.rotation);
+            localP1 = p1.GetComponent<Player>();
+            localP1.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player1Char));
+            GameObject p2 = Instantiate(playerPrefab, spawnP2.position, spawnP2.rotation);
+            localP2 = p2.GetComponent<Player>();
+            localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
+            Vector3 p2LS = p2.GetComponentInParent<Transform>().localScale;
+            p2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
+
+        }
+    }
+
+
+    private void respawnOpponents()
+    {
+        localP1.GetComponent<Transform>().position = spawnP1.position;
+        localP2.GetComponent<Transform>().position = spawnP2.position;
+        Vector3 p2LS = localP2.GetComponentInParent<Transform>().localScale;
+        localP2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
+
+        localP1.respawn();
+        localP2.respawn();
     }
     /*************************************************************************/
     public enum State

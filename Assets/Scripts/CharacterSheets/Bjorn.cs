@@ -6,10 +6,10 @@ public class Bjorn : Character {
 
     public Bjorn()
     {
-        this.health = 1000;
+        this.health = 100;
         this.strength = 10;
         this.defence = 10;
-        this.moveSpeed = 0.1f;
+        this.moveSpeed = 10;
         this.name = "Bjorn";
     }
 
@@ -26,7 +26,7 @@ public class Bjorn : Character {
 
     public override void MoveKick()
     {
-        throw new System.NotImplementedException();
+        player.foot.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
     public override void MovePunch()
@@ -34,9 +34,15 @@ public class Bjorn : Character {
         player.fist.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
+    public override void MoveBlock()
+    {
+        
+    }
+
     public override void MoveSpecial1()
     {
         throw new System.NotImplementedException();
+
     }
 
     public override void MoveSpecial2()

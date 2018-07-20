@@ -11,6 +11,7 @@ TagManager:
   - GlobalData
   - P1Spawn
   - P2Spawn
+  - Floor
   layers:
   - Default
   - TransparentFX

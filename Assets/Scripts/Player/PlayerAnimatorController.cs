@@ -70,7 +70,6 @@ public class PlayerAnimatorController : MonoBehaviour {
                 case ANIMATION_STATE.LOWKICK:
                     return true;
                 case ANIMATION_STATE.HIGHPUNCH:
-                    Debug.Log("I'm here yay");
                     playerAnimator.SetTrigger("PUNCHING");
                     return true;
                 case ANIMATION_STATE.HIGHKICK:

@@ -6,10 +6,10 @@ public class Doge : Character {
 
     public Doge()
     {
-        this.health = 500;
+        this.health = 90;
         this.strength = 10;
         this.defence = 10;
-        this.moveSpeed = 0.1f;
+        this.moveSpeed = 10;
         this.name = "Doge";
     }
 
@@ -27,9 +27,13 @@ public class Doge : Character {
 
     public override void MoveKick()
     {
-        throw new System.NotImplementedException();
+        player.foot.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
+    public override void MoveBlock()
+    {
+        
+    }
     public override void MovePunch()
     {
         player.fist.GetComponent<PlayerDamage>().TriggerEnable();
