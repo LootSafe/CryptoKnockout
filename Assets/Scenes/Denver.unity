@@ -5460,8 +5460,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 715940932}
-  - component: {fileID: 715940931}
-  - component: {fileID: 715940930}
   - component: {fileID: 715940933}
   m_Layer: 0
   m_Name: Reporter
@@ -5470,63 +5468,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &715940930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 715940929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6767a180de870304caa2013b2772dd62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &715940931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 715940929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 600c02144c4813244abd262cbcbe8825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  show: 0
-  UserData: 
-  fps: 0
-  fpsText: 
-  images:
-    clearImage: {fileID: 0}
-    collapseImage: {fileID: 0}
-    clearOnNewSceneImage: {fileID: 0}
-    showTimeImage: {fileID: 0}
-    showSceneImage: {fileID: 0}
-    userImage: {fileID: 0}
-    showMemoryImage: {fileID: 0}
-    softwareImage: {fileID: 0}
-    dateImage: {fileID: 0}
-    showFpsImage: {fileID: 0}
-    infoImage: {fileID: 0}
-    searchImage: {fileID: 0}
-    closeImage: {fileID: 0}
-    buildFromImage: {fileID: 0}
-    systemInfoImage: {fileID: 0}
-    graphicsInfoImage: {fileID: 0}
-    backImage: {fileID: 0}
-    logImage: {fileID: 0}
-    warningImage: {fileID: 0}
-    errorImage: {fileID: 0}
-    barImage: {fileID: 0}
-    button_activeImage: {fileID: 0}
-    even_logImage: {fileID: 0}
-    odd_logImage: {fileID: 0}
-    selectedImage: {fileID: 0}
-    reporterScrollerSkin: {fileID: 0}
-  size: {x: 32, y: 32}
-  maxSize: 20
-  numOfCircleToShow: 1
-  Initialized: 0
 --- !u!4 &715940932
 Transform:
   m_ObjectHideFlags: 0
