@@ -19,7 +19,7 @@ public class Revolver : MonoBehaviour
 
     private void Update()
     {
-        Radius = GetComponentInParent<RectTransform>().sizeDelta.x + 5;
+        Radius = GetComponentInParent<RectTransform>().sizeDelta.x - (GetComponent<RectTransform>().sizeDelta.x/2) ;
         _angle += RotateSpeed * Time.deltaTime;
 
         var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
