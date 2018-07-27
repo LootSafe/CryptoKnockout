@@ -9640,8 +9640,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.90005493, y: -246.54999}
-  m_SizeDelta: {x: 640.1, y: 379.2}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0.000015258789}
+  m_SizeDelta: {x: -0.000091553, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160891113
 MonoBehaviour:
@@ -10020,8 +10020,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6999512, y: 230.29996}
-  m_SizeDelta: {x: -638.3, y: -322.09998}
+  m_AnchoredPosition: {x: 0.7999115, y: -16.250076}
+  m_SizeDelta: {x: 1.8000183, y: 57.100037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515295777
 MonoBehaviour:
@@ -10067,7 +10067,7 @@ GameObject:
   - component: {fileID: 1564679338}
   - component: {fileID: 1564679337}
   m_Layer: 5
-  m_Name: Doge Particles (1)
+  m_Name: Doge Particles Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14710,8 +14710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6999512, y: 230.29996}
-  m_SizeDelta: {x: -638.3, y: -322.09998}
+  m_AnchoredPosition: {x: 0.7999115, y: -16.250076}
+  m_SizeDelta: {x: 1.8000183, y: 57.100037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1566200424
 MonoBehaviour:
@@ -19721,7 +19721,7 @@ GameObject:
   - component: {fileID: 2019229231}
   - component: {fileID: 2019229230}
   m_Layer: 5
-  m_Name: Doge Particles
+  m_Name: Doge Particles Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
