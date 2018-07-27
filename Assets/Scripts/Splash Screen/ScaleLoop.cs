@@ -23,7 +23,6 @@ public class ScaleLoop : MonoBehaviour
     void Update()
     {
         float multiplier = (maxMultiplier - minMultiplier) * Mathf.Sin(Time.time) + minMultiplier;
-        Debug.Log(" Angled - " + multiplier + " Range:" + (maxMultiplier - minMultiplier) + " sin" + Mathf.Sin(Time.time));
         GetComponent<RectTransform>().sizeDelta = new Vector2(orgSize.x * multiplier, orgSize.y * multiplier);
     }
 }

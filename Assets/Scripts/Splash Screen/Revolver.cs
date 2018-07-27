@@ -8,17 +8,17 @@ public class Revolver : MonoBehaviour
 
     private float RotateSpeed = 5f;
     private float Radius = 20f;
-
+    public RectTransform centerObject;
     private Vector2 _centre;
     private float _angle;
 
     private void Start()
     {
-        _centre = GetComponent<RectTransform>().position;
     }
 
     private void Update()
     {
+        _centre = centerObject.position;
         Radius = GetComponentInParent<RectTransform>().sizeDelta.x - (GetComponent<RectTransform>().sizeDelta.x/2) ;
         _angle += RotateSpeed * Time.deltaTime;
 
