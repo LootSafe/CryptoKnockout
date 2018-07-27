@@ -12,6 +12,7 @@ TagManager:
   - P1Spawn
   - P2Spawn
   - Floor
+  - BackgroundMarkers
   layers:
   - Default
   - TransparentFX
