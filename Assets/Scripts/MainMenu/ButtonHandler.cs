@@ -5,14 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class ButtonHandler : MonoBehaviour {
 
+    bool escapeLock;
 	// Use this for initialization
 	void Start () {
-		
+        escapeLock = false;		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        //Escape Key Handling
+        if (Input.GetAxis("Cancel") != 0 && !escapeLock)
+        {
+            escapeLock = true;
+            SceneManager.LoadScene("Intro Screen");
+        } else
+        {
+            escapeLock = false;
+        }
 	}
 
     public void BtnLocalPlay()
