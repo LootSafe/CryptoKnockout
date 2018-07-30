@@ -4769,10 +4769,10 @@ RectTransform:
   m_Father: {fileID: 1992923981}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 7.85, y: 363}
-  m_SizeDelta: {x: 1512.6, y: 726}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 7.850006, y: 85}
+  m_SizeDelta: {x: 392.59998, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143196552
 MonoBehaviour:
@@ -4842,7 +4842,7 @@ GameObject:
   - component: {fileID: 186538450}
   - component: {fileID: 186538449}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5083,10 +5083,10 @@ RectTransform:
   m_Father: {fileID: 245185014}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 28.393002}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.8, y: 61.6}
-  m_SizeDelta: {x: 15.89, y: 9.61}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -26.799988, y: 61.6}
+  m_SizeDelta: {x: -668.11, y: -244.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &556160279
 ParticleSystemRenderer:
@@ -9705,10 +9705,10 @@ RectTransform:
   m_Father: {fileID: 245185014}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -150.09201}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.9, y: -46.8}
-  m_SizeDelta: {x: 15.89, y: 9.61}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 35.899994, y: -46.800003}
+  m_SizeDelta: {x: -668.11, y: -244.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &933587827
 ParticleSystemRenderer:
@@ -14475,6 +14475,7 @@ MonoBehaviour:
   speed: 0.0001
   maxMultiplier: 1.2
   minMultiplier: 0.98
+  randomize: 0
 --- !u!1 &1208258723
 GameObject:
   m_ObjectHideFlags: 0
@@ -29002,6 +29003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerObject: {fileID: 186538448}
+  overrideRadius: 0
 --- !u!114 &1768788606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29218,6 +29220,7 @@ MonoBehaviour:
   speed: 0.0001
   maxMultiplier: 1.1
   minMultiplier: 0.98
+  randomize: 0
 --- !u!1 &2019229228
 GameObject:
   m_ObjectHideFlags: 0
