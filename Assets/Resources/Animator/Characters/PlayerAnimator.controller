@@ -75,15 +75,15 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!206 &206234557198696440
+--- !u!206 &206624532278212226
 BlendTree:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Blend Tree
   m_Childs: []
-  m_BlendParameter: Blend
-  m_BlendParameterY: Blend
+  m_BlendParameter: speed
+  m_BlendParameterY: speed
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -574,31 +574,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102201377667514754
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Blend Tree
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 206234557198696440}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &1102256358805956294
 AnimatorState:
   serializedVersion: 5
@@ -787,13 +762,13 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102877301319319258
+--- !u!1102 &1102838260655090692
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Doge_Punch
+  m_Name: Blend Tree 0
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -806,7 +781,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 94d1454ff67aaf440b21c86cfc91c4f6, type: 2}
+  m_Motion: {fileID: 206624532278212226}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -936,11 +911,8 @@ AnimatorStateMachine:
     m_State: {fileID: 1102155395070807616}
     m_Position: {x: 816, y: -840, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102201377667514754}
-    m_Position: {x: 2099.331, y: -1926.6001, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102877301319319258}
-    m_Position: {x: 2134.331, y: -1861.6001, z: 0}
+    m_State: {fileID: 1102838260655090692}
+    m_Position: {x: 372.37024, y: -751.7717, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
