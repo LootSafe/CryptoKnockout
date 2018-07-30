@@ -11,6 +11,7 @@ public class Revolver : MonoBehaviour
     public RectTransform centerObject;
     private Vector2 _centre;
     private float _angle;
+    public float overrideRadius = 0;
 
     private void Start()
     {
@@ -20,6 +21,10 @@ public class Revolver : MonoBehaviour
     {
         _centre = centerObject.position;
         Radius = GetComponentInParent<RectTransform>().sizeDelta.x - (GetComponent<RectTransform>().sizeDelta.x/2) ;
+        if(overrideRadius!= 0)
+        {
+            Radius = overrideRadius;
+        }
         _angle += RotateSpeed * Time.deltaTime;
 
         var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;

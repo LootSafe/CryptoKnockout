@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class ScaleLoop : MonoBehaviour
+public class Oscillator : MonoBehaviour
 {
 
     public float speed = 0.0001f;
@@ -10,15 +10,16 @@ public class ScaleLoop : MonoBehaviour
     public float maxMultiplier = 1.5f;
     public float minMultiplier = 0.9f;
     public bool randomize;
-    private  Vector2 orgSize;
+    private Vector2 orgPos;
     private RectTransform rect;
     private float randomFactor;
-    
+    public float frequency;
+
 
     void Start()
     {
         rect = GetComponent<RectTransform>();
-        orgSize = rect.sizeDelta;
+        orgPos = rect.position;
         if (randomize)
         {
             randomFactor = Random.Range(0.1f, 1f);
@@ -29,7 +30,7 @@ public class ScaleLoop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float multiplier = (maxMultiplier - minMultiplier) * Mathf.Sin(Time.time + randomFactor) + minMultiplier;
-        GetComponent<RectTransform>().sizeDelta = new Vector2(orgSize.x * multiplier, orgSize.y * multiplier);
+        float multiplier = (maxMultiplier - minMultiplier) * Mathf.Sin(frequency * Time.time + randomFactor) + minMultiplier;
+        GetComponent<RectTransform>().position = new Vector2(orgPos.x, orgPos.y * multiplier);
     }
 }
