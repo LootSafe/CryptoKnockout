@@ -13,6 +13,7 @@ public class ScaleLoop : MonoBehaviour
     private  Vector2 orgSize;
     private RectTransform rect;
     private float randomFactor;
+    public float frequency = 1;
     
 
     void Start()
@@ -29,7 +30,7 @@ public class ScaleLoop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float multiplier = (maxMultiplier - minMultiplier) * Mathf.Sin(Time.time + randomFactor) + minMultiplier;
+        float multiplier = (maxMultiplier - minMultiplier) * Mathf.Sin(frequency * Time.time + randomFactor) + minMultiplier;
         GetComponent<RectTransform>().sizeDelta = new Vector2(orgSize.x * multiplier, orgSize.y * multiplier);
     }
 }
