@@ -31,7 +31,6 @@ public class Tilter : MonoBehaviour
     void Update()
     {
         float multiplier = (maxMultiplier - minMultiplier) * Mathf.Sin(frequency * Time.time + randomFactor);
-        Debug.Log("" + Mathf.Sin(frequency * Time.time + randomFactor) + minMultiplier);
         GetComponent<RectTransform>().rotation = new Quaternion(rect.rotation.x, rect.rotation.y, orgAngle.z + multiplier, rect.rotation.w);
     }
 }
