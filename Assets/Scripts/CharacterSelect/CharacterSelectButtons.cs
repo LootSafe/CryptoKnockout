@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CharacterSelectButtons : MonoBehaviour {
-
+    public RectTransform reticule;
+    private bool selected;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,13 +16,17 @@ public class CharacterSelectButtons : MonoBehaviour {
 		
 	}
 
-    public void BtnBack()
+    void OnMouseEnter()
     {
-        SceneManager.LoadScene("MainMenu");
+        selected = true;
+    }
+    void OnMouseExit()
+    {
+        selected = false;
     }
 
-    public void BtnPlay()
+    void OnClick()
     {
-        SceneManager.LoadScene("Denver");
+        Debug.Log("Clicked");
     }
 }
