@@ -27,7 +27,7 @@ public class MapSelectHandler : MonoBehaviour
     public StandaloneInputModule p1;
     public StandaloneInputModule p2;
 
-    GlobalGameData data;
+    public GlobalGameData data;
 
     void Start()
     {
@@ -37,6 +37,7 @@ public class MapSelectHandler : MonoBehaviour
     void Update()
     {
 
+        if (!data)data = GlobalGameData.GetInstance();
         if (!e.currentSelectedGameObject)
         {
             selected = false;
@@ -85,6 +86,7 @@ public class MapSelectHandler : MonoBehaviour
                 if (e.currentSelectedGameObject.GetComponent<MapSelectButton>())
                 {
                     selectedMap = e.currentSelectedGameObject;
+                    data.selectedLevel = selectedMap.GetComponent<MapSelectButton>().sceneName;
                     
                 }
             }
@@ -118,7 +120,7 @@ public class MapSelectHandler : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene("MapSelect");
+        SceneManager.LoadScene(data.selectedLevel);
     }
 
 
