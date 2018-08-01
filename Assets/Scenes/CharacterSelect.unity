@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -127.1, y: -232.53}
+  m_AnchoredPosition: {x: -127.099976, y: -232.53}
   m_SizeDelta: {x: 150, y: 215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439963686
@@ -739,13 +739,13 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 643342942}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: BtnPlay
+      - m_Target: {fileID: 1331916346}
+        m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1049,8 +1049,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: BtnBack
+      - m_Target: {fileID: 1331916346}
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1755,6 +1755,7 @@ MonoBehaviour:
   lastSelection: {fileID: 0}
   p1Selection: {fileID: 0}
   p2Selection: {fileID: 0}
+  nextSceneButton: {fileID: 643342941}
   reticule: {fileID: 2085779199}
   state: 0
   p1: {fileID: 1331916347}
@@ -1861,7 +1862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 20.699997}
+  m_AnchoredPosition: {x: 0, y: 20.700012}
   m_SizeDelta: {x: 235, y: 142}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1334567590

@@ -18,6 +18,8 @@ public class InputHandler : MonoBehaviour {
     public GameObject p1Selection;
     public GameObject p2Selection;
 
+    public Button nextSceneButton;
+
     public RectTransform reticule;
     public State state;
     string stateName = "";
@@ -106,9 +108,11 @@ public class InputHandler : MonoBehaviour {
                         break;
                     case State.p2:
                         p2Selection = e.currentSelectedGameObject;
+                        nextSceneButton.interactable = true;
                         state = State.done;
                         break;
                     case State.done:
+                        NextScene();
                         break;
                     default:
                         state = State.p1;
@@ -130,13 +134,14 @@ public class InputHandler : MonoBehaviour {
                 switch (state)
                 {
                     case State.p1:
-                        SceneManager.LoadScene("MainMenu");
+                        Back();
                         break;
                     case State.p2:
                         state = State.p1;
                         break;
                     case State.done:
                         state = State.p2;
+                        nextSceneButton.interactable = false;
                         break;
                     default:
                         state = State.p1;
@@ -152,12 +157,12 @@ public class InputHandler : MonoBehaviour {
 
     }
 
-    void Back()
+    public void Back()
     {
-
+        SceneManager.LoadScene("MainMenu");
     }
 
-    void NextScene()
+    public void NextScene()
     {
         SceneManager.LoadScene("MapSelect");
     }
