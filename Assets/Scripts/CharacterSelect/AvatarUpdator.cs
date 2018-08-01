@@ -22,7 +22,7 @@ public class AvatarUpdator : MonoBehaviour {
         {
             if (p1Selection)
             {
-                Sprite sprite = p1Selection.GetComponent<CharacterSelectButtons>().avatar;
+                Sprite sprite = p1Selection.GetComponent<CharacterSelectButtons>().avatar_left;
                 GetComponent<Image>().sprite = sprite;
                 
             }
@@ -31,7 +31,7 @@ public class AvatarUpdator : MonoBehaviour {
         {
             if (p2Selection)
             {
-                Sprite sprite = p2Selection.GetComponent<CharacterSelectButtons>().avatar;
+                Sprite sprite = p2Selection.GetComponent<CharacterSelectButtons>().avatar_right;
                 GetComponent<Image>().sprite = sprite;
             }
         }

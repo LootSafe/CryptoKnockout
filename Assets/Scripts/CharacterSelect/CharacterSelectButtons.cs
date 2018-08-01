@@ -8,7 +8,8 @@ public class CharacterSelectButtons : MonoBehaviour {
     public RectTransform reticule;
     private bool selected;
     Button button;
-    public Sprite avatar;
+    public Sprite avatar_left;
+    public Sprite avatar_right;
 	// Use this for initialization
 	void Start () {
 		
