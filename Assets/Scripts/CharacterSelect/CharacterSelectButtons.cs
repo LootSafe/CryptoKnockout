@@ -8,6 +8,7 @@ public class CharacterSelectButtons : MonoBehaviour {
     public RectTransform reticule;
     private bool selected;
     Button button;
+    public Sprite avatar;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,6 +16,7 @@ public class CharacterSelectButtons : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	}
 
     void OnMouseEnter()

@@ -122,7 +122,7 @@ public class InputHandler : MonoBehaviour {
             submitLock = false;
         }
 
-        if (Input.GetAxis("Cancel") > 0 && !cancelLock)
+        if (Input.GetAxis(stateName + "Kick") > 0 && !cancelLock)
         {
             cancelLock = true;
 
@@ -145,7 +145,8 @@ public class InputHandler : MonoBehaviour {
                         break;
                 }
             }
-        } else
+        }
+        else
         {
             cancelLock = false;
         }
