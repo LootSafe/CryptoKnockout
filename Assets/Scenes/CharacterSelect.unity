@@ -381,20 +381,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114905106244093888, guid: cc49246cd603d5e4185ee4b8beccc98f,
+    - target: {fileID: 114507366520482692, guid: cc49246cd603d5e4185ee4b8beccc98f,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: reticule
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1808903156169858, guid: cc49246cd603d5e4185ee4b8beccc98f, type: 2}
-      propertyPath: m_Name
-      value: CharacterButton3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905106244093888, guid: cc49246cd603d5e4185ee4b8beccc98f,
-        type: 2}
-      propertyPath: m_Navigation.m_Mode
-      value: 4
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2085779199}
     - target: {fileID: 114905106244093888, guid: cc49246cd603d5e4185ee4b8beccc98f,
         type: 2}
       propertyPath: m_Navigation.m_SelectOnUp
@@ -415,6 +406,10 @@ Prefab:
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
       objectReference: {fileID: 289793307}
+    - target: {fileID: 1808903156169858, guid: cc49246cd603d5e4185ee4b8beccc98f, type: 2}
+      propertyPath: m_Name
+      value: CharacterButton3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc49246cd603d5e4185ee4b8beccc98f, type: 2}
   m_IsPrefabParent: 0
@@ -645,6 +640,11 @@ Prefab:
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
       objectReference: {fileID: 1657828382}
+    - target: {fileID: 114507366520482692, guid: cc49246cd603d5e4185ee4b8beccc98f,
+        type: 2}
+      propertyPath: reticule
+      value: 
+      objectReference: {fileID: 2085779199}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc49246cd603d5e4185ee4b8beccc98f, type: 2}
   m_IsPrefabParent: 0
@@ -1700,6 +1700,7 @@ GameObject:
   - component: {fileID: 1331916349}
   - component: {fileID: 1331916348}
   - component: {fileID: 1331916347}
+  - component: {fileID: 1331916350}
   - component: {fileID: 1331916346}
   m_Layer: 0
   m_Name: EventSystem
@@ -1720,6 +1721,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedObject: {fileID: 1641656969}
+  lastSelection: {fileID: 0}
+  p1Selection: {fileID: 0}
+  p2Selection: {fileID: 0}
+  reticule: {fileID: 2085779199}
+  p1: {fileID: 1331916347}
+  p2: {fileID: 1331916350}
 --- !u!114 &1331916347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1731,10 +1738,10 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
+  m_HorizontalAxis: P1_Horizontal
+  m_VerticalAxis: P1_Vertical
+  m_SubmitButton: P1_Punch
+  m_CancelButton: P1_Kick
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 1
@@ -1765,6 +1772,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1331916350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1331916345}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: P2_Horizontal
+  m_VerticalAxis: P2_Vertical
+  m_SubmitButton: P2_Punch
+  m_CancelButton: P2_Kick
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 1
 --- !u!114 &1333646934 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114905106244093888, guid: cc49246cd603d5e4185ee4b8beccc98f,
@@ -2021,23 +2046,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1018823852}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &1657828378 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1808903156169858, guid: cc49246cd603d5e4185ee4b8beccc98f,
-    type: 2}
-  m_PrefabInternal: {fileID: 571284586}
---- !u!114 &1657828379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1657828378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e013ccba8aee9d4ea9e4f21e87c9790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reticule: {fileID: 0}
 --- !u!114 &1657828382 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114905106244093888, guid: cc49246cd603d5e4185ee4b8beccc98f,
@@ -2482,7 +2490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2085779199
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2715,7 +2723,7 @@ Prefab:
         type: 2}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
-      objectReference: {fileID: 900000284}
+      objectReference: {fileID: 874646973}
     - target: {fileID: 114905106244093888, guid: cc49246cd603d5e4185ee4b8beccc98f,
         type: 2}
       propertyPath: m_Navigation.m_SelectOnUp

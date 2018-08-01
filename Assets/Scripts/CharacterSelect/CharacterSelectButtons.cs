@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterSelectButtons : MonoBehaviour {
     public RectTransform reticule;
     private bool selected;
+    Button button;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,7 +15,6 @@ public class CharacterSelectButtons : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
     void OnMouseEnter()
@@ -29,4 +30,6 @@ public class CharacterSelectButtons : MonoBehaviour {
     {
         Debug.Log("Clicked");
     }
+
+    
 }
