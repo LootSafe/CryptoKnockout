@@ -34,6 +34,8 @@ public class InputHandler : MonoBehaviour {
     {
         e = GetComponent<EventSystem>();
         state = State.p1;
+        e.SetSelectedGameObject(selectedObject);
+        
     }
 	// Update is called once per frame
 	void Update () {
@@ -56,13 +58,12 @@ public class InputHandler : MonoBehaviour {
                 p2.enabled = false;
                 break;
         }
-        
         if (!e.currentSelectedGameObject)
         {
             selected = false;
         }
         //Activate Selection
-        if((Input.GetAxisRaw(stateName + "Vertical") != 0 || Input.GetAxisRaw(stateName + "Horizontal") != 0) && !selected)
+        if(!e.currentSelectedGameObject && (Input.GetAxisRaw(stateName + "Vertical") != 0 || Input.GetAxisRaw(stateName + "Horizontal") != 0) && !selected)
         {
             e.SetSelectedGameObject(selectedObject);
             reticule.gameObject.SetActive(true);
@@ -117,14 +118,20 @@ public class InputHandler : MonoBehaviour {
                 {
                     case State.p1:
                         p1Selection = e.currentSelectedGameObject;
-                        data.player1Char = p1Selection.GetComponent<CharacterSelectButtons>().character;
-                        state = State.p2;
+                        if (p1Selection.GetComponent<Button>().IsInteractable())
+                        {
+                            data.player1Char = p1Selection.GetComponent<CharacterSelectButtons>().character;
+                            state = State.p2;
+                        }
                         break;
                     case State.p2:
                         p2Selection = e.currentSelectedGameObject;
-                        data.player2Char = p2Selection.GetComponent<CharacterSelectButtons>().character;
-                        nextSceneButton.interactable = true;
-                        state = State.done;
+                        if (p2Selection.GetComponent<Button>().IsInteractable())
+                        {
+                            data.player2Char = p2Selection.GetComponent<CharacterSelectButtons>().character;
+                            nextSceneButton.interactable = true;
+                            state = State.done;
+                        }
                         break;
                     case State.done:
                         NextScene();
