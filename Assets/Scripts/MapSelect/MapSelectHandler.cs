@@ -32,6 +32,7 @@ public class MapSelectHandler : MonoBehaviour
     void Start()
     {
         e = GetComponent<EventSystem>();
+        e.SetSelectedGameObject(selectedObject);
     }
     // Update is called once per frame
     void Update()

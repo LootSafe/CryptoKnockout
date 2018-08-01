@@ -118,12 +118,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224907105566283288, guid: 59988e59063d520458958561b518d3ec,
     type: 2}
   m_PrefabInternal: {fileID: 1889122608}
---- !u!114 &241077674 stripped
+--- !u!114 &241077673 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114182088230015320, guid: 59988e59063d520458958561b518d3ec,
+  m_PrefabParentObject: {fileID: 114464480409358080, guid: 59988e59063d520458958561b518d3ec,
     type: 2}
   m_PrefabInternal: {fileID: 1025326256}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &439963684
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,16 +462,6 @@ Prefab:
       propertyPath: m_Name
       value: MapButton (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114464480409358080, guid: 59988e59063d520458958561b518d3ec,
-        type: 2}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114464480409358080, guid: 59988e59063d520458958561b518d3ec,
-        type: 2}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 1065863482}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59988e59063d520458958561b518d3ec, type: 2}
   m_IsPrefabParent: 0
@@ -610,9 +600,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 241077673}
+    m_SelectOnDown: {fileID: 1065863481}
     m_SelectOnLeft: {fileID: 742421038}
     m_SelectOnRight: {fileID: 742421038}
   m_Transition: 2
@@ -821,9 +811,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 1641656971}
+    m_SelectOnDown: {fileID: 1641656971}
     m_SelectOnLeft: {fileID: 643342941}
     m_SelectOnRight: {fileID: 643342941}
   m_Transition: 2
@@ -1300,7 +1290,7 @@ Prefab:
         type: 2}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 241077674}
+      objectReference: {fileID: 1518330186}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59988e59063d520458958561b518d3ec, type: 2}
   m_IsPrefabParent: 0
@@ -1309,11 +1299,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224907105566283288, guid: 59988e59063d520458958561b518d3ec,
     type: 2}
   m_PrefabInternal: {fileID: 1025326256}
---- !u!114 &1065863482 stripped
+--- !u!114 &1065863481 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114182088230015320, guid: 59988e59063d520458958561b518d3ec,
+  m_PrefabParentObject: {fileID: 114464480409358080, guid: 59988e59063d520458958561b518d3ec,
     type: 2}
   m_PrefabInternal: {fileID: 551237964}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1078062069 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114226850372423376, guid: 59988e59063d520458958561b518d3ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1889122608}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1331916345
 GameObject:
@@ -1416,11 +1412,23 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 1
+--- !u!114 &1518330186 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114226850372423376, guid: 59988e59063d520458958561b518d3ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1025326256}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1641656969 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1709892777127542, guid: 59988e59063d520458958561b518d3ec,
     type: 2}
   m_PrefabInternal: {fileID: 1889122608}
+--- !u!114 &1641656971 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114464480409358080, guid: 59988e59063d520458958561b518d3ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1889122608}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1867013909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,6 +1610,16 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: d759c824c4a96ce47877e582e1a03f8d,
         type: 3}
+    - target: {fileID: 114464480409358080, guid: 59988e59063d520458958561b518d3ec,
+        type: 2}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 1078062069}
+    - target: {fileID: 114464480409358080, guid: 59988e59063d520458958561b518d3ec,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59988e59063d520458958561b518d3ec, type: 2}
   m_IsPrefabParent: 0
