@@ -11,18 +11,20 @@ public class AvatarUpdator : MonoBehaviour {
     GameObject p1Selection, p2Selection;
 	// Use this for initialization
 	void Start () {
-        p1Selection = inputHandler.p1Selection;
-        p2Selection = inputHandler.p2Selection;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(playerNumber == 1)
+        p1Selection = inputHandler.p1Selection;
+        p2Selection = inputHandler.p2Selection;
+        if (playerNumber == 1)
         {
             if (p1Selection)
             {
                 Sprite sprite = p1Selection.GetComponent<CharacterSelectButtons>().avatar;
                 GetComponent<Image>().sprite = sprite;
+                
             }
         }
         else if(playerNumber == 2)
