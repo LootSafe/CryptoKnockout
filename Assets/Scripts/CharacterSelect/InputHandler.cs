@@ -97,6 +97,17 @@ public class InputHandler : MonoBehaviour {
 
     public void UpdateSelection()
     {
+        switch (state)
+        {
+            case State.p1:
+                p1Selection = e.currentSelectedGameObject;
+                break;
+            case State.p2:
+                p2Selection = e.currentSelectedGameObject;
+                break;
+        }
+
+
         if (Input.GetAxisRaw(stateName + "Punch") != 0)
         {
             if (!submitLock)
