@@ -95,7 +95,6 @@ public class InputHandler : MonoBehaviour {
     {
         if (Input.GetAxisRaw(stateName + "Punch") != 0)
         {
-            Debug.Log("Submitted");
             if (!submitLock)
             {
                 submitLock = true;
@@ -124,7 +123,6 @@ public class InputHandler : MonoBehaviour {
 
         if (Input.GetAxis(stateName + "Kick") > 0 && !cancelLock)
         {
-            cancelLock = true;
 
             if (!cancelLock)
             {

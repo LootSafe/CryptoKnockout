@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterSelectButtons : MonoBehaviour {
-    public RectTransform reticule;
     private bool selected;
     Button button;
     public Sprite avatar_left;
