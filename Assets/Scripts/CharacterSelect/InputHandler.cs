@@ -28,6 +28,8 @@ public class InputHandler : MonoBehaviour {
     public StandaloneInputModule p1;
     public StandaloneInputModule p2;
 
+    GlobalGameData data;
+
     void Start()
     {
         e = GetComponent<EventSystem>();
@@ -35,7 +37,7 @@ public class InputHandler : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-        
+        if (!data) data = GlobalGameData.GetInstance();
         switch (state)
         {
             case State.p1:
@@ -104,10 +106,12 @@ public class InputHandler : MonoBehaviour {
                 {
                     case State.p1:
                         p1Selection = e.currentSelectedGameObject;
+                        data.player1Char = p1Selection.GetComponent<CharacterSelectButtons>().character;
                         state = State.p2;
                         break;
                     case State.p2:
                         p2Selection = e.currentSelectedGameObject;
+                        data.player2Char = p2Selection.GetComponent<CharacterSelectButtons>().character;
                         nextSceneButton.interactable = true;
                         state = State.done;
                         break;
