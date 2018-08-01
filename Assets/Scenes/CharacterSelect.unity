@@ -2763,6 +2763,18 @@ Prefab:
       propertyPath: character
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114507366520482692, guid: cc49246cd603d5e4185ee4b8beccc98f,
+        type: 2}
+      propertyPath: avatar_left
+      value: 
+      objectReference: {fileID: 21300000, guid: 71021647e1c534943900b0080765a719,
+        type: 3}
+    - target: {fileID: 114507366520482692, guid: cc49246cd603d5e4185ee4b8beccc98f,
+        type: 2}
+      propertyPath: avatar_right
+      value: 
+      objectReference: {fileID: 21300000, guid: c2bc177611e3e6544b4cb0c644fd937f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc49246cd603d5e4185ee4b8beccc98f, type: 2}
   m_IsPrefabParent: 0
