@@ -19,7 +19,8 @@ public class InputHandler : MonoBehaviour {
     public GameObject p2Selection;
 
     public RectTransform reticule;
-    private State state;
+    public State state;
+    string stateName = "";
     EventSystem e;
 
     public StandaloneInputModule p1;
@@ -28,10 +29,11 @@ public class InputHandler : MonoBehaviour {
     void Start()
     {
         e = GetComponent<EventSystem>();
+        state = State.p1;
     }
 	// Update is called once per frame
 	void Update () {
-        string stateName = "";
+        
         switch (state)
         {
             case State.p1:
@@ -91,8 +93,9 @@ public class InputHandler : MonoBehaviour {
 
     public void UpdateSelection()
     {
-        if (Input.GetAxisRaw("Submit") != 0)
+        if (Input.GetAxisRaw(stateName + "Punch") != 0)
         {
+            Debug.Log("Submitted");
             if (!submitLock)
             {
                 submitLock = true;
@@ -108,6 +111,9 @@ public class InputHandler : MonoBehaviour {
                         break;
                     case State.done:
                         break;
+                    default:
+                        state = State.p1;
+                    break;
                 }
             }
         }
@@ -134,6 +140,9 @@ public class InputHandler : MonoBehaviour {
                     case State.done:
                         state = State.p2;
                         break;
+                    default:
+                        state = State.p1;
+                        break;
                 }
             }
         } else
@@ -154,7 +163,7 @@ public class InputHandler : MonoBehaviour {
         SceneManager.LoadScene("MapSelect");
     }
 
-    enum State
+    public enum State
     {
         p1 = 1,
         p2 = 2,

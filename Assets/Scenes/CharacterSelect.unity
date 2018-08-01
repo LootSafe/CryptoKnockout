@@ -1725,6 +1725,7 @@ MonoBehaviour:
   p1Selection: {fileID: 0}
   p2Selection: {fileID: 0}
   reticule: {fileID: 2085779199}
+  state: 0
   p1: {fileID: 1331916347}
   p2: {fileID: 1331916350}
 --- !u!114 &1331916347
