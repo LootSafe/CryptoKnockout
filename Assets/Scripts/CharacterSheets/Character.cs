@@ -66,6 +66,7 @@ public abstract class Character {
         BJORN,
         BITCOINBOY,
         DOGE,
+        ETHBOY,
         MONERO
     }
 
