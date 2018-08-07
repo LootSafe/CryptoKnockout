@@ -10640,9 +10640,9 @@ MonoBehaviour:
   arrivedDistance: 0.1
   speed: 0.05
   sprite: {fileID: 783755326}
-  pauseFrequency: 0.2
-  pauseTimeMin: 0.1
-  pauseTimeMax: 2
+  pauseFrequency: 0.1
+  pauseTimeMin: 1
+  pauseTimeMax: 3
   pauseWaitMin: 2
   pauseWaitMax: 4
 --- !u!1 &952017387
