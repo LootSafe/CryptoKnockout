@@ -20,7 +20,7 @@ public class EthBot : Character {
 
     public override AnimatorOverrideController GetAnimationController()
     {
-        AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/Doge", typeof(AnimatorOverrideController));
+        AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/EthBot", typeof(AnimatorOverrideController));
         
         return p;
     }

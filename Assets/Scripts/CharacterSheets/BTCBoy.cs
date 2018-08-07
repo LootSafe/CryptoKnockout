@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BitcoinBoy : Character {
+public class BTCBoy : Character {
 
-    public BitcoinBoy()
+    public BTCBoy()
     {
         this.health = 90;
         this.strength = 10;
         this.defence = 10;
         this.moveSpeed = 10;
-        this.name = "Doge";
+        this.name = "Bitcoin Boy";
     }
 
     public override float CalculateDamage(float damage)
@@ -20,7 +20,7 @@ public class BitcoinBoy : Character {
 
     public override AnimatorOverrideController GetAnimationController()
     {
-        AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/Doge", typeof(AnimatorOverrideController));
+        AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/BTCBoy", typeof(AnimatorOverrideController));
         
         return p;
     }
