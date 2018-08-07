@@ -89,8 +89,6 @@ public class HorseGallop : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Moving");
-
             transform.position = new Vector2(transform.position.x + (speed * direction), transform.position.y);
         }
     }
