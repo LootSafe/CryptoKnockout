@@ -3,7 +3,7 @@
 --- !u!221 &22100000
 AnimatorOverrideController:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Doge
   m_Controller: {fileID: 9100000, guid: bb2a6cd947ba1ce4391a7be9cfcdb15f, type: 2}
@@ -16,3 +16,7 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: 7400000, guid: 904fd865095d3c040a2b264c359c4bba, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: e962e2098a32af44e804d28bfa7ec991, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 1300e414693621a48aa92e807b74ec23, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 802cacaaa368ab94f9072b9e44952445, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5045bd284a3fc0e48a45b5219ffcd136, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8a1d9e28f1ed1f5459c09458ad323106, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4eb888f7d26d8db4c866382874326ab9, type: 2}
