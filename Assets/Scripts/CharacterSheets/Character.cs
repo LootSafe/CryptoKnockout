@@ -78,6 +78,10 @@ public abstract class Character {
                 return new Bjorn();
             case Characters.DOGE:
                 return new Doge();
+            case Characters.ETHBOT:
+                return new EthBot();
+            case Characters.BITCOINBOY:
+                return new BTCBoy();
             default:
                 return new Doge();
         }
