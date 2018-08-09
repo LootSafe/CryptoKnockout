@@ -45,4 +45,9 @@ public class LaserRandomScript : MonoBehaviour {
             }
         }
 	}
+
+    void getTarget()
+    {
+
+    }
 }

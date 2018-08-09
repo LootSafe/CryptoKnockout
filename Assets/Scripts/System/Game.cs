@@ -174,6 +174,32 @@ public class Game : MonoBehaviour {
         return result;
     }
 
+    public Player[] GetPlayers()
+    {
+        Player[] p;
+        if (gameMode == GameMode.LOCALMULTIPLAYER)
+        {
+            p = new Player[2];
+            p[0] = localP1;
+            p[1] = localP2;
+        }
+        else
+        {
+            GameObject tempPlayer;
+            int i = 0;
+            p = new Player[networkGameData.networkPlayers.Count];
+            foreach(NetworkGameData.PlayerRecord playerRecord in networkGameData.networkPlayers)
+            {
+                tempPlayer = ClientScene.FindLocalObject(playerRecord.id.netId);
+                p[i] = tempPlayer.GetComponent<Player>();
+                i++;
+
+            }
+        }
+        return p;
+        
+    }
+
     public int GetNumberOfPlayers()
     {
         if (gameMode == GameMode.LOCALMULTIPLAYER) return 2;
