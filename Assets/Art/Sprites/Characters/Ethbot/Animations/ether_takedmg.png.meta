@@ -118,34 +118,14 @@ TextureImporter:
         y: 3946
         width: 653
         height: 2008
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: e51e4f728ba88ec428e66778ef1afb23
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_takedmg_1
-      rect:
-        serializedVersion: 2
-        x: 1439
-        y: 5175
-        width: 291
-        height: 324
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ede943bfd0d665e4aa52eb57384b2a71
       vertices: []
       indices: 
       edges: []
@@ -158,8 +138,8 @@ TextureImporter:
         y: 3946
         width: 1094
         height: 1971
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,8 +158,8 @@ TextureImporter:
         y: 646
         width: 1081
         height: 1966
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -198,8 +178,8 @@ TextureImporter:
         y: 646
         width: 1119
         height: 1971
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

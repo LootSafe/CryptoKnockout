@@ -118,34 +118,14 @@ TextureImporter:
         y: 4004
         width: 912
         height: 2027
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 1dc939219be0df34db04af3129e41c6f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_kick_1
-      rect:
-        serializedVersion: 2
-        x: 3065
-        y: 5297
-        width: 32
-        height: 35
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 047c3d4ae05f4664dae708c458ac3b58
       vertices: []
       indices: 
       edges: []
@@ -158,8 +138,8 @@ TextureImporter:
         y: 4111
         width: 1088
         height: 1891
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,11 +155,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 683
-        y: 807
+        y: 799
         width: 1310
         height: 1901
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -198,8 +178,8 @@ TextureImporter:
         y: 811
         width: 1096
         height: 1901
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

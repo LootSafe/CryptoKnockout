@@ -118,12 +118,12 @@ TextureImporter:
       name: ether_knockout_0
       rect:
         serializedVersion: 2
-        x: 2176
+        x: 2164
         y: 7243
         width: 908
         height: 2009
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,8 +142,8 @@ TextureImporter:
         y: 7278
         width: 1086
         height: 2128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,34 +162,14 @@ TextureImporter:
         y: 7308
         width: 1279
         height: 2006
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: f9810d91ac8e1134da76f78998943138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_knockout_9
-      rect:
-        serializedVersion: 2
-        x: 9270
-        y: 8398
-        width: 119
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0102b993caf075a49ac1720fbdae56bd
       vertices: []
       indices: 
       edges: []
@@ -202,8 +182,8 @@ TextureImporter:
         y: 4000
         width: 1698
         height: 1683
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,8 +202,8 @@ TextureImporter:
         y: 3975
         width: 1925
         height: 1776
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,8 +222,8 @@ TextureImporter:
         y: 3988
         width: 2245
         height: 1446
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -258,12 +238,12 @@ TextureImporter:
       name: ether_knockout_29
       rect:
         serializedVersion: 2
-        x: 451
+        x: 428
         y: 698
         width: 2489
         height: 1037
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -282,8 +262,8 @@ TextureImporter:
         y: 688
         width: 2716
         height: 1060
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
