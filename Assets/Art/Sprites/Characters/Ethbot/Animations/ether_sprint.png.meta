@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 67338c8aca4655549b2d5b1c945bc558
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ether_sprint_2
+    21300002: ether_sprint_3
+    21300004: ether_sprint_4
+    21300006: ether_sprint_8
+    21300008: ether_sprint_10
+    21300010: ether_sprint_12
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -104,7 +110,127 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ether_sprint_2
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 4010
+        width: 1124
+        height: 1852
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188db3fcc6952ef4685a5bd95d255514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_sprint_3
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 4163
+        width: 1563
+        height: 1826
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5652ae95d0d1a44eab9389aebbe6ae1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_sprint_4
+      rect:
+        serializedVersion: 2
+        x: 5833
+        y: 4163
+        width: 1478
+        height: 1826
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92252944fad4a34a99818943ee1ee72
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_sprint_8
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 798
+        width: 773
+        height: 1781
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f266c09944d201342a942b08246b9081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_sprint_10
+      rect:
+        serializedVersion: 2
+        x: 3242
+        y: 928
+        width: 1425
+        height: 1774
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcfde07f7208a646b2f9ce87a23e613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_sprint_12
+      rect:
+        serializedVersion: 2
+        x: 5793
+        y: 928
+        width: 1442
+        height: 1774
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6ebb59766a78f4294c8bd6e76c9fae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

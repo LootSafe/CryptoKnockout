@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: 577f4a247ee5dc84d8e2a4b66eec5a81
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ether_walk_0
+    21300002: ether_walk_1
+    21300004: ether_walk_2
+    21300006: ether_walk_6
+    21300008: ether_walk_9
+    21300010: ether_walk_10
+    21300012: ether_walk_14
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -104,7 +111,147 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ether_walk_0
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 4001
+        width: 1052
+        height: 1927
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73902598999dc7945a8c825f834b4ef9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_walk_1
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 5603
+        width: 11
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3f6d638a220f9449ceb924cea5c70f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_walk_2
+      rect:
+        serializedVersion: 2
+        x: 3281
+        y: 4065
+        width: 1250
+        height: 1889
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b07e5a25c33604b8a580ad6c58d4b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_walk_6
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 5010
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99668a5714540a543b25344c33b73138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_walk_9
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 785
+        width: 838
+        height: 1849
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e383c6a1ee77e142a42457d0180bf64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_walk_10
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 836
+        width: 1346
+        height: 1818
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47c0a95aa0d5c746b56cea3b1c1f0cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_walk_14
+      rect:
+        serializedVersion: 2
+        x: 3282
+        y: 953
+        width: 7
+        height: 5
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8801a94ee49e0419e4060d6de70287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

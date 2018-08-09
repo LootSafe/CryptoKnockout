@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 2a39be073fcc01a468ec566b786939c9
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ether_punch_0
+    21300002: ether_punch_3
+    21300004: ether_punch_10
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -104,7 +107,67 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ether_punch_0
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 3946
+        width: 911
+        height: 2008
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a2c995e243c9b43b587b32509bbb71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_punch_3
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 3946
+        width: 1263
+        height: 2021
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec9cc0df181fac4d9b0c9266ee85f21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_punch_10
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 646
+        width: 1435
+        height: 1959
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabea147a66e7634c8b54202857a6d6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

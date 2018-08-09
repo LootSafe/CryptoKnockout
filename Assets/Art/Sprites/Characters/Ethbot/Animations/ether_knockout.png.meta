@@ -1,7 +1,16 @@
 fileFormatVersion: 2
 guid: 86694b7a8fb59f44eb9c0fb12509f15a
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ether_knockout_0
+    21300002: ether_knockout_1
+    21300004: ether_knockout_8
+    21300006: ether_knockout_9
+    21300008: ether_knockout_21
+    21300010: ether_knockout_22
+    21300012: ether_knockout_24
+    21300014: ether_knockout_29
+    21300016: ether_knockout_32
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -104,7 +113,187 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ether_knockout_0
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 7243
+        width: 908
+        height: 2009
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5de0922910668d49b04b54af9c30eec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_knockout_1
+      rect:
+        serializedVersion: 2
+        x: 5402
+        y: 7278
+        width: 1086
+        height: 2128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76c8d1dfb8a7144b9ca2f90fe8a99b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_knockout_8
+      rect:
+        serializedVersion: 2
+        x: 8494
+        y: 7308
+        width: 1279
+        height: 2006
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9810d91ac8e1134da76f78998943138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_knockout_9
+      rect:
+        serializedVersion: 2
+        x: 9270
+        y: 8398
+        width: 119
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0102b993caf075a49ac1720fbdae56bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_knockout_21
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 4000
+        width: 1698
+        height: 1683
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e335134e7a39a24dbcb5855b29eb6cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_knockout_22
+      rect:
+        serializedVersion: 2
+        x: 4425
+        y: 3975
+        width: 1925
+        height: 1776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf10a81c1b372a438e9b50ef967a30c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_knockout_24
+      rect:
+        serializedVersion: 2
+        x: 7519
+        y: 3988
+        width: 2245
+        height: 1446
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9e123691bc0be42b368ebfab1c7159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_knockout_29
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 698
+        width: 2489
+        height: 1037
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04c34a62d7fa68479db346d2f1c831f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_knockout_32
+      rect:
+        serializedVersion: 2
+        x: 3625
+        y: 688
+        width: 2716
+        height: 1060
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96933cb66b8eb848ab65077632f4a6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

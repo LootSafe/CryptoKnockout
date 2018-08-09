@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: 6f9308e27f5665047bb7edd9f65949f2
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ether_takedmg_0
+    21300002: ether_takedmg_1
+    21300004: ether_takedmg_3
+    21300006: ether_takedmg_11
+    21300008: ether_takedmg_13
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -104,7 +109,107 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ether_takedmg_0
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 3946
+        width: 653
+        height: 2008
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51e4f728ba88ec428e66778ef1afb23
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_takedmg_1
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 5175
+        width: 291
+        height: 324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede943bfd0d665e4aa52eb57384b2a71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_takedmg_3
+      rect:
+        serializedVersion: 2
+        x: 3158
+        y: 3946
+        width: 1094
+        height: 1971
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7bd0971fce98f84883a3fe3dd9b544c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_takedmg_11
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 646
+        width: 1081
+        height: 1966
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed7dd20d4f4b3746af735211ba220e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_takedmg_13
+      rect:
+        serializedVersion: 2
+        x: 3148
+        y: 646
+        width: 1119
+        height: 1971
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4534f3fb39ea85b4a85b0109deaff7aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
