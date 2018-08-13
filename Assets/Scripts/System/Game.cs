@@ -136,7 +136,7 @@ public class Game : MonoBehaviour {
 
     public float GetRemainingCountDownTime()
     {
-        return 6 - (Time.time - countDownTimer);
+        return 4 - (Time.time - countDownTimer);
     }
 
 
@@ -339,6 +339,7 @@ public class Game : MonoBehaviour {
         STARTING,
         ROUND_BEGINING,
         FIGHTING,
+        SUPER,
         ROUND_ENDING,
         SUMMARIZING,
         COMPLETED

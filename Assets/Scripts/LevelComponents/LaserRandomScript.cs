@@ -61,9 +61,10 @@ public class LaserRandomScript : MonoBehaviour {
 
     void TriggerRandomFire()
     {
+
         if (active)
         {
-            if (Time.time - lastFire >= fireTime + Random.Range(0.1f, 0.3f))
+            if (Time.time - lastFire >= fireTime + Random.Range(0.1f, 0.2f))
             {
                 lastFire = Time.time;
                 laserSprite.SetActive(false);
@@ -73,16 +74,19 @@ public class LaserRandomScript : MonoBehaviour {
         else
         {
             if (game.GetState() != Game.State.FIGHTING) return;
-            if (Time.time - lastFire >= delay + Random.Range(0.1f, 10f))
+            CheckForTargets();
+            if (currentTarget)
             {
+                if (Time.time - lastFire >= delay + Random.Range(1f, 10f))
+                {
 
-                lastFire = Time.time;
-                laserSprite.SetActive(true);
-                active = true;
+                    lastFire = Time.time;
+                    laserSprite.SetActive(true);
+                    active = true;
+                }
             }
         }
     }
-
 
     //TODO needs to be optimized
     void UpdatePlayers()
