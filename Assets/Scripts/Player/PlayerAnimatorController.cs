@@ -62,6 +62,7 @@ public class PlayerAnimatorController : MonoBehaviour
                     playerAnimator.SetTrigger("HURT");
                     return;
                 case ANIMATION_STATE.BLOCK:
+                    playerAnimator.SetTrigger("BLOCKING");
                     return;
                 case ANIMATION_STATE.LOWPUNCH:
                     return;
@@ -71,8 +72,10 @@ public class PlayerAnimatorController : MonoBehaviour
                     playerAnimator.SetTrigger("PUNCHING");
                     return;
                 case ANIMATION_STATE.HIGHKICK:
+                    playerAnimator.SetTrigger("KICKING");
                     return;
                 case ANIMATION_STATE.SPECIALATTACKONE:
+                    playerAnimator.SetTrigger("SPECIAL");
                     return;
                 default:
                     playerAnimator.SetTrigger("GROUNDED");
