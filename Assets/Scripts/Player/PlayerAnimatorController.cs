@@ -49,12 +49,11 @@ public class PlayerAnimatorController : MonoBehaviour
             switch (animationState)
             {
                 case ANIMATION_STATE.DEAD:
-                    SetDeadState(DEAD_STATE.DEAD);
+                    playerAnimator.SetBool("DEAD", true);
                     return true;
                 case ANIMATION_STATE.ALIVE:
-                    SetDeadState(DEAD_STATE.ALIVE);
+                    playerAnimator.SetBool("DEAD", false);
                     Debug.Log("I'm coming back to life");
-                    playerAnimator.SetTrigger("DEAD");
                     return true;
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("GROUNDED");
@@ -94,24 +93,6 @@ public class PlayerAnimatorController : MonoBehaviour
         else
         {
             return false;
-        }
-    }
-
-    /* State Helpers */
-
-    public void SetDeadState(DEAD_STATE state)
-    {
-        if (state == DEAD_STATE.DEAD)
-        {
-            playerAnimator.SetBool("DEAD", true);
-            currentAnimationState = ANIMATION_STATE.DEAD;
-            deadState = DEAD_STATE.DEAD;
-        }
-        else
-        {
-            playerAnimator.SetBool("DEAD", false);
-            currentAnimationState = ANIMATION_STATE.IDLE;
-            deadState = DEAD_STATE.ALIVE;
         }
     }
 
