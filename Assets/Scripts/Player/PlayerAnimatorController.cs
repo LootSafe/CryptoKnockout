@@ -28,8 +28,7 @@ public class PlayerAnimatorController : MonoBehaviour
     }
     void Start()
     {
-        playerAnimator = GetComponent<Animator>();
-
+        UpdateController();
         deadState = DEAD_STATE.ALIVE;
         SetAnimationState(ANIMATION_STATE.IDLE);
 
@@ -136,6 +135,11 @@ public class PlayerAnimatorController : MonoBehaviour
     public GROUNDED_STATE GetGroundedState(bool isGrounded)
     {
         return groundedState;
+    }
+
+    public void UpdateController()
+    {
+        playerAnimator = GetComponent<Animator>();
     }
 
 }
