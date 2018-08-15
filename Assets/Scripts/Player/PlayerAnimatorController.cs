@@ -8,9 +8,10 @@ public class PlayerAnimatorController : MonoBehaviour
     bool IDLE = false;
 
     public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED };
-    public enum DEAD_STATE { DEAD, ALIVE };
-    public enum ANIMATION_STATE { ALIVE, IDLE, WALKING, RUNNING, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
+    public enum ANIMATION_STATE { ALIVE, IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
 
+
+    Player player;
     /* Animator Object */
 
     Animator playerAnimator;
@@ -19,7 +20,6 @@ public class PlayerAnimatorController : MonoBehaviour
 
     GROUNDED_STATE groundedState;
     ANIMATION_STATE currentAnimationState;
-    DEAD_STATE deadState;
     Rigidbody2D rgbody;
 
     void Update()
@@ -29,9 +29,8 @@ public class PlayerAnimatorController : MonoBehaviour
     void Start()
     {
         UpdateController();
-        deadState = DEAD_STATE.ALIVE;
         SetAnimationState(ANIMATION_STATE.IDLE);
-
+        player = GetComponent<Player>();
         rgbody = GetComponent<Rigidbody2D>();
     }
 
@@ -42,63 +41,44 @@ public class PlayerAnimatorController : MonoBehaviour
         return currentAnimationState;
     }
 
-    public bool SetAnimationState(ANIMATION_STATE animationState)
+    public void SetAnimationState(ANIMATION_STATE animationState)
     {
-        if (deadState == DEAD_STATE.ALIVE)
-        {
             switch (animationState)
             {
                 case ANIMATION_STATE.DEAD:
                     playerAnimator.SetBool("DEAD", true);
-                    return true;
+                    return;
                 case ANIMATION_STATE.ALIVE:
                     playerAnimator.SetBool("DEAD", false);
                     Debug.Log("I'm coming back to life");
-                    return true;
+                    return;
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("GROUNDED");
-                    playerAnimator.SetBool("WALKING", false);
-                    return true;
-                case ANIMATION_STATE.WALKING:
-                    playerAnimator.SetBool("WALKING", true);
-                    return true;
-                case ANIMATION_STATE.RUNNING:
-                    playerAnimator.SetBool("RUNNING", true);
-                    playerAnimator.SetTrigger("RUNNING");
-                    return true;
+                     return;
                 case ANIMATION_STATE.JUMP:
                     playerAnimator.SetTrigger("JUMP");
-                    return true;
+                    return;
                 case ANIMATION_STATE.HURT:
                     playerAnimator.SetTrigger("HURT");
-                    return true;
+                    return;
                 case ANIMATION_STATE.BLOCK:
-                    return true;
+                    return;
                 case ANIMATION_STATE.LOWPUNCH:
-                    return true;
+                    return;
                 case ANIMATION_STATE.LOWKICK:
-                    return true;
+                    return;
                 case ANIMATION_STATE.HIGHPUNCH:
                     playerAnimator.SetTrigger("PUNCHING");
-                    return true;
+                    return;
                 case ANIMATION_STATE.HIGHKICK:
-                    return true;
+                    return;
                 case ANIMATION_STATE.SPECIALATTACKONE:
-                    return true;
+                    return;
                 default:
                     playerAnimator.SetTrigger("GROUNDED");
-                    return true;
+                    return;
             }
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public DEAD_STATE GetDeadState()
-    {
-        return deadState;
+       
     }
 
     public void SetGroundedState(bool isGrounded)
