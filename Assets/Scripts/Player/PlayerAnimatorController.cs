@@ -36,7 +36,6 @@ public class PlayerAnimatorController : MonoBehaviour
     }
 
     /* Animation State */
-
     public ANIMATION_STATE GetCurrentAnimationState()
     {
         return currentAnimationState;
