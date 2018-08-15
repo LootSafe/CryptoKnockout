@@ -179,7 +179,7 @@ public class Player : NetworkBehaviour {
     {
         alive = true;
         health = character.GetHealth();
-        GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
+        GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.ALIVE);
         special = 0;
 
     }

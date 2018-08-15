@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 
-public class PlayerAnimatorController : MonoBehaviour {
+public class PlayerAnimatorController : MonoBehaviour
+{
 
     public bool DEBUG = false; // REMOVE ME LATER
 
     bool IDLE = false;
 
-	public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED};
+    public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED };
     public enum DEAD_STATE { DEAD, ALIVE };
-    public enum ANIMATION_STATE { IDLE, WALKING, RUNNING, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
+    public enum ANIMATION_STATE { ALIVE, IDLE, WALKING, RUNNING, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
 
     /* Animator Object */
 
@@ -19,15 +20,20 @@ public class PlayerAnimatorController : MonoBehaviour {
     GROUNDED_STATE groundedState;
     ANIMATION_STATE currentAnimationState;
     DEAD_STATE deadState;
+    Rigidbody2D rgbody;
 
-    /* Basic Methods */
-
+    void Update()
+    {
+        playerAnimator.SetFloat("speed", Mathf.Abs(rgbody.velocity.x));
+    }
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
 
         deadState = DEAD_STATE.ALIVE;
         SetAnimationState(ANIMATION_STATE.IDLE);
+
+        rgbody = GetComponent<Rigidbody2D>();
     }
 
     /* Animation State */
@@ -45,6 +51,11 @@ public class PlayerAnimatorController : MonoBehaviour {
             {
                 case ANIMATION_STATE.DEAD:
                     SetDeadState(DEAD_STATE.DEAD);
+                    return true;
+                case ANIMATION_STATE.ALIVE:
+                    SetDeadState(DEAD_STATE.ALIVE);
+                    Debug.Log("I'm coming back to life");
+                    playerAnimator.SetTrigger("DEAD");
                     return true;
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("GROUNDED");
@@ -105,7 +116,7 @@ public class PlayerAnimatorController : MonoBehaviour {
         }
     }
 
-    public  DEAD_STATE GetDeadState()
+    public DEAD_STATE GetDeadState()
     {
         return deadState;
     }

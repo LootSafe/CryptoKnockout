@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRoundTime: 300
   roundEndDelay: 5
-  rounds: 3
+  rounds: 8
   lives: 2
   MaxPlayers: 2
   globalDataPrefab: {fileID: 114664089178248270, guid: 77d32bb0ffd267041a0c34d293e5b267,
@@ -130,7 +130,7 @@ SpriteRenderer:
   m_SortingLayer: 16
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300032, guid: 0c8462925456a584e8d76d5bdfe84b08, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

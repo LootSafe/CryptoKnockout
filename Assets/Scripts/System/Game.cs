@@ -32,6 +32,7 @@ public class Game : MonoBehaviour {
     private float countDownTimer = 0;
 
 
+    private bool respawnToggle = false;
     private float roundStartTime = 0;
     private float roundEndTimer = 0;
 
@@ -253,7 +254,12 @@ public class Game : MonoBehaviour {
                 break;
 
             case State.ROUND_BEGINING:
-                respawnOpponents();
+                if (!respawnToggle)
+                {
+                    respawnToggle = true;
+                    respawnOpponents();
+                }
+                respawnToggle = false;
                 if (GetRemainingCountDownTime() > 0) break;
                 currentRound++;
                 state = State.FIGHTING;
@@ -278,6 +284,7 @@ public class Game : MonoBehaviour {
                     state = State.COMPLETED;
                 } else
                 {
+                    respawnToggle = false;
                     state = State.ROUND_BEGINING;
                     countDownTimer = Time.time;
                 }
@@ -324,6 +331,7 @@ public class Game : MonoBehaviour {
 
     private void respawnOpponents()
     {
+
         localP1.GetComponent<Transform>().position = spawnP1.position;
         localP2.GetComponent<Transform>().position = spawnP2.position;
         Vector3 p2LS = localP2.GetComponentInParent<Transform>().localScale;
@@ -332,6 +340,7 @@ public class Game : MonoBehaviour {
         localP1.respawn();
         localP2.respawn();
     }
+
     /*************************************************************************/
     public enum State
     {
