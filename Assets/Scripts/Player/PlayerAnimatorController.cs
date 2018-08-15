@@ -7,7 +7,6 @@ public class PlayerAnimatorController : MonoBehaviour
 
     bool IDLE = false;
 
-    public enum GROUNDED_STATE { GROUNDED, NOTGROUNDED };
     public enum ANIMATION_STATE { ALIVE, IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
 
 
@@ -18,7 +17,6 @@ public class PlayerAnimatorController : MonoBehaviour
 
     /* State Vars */
 
-    GROUNDED_STATE groundedState;
     ANIMATION_STATE currentAnimationState;
     Rigidbody2D rgbody;
 
@@ -84,22 +82,6 @@ public class PlayerAnimatorController : MonoBehaviour
        
     }
 
-    public void SetGroundedState(bool isGrounded)
-    {
-        if (isGrounded)
-        {
-            groundedState = GROUNDED_STATE.GROUNDED;
-        }
-        else
-        {
-            groundedState = GROUNDED_STATE.NOTGROUNDED;
-        }
-    }
-
-    public GROUNDED_STATE GetGroundedState(bool isGrounded)
-    {
-        return groundedState;
-    }
 
     public void UpdateController()
     {
