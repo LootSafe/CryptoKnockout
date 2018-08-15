@@ -26,6 +26,7 @@ public class PlayerAnimatorController : MonoBehaviour
         playerAnimator.SetBool("GROUNDED", player.IsGrounded());
         playerAnimator.SetBool("ALIVE", player.IsAlive());
     }
+
     void Start()
     {
         UpdateController();
