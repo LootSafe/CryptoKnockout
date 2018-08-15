@@ -92,7 +92,6 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                 //transform.position = new Vector3(transform.position.x + (lastHeadings[playerNumber -1] * player.GetMoveSpeed()), transform.position.y, transform.position.z);
                 rigidbody.AddForce(new Vector2(xMovement * player.GetMoveSpeed(), 0));
                 transform.localScale = updatedHeading;
-                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.WALKING);
                 lastMovements[playerNumber - 1] = Time.time;
             }
         }
