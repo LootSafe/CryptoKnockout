@@ -7,7 +7,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     bool IDLE = false;
 
-    public enum ANIMATION_STATE { ALIVE, IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
+    public enum ANIMATION_STATE {IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
 
 
     Player player;
@@ -22,7 +22,9 @@ public class PlayerAnimatorController : MonoBehaviour
 
     void Update()
     {
-        playerAnimator.SetFloat("speed", Mathf.Abs(rgbody.velocity.x));
+        playerAnimator.SetFloat("SPEED", Mathf.Abs(rgbody.velocity.x));
+        playerAnimator.SetBool("GROUNDED", player.IsGrounded());
+        playerAnimator.SetBool("ALIVE", player.IsAlive());
     }
     void Start()
     {
@@ -44,11 +46,7 @@ public class PlayerAnimatorController : MonoBehaviour
             switch (animationState)
             {
                 case ANIMATION_STATE.DEAD:
-                    playerAnimator.SetBool("DEAD", true);
-                    return;
-                case ANIMATION_STATE.ALIVE:
-                    playerAnimator.SetBool("DEAD", false);
-                    Debug.Log("I'm coming back to life");
+                    playerAnimator.SetTrigger("DIE");
                     return;
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("GROUNDED");
