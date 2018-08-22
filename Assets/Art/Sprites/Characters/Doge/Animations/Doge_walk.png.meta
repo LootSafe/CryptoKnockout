@@ -7,7 +7,7 @@ TextureImporter:
     21300004: Doge_walk_2
     21300006: Doge_walk_3
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 7
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -25,6 +25,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -35,7 +37,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -89,10 +91,10 @@ TextureImporter:
       name: Doge_walk_0
       rect:
         serializedVersion: 2
-        x: 793
-        y: 4220
-        width: 987
-        height: 1717
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f11b8d05dc13f84b9e3e82877d48ad7
+      spriteID: 40757d482a6ebc649adaff655c8bd022
       vertices: []
       indices: 
       edges: []
@@ -109,10 +111,10 @@ TextureImporter:
       name: Doge_walk_1
       rect:
         serializedVersion: 2
-        x: 3306
-        y: 4278
-        width: 1026
-        height: 1650
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19ec89ebc6f7e8f4fa355a2ca012cebb
+      spriteID: a9e4adc6f0e278247b569edc0ce6fa1b
       vertices: []
       indices: 
       edges: []
@@ -129,10 +131,10 @@ TextureImporter:
       name: Doge_walk_2
       rect:
         serializedVersion: 2
-        x: 786
-        y: 988
-        width: 994
-        height: 1662
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07e9bc0ffcfa9f5418a14774008c0e26
+      spriteID: dfe376f36dae65a44b02312dedd069fa
       vertices: []
       indices: 
       edges: []
@@ -149,10 +151,10 @@ TextureImporter:
       name: Doge_walk_3
       rect:
         serializedVersion: 2
-        x: 3306
-        y: 923
-        width: 1026
-        height: 1705
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb3de0b1a3f01554688cadbf7bd14a55
+      spriteID: 7fc00e27870aebb45b6fb19fdcd6923c
       vertices: []
       indices: 
       edges: []
@@ -174,6 +176,8 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

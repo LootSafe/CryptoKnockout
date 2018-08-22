@@ -7,7 +7,7 @@ TextureImporter:
     21300004: Doge_idle_2
     21300006: Doge_idle_3
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 7
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -25,6 +25,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -35,7 +37,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -89,10 +91,10 @@ TextureImporter:
       name: Doge_idle_0
       rect:
         serializedVersion: 2
-        x: 769
-        y: 4120
-        width: 988
-        height: 1734
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcabf321a5d2cfa4ca68ec960164f9ca
+      spriteID: bcba3b713d815fc448eedcafeec0907e
       vertices: []
       indices: 
       edges: []
@@ -109,10 +111,10 @@ TextureImporter:
       name: Doge_idle_1
       rect:
         serializedVersion: 2
-        x: 3323
-        y: 4120
-        width: 954
-        height: 1731
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7deadfc21c0865438053b5be03c5058
+      spriteID: 2b982d56e62d3df48bd1c0c54fe2f31e
       vertices: []
       indices: 
       edges: []
@@ -129,10 +131,10 @@ TextureImporter:
       name: Doge_idle_2
       rect:
         serializedVersion: 2
-        x: 649
-        y: 820
-        width: 1076
-        height: 1735
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f2ca535c9605049adc0042e788db0d
+      spriteID: 7d6ad2948943977479111cb908b0565f
       vertices: []
       indices: 
       edges: []
@@ -149,10 +151,10 @@ TextureImporter:
       name: Doge_idle_3
       rect:
         serializedVersion: 2
-        x: 3318
-        y: 820
-        width: 959
-        height: 1731
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4596ea3e2e92efe459c60e1208da6012
+      spriteID: ee97014efeeb25d45997a10141eabd8d
       vertices: []
       indices: 
       edges: []
@@ -174,6 +176,8 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

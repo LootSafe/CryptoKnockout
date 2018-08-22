@@ -16,7 +16,7 @@ TextureImporter:
     21300022: Doge_KnockOut_11
     21300024: Doge_KnockOut_12
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 7
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -34,6 +34,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -44,7 +46,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -98,10 +100,10 @@ TextureImporter:
       name: Doge_KnockOut_0
       rect:
         serializedVersion: 2
-        x: 2609
-        y: 7443
-        width: 995
-        height: 1746
+        x: 0
+        y: 6600
+        width: 3889
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,7 +111,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a7064fcf803d0046abf723baaef99de
+      spriteID: 3be41a4b54d4f5d42b89885ddcbc7921
       vertices: []
       indices: 
       edges: []
@@ -118,10 +120,10 @@ TextureImporter:
       name: Doge_KnockOut_1
       rect:
         serializedVersion: 2
-        x: 6172
-        y: 7709
-        width: 964
-        height: 1632
+        x: 3889
+        y: 6600
+        width: 3889
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,7 +131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 120f096f5a71a144bb36370c591278db
+      spriteID: afdd3c943d66d4f47a38b9236c08f303
       vertices: []
       indices: 
       edges: []
@@ -138,10 +140,10 @@ TextureImporter:
       name: Doge_KnockOut_2
       rect:
         serializedVersion: 2
-        x: 9111
-        y: 8043
-        width: 1360
-        height: 1253
+        x: 7778
+        y: 6600
+        width: 3889
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,7 +151,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba79d2413a0a186459e80ade16db6563
+      spriteID: f22669a35a948c04a9630db243a1c5ab
       vertices: []
       indices: 
       edges: []
@@ -158,10 +160,10 @@ TextureImporter:
       name: Doge_KnockOut_3
       rect:
         serializedVersion: 2
-        x: 12271
-        y: 7837
-        width: 1511
-        height: 1033
+        x: 11667
+        y: 6600
+        width: 3889
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,7 +171,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cdad79343b609a4896c726c4c467e2e
+      spriteID: f316ece616bd86c4ebce50c6df12543d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doge_KnockOut_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3300
+        width: 3889
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6276e108ddf872640ac60285ff6e02d2
       vertices: []
       indices: 
       edges: []
@@ -178,10 +200,10 @@ TextureImporter:
       name: Doge_KnockOut_5
       rect:
         serializedVersion: 2
-        x: 4186
-        y: 3942
-        width: 2009
-        height: 1489
+        x: 3889
+        y: 3300
+        width: 3889
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,7 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 173f7f0f691a2044d817978e3d026d8f
+      spriteID: ec188c05f988780428bdb7e19915123c
       vertices: []
       indices: 
       edges: []
@@ -198,10 +220,10 @@ TextureImporter:
       name: Doge_KnockOut_6
       rect:
         serializedVersion: 2
-        x: 8147
-        y: 4145
-        width: 1769
-        height: 1230
+        x: 7778
+        y: 3300
+        width: 3889
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,7 +231,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8261726508f38444283c0311de302741
+      spriteID: 1c6d9d9461533804d9ab6ce0d5807794
       vertices: []
       indices: 
       edges: []
@@ -218,10 +240,10 @@ TextureImporter:
       name: Doge_KnockOut_7
       rect:
         serializedVersion: 2
-        x: 160
-        y: 3978
-        width: 1948
-        height: 668
+        x: 11667
+        y: 3300
+        width: 3889
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,7 +251,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62c591c7b3c30a54e8771d858d4a6233
+      spriteID: 4a97dfa91b2199246a99d077cd029416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doge_KnockOut_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3889
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7dcdedfbde03b442812c32ed4af0c8d
       vertices: []
       indices: 
       edges: []
@@ -238,10 +280,10 @@ TextureImporter:
       name: Doge_KnockOut_9
       rect:
         serializedVersion: 2
-        x: 11793
-        y: 3978
-        width: 1982
-        height: 808
+        x: 3889
+        y: 0
+        width: 3889
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,47 +291,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0462d0da1f7bac446850af3d6adc5116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Doge_KnockOut_11
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 680
-        width: 1962
-        height: 808
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 253eb376b272255479b2ffd5c2ad2c59
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Doge_KnockOut_12
-      rect:
-        serializedVersion: 2
-        x: 3946
-        y: 680
-        width: 2051
-        height: 661
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 806f402985c83f742bbd3cea9a0e9c3d
+      spriteID: f553e3f350e7f9a4e857e0605285f81f
       vertices: []
       indices: 
       edges: []
@@ -303,6 +305,8 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

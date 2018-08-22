@@ -114,10 +114,10 @@ TextureImporter:
       name: Doge_jump_0
       rect:
         serializedVersion: 2
-        x: 850
-        y: 4148
-        width: 990
-        height: 1733
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66679efe97269a44dafda40ad1647c63
+      spriteID: 41c6958658d4ee14e980af3d806c8068
       vertices: []
       indices: 
       edges: []
@@ -134,10 +134,10 @@ TextureImporter:
       name: Doge_jump_1
       rect:
         serializedVersion: 2
-        x: 3418
-        y: 4148
-        width: 1178
-        height: 1594
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b25bb025de0f82947beff22a3c3a2a60
+      spriteID: 75e56c2f41a80c84b90387fb57e0738d
       vertices: []
       indices: 
       edges: []
@@ -154,10 +154,10 @@ TextureImporter:
       name: Doge_jump_2
       rect:
         serializedVersion: 2
-        x: 5930
-        y: 4436
-        width: 1027
-        height: 1817
+        x: 5100
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,7 +165,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96c1d51ebe7013248a64eb2db32b5d39
+      spriteID: 8f275839af99b2941a9faaf18468119c
       vertices: []
       indices: 
       edges: []
@@ -174,10 +174,10 @@ TextureImporter:
       name: Doge_jump_3
       rect:
         serializedVersion: 2
-        x: 869
-        y: 1085
-        width: 1124
-        height: 1696
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,7 +185,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6928952f073a734ab264e5fbeaab5b6
+      spriteID: 7f04cbfd1f9a89246a27dc94e3d558bc
       vertices: []
       indices: 
       edges: []
@@ -194,10 +194,10 @@ TextureImporter:
       name: Doge_jump_4
       rect:
         serializedVersion: 2
-        x: 3418
-        y: 846
-        width: 1178
-        height: 1595
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 776e0749ed8ed4c43bd5ac25065af9d7
+      spriteID: adca8b3a2de22f34dbd2a15594405a42
       vertices: []
       indices: 
       edges: []
