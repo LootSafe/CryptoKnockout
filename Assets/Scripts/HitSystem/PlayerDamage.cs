@@ -14,17 +14,23 @@ public class PlayerDamage : MonoBehaviour {
 
     void Update()
     {
-        if (lastHit != 0 && Time.time >= Time.time + delay)
+        if (lastHit != 0 && Time.time >= lastHit + delay)
         {
             gameObject.SetActive(false);
             lastHit = 0;
         }
+
     }
 
     public void TriggerEnable()
     {
         lastHit = Time.time;
         gameObject.SetActive(true);
+    }
+
+    public void TriggerDisable()
+    {
+        gameObject.SetActive(false);
     }
 
     void OnTriggerStay2D(Collider2D other)

@@ -4,12 +4,9 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 [ExecuteInEditMode()]
-public class Player : NetworkBehaviour {
-    [SyncVar]
+public class Player : MonoBehaviour {
     private float lives = 1;
-    [SyncVar]
     private bool alive = false;
-    [SyncVar]
     public float health = 0;
     private float special = 0;
     private float maxSpecial = 100;
@@ -79,7 +76,7 @@ public class Player : NetworkBehaviour {
         //Temp
         float damageTake = character.CalculateDamage(damage);
 
-        if (game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER || isServer)
+        if (game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER)
         {
             
             if (health - damageTake <= 0)

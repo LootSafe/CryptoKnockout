@@ -51,7 +51,7 @@ public class Parallax : MonoBehaviour
         /* Uncomment me later */
 
         //currentGameMode = Game.GetInstance().GetGameMode();
-        if (!game || game.GetState() != Game.State.FIGHTING)
+        if (!game)
         {
             game = Game.GetInstance();
             return;
@@ -72,7 +72,7 @@ public class Parallax : MonoBehaviour
 
     void Update ()
     {
-        if (!game || game.GetState() != Game.State.FIGHTING)
+        if (!game)
         {
             game = Game.GetInstance();
             return;

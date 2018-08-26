@@ -8,7 +8,7 @@ TextureImporter:
     21300006: bjorn_Idle_3
     21300008: bjorn_Idle_4
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 7
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -26,6 +26,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -36,7 +38,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -90,18 +92,18 @@ TextureImporter:
       name: bjorn_Idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2244
-        width: 1326
-        height: 2244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 72
+        y: 2342
+        width: 1165
+        height: 2009
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a63ac2f50e1b84e4b90301e24bb715a9
+      spriteID: ec93835df0a611249af6fc4bf1aafa11
       vertices: []
       indices: 
       edges: []
@@ -110,18 +112,18 @@ TextureImporter:
       name: bjorn_Idle_1
       rect:
         serializedVersion: 2
-        x: 1326
-        y: 2244
-        width: 1326
-        height: 2244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1397
+        y: 2342
+        width: 1186
+        height: 2015
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7a9e3ef738fb2d409b6670f0108022f
+      spriteID: baa2ddeb8633e9f4891d5906d1053872
       vertices: []
       indices: 
       edges: []
@@ -130,18 +132,18 @@ TextureImporter:
       name: bjorn_Idle_2
       rect:
         serializedVersion: 2
-        x: 2652
-        y: 2244
-        width: 1326
-        height: 2244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2723
+        y: 2342
+        width: 1177
+        height: 2022
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c0832c09b5611242a81ddffc79d9881
+      spriteID: d6e88bf700c539b498d060e4e1af26ab
       vertices: []
       indices: 
       edges: []
@@ -150,18 +152,18 @@ TextureImporter:
       name: bjorn_Idle_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1326
-        height: 2244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 71
+        y: 98
+        width: 1186
+        height: 2015
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2202028d41dadd42bc085ad56fbea7d
+      spriteID: a7f525afb571b9444930a91504103336
       vertices: []
       indices: 
       edges: []
@@ -170,18 +172,18 @@ TextureImporter:
       name: bjorn_Idle_4
       rect:
         serializedVersion: 2
-        x: 1326
-        y: 0
-        width: 1326
-        height: 2244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1398
+        y: 98
+        width: 1165
+        height: 2009
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b073fd5ddf8fdaf4b99e1caff6482b4b
+      spriteID: 964b7643e0f2b3e4a9a44d185229571c
       vertices: []
       indices: 
       edges: []
@@ -195,6 +197,8 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 114456718162601248}
   - component: {fileID: 114401440526092280}
   m_Layer: 9
-  m_Name: Player
+  m_Name: Bjorn
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -481,22 +481,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 113
-    i1: 92
-    i2: 2
-    i3: 194
-    i4: 227
-    i5: 55
-    i6: 94
-    i7: 116
-    i8: 24
-    i9: 218
-    i10: 61
-    i11: 162
-    i12: 225
-    i13: 217
-    i14: 155
-    i15: 103
+    i0: 180
+    i1: 172
+    i2: 57
+    i3: 97
+    i4: 28
+    i5: 158
+    i6: 163
+    i7: 212
+    i8: 9
+    i9: 163
+    i10: 85
+    i11: 181
+    i12: 55
+    i13: 116
+    i14: 109
+    i15: 110
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!114 &114902545231117984
