@@ -325,8 +325,8 @@ public class Game : MonoBehaviour {
             localP2 = p2.GetComponentInChildren<Player>();
             localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
 
-            Vector3 p2LS = p2.GetComponentInParent<Transform>().localScale;
-            p2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
+            Vector3 p2LS = localP1.GetComponent<Transform>().localScale;
+            localP2.GetComponent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
 
         }
     }
