@@ -18,6 +18,9 @@ public class Player : MonoBehaviour {
     public GameObject foot;
     public GameObject specialSource;
 
+    private bool hurt;
+    public float timeIncapacitated;
+
     private float lastHit;
     private float damageDealt;
 
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour {
 
 
             //To be done only by server
-            public float TakeDamage(float damage, Player source)
+    public float TakeDamage(float damage, Player source)
     {
 
         if (!alive) return 0;
@@ -100,6 +103,7 @@ public class Player : MonoBehaviour {
         }
 
         GetComponent<DamageAnimator>().TriggerSmallHit(damageTake);
+        hurt = true;
         return damageTake;
 
     }
@@ -126,7 +130,10 @@ public class Player : MonoBehaviour {
         return alive;
     }
 
-
+    public bool IsHurt()
+    {
+        return hurt;
+    }
 
     public bool IsGrounded()
     {
@@ -183,5 +190,10 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
 	void Update () {
 		
+        //Update Hurt Interruption
+        if(Time.time >= lastHit + timeIncapacitated)
+        {
+            hurt = false;
+        }
 	}
 }
