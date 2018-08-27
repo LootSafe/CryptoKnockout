@@ -418,6 +418,7 @@ MonoBehaviour:
   fist: {fileID: 1079451026728450}
   foot: {fileID: 1756666442828242}
   specialSource: {fileID: 1771455447903784}
+  timeIncapacitated: 0.2
 --- !u!114 &114493075351780650
 MonoBehaviour:
   m_ObjectHideFlags: 1
