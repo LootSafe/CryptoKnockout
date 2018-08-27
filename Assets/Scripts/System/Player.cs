@@ -34,8 +34,8 @@ public class Player : MonoBehaviour {
     {
 
         //Animation Controller
-        GetComponent<Animator>().runtimeAnimatorController = character.GetAnimationController();
-        Debug.Log("Test");
+        //GetComponent<Animator>().runtimeAnimatorController = character.GetAnimationController();
+        //Debug.Log("Test");
         character.initializePlayer(this);
         this.character = character;
         health = character.GetHealth();
