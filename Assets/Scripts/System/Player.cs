@@ -104,6 +104,7 @@ public class Player : MonoBehaviour {
 
         GetComponent<DamageAnimator>().TriggerSmallHit(damageTake);
         hurt = true;
+        InterruptActions();
         return damageTake;
 
     }
@@ -123,6 +124,12 @@ public class Player : MonoBehaviour {
     {
         special += 1;
         this.damageDealt += damageDealt;
+    }
+
+    public void InterruptActions()
+    {
+        fist.SetActive(false);
+        foot.SetActive(false);
     }
 	
     public bool IsAlive()
