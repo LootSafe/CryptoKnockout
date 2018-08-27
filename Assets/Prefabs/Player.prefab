@@ -90,8 +90,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4468873815217638}
-  - component: {fileID: 114886340538789656}
-  - component: {fileID: 114985243175711498}
   - component: {fileID: 212298209694372100}
   - component: {fileID: 61258840985077550}
   - component: {fileID: 58103943271811376}
@@ -99,7 +97,6 @@ GameObject:
   - component: {fileID: 50825129052665634}
   - component: {fileID: 95906605965611374}
   - component: {fileID: 114186994662308574}
-  - component: {fileID: 114037795989249596}
   - component: {fileID: 114456718162601248}
   - component: {fileID: 114401440526092280}
   m_Layer: 9
@@ -271,8 +268,8 @@ BoxCollider2D:
   m_Offset: {x: -1.693718, y: 12.519956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 11.86, y: 20.15}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 13.26, y: 22.44}
     newSize: {x: 0.72, y: 1.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -349,17 +346,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114037795989249596
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729820886990980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b6c3f78a2349c43b4c5039086f2e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114177713500224284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,38 +453,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   delay: 0.02
---- !u!114 &114886340538789656
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729820886990980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 113
-    i1: 92
-    i2: 2
-    i3: 194
-    i4: 227
-    i5: 55
-    i6: 94
-    i7: 116
-    i8: 24
-    i9: 218
-    i10: 61
-    i11: 162
-    i12: 225
-    i13: 217
-    i14: 155
-    i15: 103
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114902545231117984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -512,27 +466,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   delay: 0.02
---- !u!114 &114985243175711498
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729820886990980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!212 &212110972517672462
 SpriteRenderer:
   m_ObjectHideFlags: 1

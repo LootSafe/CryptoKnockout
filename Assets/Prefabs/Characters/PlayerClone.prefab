@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 114456718162601248}
   - component: {fileID: 114401440526092280}
   m_Layer: 9
-  m_Name: Bjorn
+  m_Name: PlayerClone
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,8 +271,8 @@ BoxCollider2D:
   m_Offset: {x: -1.693718, y: 12.519956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 11.86, y: 20.15}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 13.26, y: 22.44}
     newSize: {x: 0.72, y: 1.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -481,22 +481,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 180
-    i1: 172
-    i2: 57
-    i3: 97
-    i4: 28
-    i5: 158
-    i6: 163
-    i7: 212
-    i8: 9
-    i9: 163
-    i10: 85
-    i11: 181
-    i12: 55
-    i13: 116
-    i14: 109
-    i15: 110
+    i0: 110
+    i1: 3
+    i2: 155
+    i3: 15
+    i4: 42
+    i5: 113
+    i6: 131
+    i7: 84
+    i8: 155
+    i9: 158
+    i10: 13
+    i11: 209
+    i12: 103
+    i13: 141
+    i14: 249
+    i15: 188
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!114 &114902545231117984
