@@ -21422,7 +21422,7 @@ MonoBehaviour:
   Doge: {fileID: 1558382579886528, guid: ec2809ade43433b4a9c6d56c092ccbe6, type: 2}
   Bjorn: {fileID: 1303773588206366, guid: 3813c517dd8df994fb873df3352a4c62, type: 2}
   EthBot: {fileID: 1989421226341838, guid: f874a17e21a95d647a0a694c4a532091, type: 2}
-  BTCBoy: {fileID: 0}
+  BTCBoy: {fileID: 1759074987365936, guid: 24654edb35e9c1b4497be7fe273acdaa, type: 2}
   Monero: {fileID: 1338820219904830, guid: 847b0b69584ece94fbea440b00e6f066, type: 2}
 --- !u!1 &1808449335
 GameObject:
