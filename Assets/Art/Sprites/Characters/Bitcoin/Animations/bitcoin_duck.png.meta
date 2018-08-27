@@ -111,10 +111,10 @@ TextureImporter:
       name: bitcoin_duck_0
       rect:
         serializedVersion: 2
-        x: 547
-        y: 681
-        width: 1506
-        height: 2090
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1a95cce0f1272344ade03d2b5569ee2
+      spriteID: 0c5938466ca009b45a492418aec8d9e4
       vertices: []
       indices: 
       edges: []
@@ -131,10 +131,10 @@ TextureImporter:
       name: bitcoin_duck_1
       rect:
         serializedVersion: 2
-        x: 3156
-        y: 681
-        width: 1507
-        height: 1868
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b9641b1c9334c74695405f03afffb42
+      spriteID: 5aa625d20088f504bbc371f0b1d62e50
       vertices: []
       indices: 
       edges: []

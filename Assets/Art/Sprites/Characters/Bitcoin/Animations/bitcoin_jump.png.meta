@@ -116,10 +116,10 @@ TextureImporter:
       name: bitcoin_jump_0
       rect:
         serializedVersion: 2
-        x: 544
-        y: 6992
-        width: 1512
-        height: 2093
+        x: 0
+        y: 6600
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,7 +127,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 302882f0d55e4114488b01d87b2a0e0c
+      spriteID: 7f0e841a6e23e6d4b97fb1c0419e25e0
       vertices: []
       indices: 
       edges: []
@@ -136,10 +136,10 @@ TextureImporter:
       name: bitcoin_jump_1
       rect:
         serializedVersion: 2
-        x: 3134
-        y: 6992
-        width: 1696
-        height: 1871
+        x: 2550
+        y: 6600
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,7 +147,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b75bf530a85ec3341a157aa69da67ab9
+      spriteID: 025efb256a8098d44a8d620aa94106e0
       vertices: []
       indices: 
       edges: []
@@ -156,10 +156,10 @@ TextureImporter:
       name: bitcoin_jump_2
       rect:
         serializedVersion: 2
-        x: 5652
-        y: 7500
-        width: 1425
-        height: 2219
+        x: 5100
+        y: 6600
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,7 +167,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b90fb2150632ff4e9e3a52fbadaf390
+      spriteID: 9e1a0fbd215b6194fad91d86b3cae830
       vertices: []
       indices: 
       edges: []
@@ -176,10 +176,10 @@ TextureImporter:
       name: bitcoin_jump_3
       rect:
         serializedVersion: 2
-        x: 553
-        y: 4201
-        width: 1426
-        height: 2216
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6377fdaf2d8eff6458195624a636859a
+      spriteID: a9e6cf3afdfbb5f468b44e6425657471
       vertices: []
       indices: 
       edges: []
@@ -196,10 +196,10 @@ TextureImporter:
       name: bitcoin_jump_4
       rect:
         serializedVersion: 2
-        x: 3095
-        y: 4092
-        width: 1508
-        height: 2059
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,7 +207,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc0b086f99731094f98b635de6647926
+      spriteID: fdde50b924674ee47b2da04293d5d330
       vertices: []
       indices: 
       edges: []
@@ -216,10 +216,10 @@ TextureImporter:
       name: bitcoin_jump_5
       rect:
         serializedVersion: 2
-        x: 5642
-        y: 4092
-        width: 1513
-        height: 2059
+        x: 5100
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,7 +227,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1901798d49d44d42a3b1cd3f111e336
+      spriteID: 159578a15714f164ba150ca279911555
       vertices: []
       indices: 
       edges: []
@@ -236,10 +236,10 @@ TextureImporter:
       name: bitcoin_jump_6
       rect:
         serializedVersion: 2
-        x: 582
-        y: 394
-        width: 1697
-        height: 1871
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b5be4ebd924cc742a9dfc12d99f7eb4
+      spriteID: 3d315e50ac50c574db15e3c9f9e2bbe6
       vertices: []
       indices: 
       edges: []

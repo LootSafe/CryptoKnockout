@@ -111,10 +111,10 @@ TextureImporter:
       name: bitcoin_block_0
       rect:
         serializedVersion: 2
-        x: 542
-        y: 651
-        width: 1506
-        height: 2090
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e14dbdb41998974e82102e3d2aadf59
+      spriteID: eb338086c8338e44da6ae0389d961914
       vertices: []
       indices: 
       edges: []
@@ -131,10 +131,10 @@ TextureImporter:
       name: bitcoin_block_1
       rect:
         serializedVersion: 2
-        x: 3143
-        y: 651
-        width: 1202
-        height: 2015
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b559f0db2cd11a44aa7afc8e05acdf31
+      spriteID: c9b349ab67d10a34682045c76be7675e
       vertices: []
       indices: 
       edges: []

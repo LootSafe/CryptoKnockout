@@ -116,18 +116,18 @@ TextureImporter:
       name: bitcoin_walk_0
       rect:
         serializedVersion: 2
-        x: 537
-        y: 4141
-        width: 1527
-        height: 1904
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0eed68415a6f29f46a5c277316fb46db
+      spriteID: 1a1eb0bcdfe24c54b9d4ae86f67c0840
       vertices: []
       indices: 
       edges: []
@@ -136,18 +136,18 @@ TextureImporter:
       name: bitcoin_walk_1
       rect:
         serializedVersion: 2
-        x: 3099
-        y: 4163
-        width: 1505
-        height: 1927
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fcfae4c403820240b346352e1f64e92
+      spriteID: 53c27b8b41c60114b89d96634bca1142
       vertices: []
       indices: 
       edges: []
@@ -156,18 +156,38 @@ TextureImporter:
       name: bitcoin_walk_2
       rect:
         serializedVersion: 2
-        x: 5631
-        y: 4055
-        width: 1532
-        height: 2001
+        x: 5100
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dac5c95737bf3044a9361a4368bb6ceb
+      spriteID: 9a21b33290ecccb4cac8618bb9d11196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bitcoin_walk_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28e366b312e9ec48ac41f8b729fab27
       vertices: []
       indices: 
       edges: []
@@ -176,38 +196,18 @@ TextureImporter:
       name: bitcoin_walk_4
       rect:
         serializedVersion: 2
-        x: 502
-        y: 745
-        width: 1528
-        height: 2032
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c1c0a88a46f23c4880a66b4fd25241a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bitcoin_walk_6
-      rect:
-        serializedVersion: 2
-        x: 3054
-        y: 745
-        width: 1527
-        height: 2032
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39591819122154247b8deb18ff2c8aaa
+      spriteID: 5ec7e525e9e97594d88bdcc8eefe89cc
       vertices: []
       indices: 
       edges: []
