@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     public GameObject specialSource;
 
     private bool hurt;
-    public float timeIncapacitated;
+    public float timeIncapacitated = 0.2f;
 
     private float lastHit;
     private float damageDealt;
