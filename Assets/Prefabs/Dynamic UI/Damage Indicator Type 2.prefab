@@ -269,6 +269,8 @@ GameObject:
   - component: {fileID: 222258384303215960}
   - component: {fileID: 114634558813410468}
   - component: {fileID: 114806416703347300}
+  - component: {fileID: 2957796975257344739}
+  - component: {fileID: 2694072241028417429}
   m_Layer: 5
   m_Name: Damage Indicator Type 2
   m_TagString: Untagged
@@ -346,4 +348,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ab080acb5a33044b092a161a9bdde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0.2
+  life: 0.4
+--- !u!114 &2957796975257344739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704127310038864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a05519567931a44eb8662172410683d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.0001
+  maxMultiplier: 1.8
+  minMultiplier: 1.2
+  randomize: 1
+  frequency: 1
+--- !u!114 &2694072241028417429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704127310038864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb0b9622bcb2dd44903dd2596ef7e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.0001
+  maxMultiplier: 1.2
+  minMultiplier: 1
+  randomize: 1
+  frequency: 1
