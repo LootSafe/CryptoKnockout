@@ -6,6 +6,7 @@ public abstract class Character {
 
     protected float health, special, defence, strength, moveSpeed, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
     protected string name;
+    protected List<string> hitWords;
     protected Player player;
 
     /// <summary>
@@ -61,6 +62,10 @@ public abstract class Character {
         return special;
     }
 
+    public List<string> GetHitWords()
+    {
+        return hitWords;
+    }
     public enum Characters
     {
         BJORN,

@@ -179,6 +179,12 @@ public class Player : MonoBehaviour {
     {
         return character;
     }
+
+    public List<string> GetHitWords()
+    {
+        return character.GetHitWords();
+    }
+
     public void notifyDeath()
     {
         lives--;

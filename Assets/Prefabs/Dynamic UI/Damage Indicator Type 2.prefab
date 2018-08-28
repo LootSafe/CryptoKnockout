@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 222726461416671850}
   - component: {fileID: 114076264872926862}
   - component: {fileID: 114258082349456958}
+  - component: {fileID: 2690857168708090035}
   m_Layer: 5
   m_Name: KAPOW
   m_TagString: Untagged
@@ -197,8 +198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 29.206001}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000076293945, y: 0.000015258789}
-  m_SizeDelta: {x: 27.9, y: -49.2}
+  m_AnchoredPosition: {x: 6.48, y: 2.05}
+  m_SizeDelta: {x: 77.86, y: -36.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222726461416671850
 CanvasRenderer:
@@ -230,16 +231,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 02e2e7e0396102f40a53e1a5af2e1fa7, type: 3}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 5
+    m_MinSize: 2
     m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: KABLAAM!
 --- !u!114 &114258082349456958
@@ -257,6 +258,23 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &2690857168708090035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361000297863154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a05519567931a44eb8662172410683d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.0001
+  maxMultiplier: 1.5
+  minMultiplier: 1.2
+  randomize: 1
+  frequency: 2
 --- !u!1 &1704127310038864
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,10 +380,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.0001
-  maxMultiplier: 1.8
-  minMultiplier: 1.2
+  maxMultiplier: 2
+  minMultiplier: 1.8
   randomize: 1
-  frequency: 1
+  frequency: 5
 --- !u!114 &2694072241028417429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.0001
-  maxMultiplier: 1.2
-  minMultiplier: 1
+  maxMultiplier: 1.1
+  minMultiplier: 0.6
   randomize: 1
-  frequency: 1
+  frequency: 2
