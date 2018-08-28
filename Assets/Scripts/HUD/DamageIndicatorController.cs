@@ -5,11 +5,12 @@ using UnityEngine;
 public class DamageIndicatorController : MonoBehaviour {
     public GameObject IndicatorPrefab;
     public GameObject player;
+    public Vector2 randomRange;
     public void TriggerIndicator(float damage)
     {
         RectTransform parent = GetComponentInParent<RectTransform>();
         Vector2 pLocation = player.transform.position;
-        Vector2 position = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().WorldToScreenPoint(new Vector2(pLocation.x + Random.Range(-.5f, .5f), pLocation.y + Random.Range(-.5f, .5f)));
+        Vector2 position = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().WorldToScreenPoint(new Vector2(pLocation.x + Random.Range(-randomRange.x, randomRange.x), pLocation.y + Random.Range(-randomRange.y, randomRange.y)));
         GameObject instance = GameObject.Instantiate(IndicatorPrefab, GetComponentInParent<RectTransform>(), true);
         instance.GetComponent<DamageIndicator>().transform.SetParent(parent.transform, false);
         instance.transform.position = position;
