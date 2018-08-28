@@ -13,7 +13,10 @@ public class DamageIndicator : MonoBehaviour {
     
     public void Init(float Damage)
     {
-        GetComponent<Text>().text = ((int)Damage).ToString();
+        if (GetComponent<Text>())
+        {
+            GetComponent<Text>().text = ((int)Damage).ToString();
+        }
     }
 	
 	// Update is called once per frame

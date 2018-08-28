@@ -35,7 +35,7 @@ public class CharacterSwapper : MonoBehaviour {
             case Character.Characters.MONERO:
                 return GetInstance().Monero;
             default:
-                return GetInstance().Doge;
+                throw new System.Exception();
         }
     }
 }

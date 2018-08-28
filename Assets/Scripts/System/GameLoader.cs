@@ -13,7 +13,11 @@ public class GameLoader : MonoBehaviour {
     void Awake()
     {
         //Check if a GameManager has already been assigned to static variable GameManager.instance or if it's still null
-        if (Game.GetInstance() == null) Instantiate(game);
+        if (Game.GetInstance() == null)
+        {
+            GameObject instance = Instantiate(game);
+            game.GetComponent<Game>().enabled = true;
+        }
         if (!GameObject.FindGameObjectWithTag("GlobalData"))
         {
             Instantiate(globalDataPrefab);
