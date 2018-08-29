@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0.4
+  textComponent: {fileID: 114076264872926862}
 --- !u!114 &2957796975257344739
 MonoBehaviour:
   m_ObjectHideFlags: 0

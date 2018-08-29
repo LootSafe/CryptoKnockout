@@ -14,7 +14,7 @@ public class DamageIndicatorController : MonoBehaviour {
         GameObject instance = GameObject.Instantiate(IndicatorPrefab, GetComponentInParent<RectTransform>(), true);
         instance.GetComponent<DamageIndicator>().transform.SetParent(parent.transform, false);
         instance.transform.position = position;
-        instance.GetComponent<DamageIndicator>().Init(damage);
+        instance.GetComponent<DamageIndicator>().Init(damage, player);
 
     }
 	// Update is called once per frame

@@ -185,6 +185,11 @@ public class Player : MonoBehaviour {
         return character.GetHitWords();
     }
 
+    public string RequestHitWord()
+    {
+        return GetHitWords()[Random.Range((int)0, GetHitWords().Count)];
+    }
+
     public void notifyDeath()
     {
         lives--;
