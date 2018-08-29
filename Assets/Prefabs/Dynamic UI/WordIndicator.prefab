@@ -287,10 +287,11 @@ GameObject:
   - component: {fileID: 222258384303215960}
   - component: {fileID: 114634558813410468}
   - component: {fileID: 114806416703347300}
+  - component: {fileID: 7795764289874816520}
   - component: {fileID: 2957796975257344739}
   - component: {fileID: 2694072241028417429}
   m_Layer: 5
-  m_Name: Damage Indicator Type 2
+  m_Name: WordIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,6 +369,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0.4
   textComponent: {fileID: 114076264872926862}
+--- !u!114 &7795764289874816520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704127310038864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3708c3c159483c34ea634a031c167305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgColors:
+  - {r: 0.8584906, g: 0.7767837, b: 0.19032574, a: 1}
+  - {r: 0.8584906, g: 0, b: 0, a: 1}
+  - {r: 0.003648994, g: 0.4273674, b: 0.7735849, a: 1}
+  - {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+  fgColors:
+  - {r: 0.8588236, g: 0.77647066, b: 0.19215688, a: 1}
+  - {r: 0.8588236, g: 0, b: 0, a: 1}
+  - {r: 0.003921569, g: 0.427451, b: 0.7725491, a: 1}
+  - {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  txtColors:
+  - {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.99215686}
+  - {r: 0, g: 0, b: 0, a: 1}
+  bg: {fileID: 114743297638113668}
+  fg: {fileID: 114282259227358640}
+  txt: {fileID: 114076264872926862}
 --- !u!114 &2957796975257344739
 MonoBehaviour:
   m_ObjectHideFlags: 0
