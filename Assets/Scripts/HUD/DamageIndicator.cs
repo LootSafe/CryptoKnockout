@@ -20,7 +20,6 @@ public class DamageIndicator : MonoBehaviour {
             textComponent.text = source.RequestHitWord();
         } else
         {
-            Debug.Log("That aint a crit");
             textComponent = GetComponent<Text>();
             textComponent.text = ((int)Damage).ToString();
         }

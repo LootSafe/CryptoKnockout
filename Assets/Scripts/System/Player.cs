@@ -102,7 +102,7 @@ public class Player : MonoBehaviour {
             }
         }
         
-        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake, source, damageTake/maxHealth > maxHealth*.09);
+        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake, source, damageTake > maxHealth*.09);
         hurt = true;
         InterruptActions();
         return damageTake;
