@@ -7,25 +7,21 @@ public class DamageIndicator : MonoBehaviour {
     public float life = 1f;
     float startTime;
     public Text textComponent;
-    private bool critical = false;
+
     // Use this for initialization
     void Start() {
-        startTime = Time.time;
-        critical = true;
-        if (!textComponent)
-        {
-            textComponent = GetComponent<Text>();
-            critical = false;
-        }
-	}
+        startTime = Time.time;  
+    }
     
-    public void Init(float Damage, GameObject player)
+    public void Init(float Damage, Player player, bool critical, Player source)
     {
         if (critical)
-        {
-            textComponent.text = player.GetComponent<Player>().RequestHitWord();
+        {   
+            textComponent.text = source.RequestHitWord();
         } else
         {
+            Debug.Log("That aint a crit");
+            textComponent = GetComponent<Text>();
             textComponent.text = ((int)Damage).ToString();
         }
     }

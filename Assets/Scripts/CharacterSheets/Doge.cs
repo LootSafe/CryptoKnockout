@@ -14,11 +14,11 @@ public class Doge : Character {
 
         this.hitWords = new List<string>();
         this.hitWords.Add("BANG!!");
-        this.hitWords.Add("");
-        this.hitWords.Add("");
-        this.hitWords.Add("");
-        this.hitWords.Add("");
-        this.hitWords.Add("");
+        this.hitWords.Add("WHAAAM!!");
+        this.hitWords.Add("MUCH WOW!!");
+        this.hitWords.Add("FLIM!!");
+        this.hitWords.Add("FLAAM!!");
+        this.hitWords.Add("WOOOOFFF!!");
     }
 
     public override float CalculateDamage(float damage)

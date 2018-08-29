@@ -102,7 +102,7 @@ public class Player : MonoBehaviour {
             }
         }
 
-        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake);
+        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake, source);
         hurt = true;
         InterruptActions();
         return damageTake;
