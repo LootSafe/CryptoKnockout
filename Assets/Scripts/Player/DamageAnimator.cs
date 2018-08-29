@@ -18,10 +18,10 @@ public class DamageAnimator : MonoBehaviour {
         damageQuantities = new float[numberOfMarkers, 2];
 	}
 
-    public void TriggerSmallHit(float damage, Player source)
+    public void TriggerSmallHit(float damage, Player source, bool critical)
     {
         lastHit = Time.time;
-        damageIndicator.TriggerIndicator(damage, source);
+        damageIndicator.TriggerIndicator(damage, source, critical);
     }
 
     public void AddMarker()
