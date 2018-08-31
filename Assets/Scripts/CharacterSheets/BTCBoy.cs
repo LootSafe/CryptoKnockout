@@ -11,6 +11,13 @@ public class BTCBoy : Character {
         this.defence = 10;
         this.moveSpeed = 10;
         this.name = "Bitcoin Boy";
+
+        this.hitWords = new List<string>();
+        this.hitWords.Add("POOOWW!!");
+        this.hitWords.Add("BIIINGG!");
+        this.hitWords.Add("CA-CHING!");
+        this.hitWords.Add("KAAPOW!!!");
+        this.hitWords.Add("CLIINK!!");
     }
 
     public override float CalculateDamage(float damage)

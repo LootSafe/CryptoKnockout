@@ -113,18 +113,18 @@ TextureImporter:
       name: bitcoin_takeDMG_0
       rect:
         serializedVersion: 2
-        x: 579
-        y: 611
-        width: 1504
-        height: 2090
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b9bf91ec4730a14f93ac6c9f77f3638
+      spriteID: 49947412fa8baf34f8d159682bb8e1db
       vertices: []
       indices: 
       edges: []
@@ -133,18 +133,18 @@ TextureImporter:
       name: bitcoin_takeDMG_1
       rect:
         serializedVersion: 2
-        x: 3141
-        y: 656
-        width: 1437
-        height: 2072
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec074f3ba9a857d4e8dee0889321e205
+      spriteID: 7715c55279cc05e41b835dfaa82448f8
       vertices: []
       indices: 
       edges: []

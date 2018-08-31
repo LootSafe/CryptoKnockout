@@ -125,7 +125,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
         if (punch != 0 )
         {
-            if (controlLocks[playerNumber - 1, 1] == false)
+            if (controlLocks[playerNumber - 1, 1] == false && !player.IsHurt())
             {
                 player.GetCharacter().MovePunch();
                 player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
@@ -141,7 +141,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Kick
         if (kick != 0)
         {
-            if (controlLocks[playerNumber - 1, 2] == false)
+            if (controlLocks[playerNumber - 1, 2] == false && !player.IsHurt())
             {
                 player.GetCharacter().MoveKick();
                 player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LOWKICK);

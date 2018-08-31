@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 m_EditorVersion: 5.6.2f1
+=======
+m_EditorVersion: 2018.2.0x-ImprovedPrefabs
+>>>>>>> 1c98976f29a7aedb4ffa9e0b9bcbab2b7a62665c

@@ -116,18 +116,18 @@ TextureImporter:
       name: bitcoin_knockout_0
       rect:
         serializedVersion: 2
-        x: 2962
-        y: 7229
-        width: 1517
-        height: 2099
+        x: 0
+        y: 6600
+        width: 4622
+        height: 3300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a0e1922d60f05a4abab40f21011938b
+      spriteID: 7c2c9e116291fec4bbf99796a9b1f0d5
       vertices: []
       indices: 
       edges: []
@@ -136,18 +136,18 @@ TextureImporter:
       name: bitcoin_knockout_1
       rect:
         serializedVersion: 2
-        x: 6997
-        y: 7276
-        width: 1503
-        height: 2065
+        x: 4622
+        y: 6600
+        width: 4622
+        height: 3300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06da55343e7ca844ba3c36c3656d469e
+      spriteID: a6d39daa025b9514b983e95274b80dfe
       vertices: []
       indices: 
       edges: []
@@ -156,18 +156,18 @@ TextureImporter:
       name: bitcoin_knockout_2
       rect:
         serializedVersion: 2
-        x: 10721
-        y: 7797
-        width: 1774
-        height: 1937
+        x: 9244
+        y: 6589
+        width: 4622
+        height: 3300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 891b9bf104f5dd24cac7a15cb7dad88f
+      spriteID: 82a78a8d3c865104798cf61e4dd7c82f
       vertices: []
       indices: 
       edges: []
@@ -176,18 +176,18 @@ TextureImporter:
       name: bitcoin_knockout_3
       rect:
         serializedVersion: 2
-        x: 667
-        y: 4500
-        width: 1726
-        height: 1855
+        x: 0
+        y: 3300
+        width: 4622
+        height: 3300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29bf7c71b0098c24cb7f0586dce8cf28
+      spriteID: 1e0dcab91cf788c4597f63cf6326c2c1
       vertices: []
       indices: 
       edges: []
@@ -196,18 +196,18 @@ TextureImporter:
       name: bitcoin_knockout_4
       rect:
         serializedVersion: 2
-        x: 4770
-        y: 3619
-        width: 2173
-        height: 1138
+        x: 4622
+        y: 3300
+        width: 4622
+        height: 3300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c61bfedda3e80ca4eb8aec40dfa616aa
+      spriteID: 5d220bd1c1dfbc741a14b63d4b4a7551
       vertices: []
       indices: 
       edges: []
@@ -216,18 +216,18 @@ TextureImporter:
       name: bitcoin_knockout_5
       rect:
         serializedVersion: 2
-        x: 9455
-        y: 4100
-        width: 2092
-        height: 1002
+        x: 9244
+        y: 3300
+        width: 4622
+        height: 3300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98c161405f0ce7d4f8ee91a0d9e79d05
+      spriteID: 4cf8b401ebc99684580610346fac24aa
       vertices: []
       indices: 
       edges: []
@@ -236,18 +236,18 @@ TextureImporter:
       name: bitcoin_knockout_6
       rect:
         serializedVersion: 2
-        x: 146
-        y: 302
-        width: 2173
-        height: 1140
+        x: 0
+        y: 0
+        width: 4622
+        height: 3300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3cbf1231180881458305f2de0e7e6d5
+      spriteID: 9c54b3557782e8f40a62c363b0377979
       vertices: []
       indices: 
       edges: []

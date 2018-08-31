@@ -22,7 +22,7 @@ public class Tilter : MonoBehaviour
         orgAngle = rect.rotation;
         if (randomize)
         {
-            randomFactor = Random.Range(0.1f, 1f);
+            randomFactor = Random.Range(-1f, 1f);
         }
 
     }

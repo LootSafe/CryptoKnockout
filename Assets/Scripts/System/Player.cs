@@ -18,6 +18,9 @@ public class Player : MonoBehaviour {
     public GameObject foot;
     public GameObject specialSource;
 
+    private bool hurt;
+    public float timeIncapacitated = 0.2f;
+
     private float lastHit;
     private float damageDealt;
 
@@ -34,8 +37,8 @@ public class Player : MonoBehaviour {
     {
 
         //Animation Controller
-        GetComponent<Animator>().runtimeAnimatorController = character.GetAnimationController();
-        Debug.Log("Test");
+        //GetComponent<Animator>().runtimeAnimatorController = character.GetAnimationController();
+        //Debug.Log("Test");
         character.initializePlayer(this);
         this.character = character;
         health = character.GetHealth();
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour {
 
 
             //To be done only by server
-            public float TakeDamage(float damage, Player source)
+    public float TakeDamage(float damage, Player source)
     {
 
         if (!alive) return 0;
@@ -98,8 +101,10 @@ public class Player : MonoBehaviour {
                 }
             }
         }
-
-        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake);
+        
+        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake, source, damageTake > maxHealth*.09);
+        hurt = true;
+        InterruptActions();
         return damageTake;
 
     }
@@ -120,13 +125,22 @@ public class Player : MonoBehaviour {
         special += 1;
         this.damageDealt += damageDealt;
     }
+
+    public void InterruptActions()
+    {
+        fist.SetActive(false);
+        foot.SetActive(false);
+    }
 	
     public bool IsAlive()
     {
         return alive;
     }
 
-
+    public bool IsHurt()
+    {
+        return hurt;
+    }
 
     public bool IsGrounded()
     {
@@ -165,6 +179,17 @@ public class Player : MonoBehaviour {
     {
         return character;
     }
+
+    public List<string> GetHitWords()
+    {
+        return character.GetHitWords();
+    }
+
+    public string RequestHitWord()
+    {
+        return GetHitWords()[Random.Range((int)0, GetHitWords().Count)];
+    }
+
     public void notifyDeath()
     {
         lives--;
@@ -183,5 +208,10 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
 	void Update () {
 		
+        //Update Hurt Interruption
+        if(Time.time >= lastHit + timeIncapacitated)
+        {
+            hurt = false;
+        }
 	}
 }

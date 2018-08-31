@@ -11,6 +11,14 @@ public class Doge : Character {
         this.defence = 10;
         this.moveSpeed = 10;
         this.name = "Doge";
+
+        this.hitWords = new List<string>();
+        this.hitWords.Add("BANG!!");
+        this.hitWords.Add("WHAAAM!!");
+        this.hitWords.Add("MUCH WOW!!");
+        this.hitWords.Add("FLIM!!");
+        this.hitWords.Add("FLAAM!!");
+        this.hitWords.Add("WOOOOFFF!!");
     }
 
     public override float CalculateDamage(float damage)

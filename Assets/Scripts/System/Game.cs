@@ -315,15 +315,18 @@ public class Game : MonoBehaviour {
         spawnP2 = GameObject.FindGameObjectWithTag("P2Spawn").GetComponent<Transform>();
         if (gameMode == GameMode.LOCALMULTIPLAYER)
         {
+            Debug.Log("Spawning ---");
             //Spawn Players 1 and 2
-            GameObject p1 = Instantiate(playerPrefab, spawnP1.position, spawnP1.rotation);
-            localP1 = p1.GetComponent<Player>();
+            GameObject p1 = Instantiate(CharacterSwapper.GetCharacter(GlobalGameData.GetInstance().player1Char), spawnP1.position, spawnP1.rotation);
+            localP1 = p1.GetComponentInChildren<Player>();
             localP1.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player1Char));
-            GameObject p2 = Instantiate(playerPrefab, spawnP2.position, spawnP2.rotation);
-            localP2 = p2.GetComponent<Player>();
+
+            GameObject p2 = Instantiate(CharacterSwapper.GetCharacter(GlobalGameData.GetInstance().player2Char), spawnP2.position, spawnP2.rotation);
+            localP2 = p2.GetComponentInChildren<Player>();
             localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
-            Vector3 p2LS = p2.GetComponentInParent<Transform>().localScale;
-            p2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
+
+            Vector3 p2LS = localP1.GetComponent<Transform>().localScale;
+            localP2.GetComponent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
 
         }
     }

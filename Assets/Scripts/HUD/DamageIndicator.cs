@@ -6,14 +6,23 @@ using UnityEngine.UI;
 public class DamageIndicator : MonoBehaviour {
     public float life = 1f;
     float startTime;
-	// Use this for initialization
-	void Start () {
-        startTime = Time.time;
-	}
+    public Text textComponent;
+
+    // Use this for initialization
+    void Start() {
+        startTime = Time.time;  
+    }
     
-    public void Init(float Damage)
+    public void Init(float Damage, Player player, bool critical, Player source)
     {
-        GetComponent<Text>().text = ((int)Damage).ToString();
+        if (critical)
+        {   
+            textComponent.text = source.RequestHitWord();
+        } else
+        {
+            textComponent = GetComponent<Text>();
+            textComponent.text = ((int)Damage).ToString();
+        }
     }
 	
 	// Update is called once per frame

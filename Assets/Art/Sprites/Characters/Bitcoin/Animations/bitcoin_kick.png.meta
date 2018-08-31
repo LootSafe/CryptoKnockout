@@ -113,10 +113,10 @@ TextureImporter:
       name: bitcoin_kick_0
       rect:
         serializedVersion: 2
-        x: 578
-        y: 3911
-        width: 1508
-        height: 2091
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22a3688090288e245824bbaba2e5771f
+      spriteID: 5a98e6d2c5783074a8ebbfcbf0a206ba
       vertices: []
       indices: 
       edges: []
@@ -133,10 +133,10 @@ TextureImporter:
       name: bitcoin_kick_1
       rect:
         serializedVersion: 2
-        x: 3127
-        y: 3888
-        width: 1527
-        height: 2104
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,7 +144,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3074d2af5b1555e469b388f81082babc
+      spriteID: 2bb980c7480307b41947e5804b56ea81
       vertices: []
       indices: 
       edges: []
@@ -153,10 +153,10 @@ TextureImporter:
       name: bitcoin_kick_2
       rect:
         serializedVersion: 2
-        x: 578
-        y: 620
-        width: 1595
-        height: 2076
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5d413e8a1152394fbee63a9dce44248
+      spriteID: 8e9192f4b541fc64c91af3764da9e876
       vertices: []
       indices: 
       edges: []
@@ -173,10 +173,10 @@ TextureImporter:
       name: bitcoin_kick_3
       rect:
         serializedVersion: 2
-        x: 3127
-        y: 620
-        width: 1598
-        height: 2076
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,7 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74f6bc8fb9034924fa9d673fb170e1c6
+      spriteID: 3e5c2be55fdf31c4e97a3e95989ece06
       vertices: []
       indices: 
       edges: []

@@ -11,6 +11,14 @@ public class EthBot : Character {
         this.defence = 10;
         this.moveSpeed = 10;
         this.name = "EthBot";
+
+        this.hitWords = new List<string>();
+        this.hitWords.Add("ZZZAAAP!!");
+        this.hitWords.Add("ZIIINGGGG!!");
+        this.hitWords.Add("CLASSHHH!!");
+        this.hitWords.Add("CLAANK!!");
+        this.hitWords.Add("CLIINK!!");
+        this.hitWords.Add("CACHUNK!!!");
     }
 
     public override float CalculateDamage(float damage)

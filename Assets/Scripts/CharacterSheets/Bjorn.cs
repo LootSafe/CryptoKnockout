@@ -11,6 +11,14 @@ public class Bjorn : Character {
         this.defence = 10;
         this.moveSpeed = 10;
         this.name = "Bjorn";
+
+        this.hitWords = new List<string>();
+        this.hitWords.Add("BAAAM!!");
+        this.hitWords.Add("POOOWW!!");
+        this.hitWords.Add("ROOAR!!");
+        this.hitWords.Add("ZAAAM!!!");
+        this.hitWords.Add("KAABOOM!!");
+        this.hitWords.Add("KAAPOOWW!");
     }
 
     public override float CalculateDamage(float damage)
