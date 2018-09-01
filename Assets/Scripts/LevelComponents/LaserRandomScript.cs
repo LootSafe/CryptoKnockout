@@ -13,6 +13,9 @@ public class LaserRandomScript : MonoBehaviour {
     private bool active;
     private Player[] players;
     private Transform currentTarget;
+
+    public int fireChance;
+    public int fireChances;
     Game game;
 	// Use this for initialization
 	void Start () {
@@ -79,10 +82,14 @@ public class LaserRandomScript : MonoBehaviour {
             {
                 if (Time.time - lastFire >= delay + Random.Range(1f, 10f))
                 {
-                    if (!(Random.Range(0, 100) > 80)) return;
-                    lastFire = Time.time;
-                    laserSprite.SetActive(true);
-                    active = true;
+                    int roll = Random.Range(0, fireChances);
+                    if (roll > fireChance)
+                    {
+                        Debug.Log("Rolled a: " + roll);
+                        lastFire = Time.time;
+                        laserSprite.SetActive(true);
+                        active = true;
+                    }
                 }
             }
         }

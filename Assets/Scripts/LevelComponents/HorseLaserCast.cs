@@ -30,4 +30,9 @@ public class HorseLaserCast : MonoBehaviour {
             Debug.Log(objectHit.parent.name);
         }
     }
+
+    void UpdateLaserDrawing()
+    {
+
+    }
 }
