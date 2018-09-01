@@ -88,6 +88,11 @@ public class LaserRandomScript : MonoBehaviour {
         }
     }
 
+    public Transform GetCurrentTarget()
+    {
+        return currentTarget;
+    }
+
     //TODO needs to be optimized
     void UpdatePlayers()
     {
