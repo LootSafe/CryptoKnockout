@@ -79,7 +79,7 @@ public class LaserRandomScript : MonoBehaviour {
             {
                 if (Time.time - lastFire >= delay + Random.Range(1f, 10f))
                 {
-
+                    if (!(Random.Range(0, 100) > 80)) return;
                     lastFire = Time.time;
                     laserSprite.SetActive(true);
                     active = true;

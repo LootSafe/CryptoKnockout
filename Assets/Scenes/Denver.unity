@@ -16364,8 +16364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1326712179}
-  randomOffsetMin: {x: -6, y: 6}
-  randomOffsetMax: {x: 2, y: 6}
+  randomOffsetMin: {x: -6, y: -6}
+  randomOffsetMax: {x: 6, y: 2}
   debug: 1
 --- !u!1 &1667598253
 GameObject:
