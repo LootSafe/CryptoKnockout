@@ -8,14 +8,18 @@ public class LaserRandomScript : MonoBehaviour {
     public float delay = 1f;
     public float fireTime =  1f;
     public float targetRange = 20f;
+    public float sweepSpeed = 0.1f;
     public Transform LaserSource;
     private float lastFire;
     private bool active;
     private Player[] players;
-    private Transform currentTarget;
+    public Transform currentTarget;
 
     public int fireChance;
     public int fireChances;
+    public Vector2 minOffset, maxOffset;
+    private Vector2 lastTargetLocation;
+
     Game game;
 	// Use this for initialization
 	void Start () {
@@ -51,6 +55,7 @@ public class LaserRandomScript : MonoBehaviour {
             {
                 viableTargets.Add(p.transform);
             }
+            Debug.Log(p.transform.position);
         }
         if (viableTargets.Count >= 0)
         {
@@ -85,7 +90,10 @@ public class LaserRandomScript : MonoBehaviour {
                     int roll = Random.Range(0, fireChances);
                     if (roll > fireChance)
                     {
-                        Debug.Log("Rolled a: " + roll);
+                        //Choose Offset For Arch
+                        lastTargetLocation = (Vector2)currentTarget.position + new Vector2(Random.Range(minOffset.x, maxOffset.x), Random.Range(minOffset.y, maxOffset.y));
+                        //Account for Sprite Padding
+                        lastTargetLocation += new Vector2(currentTarget.GetComponent<SpriteRenderer>().size.x / 2, currentTarget.GetComponent<SpriteRenderer>().size.y / 2);
                         lastFire = Time.time;
                         laserSprite.SetActive(true);
                         active = true;
@@ -116,5 +124,16 @@ public class LaserRandomScript : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    public Vector2 GetNextPoint()
+    {
+        float y = Mathf.Sin(lastTargetLocation.x);
+        Vector2 nextPoint = new Vector2(lastTargetLocation.x, y + lastTargetLocation.y);
+        lastTargetLocation += new Vector2(sweepSpeed, 0);
+        //Debug.Log("Last Target Location" + lastTargetLocation);
+        return lastTargetLocation;
+        //return currentTarget.position;
+        return nextPoint;
     }
 }

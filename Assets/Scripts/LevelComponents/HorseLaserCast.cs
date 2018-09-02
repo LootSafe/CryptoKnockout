@@ -9,7 +9,6 @@ public class HorseLaserCast : MonoBehaviour {
     public Vector2 randomOffsetMax;
 
     public LineRenderer line;
-    public Transform damageSource;
 
     public bool debug;
 
@@ -18,14 +17,13 @@ public class HorseLaserCast : MonoBehaviour {
         
     }
 	void Update () {
-        damageSource.gameObject.SetActive(false);
         Vector2 offsets = new Vector2(Random.Range(randomOffsetMin.x, randomOffsetMax.x), 
                                       Random.Range(randomOffsetMin.y, randomOffsetMax.y));
 
-        Vector2 direction = (Vector2)laser.GetCurrentTarget().position + offsets;
+        Vector2 direction = (Vector2)laser.GetNextPoint() ;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction , 50.0f);
-        damageSource.gameObject.SetActive(true);
+        
         if (debug)
         {
             Debug.DrawRay(transform.position, direction * 100, Color.green);
@@ -34,10 +32,15 @@ public class HorseLaserCast : MonoBehaviour {
 
         if (hit.collider != null)
         {
-            Transform objectHit = hit.transform;
+            Transform objectHit = hit.transform            
             if(debug) Debug.Log("I Hit" + objectHit.parent.name);
-            UpdateLaserDrawing(objectHit.position);
-            damageSource.position = objectHit.position;
+            UpdateLaserDrawing(hit.point);
+
+            if(hit.collider.tag == "Player")
+            {
+                hit.collider.GetComponent<Player>().TakeDamage(1, null);
+            }
+            
             
         }
     }
