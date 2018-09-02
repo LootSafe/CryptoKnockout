@@ -5,6 +5,10 @@ using UnityEngine;
 public class HorseLaserCast : MonoBehaviour {
 
     public LaserRandomScript laser;
+    public Transform laserSource;
+
+    public Transform lineTestObject;
+
     public Vector2 randomOffsetMin;
     public Vector2 randomOffsetMax;
 
@@ -47,8 +51,22 @@ public class HorseLaserCast : MonoBehaviour {
 
     void UpdateLaserDrawing(Vector2 end)
     {
-        line.SetPosition(0, transform.position);
-        line.SetPosition(1, (Vector3)end);
+        if (debug)
+        {
+            lineTestObject.gameObject.SetActive(true);
+            lineTestObject.position = laserSource.position;
+        }
+        Vector3[] points = new Vector3[2];
+        points[0] = laserSource.position;
+        points[1] = end;
+
+        line.SetPositions(points);
+
+    }
+
+
+    void UpdateParticleSystem(Vector2 end)
+    {
 
     }
 }

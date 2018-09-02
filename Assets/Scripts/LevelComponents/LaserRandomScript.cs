@@ -20,6 +20,9 @@ public class LaserRandomScript : MonoBehaviour {
     public Vector2 minOffset, maxOffset;
     private Vector2 lastTargetLocation;
 
+    public Animator horseAnimator;
+    public HorseGallop gallop;
+
     Game game;
 	// Use this for initialization
 	void Start () {
@@ -55,7 +58,6 @@ public class LaserRandomScript : MonoBehaviour {
             {
                 viableTargets.Add(p.transform);
             }
-            Debug.Log(p.transform.position);
         }
         if (viableTargets.Count >= 0)
         {
@@ -74,6 +76,10 @@ public class LaserRandomScript : MonoBehaviour {
         {
             if (Time.time - lastFire >= fireTime + Random.Range(0.1f, 0.2f))
             {
+                //Enable Motion
+                horseAnimator.enabled = true;
+                gallop.Resume();
+
                 lastFire = Time.time;
                 laserSprite.SetActive(false);
                 active = false;
@@ -94,6 +100,12 @@ public class LaserRandomScript : MonoBehaviour {
                         lastTargetLocation = (Vector2)currentTarget.position + new Vector2(Random.Range(minOffset.x, maxOffset.x), Random.Range(minOffset.y, maxOffset.y));
                         //Account for Sprite Padding
                         lastTargetLocation += new Vector2(currentTarget.GetComponent<SpriteRenderer>().size.x / 2, currentTarget.GetComponent<SpriteRenderer>().size.y / 2);
+
+                        //Disable Motion
+                        horseAnimator.enabled = false;
+                        gallop.Pause();
+
+
                         lastFire = Time.time;
                         laserSprite.SetActive(true);
                         active = true;
