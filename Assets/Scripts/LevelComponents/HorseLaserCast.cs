@@ -32,7 +32,7 @@ public class HorseLaserCast : MonoBehaviour {
 
         if (hit.collider != null)
         {
-            Transform objectHit = hit.transform            
+            Transform objectHit = hit.transform;            
             if(debug) Debug.Log("I Hit" + objectHit.parent.name);
             UpdateLaserDrawing(hit.point);
 
