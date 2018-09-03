@@ -21,6 +21,8 @@ public class HorseLaserCast : MonoBehaviour {
         
     }
 	void Update () {
+        //Make Sure ine Isn' Visible till Sized
+        line.enabled = false;
         Vector2 offsets = new Vector2(Random.Range(randomOffsetMin.x, randomOffsetMax.x), 
                                       Random.Range(randomOffsetMin.y, randomOffsetMax.y));
 
@@ -31,13 +33,13 @@ public class HorseLaserCast : MonoBehaviour {
         if (debug)
         {
             Debug.DrawRay(transform.position, direction * 100, Color.green);
-            Debug.Log("Target:" + laser.GetCurrentTarget().transform.parent.name);
+            //Debug.Log("Target:" + laser.GetCurrentTarget().transform.parent.name);
         }
 
         if (hit.collider != null)
         {
             Transform objectHit = hit.transform;            
-            if(debug) Debug.Log("I Hit" + objectHit.parent.name);
+            //if(debug) Debug.Log("I Hit" + objectHit.parent.name);
             UpdateLaserDrawing(hit.point);
 
             if(hit.collider.tag == "Player")
@@ -51,19 +53,30 @@ public class HorseLaserCast : MonoBehaviour {
 
     void UpdateLaserDrawing(Vector2 end)
     {
-        if (debug)
-        {
-            lineTestObject.gameObject.SetActive(true);
-            lineTestObject.position = laserSource.position;
-        }
+        line.enabled = true;
         Vector3[] points = new Vector3[2];
         points[0] = laserSource.position;
-        points[1] = end;
+        points[1] = new Vector3(end.x, end.y, 0);
 
         line.SetPositions(points);
 
+        if (debug)
+        {
+            //lineTestObject.gameObject.SetActive(true);
+            lineTestObject.position = laserSource.position;
+            Debug.Log("Line A:" + (Vector2)laserSource.position + " to " + end);
+            Debug.Log("Line B:" + (Vector2)line.GetPosition(0) + " to " + (Vector2)line.GetPosition(1));
+            Debug.Assert(laserSource.position == line.GetPosition(0));
+            Debug.Assert((end == (Vector2)line.GetPosition(1)));
+        }
+
     }
 
+    void ResetLine()
+    {
+        line.SetPosition(0, Vector2.zero);
+        line.SetPosition(1, Vector2.zero);
+    }
 
     void UpdateParticleSystem(Vector2 end)
     {

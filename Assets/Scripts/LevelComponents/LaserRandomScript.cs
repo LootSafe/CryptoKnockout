@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LaserRandomScript : MonoBehaviour {
 
-    public GameObject laserSprite;
+    public GameObject laserRayObject;
+    public GameObject laserLine;
     public float delay = 1f;
     public float fireTime =  1f;
     public float targetRange = 20f;
@@ -26,7 +27,8 @@ public class LaserRandomScript : MonoBehaviour {
     Game game;
 	// Use this for initialization
 	void Start () {
-        laserSprite.SetActive(false);
+        laserRayObject.SetActive(false);
+        laserLine.SetActive(false);
         lastFire = Time.time;
         game = Game.GetInstance();
 	}
@@ -81,7 +83,8 @@ public class LaserRandomScript : MonoBehaviour {
                 gallop.Resume();
 
                 lastFire = Time.time;
-                laserSprite.SetActive(false);
+                laserRayObject.SetActive(false);
+                laserLine.SetActive(false);
                 active = false;
             }
         }
@@ -107,7 +110,8 @@ public class LaserRandomScript : MonoBehaviour {
 
 
                         lastFire = Time.time;
-                        laserSprite.SetActive(true);
+                        laserRayObject.SetActive(true);
+                        laserLine.SetActive(true);
                         active = true;
                     }
                 }
@@ -144,7 +148,7 @@ public class LaserRandomScript : MonoBehaviour {
         Vector2 nextPoint = new Vector2(lastTargetLocation.x, y + lastTargetLocation.y);
         lastTargetLocation += new Vector2(sweepSpeed, 0);
         //Debug.Log("Last Target Location" + lastTargetLocation);
-        return lastTargetLocation;
+        //return lastTargetLocation;
         //return currentTarget.position;
         return nextPoint;
     }

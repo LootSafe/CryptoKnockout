@@ -6,7 +6,7 @@ public class Doge : Character {
 
     public Doge()
     {
-        this.health = 90;
+        this.health = 900000;
         this.strength = 10;
         this.defence = 10;
         this.moveSpeed = 10;
