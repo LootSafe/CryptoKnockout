@@ -12,6 +12,8 @@ public class HorseLaserCast : MonoBehaviour {
     public Vector2 randomOffsetMin;
     public Vector2 randomOffsetMax;
 
+    public Vector2 directionOverride;
+
     public LineRenderer line;
 
     public bool debug;
@@ -28,11 +30,11 @@ public class HorseLaserCast : MonoBehaviour {
 
         Vector2 direction = (Vector2)laser.GetNextPoint() ;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction , 50.0f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction - (Vector2)transform.position , 50.0f);
         
         if (debug)
         {
-            Debug.DrawRay(transform.position, direction * 100, Color.green);
+            Debug.DrawRay(transform.position, (direction - (Vector2)transform.position) * 20  , Color.green);
             //Debug.Log("Target:" + laser.GetCurrentTarget().transform.parent.name);
         }
 
@@ -64,10 +66,10 @@ public class HorseLaserCast : MonoBehaviour {
         {
             //lineTestObject.gameObject.SetActive(true);
             lineTestObject.position = laserSource.position;
-            Debug.Log("Line A:" + (Vector2)laserSource.position + " to " + end);
-            Debug.Log("Line B:" + (Vector2)line.GetPosition(0) + " to " + (Vector2)line.GetPosition(1));
-            Debug.Assert(laserSource.position == line.GetPosition(0));
-            Debug.Assert((end == (Vector2)line.GetPosition(1)));
+            //Debug.Log("Line A:" + (Vector2)laserSource.position + " to " + end);
+            //Debug.Log("Line B:" + (Vector2)line.GetPosition(0) + " to " + (Vector2)line.GetPosition(1));
+            //Debug.Assert(laserSource.position == line.GetPosition(0));
+            //Debug.Assert((end == (Vector2)line.GetPosition(1)));
         }
 
     }

@@ -395,7 +395,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247354951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee944c9df0354f4581a7b1a57eeb2af, type: 3}
   m_Name: 
@@ -11711,11 +11711,11 @@ MonoBehaviour:
   laserLine: {fileID: 208081520}
   delay: 0
   fireTime: 4
-  targetRange: 10
+  targetRange: 5
   sweepSpeed: 0.1
   LaserSource: {fileID: 844166149}
   currentTarget: {fileID: 0}
-  fireChance: 990
+  fireChance: 500
   fireChances: 1000
   minOffset: {x: -1, y: -2}
   maxOffset: {x: 1, y: 1}
@@ -16628,6 +16628,7 @@ MonoBehaviour:
   lineTestObject: {fileID: 1025780245}
   randomOffsetMin: {x: -6, y: -6}
   randomOffsetMax: {x: 6, y: 2}
+  directionOverride: {x: -5, y: -5}
   line: {fileID: 208081522}
   debug: 1
 --- !u!1 &1667598253

@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     private float lives = 1;
     private bool alive = false;
     public float health = 0;
+    public Transform target;
     private float special = 0;
     private float maxSpecial = 100;
     private float maxHealth;
@@ -91,7 +92,7 @@ public class Player : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Ouch!");
+                //Debug.Log("Ouch!");
                 health -= damageTake;
                 lastHit = Time.time;
                 GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HURT);
