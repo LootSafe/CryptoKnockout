@@ -35,6 +35,7 @@ public class Doge : Character {
 
     public override void MoveKick()
     {
+        player.IsAttacking();
         player.foot.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
@@ -44,6 +45,7 @@ public class Doge : Character {
     }
     public override void MovePunch()
     {
+        player.IsAttacking();
         player.fist.GetComponent<PlayerDamage>().TriggerEnable();
     }
 

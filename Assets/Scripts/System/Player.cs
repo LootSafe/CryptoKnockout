@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
     private float lastHit;
     private float damageDealt;
 
+    public bool attacking;
+
     private bool grounded = false;
 
     void Start()
@@ -95,7 +97,10 @@ public class Player : MonoBehaviour {
                 //Debug.Log("Ouch!");
                 health -= damageTake;
                 lastHit = Time.time;
+                hurt = true;
+                InterruptActions();
                 GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HURT);
+                GetComponent<DamageAnimator>().TriggerSmallHit(damageTake, source, damageTake > maxHealth * .09);
                 if (source)
                 {
                     KnockBack(source.GetComponent<Transform>().position.x);
@@ -103,9 +108,8 @@ public class Player : MonoBehaviour {
             }
         }
         
-        GetComponent<DamageAnimator>().TriggerSmallHit(damageTake, source, damageTake > maxHealth*.09);
-        hurt = true;
-        InterruptActions();
+        
+        
         return damageTake;
 
     }
@@ -131,6 +135,7 @@ public class Player : MonoBehaviour {
     {
         fist.SetActive(false);
         foot.SetActive(false);
+        attacking = false;
     }
 	
     public bool IsAlive()
@@ -143,6 +148,20 @@ public class Player : MonoBehaviour {
         return hurt;
     }
 
+    public void StartAttacking()
+    {
+        attacking = true;
+    }
+
+    public void StopAttacking()
+    {
+        attacking = false;
+    }
+
+    public bool IsAttacking()
+    {
+        return attacking;
+    }
     public bool IsGrounded()
     {
         return grounded;

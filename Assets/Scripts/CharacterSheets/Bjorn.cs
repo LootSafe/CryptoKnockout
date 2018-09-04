@@ -34,11 +34,13 @@ public class Bjorn : Character {
 
     public override void MoveKick()
     {
+        player.StartAttacking();
         player.foot.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
     public override void MovePunch()
     {
+        player.StartAttacking();
         player.fist.GetComponent<PlayerDamage>().TriggerEnable();
     }
 
@@ -49,6 +51,7 @@ public class Bjorn : Character {
 
     public override void MoveSpecial1()
     {
+
         throw new System.NotImplementedException();
 
     }

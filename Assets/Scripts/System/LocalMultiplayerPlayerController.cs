@@ -74,7 +74,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         float block = Input.GetAxis("P" + playerNumber + "_Block");
 
         //Horizontal Changes
-        if (xMovement != 0)
+        if (xMovement != 0 && !player.IsAttacking())
         {
             if (Time.time - lastMovements[playerNumber - 1] >= 0.01) 
             {
@@ -102,7 +102,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         }
 
         //Vertical Changes
-        if (jump != 0)
+        if (jump != 0 && !player.IsAttacking())
         {
             if (controlLocks[playerNumber - 1, 0] == false)
             {
@@ -123,9 +123,9 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         /*Player Moves*/
         //Punch
 
-        if (punch != 0 )
+        if (punch != 0)
         {
-            if (controlLocks[playerNumber - 1, 1] == false && !player.IsHurt())
+            if (controlLocks[playerNumber - 1, 1] == false && !player.IsHurt() && !player.IsAttacking())
             {
                 player.GetCharacter().MovePunch();
                 player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
@@ -141,7 +141,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Kick
         if (kick != 0)
         {
-            if (controlLocks[playerNumber - 1, 2] == false && !player.IsHurt())
+            if (controlLocks[playerNumber - 1, 2] == false && !player.IsHurt() && !player.IsAttacking())
             {
                 player.GetCharacter().MoveKick();
                 player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LOWKICK);

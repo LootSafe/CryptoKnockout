@@ -20,7 +20,7 @@ public abstract class Character {
     public void initializePlayer(Player player)
     {
         this.player = player;
-        Debug.Log("Player reference has been updated for " + name);
+        //Debug.Log("Player reference has been updated for " + name);
     }
     public float GetHealth()
     {

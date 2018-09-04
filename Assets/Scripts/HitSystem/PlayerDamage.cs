@@ -17,6 +17,7 @@ public class PlayerDamage : MonoBehaviour {
         if (lastHit != 0 && Time.time >= lastHit + delay)
         {
             gameObject.SetActive(false);
+            if (player) player.StopAttacking();
             lastHit = 0;
         }
 
@@ -35,11 +36,15 @@ public class PlayerDamage : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player" && other!= player)
+        if (other.tag == "Player" && other != player)
         {
             float damageDealt = other.GetComponent<Player>().TakeDamage(10, player);
             gameObject.SetActive(false);
-            if(player) player.AddToScore(damageDealt);
+            if (player)
+            {
+                player.AddToScore(damageDealt);
+                player.StopAttacking();
+            }
         }
     }
 }
