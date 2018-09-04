@@ -59,11 +59,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208081520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.0047946, y: 7.1336493, z: 0}
+  m_LocalScale: {x: 2.4999998, y: 2.4999998, z: 2.4999998}
   m_Children: []
-  m_Father: {fileID: 682696520}
-  m_RootOrder: 7
+  m_Father: {fileID: 1326712178}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &208081522
 LineRenderer:
@@ -112,7 +112,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0.08060837
-        value: 0.14406395
+        value: 0.10736656
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -124,8 +124,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 0.4811321, g: 0.23375759, b: 0.23375759, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 0.3882353}
+      key1: {r: 0.4811321, g: 0.23375759, b: 0.23375759, a: 0.4509804}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -140,7 +140,7 @@ LineRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
+      atime0: 193
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -5749,7 +5749,6 @@ Transform:
   - {fileID: 1452815166}
   - {fileID: 1301487710}
   - {fileID: 1123232525}
-  - {fileID: 208081521}
   - {fileID: 834584648}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -6201,7 +6200,7 @@ Transform:
   - {fileID: 924939257}
   - {fileID: 1438229482}
   m_Father: {fileID: 682696520}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &844166148
 GameObject:
@@ -11691,6 +11690,7 @@ Transform:
   m_LocalPosition: {x: -9.95, y: 0.9, z: 0.10955759}
   m_LocalScale: {x: 0.7107038, y: 0.71070385, z: 0.71070385}
   m_Children:
+  - {fileID: 208081521}
   - {fileID: 1603334888}
   m_Father: {fileID: 783755326}
   m_RootOrder: 0
@@ -16552,7 +16552,7 @@ Transform:
   - {fileID: 1464224823}
   - {fileID: 1673209699}
   m_Father: {fileID: 1326712178}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!20 &1603334891
 Camera:

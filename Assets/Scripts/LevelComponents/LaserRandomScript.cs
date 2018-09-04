@@ -100,7 +100,7 @@ public class LaserRandomScript : MonoBehaviour {
                     if (roll > fireChance)
                     {
                         //Choose Offset For Arch
-                        //lastTargetLocation = (Vector2)currentTarget.position + new Vector2(Random.Range(minOffset.x, maxOffset.x), Random.Range(minOffset.y, maxOffset.y));
+                        lastTargetLocation = (Vector2)currentTarget.position + new Vector2(Random.Range(minOffset.x, maxOffset.x), Random.Range(minOffset.y, maxOffset.y));
                         //lastTargetLocation = (Vector2)currentTarget.GetComponent<Player>().target.position;
                         lastTargetLocation = (Vector2)currentTarget.position;
                         //Account for Sprite Padding
@@ -146,12 +146,12 @@ public class LaserRandomScript : MonoBehaviour {
 
     public Vector2 GetNextPoint()
     {
-        //float y = Mathf.Sin(lastTargetLocation.x);
-       // Vector2 nextPoint = new Vector2(lastTargetLocation.x, y + lastTargetLocation.y);
-        //lastTargetLocation += new Vector2(sweepSpeed, 0);
+        float y = Mathf.Sin(lastTargetLocation.x);
+        Vector2 nextPoint = new Vector2(lastTargetLocation.x, y + lastTargetLocation.y);
+        lastTargetLocation += new Vector2(sweepSpeed, 0);
         //Debug.Log("Last Target Location" + lastTargetLocation);
-        return lastTargetLocation;
+        //return lastTargetLocation;
         //return currentTarget.position;
-        //return nextPoint;
+        return nextPoint;
     }
 }
