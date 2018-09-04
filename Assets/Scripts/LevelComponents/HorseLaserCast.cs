@@ -14,6 +14,8 @@ public class HorseLaserCast : MonoBehaviour {
 
     public Vector2 directionOverride;
 
+    public Transform particles;
+
     public LineRenderer line;
 
     public bool debug;
@@ -59,6 +61,7 @@ public class HorseLaserCast : MonoBehaviour {
         Vector3[] points = new Vector3[2];
         points[0] = laserSource.position;
         points[1] = new Vector3(end.x, end.y, 0);
+        particles.position = end;
 
         line.SetPositions(points);
 

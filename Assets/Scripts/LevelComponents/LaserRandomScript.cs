@@ -24,10 +24,13 @@ public class LaserRandomScript : MonoBehaviour {
     public Animator horseAnimator;
     public HorseGallop gallop;
 
+    public GameObject laserFloorParticles;
+
     Game game;
 	// Use this for initialization
 	void Start () {
         laserRayObject.SetActive(false);
+        laserFloorParticles.SetActive(false);
         laserLine.SetActive(false);
         lastFire = Time.time;
         game = Game.GetInstance();
@@ -84,6 +87,7 @@ public class LaserRandomScript : MonoBehaviour {
 
                 lastFire = Time.time;
                 laserRayObject.SetActive(false);
+                laserFloorParticles.SetActive(false);
                 laserLine.SetActive(false);
                 active = false;
             }
@@ -113,6 +117,7 @@ public class LaserRandomScript : MonoBehaviour {
 
                         lastFire = Time.time;
                         laserRayObject.SetActive(true);
+                        laserFloorParticles.SetActive(true);
                         laserLine.SetActive(true);
                         active = true;
                     }
