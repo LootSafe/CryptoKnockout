@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 55e53697b8d8cf3498bc13a193e672b5
+guid: 3994e50d73528ec4dbaf934fff53124a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Doge_kick_0
-    21300002: Doge_kick_1
+    21300000: Doge_block_0
+    21300002: Doge_block_1
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -108,7 +108,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Doge_kick_0
+      name: Doge_block_0
       rect:
         serializedVersion: 2
         x: 0
@@ -122,13 +122,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a830fac5f20d4714494ae412e332fc3c
+      spriteID: b54ce6e1d38c82d4492f149966727951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Doge_kick_1
+      name: Doge_block_1
       rect:
         serializedVersion: 2
         x: 2550
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0654f7eaf5f0c9d458e67f1dd0414bae
+      spriteID: 3dd181ecf2ba6864bba67341138d1d92
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0666c900189f97547ba88e85906e6f16
+    spriteID: 156f945b346a1fa4a9364f135c31d10b
     vertices: []
     indices: 
     edges: []

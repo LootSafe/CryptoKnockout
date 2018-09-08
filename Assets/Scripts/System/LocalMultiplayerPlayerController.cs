@@ -144,7 +144,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             if (controlLocks[playerNumber - 1, 2] == false && !player.IsHurt() && !player.IsAttacking())
             {
                 player.GetCharacter().MoveKick();
-                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LOWKICK);
+                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHKICK);
                 controlLocks[playerNumber - 1, 2] = true;
             }
         }
