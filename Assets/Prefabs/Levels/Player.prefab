@@ -645,6 +645,7 @@ MonoBehaviour:
   foot: {fileID: 1633664159556462}
   specialSource: {fileID: 1420809114905940}
   timeIncapacitated: 0.2
+  attacking: 0
 --- !u!114 &114456718162601248
 MonoBehaviour:
   m_ObjectHideFlags: 0
