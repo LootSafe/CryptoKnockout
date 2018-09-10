@@ -27,7 +27,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
 
         //Initialize Control Locks
-        controlLocks = new bool[8, 4];
+        controlLocks = new bool[8, 5];
         lastMovements = new float[8];
 	}
 
@@ -63,6 +63,8 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         Rigidbody2D rigidbody = player.GetComponentInParent<Rigidbody2D>();
         
         float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
+
+        //4 -- For Crouch
         float yMovement = Input.GetAxis("P" + playerNumber + "_Vertical");
         //0
         float jump = Input.GetAxis("P" + playerNumber + "_Jump");
@@ -115,7 +117,10 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             }
             else if(yMovement < 0)
             {
-
+                if(controlLocks[playerNumber - 1, 4])
+                {
+                    player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DUCK);
+                }
             }
         }
         else

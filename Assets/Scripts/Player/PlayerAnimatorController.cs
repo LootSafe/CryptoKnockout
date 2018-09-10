@@ -7,7 +7,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     bool IDLE = false;
 
-    public enum ANIMATION_STATE {IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE };
+    public enum ANIMATION_STATE {IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE, DUCK };
 
 
     Player player;
@@ -47,6 +47,9 @@ public class PlayerAnimatorController : MonoBehaviour
             {
                 case ANIMATION_STATE.DEAD:
                     playerAnimator.SetTrigger("DIE");
+                    return;
+            case ANIMATION_STATE.DUCK:
+                    playerAnimator.SetTrigger("DUCK");
                     return;
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("GROUNDED");
