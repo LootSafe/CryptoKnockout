@@ -64,7 +64,7 @@ public class PlayerAnimatorController : MonoBehaviour
                     playerAnimator.SetTrigger("HURT");
                     return;
                 case ANIMATION_STATE.BLOCK:
-                    playerAnimator.SetTrigger("BLOCKING");
+                    playerAnimator.SetTrigger("BLOCK");
                     return;
                 case ANIMATION_STATE.LOWPUNCH:
                     return;
