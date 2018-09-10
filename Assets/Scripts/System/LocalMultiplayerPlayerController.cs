@@ -119,16 +119,13 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             }
             else if(yMovement < 0)
             {
-                if(controlLocks[playerNumber - 1, 4])
-                {
                     player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DUCK);
                     player.StartDucking();
-                }
             }
             else
             {
                 player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
-                player.StopDucking();
+                
             }
         }
         else
@@ -137,6 +134,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             {
                 controlLocks[playerNumber - 1, 0] = false;
             }
+            player.StopDucking();
         }
 
 
