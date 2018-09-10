@@ -102,13 +102,20 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         }
 
         //Vertical Changes
-        if (jump != 0 && !player.IsAttacking())
+        if (yMovement != 0 && !player.IsAttacking())
         {
-            if (controlLocks[playerNumber - 1, 0] == false)
+            if (yMovement > 0)
             {
-                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
-                rigidbody.AddForce(new Vector2(0, 350));
-                controlLocks[playerNumber - 1, 0] = true;
+                if (controlLocks[playerNumber - 1, 0] == false)
+                {
+                    player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
+                    rigidbody.AddForce(new Vector2(0, 350));
+                    controlLocks[playerNumber - 1, 0] = true;
+                }
+            }
+            else if(yMovement < 0)
+            {
+
             }
         }
         else
