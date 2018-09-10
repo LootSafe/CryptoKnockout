@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
     private float damageDealt;
 
     public bool attacking;
-
+    private bool blocking , ducking;
     private bool grounded = false;
 
     void Start()
@@ -161,6 +161,35 @@ public class Player : MonoBehaviour {
     public bool IsAttacking()
     {
         return attacking;
+    }
+
+    public void StartBlocking()
+    {
+        blocking = true;
+    }
+
+    public void StopBlocking()
+    {
+        blocking = false;
+    }
+
+    public bool IsDucking()
+    {
+        return ducking;
+    }
+
+    public void StartDucking()
+    {
+        ducking = true;
+    }
+
+    public void StopDucking()
+    {
+        ducking = false;
+    }
+    public bool IsBlocking()
+    {
+        return blocking;
     }
     public bool IsGrounded()
     {

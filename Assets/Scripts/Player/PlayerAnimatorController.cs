@@ -25,6 +25,9 @@ public class PlayerAnimatorController : MonoBehaviour
         playerAnimator.SetFloat("SPEED", Mathf.Abs(rgbody.velocity.x));
         playerAnimator.SetBool("GROUNDED", player.IsGrounded());
         playerAnimator.SetBool("ALIVE", player.IsAlive());
+        playerAnimator.SetBool("BLOCKING", player.IsBlocking());
+        playerAnimator.SetBool("DUCKING", player.IsDucking());
+
     }
 
     void Start()

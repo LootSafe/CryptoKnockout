@@ -63,6 +63,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: DUCKING
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: BLOCK
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: DUCK
     m_Type: 9
     m_DefaultFloat: 0
@@ -302,7 +314,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: SPEED
+    m_EventTreshold: 9999
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102113867700847060}
   m_Solo: 0
@@ -324,7 +339,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: BLOCK
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102928426894581664}
   m_Solo: 0
@@ -493,7 +511,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: DUCKING
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102260023286618690}
   m_Solo: 0
@@ -537,7 +558,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: BLOCKING
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102260023286618690}
   m_Solo: 0
@@ -1072,7 +1096,7 @@ AnimatorStateMachine:
     m_Position: {x: 444, y: -432, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102911222709413348}
-    m_Position: {x: 444, y: -852, z: 0}
+    m_Position: {x: 432, y: -852, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102928426894581664}
     m_Position: {x: 444, y: -372, z: 0}

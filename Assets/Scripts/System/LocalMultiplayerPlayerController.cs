@@ -61,7 +61,9 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
         Transform transform = player.GetComponentInParent<Transform>();
         Rigidbody2D rigidbody = player.GetComponentInParent<Rigidbody2D>();
-        
+        PlayerAnimatorController pac = player.GetComponent<PlayerAnimatorController>();
+
+
         float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
 
         //4 -- For Crouch
@@ -120,7 +122,13 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                 if(controlLocks[playerNumber - 1, 4])
                 {
                     player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DUCK);
+                    player.StartDucking();
                 }
+            }
+            else
+            {
+                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
+                player.StopDucking();
             }
         }
         else
@@ -140,7 +148,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             if (controlLocks[playerNumber - 1, 1] == false && !player.IsHurt() && !player.IsAttacking())
             {
                 player.GetCharacter().MovePunch();
-                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
+                pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
                 controlLocks[playerNumber - 1, 1] = true;
             }
         }
@@ -156,7 +164,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             if (controlLocks[playerNumber - 1, 2] == false && !player.IsHurt() && !player.IsAttacking())
             {
                 player.GetCharacter().MoveKick();
-                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHKICK);
+                pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHKICK);
                 controlLocks[playerNumber - 1, 2] = true;
             }
         }
@@ -171,13 +179,16 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             if (controlLocks[playerNumber - 1, 3] == false)
             {
                 player.GetCharacter().MoveBlock();
-                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.BLOCK);
+                pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.BLOCK);
                 controlLocks[playerNumber - 1, 3] = true;
+                player.StartBlocking();
             }
         }
         else
         {
             controlLocks[playerNumber - 1, 3] = false;
+            pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
+            player.StopBlocking();
         }
 
         //Special2
