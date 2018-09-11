@@ -641,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1000
   target: {fileID: 4887495918434850245}
+  special: 0
   fist: {fileID: 1493002108899744}
   foot: {fileID: 1633664159556462}
   specialSource: {fileID: 1420809114905940}

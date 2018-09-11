@@ -14,6 +14,7 @@ public class DamageAnimator : MonoBehaviour {
     Color orgColor;
 	// Use this for initialization
 	void Start () {
+        lastHit = Time.time - duration;
         orgColor = GetComponent<SpriteRenderer>().color;
         damageQuantities = new float[numberOfMarkers, 2];
 	}
