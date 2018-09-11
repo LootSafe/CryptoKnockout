@@ -109,6 +109,7 @@ public class HealthBarUpdater : MonoBehaviour {
 
         if (currentWidth != targetWidth)
         {
+            damageBarParticles.SetActive(true);
             //Check if health has gone up - hard reset to new position
             if (targetWidth > currentWidth)
             {
@@ -122,16 +123,18 @@ public class HealthBarUpdater : MonoBehaviour {
                     if (Mathf.Abs(targetWidth - currentWidth) < damageAnimateSpeed)
                     {
                         newWidth = targetWidth;
-                        damageBarParticles.SetActive(false);
                     }
                     else
                     {
-                        damageBarParticles.SetActive(true);
                         newWidth = currentWidth + damageAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
                     }
                     damageIndicator.sizeDelta = new Vector2(newWidth, currentSize.y);
                 }
             }
+        }
+        else
+        {
+            damageBarParticles.SetActive(false);
         }
     }
 
