@@ -22,6 +22,8 @@ public class HealthBarUpdater : MonoBehaviour {
     public float specialAnimateSpeed;
     public RectTransform specialContainer;
 
+    public GameObject damageBarParticles;
+
     public Text healthTextDisplay;
 
     Game game;

@@ -98,3 +98,6 @@ TagManager:
   - name: Foreground
     uniqueID: 3088902055
     locked: 0
+  - name: Particles
+    uniqueID: 419570821
+    locked: 0
