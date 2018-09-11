@@ -91,6 +91,7 @@ public class Player : MonoBehaviour {
                 lastHit = Time.time;
                 notifyDeath();
                 GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DEAD);
+                GetComponent<DamageAnimator>().TriggerSmallHit(damageTake, source, damageTake > maxHealth * .09);
             }
             else
             {

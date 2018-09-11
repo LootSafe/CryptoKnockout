@@ -6365,9 +6365,9 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: 25, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 35.53349, y: 34.584694, z: 0}
+    m_Scale: {x: 30, y: 34.584694, z: 0}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -6509,7 +6509,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10348,6 +10348,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followObject: {fileID: 1181945846}
+  healthFill: {fileID: 1653717380}
+  damageFill: {fileID: 493528827}
+  particles: {fileID: 445279528}
 --- !u!1 &461556498
 GameObject:
   m_ObjectHideFlags: 0
