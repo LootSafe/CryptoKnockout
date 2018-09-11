@@ -122,9 +122,11 @@ public class HealthBarUpdater : MonoBehaviour {
                     if (Mathf.Abs(targetWidth - currentWidth) < damageAnimateSpeed)
                     {
                         newWidth = targetWidth;
+                        damageBarParticles.SetActive(false);
                     }
                     else
                     {
+                        damageBarParticles.SetActive(true);
                         newWidth = currentWidth + damageAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
                     }
                     damageIndicator.sizeDelta = new Vector2(newWidth, currentSize.y);
