@@ -100,7 +100,14 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         float block = Input.GetAxis("P" + playerNumber + "_Block");
 
         //Horizontal Changes
-        if (xMovement != 0 && !player.IsAttacking() && !player.IsDucking() && !player.IsDucking())
+        /*
+        Debug.Log("Player: " + playerNumber + "- " 
+            + "\n Alive: " + player.IsAlive()
+            + " NotAttacking: " + !player.IsAttacking() 
+            + " NotDucking: " + !player.IsDucking() 
+            + !player.IsDucking());
+         */
+        if (xMovement != 0 && player.IsAlive() && !player.IsAttacking() && !player.IsDucking() && !player.IsDucking())
         {
             if (Time.time - lastMovements[playerNumber - 1] >= 0.01) 
             {
@@ -135,7 +142,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                 if (controlLocks[playerNumber - 1, 0] == false)
                 {
                     pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
-                    rigidbody.AddForce(new Vector2(0, 350));
+                    rigidbody.AddForce(new Vector2(0, 400));
                     controlLocks[playerNumber - 1, 0] = true;
                 }
             }

@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
     private float lastHit;
     private float damageDealt;
 
-    public bool attacking;
+    public bool attacking = false;
     private bool blocking , ducking;
     private bool grounded = false;
 
@@ -250,6 +250,9 @@ public class Player : MonoBehaviour {
     public void respawn()
     {
         alive = true;
+        attacking = false;
+        blocking = false;
+        ducking = false;
         health = character.GetHealth();
         //GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.ALIVE);
         special = 0;

@@ -26,9 +26,8 @@ public class DirectFollower : MonoBehaviour {
         //particles.shape.position;
 
         //damageFill.sizeDelta.x 
-        Debug.Log(Mathf.Abs(damageFill.sizeDelta.x - healthFill.sizeDelta.x) + 5);
         clone.scale = new Vector3(Mathf.Abs(damageFill.sizeDelta.x - healthFill.sizeDelta.x) + 5, scale.y, scale.z);
         clone.position = new Vector3(-(particles.shape.scale.x / 2) + 25, position.y, position.z);
-        emClone.rateOverTime = Mathf.CeilToInt(scale.x / 40) + 1;
+        emClone.rateOverTime = Mathf.CeilToInt(scale.x / 20) + 1;
 	}
 }

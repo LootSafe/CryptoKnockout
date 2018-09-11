@@ -4,6 +4,7 @@ public class PlayerAnimatorController : MonoBehaviour
 {
 
     public bool DEBUG = false; // REMOVE ME LATER
+    public GameObject groundParticles;
 
     bool IDLE = false;
 
@@ -27,6 +28,15 @@ public class PlayerAnimatorController : MonoBehaviour
         playerAnimator.SetBool("ALIVE", player.IsAlive());
         playerAnimator.SetBool("BLOCKING", player.IsBlocking());
         playerAnimator.SetBool("DUCKING", player.IsDucking());
+
+        /*if(player.IsGrounded() && Mathf.Abs(rgbody.velocity.x) > 1)
+        {
+            groundParticles.SetActive(true);
+        } else
+        {
+            groundParticles.SetActive(false);
+        }
+        */
 
     }
 
