@@ -19,6 +19,7 @@ public class HealthBarUpdater : MonoBehaviour {
 
     public RectTransform specialBar;
     public float specialAnimateSpeed;
+    public RectTransform specialContainer;
 
     public Text healthTextDisplay;
 
@@ -136,13 +137,14 @@ public class HealthBarUpdater : MonoBehaviour {
 
         float specialPercent = player.GetSpecial() / player.GetMaxSpecial();
         float currentWidth = currentSize.x;
-        float targetWidth = containerWidth * specialPercent;
+        float targetWidth = specialContainer.sizeDelta.x * specialPercent;
         float newWidth = currentWidth;
 
         if (currentWidth != targetWidth)
         {
-            if (Mathf.Abs(targetWidth - currentWidth) < specialAnimateSpeed)
+            if (Mathf.Abs(targetWidth - currentWidth) < specialAnimateSpeed || Mathf.Abs(targetWidth - currentWidth) > specialContainer.sizeDelta.x * .5)
             {
+                Debug.Log("Reset to small size");
                 newWidth = targetWidth;
             }
             else
@@ -150,6 +152,7 @@ public class HealthBarUpdater : MonoBehaviour {
                 newWidth = currentWidth + specialAnimateSpeed * (Mathf.Abs(targetWidth - currentWidth) / (targetWidth - currentWidth));
             }
             specialBar.sizeDelta = new Vector2(newWidth, currentSize.y);
+            
         }
     }
 }

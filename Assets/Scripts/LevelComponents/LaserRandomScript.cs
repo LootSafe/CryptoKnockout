@@ -64,7 +64,7 @@ public class LaserRandomScript : MonoBehaviour {
                 viableTargets.Add(p.transform);
             }
         }
-        if (viableTargets.Count >= 0)
+        if (viableTargets.Count > 0)
         {
             currentTarget = viableTargets[Random.Range((int)0, (int)viableTargets.Count)];
         } else

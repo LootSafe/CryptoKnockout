@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
     private bool alive = false;
     public float health = 0;
     public Transform target;
-    private float special = 0;
+    public float special = 0;
     private float maxSpecial = 100;
     private float maxHealth;
     private Game game;
@@ -127,7 +127,7 @@ public class Player : MonoBehaviour {
 
     public void AddToScore(float damageDealt)
     {
-        special += 1;
+        special += 10;
         this.damageDealt += damageDealt;
     }
 

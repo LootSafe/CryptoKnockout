@@ -10,6 +10,7 @@ public class Bjorn : Character {
         this.strength = 10;
         this.defence = 10;
         this.moveSpeed = 10;
+        this.special = 100;
         this.name = "Bjorn";
 
         this.hitWords = new List<string>();
