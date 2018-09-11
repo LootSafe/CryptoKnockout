@@ -12,6 +12,7 @@ public class HealthBarUpdater : MonoBehaviour {
     public RectTransform healthShowBar;
     public float healthAnimateSpeed;
     Color originalHealthColor;
+    public RectTransform healthFillContainer;
 
     public RectTransform damageIndicator;
     public float damageAnimateSpeed;
@@ -25,12 +26,11 @@ public class HealthBarUpdater : MonoBehaviour {
 
     Game game;
     Player player;
-    float containerWidth;
     float lastHit;
 
 	
 	void Start () {
-        containerWidth = GetComponent<RectTransform>().sizeDelta.x;
+
         originalHealthColor = healthShowBar.GetComponentInParent<Image>().color;
         game = Game.GetInstance();
 	}
@@ -57,7 +57,7 @@ public class HealthBarUpdater : MonoBehaviour {
 
         float healthPercent = player.GetHealth() / player.GetMaxHealth();
         float currentWidth = currentSize.x;
-        float targetWidth = containerWidth * healthPercent;
+        float targetWidth = healthFillContainer.sizeDelta.x * healthPercent;
         float newWidth = currentWidth;
         Color newColor = originalHealthColor;
 
@@ -102,7 +102,7 @@ public class HealthBarUpdater : MonoBehaviour {
 
         float healthPercent = player.GetHealth() / player.GetMaxHealth();
         float currentWidth = currentSize.x;
-        float targetWidth = containerWidth * healthPercent;
+        float targetWidth = healthFillContainer.sizeDelta.x * healthPercent;
         float newWidth = currentWidth;
 
         if (currentWidth != targetWidth)
