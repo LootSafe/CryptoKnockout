@@ -64,10 +64,10 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         PlayerAnimatorController pac = player.GetComponent<PlayerAnimatorController>();
 
 
-        float xMovement = Input.GetAxis("P" + playerNumber + "_Horizontal");
+        float xMovement = Input.GetAxisRaw("P" + playerNumber + "_Horizontal");
 
         //4 -- For Crouch
-        float yMovement = Input.GetAxis("P" + playerNumber + "_Vertical");
+        float yMovement = Input.GetAxisRaw("P" + playerNumber + "_Vertical");
         //0
         float jump = Input.GetAxis("P" + playerNumber + "_Jump");
         //1
@@ -78,7 +78,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         float block = Input.GetAxis("P" + playerNumber + "_Block");
 
         //Horizontal Changes
-        if (xMovement != 0 && !player.IsAttacking())
+        if (xMovement != 0 && !player.IsAttacking() && !player.IsDucking() && !player.IsDucking())
         {
             if (Time.time - lastMovements[playerNumber - 1] >= 0.01) 
             {
@@ -102,7 +102,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         }
         else
         {
-            player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
+            pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
         }
 
         //Vertical Changes
@@ -112,19 +112,23 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             {
                 if (controlLocks[playerNumber - 1, 0] == false)
                 {
-                    player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
+                    pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
                     rigidbody.AddForce(new Vector2(0, 350));
                     controlLocks[playerNumber - 1, 0] = true;
                 }
             }
             else if(yMovement < 0)
             {
-                    player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DUCK);
+                if (controlLocks[playerNumber - 1, 4] == false)
+                {
+                    controlLocks[playerNumber - 1, 4] = true;
+                    pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DUCK);
                     player.StartDucking();
+                }
             }
             else
             {
-                player.GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
+                pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.IDLE);
                 
             }
         }
@@ -134,6 +138,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             {
                 controlLocks[playerNumber - 1, 0] = false;
             }
+            controlLocks[playerNumber - 1, 4] = false;
             player.StopDucking();
         }
 
