@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+
 [ExecuteInEditMode()]
 public class Game : MonoBehaviour {
 
@@ -26,11 +28,17 @@ public class Game : MonoBehaviour {
     Transform spawnP1;
     Transform spawnP2;
 
+    //Pausing
+    private float pauseTime;
+    private State lastState;
+
    //State
     private State state = State.STARTING;
     private int currentRound = 0;
     private float countDownTimer = 0;
 
+    //Escape Menu
+    public GameObject escapeMenu;
 
     private bool respawnToggle = false;
     private float roundStartTime = 0;
@@ -105,6 +113,26 @@ public class Game : MonoBehaviour {
         return host;
     }
 
+    public void Pause()
+    {
+        if (gameMode == GameMode.LOCALMULTIPLAYER)
+        {
+            lastState = state;
+            state = State.PAUSED;
+            pauseTime = Time.time;
+            escapeMenu.SetActive(true);
+        }
+    }
+
+    public void UnPause()
+    {
+        if(gameMode == GameMode.LOCALMULTIPLAYER)
+        {
+            state = lastState;
+            roundStartTime = roundStartTime + (Time.time - pauseTime);
+            escapeMenu.SetActive(false);
+        }
+    }
 
     public NetworkHandler GetNetworkHandler()
     {

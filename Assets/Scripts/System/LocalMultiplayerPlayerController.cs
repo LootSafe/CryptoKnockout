@@ -7,6 +7,9 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
     float[] lastHeadings;
     bool[,] controlLocks;
     float[] lastMovements;
+
+    bool pauseMenuLock = false;
+
     Game game;
     Player player1;
     Player player2;
@@ -48,6 +51,25 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             player1 = game.GetPlayer(0);
             player2 = game.GetPlayer(1);
+        }
+
+        //Escape Menu
+        if (Input.GetAxisRaw("Cancel") != 0){
+            if (!pauseMenuLock)
+            {
+                if(game.GetState() == Game.State.PAUSED)
+                {
+                    game.UnPause();
+                }
+                else
+                {
+                    game.Pause();
+                }
+                pauseMenuLock = true;
+            }
+        } else
+        {
+            pauseMenuLock = false;
         }
 
         UpdatePlayer(player1, 1);
