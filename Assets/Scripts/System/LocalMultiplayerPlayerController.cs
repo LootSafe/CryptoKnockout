@@ -99,7 +99,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //3
         float block = Input.GetAxis("P" + playerNumber + "_Block");
         //5
-        float super = Input.GetAxis("P_" + playerNumber + "_Super");
+        float super = Input.GetAxis("P" + playerNumber + "_Super");
 
         //Horizontal Changes
         /*
