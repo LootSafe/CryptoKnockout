@@ -15,7 +15,31 @@ public abstract class Character {
     /// </summary>
     /// <param name="damage"></param>
     /// <returns></returns>
-    abstract public float CalculateDamage(float damage);
+    public float CalculateDamage(float damage)
+    {
+        float block = 1;
+        if (player.IsBlocking())
+        {
+            float chance = Random.Range(0, 101);
+            
+            if(chance >= 90)
+            {
+                block = 0;
+            }
+            else if(chance >= Random.Range(30, 90))
+            {
+                block = Random.Range(50, 101) / 100;
+            }
+            else
+            {
+                block = 1;
+            }
+
+        }
+
+        float i = (block*damage) - defence + Random.Range(1f, 21f);       
+        return i < 0 ? 0 : i;
+    }
 
     public void initializePlayer(Player player)
     {
