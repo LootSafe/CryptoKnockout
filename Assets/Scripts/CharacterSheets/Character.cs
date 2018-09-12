@@ -38,6 +38,8 @@ public abstract class Character {
 
         }
 
+        if (damage == 1) return 1;
+
         float i = (block*damage) - (defence + Random.Range(1f, 6f));       
         return i < 0 ? 0 : i;
     }
@@ -45,7 +47,7 @@ public abstract class Character {
     public virtual float CalculateOutgoingDamage()
     {
 
-        return strength + Random.Range(1, 21);
+        return strength + Random.Range(1f, 21f);
     }
 
     public void initializePlayer(Player player)
