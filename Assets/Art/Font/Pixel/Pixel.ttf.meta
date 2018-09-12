@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f17e1fa39099d8d409b7f689fe44b42f
+guid: 2b8c75b209b168d48a8b53edc9f01ce0
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Comica BD Bold
+  fontName: Pixel
   fontNames:
-  - Comica BD Bold
+  - Pixel
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
