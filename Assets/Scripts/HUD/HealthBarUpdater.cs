@@ -21,6 +21,7 @@ public class HealthBarUpdater : MonoBehaviour {
     public RectTransform specialBar;
     public float specialAnimateSpeed;
     public RectTransform specialContainer;
+    public GameObject specialParticles;
 
     public GameObject damageBarParticles;
 
@@ -162,6 +163,15 @@ public class HealthBarUpdater : MonoBehaviour {
             }
             specialBar.sizeDelta = new Vector2(newWidth, currentSize.y);
             
+        }
+
+        if(specialPercent > .99)
+        {
+            specialParticles.SetActive(true);
+        }
+        else
+        {
+            specialParticles.SetActive(false);
         }
     }
 }
