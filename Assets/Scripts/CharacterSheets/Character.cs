@@ -23,13 +23,13 @@ public abstract class Character {
         {
             float chance = Random.Range(0, 101);
             
-            if(chance >= 90)
+            if(chance >= 80)
             {
                 block = 0;
             }
-            else if(chance >= Random.Range(30, 90))
+            else if(chance >= Random.Range(30, 80))
             {
-                block = Random.Range(50, 101) / 100;
+                block = Random.Range(30, 101) / 100;
             }
             else
             {
@@ -40,8 +40,8 @@ public abstract class Character {
 
         if (damage == 1) return 1;
 
-        float i = (block*damage) - (defence + Random.Range(1f, 6f));       
-        return i < 0 ? 0 : i;
+        float i = (block*damage) - (defence + Random.Range(1f, 20f));       
+        return i < 0 ? 0 : i + 1;
     }
 
     public virtual float CalculateOutgoingDamage()

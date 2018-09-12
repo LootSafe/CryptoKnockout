@@ -6,9 +6,9 @@ public class Doge : Character {
 
     public Doge()
     {
-        this.health = 150;
-        this.strength = 10;
-        this.defence = 10;
+        this.health = 300;
+        this.strength = 45;
+        this.defence = 12;
         this.moveSpeed = 10;
         this.name = "Doge";
 
