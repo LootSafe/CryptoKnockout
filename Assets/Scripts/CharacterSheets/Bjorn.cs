@@ -28,18 +28,6 @@ public class Bjorn : Character {
         return p;
     }
 
-    public override void MoveKick()
-    {
-        player.StartAttacking();
-        player.foot.GetComponent<PlayerDamage>().TriggerEnable();
-    }
-
-    public override void MovePunch()
-    {
-        player.StartAttacking();
-        player.fist.GetComponent<PlayerDamage>().TriggerEnable();
-    }
-
     public override void MoveBlock()
     {
         

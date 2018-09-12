@@ -17,6 +17,7 @@ public abstract class Character {
     /// <returns></returns>
     public virtual float CalculateDamageTaken(float damage)
     {
+        Debug.Log("Input Damage" + damage);
         float block = 1;
         if (player.IsBlocking())
         {
@@ -37,7 +38,7 @@ public abstract class Character {
 
         }
 
-        float i = (block*damage) - defence + Random.Range(1f, 21f);       
+        float i = (block*damage) - (defence + Random.Range(1f, 6f));       
         return i < 0 ? 0 : i;
     }
 

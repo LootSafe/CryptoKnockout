@@ -29,22 +29,10 @@ public class Doge : Character {
         return p;
     }
 
-    public override void MoveKick()
-    {
-        player.IsAttacking();
-        player.foot.GetComponent<PlayerDamage>().TriggerEnable();
-    }
-
     public override void MoveBlock()
     {
         
     }
-    public override void MovePunch()
-    {
-        player.IsAttacking();
-        player.fist.GetComponent<PlayerDamage>().TriggerEnable();
-    }
-
     public override void MoveSpecial1()
     {
         throw new System.NotImplementedException();
