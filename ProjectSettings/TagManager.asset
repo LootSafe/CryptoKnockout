@@ -13,6 +13,7 @@ TagManager:
   - P2Spawn
   - Floor
   - BackgroundMarkers
+  - GameLoader
   layers:
   - Default
   - TransparentFX

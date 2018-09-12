@@ -39,6 +39,7 @@ public class Game : MonoBehaviour {
 
     //Escape Menu
     public GameObject escapeMenu;
+    GameLoader gl;
 
     private bool respawnToggle = false;
     private float roundStartTime = 0;
@@ -52,13 +53,15 @@ public class Game : MonoBehaviour {
         if (!GlobalGameData.GetInstance()) Instantiate(globalDataPrefab);
         gameMode = GlobalGameData.GetInstance().selectedGameMode;
         instance = this;
-
+        gl = GameObject.FindGameObjectWithTag("GameLoader").GetComponent<GameLoader>();
         //Temp
     }
 
     public void Start()
     {
         state = State.STARTING;
+        escapeMenu = gl.escapeMenu;
+        
     }
     /*************************************************************************/
 
@@ -111,6 +114,16 @@ public class Game : MonoBehaviour {
     public bool IsHost()
     {
         return host;
+    }
+
+    public bool hasPlayers()
+    {
+        return GetPlayers().Length <= 0 ? false : true;
+    }
+
+    public bool hasAllPlayers()
+    {
+        return GetPlayers().Length > 1 ? true : false;
     }
 
     public void Pause()

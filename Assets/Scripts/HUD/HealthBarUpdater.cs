@@ -154,7 +154,6 @@ public class HealthBarUpdater : MonoBehaviour {
         {
             if (Mathf.Abs(targetWidth - currentWidth) < specialAnimateSpeed || Mathf.Abs(targetWidth - currentWidth) > specialContainer.sizeDelta.x * .5)
             {
-                Debug.Log("Reset to small size");
                 newWidth = targetWidth;
             }
             else

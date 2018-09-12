@@ -56,6 +56,7 @@ public class Parallax : MonoBehaviour
             game = Game.GetInstance();
             return;
         }
+        if (!CheckIfAvailable()) return;
         if (IsMultiplayer())
         {
             distance = Vector2.Distance(GetPlayerPosition(0), GetPlayerPosition(1)) / 2;
@@ -70,6 +71,12 @@ public class Parallax : MonoBehaviour
         }
     }
 
+    bool CheckIfAvailable()
+    {
+        if (game.GetPlayer(0) && game.GetPlayer(1)) return true;
+        return false;
+    }
+
     void Update ()
     {
         if (!game)
@@ -77,6 +84,8 @@ public class Parallax : MonoBehaviour
             game = Game.GetInstance();
             return;
         }
+
+        if (!CheckIfAvailable()) return;
         /* Parallax Stuff */
 
         if (IsMultiplayer())

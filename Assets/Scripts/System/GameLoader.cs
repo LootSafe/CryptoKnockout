@@ -7,6 +7,7 @@ public class GameLoader : MonoBehaviour {
     public GameObject game;
     public GameObject soundManager;
     public GlobalGameData globalDataPrefab;
+    public GameObject escapeMenu;
     
 
 
@@ -17,6 +18,7 @@ public class GameLoader : MonoBehaviour {
         {
             GameObject instance = Instantiate(game);
             game.GetComponent<Game>().enabled = true;
+            //game.GetComponent<Game>().escapeMenu = escapeMenu;
         }
         if (!GameObject.FindGameObjectWithTag("GlobalData"))
         {
