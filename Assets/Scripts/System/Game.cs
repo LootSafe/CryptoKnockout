@@ -37,6 +37,10 @@ public class Game : MonoBehaviour {
     private int currentRound = 0;
     private float countDownTimer = 0;
 
+    //Super
+    private Player superUser;
+    private bool superUsed;
+
     //Escape Menu
     public GameObject escapeMenu;
     GameLoader gl;
@@ -76,6 +80,19 @@ public class Game : MonoBehaviour {
         roundEndTimer = Time.time;
     }
 
+    public bool TriggerSuper(Player player)
+    {
+        if (!superUsed)
+        {
+            Debug.Log("Player " + player.name + " is using his super ability");
+            state = State.SUPER;
+            superUsed = true;
+            superUser = player;
+            return true;
+        }
+        superUsed = false;
+        return false;
+    }
     public void RegisterPlayer(Player player, NetworkIdentity id)
     {
         //Temp
@@ -316,6 +333,9 @@ public class Game : MonoBehaviour {
                     roundEndTimer = Time.time;
                 }
                 break;
+            case State.SUPER:
+                state = State.ROUND_ENDING;
+                break;
 
             case State.ROUND_ENDING:
                 if (Time.time - roundEndTimer < roundEndDelay) break;
@@ -325,6 +345,8 @@ public class Game : MonoBehaviour {
                     state = State.COMPLETED;
                 } else
                 {
+                    superUsed = false;
+                    superUser = null;
                     respawnToggle = false;
                     state = State.ROUND_BEGINING;
                     countDownTimer = Time.time;
