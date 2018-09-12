@@ -249,6 +249,14 @@ public class Player : MonoBehaviour {
         game.TriggerDeath(this);
     }
     
+    public void UseSuper()
+    {
+        if (game.TriggerSuper(this))
+        {
+            special = 0;
+        }
+    }
+
     public void respawn()
     {
         alive = true;
