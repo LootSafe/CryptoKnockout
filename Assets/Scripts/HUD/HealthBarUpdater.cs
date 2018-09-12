@@ -26,7 +26,7 @@ public class HealthBarUpdater : MonoBehaviour {
     public GameObject damageBarParticles;
 
     public Image portrait;
-
+    public Text characterName;
     public Text healthTextDisplay;
 
     Game game;
@@ -50,6 +50,7 @@ public class HealthBarUpdater : MonoBehaviour {
             return;
         }
         portrait.sprite = player.characterPortrait;
+        characterName.text = player.name.ToUpper();
         UpdateHealthBar();
         UpdateDamageBar();
         updateSpecialBar();
