@@ -345,8 +345,9 @@ public class Game : MonoBehaviour {
                 }
                 break;
             case State.SUPER:
-                GetOpponent(superUser.GetPlayerNumber()).notifyDeath();
                 GetOpponent(superUser.GetPlayerNumber()).TakeDamage(99999999, superUser);
+                GetOpponent(superUser.GetPlayerNumber()).notifyDeath();
+
                 state = State.ROUND_ENDING;
                 break;
 
