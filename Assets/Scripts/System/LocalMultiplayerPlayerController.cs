@@ -30,7 +30,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
 
         //Initialize Control Locks
-        controlLocks = new bool[8, 5];
+        controlLocks = new bool[8, 6];
         lastMovements = new float[8];
 	}
 
@@ -98,6 +98,8 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         float kick = Input.GetAxis("P" + playerNumber + "_Kick");
         //3
         float block = Input.GetAxis("P" + playerNumber + "_Block");
+        //5
+        float super = Input.GetAxis("P_" + playerNumber + "_Super");
 
         //Horizontal Changes
         /*
@@ -226,6 +228,18 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Special2
 
         //Ultra
+        if (super != 0)
+        {
+            if (controlLocks[playerNumber - 1, 5] == false && !player.IsHurt() && !player.IsAttacking())
+            {
+                player.GetCharacter().MoveUltra();
+                controlLocks[playerNumber - 1, 5] = true;
+            }
+        }
+        else
+        {
+            controlLocks[playerNumber - 1, 5] = false;
+        }
 
     }
 }
