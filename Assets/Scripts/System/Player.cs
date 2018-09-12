@@ -29,6 +29,8 @@ public class Player : MonoBehaviour {
     private bool blocking , ducking;
     private bool grounded = false;
 
+    public Sprite characterPortrait;
+
     void Start()
     {
         game = Game.GetInstance();

@@ -29,14 +29,14 @@ public class PlayerAnimatorController : MonoBehaviour
         playerAnimator.SetBool("BLOCKING", player.IsBlocking());
         playerAnimator.SetBool("DUCKING", player.IsDucking());
 
-        /*if(player.IsGrounded() && Mathf.Abs(rgbody.velocity.x) > 1)
+        if(player.IsGrounded() && Mathf.Abs(rgbody.velocity.x) > 1)
         {
             groundParticles.SetActive(true);
         } else
         {
             groundParticles.SetActive(false);
         }
-        */
+        
 
     }
 

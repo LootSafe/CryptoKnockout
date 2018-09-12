@@ -413,10 +413,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  target: {fileID: 0}
+  special: 0
   fist: {fileID: 1079451026728450}
   foot: {fileID: 1756666442828242}
   specialSource: {fileID: 1771455447903784}
   timeIncapacitated: 0.2
+  attacking: 0
+  characterPortrait: {fileID: 21300000, guid: bc6e23fc5fb2eed47918439572721ee5, type: 3}
 --- !u!114 &114774084988131918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEBUG: 0
+  groundParticles: {fileID: 0}
 --- !u!114 &114808765515675694
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -366,6 +366,13 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 10
   delay: 0.02
+--- !u!114 &219382423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5431633391446226110, guid: 50eb3984234aa49439601aaad8377c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5431633391024623039}
+  m_PrefabAsset: {fileID: 0}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &247354951
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +653,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!224 &2061599590 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4035604071991267023, guid: 50eb3984234aa49439601aaad8377c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2061599589}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &353480375
 GameObject:
   m_ObjectHideFlags: 0
@@ -15459,12 +15472,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!224 &2061599590 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4035604071991267023, guid: 50eb3984234aa49439601aaad8377c1e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2061599589}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &924939256
 GameObject:
   m_ObjectHideFlags: 0
@@ -21485,12 +21492,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!224 &8313734312323482480 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4035604071991267023, guid: 50eb3984234aa49439601aaad8377c1e,
-    type: 3}
-  m_PrefabInstance: {fileID: 5431633391024623039}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1779268792
 GameObject:
   m_ObjectHideFlags: 0
@@ -21898,6 +21899,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &8313734312323482480 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4035604071991267023, guid: 50eb3984234aa49439601aaad8377c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5431633391024623039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2126845050
 GameObject:
   m_ObjectHideFlags: 0
@@ -22089,7 +22096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8314985362039454370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23017,5 +23024,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerOne_Healthbars
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4219070022227816967, guid: 50eb3984234aa49439601aaad8377c1e,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 219382423}
+    m_RemovedComponents:
+    - {fileID: 4616004204089085701, guid: 50eb3984234aa49439601aaad8377c1e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 50eb3984234aa49439601aaad8377c1e, type: 3}

@@ -217,6 +217,7 @@ MonoBehaviour:
   specialAnimateSpeed: 2
   specialContainer: {fileID: 5431633392849296682}
   damageBarParticles: {fileID: 5431633391401705628}
+  portrait: {fileID: 5431633391446226110}
   healthTextDisplay: {fileID: 5431633392623226672}
 --- !u!1 &5431633391296276134
 GameObject:

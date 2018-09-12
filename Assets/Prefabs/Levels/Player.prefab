@@ -528,6 +528,7 @@ MonoBehaviour:
   specialSource: {fileID: 1420809114905940}
   timeIncapacitated: 0.2
   attacking: 1
+  characterPortrait: {fileID: 21300000, guid: 56d9ce84c2cef054eb1d2128e27dada9, type: 3}
 --- !u!114 &114456718162601248
 MonoBehaviour:
   m_ObjectHideFlags: 0
