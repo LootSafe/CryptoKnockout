@@ -21,11 +21,6 @@ public class Monero : Character {
         this.hitWords.Add("SWOOOP!!!");
     }
 
-    public override float CalculateDamage(float damage)
-    {
-        return damage;
-    }
-
     public override AnimatorOverrideController GetAnimationController()
     {
         AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/EthBot", typeof(AnimatorOverrideController));

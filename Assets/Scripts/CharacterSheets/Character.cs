@@ -15,7 +15,7 @@ public abstract class Character {
     /// </summary>
     /// <param name="damage"></param>
     /// <returns></returns>
-    public float CalculateDamage(float damage)
+    public virtual float CalculateDamageTaken(float damage)
     {
         float block = 1;
         if (player.IsBlocking())
@@ -39,6 +39,12 @@ public abstract class Character {
 
         float i = (block*damage) - defence + Random.Range(1f, 21f);       
         return i < 0 ? 0 : i;
+    }
+
+    public virtual float CalculateOutgoingDamage()
+    {
+
+        return strength + Random.Range(1, 21);
     }
 
     public void initializePlayer(Player player)
@@ -66,9 +72,22 @@ public abstract class Character {
         return moveSpeed;
     }
 
-    public abstract void MovePunch();
-    public abstract void MoveBlock();
-    public abstract void MoveKick();
+    public virtual void MoveKick()
+    {
+        player.StartAttacking();
+        player.foot.GetComponent<PlayerDamage>().TriggerEnable(CalculateOutgoingDamage());
+    }
+
+    public virtual void MovePunch()
+    {
+        player.StartAttacking();
+        player.fist.GetComponent<PlayerDamage>().TriggerEnable(CalculateOutgoingDamage());
+    }
+
+    public virtual void MoveBlock()
+    {
+
+    }
     public abstract void MoveSpecial1();
     public abstract void MoveSpecial2();
     public abstract void MoveUltra();

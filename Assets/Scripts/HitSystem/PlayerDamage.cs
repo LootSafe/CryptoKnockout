@@ -6,6 +6,7 @@ public class PlayerDamage : MonoBehaviour {
     public Player player;
     float lastHit;
     public float delay = .02f;
+    public float overrideDamage = 10;
 
     void Start()
     {
@@ -25,6 +26,14 @@ public class PlayerDamage : MonoBehaviour {
 
     public void TriggerEnable()
     {
+        overrideDamage = 10;
+        lastHit = Time.time;
+        gameObject.SetActive(true);
+    }
+
+    public void TriggerEnable(float overrideDamage)
+    {
+        this.overrideDamage = overrideDamage;
         lastHit = Time.time;
         gameObject.SetActive(true);
     }
@@ -38,7 +47,7 @@ public class PlayerDamage : MonoBehaviour {
     {
         if (other.tag == "Player" && other != player)
         {
-            float damageDealt = other.GetComponent<Player>().TakeDamage(10, player);
+            float damageDealt = other.GetComponent<Player>().TakeDamage(overrideDamage, player);
             gameObject.SetActive(false);
             if (player)
             {

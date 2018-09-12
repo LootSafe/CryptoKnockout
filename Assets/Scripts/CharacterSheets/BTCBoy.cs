@@ -20,11 +20,6 @@ public class BTCBoy : Character {
         this.hitWords.Add("CLIINK!!");
     }
 
-    public override float CalculateDamage(float damage)
-    {
-        return damage;
-    }
-
     public override AnimatorOverrideController GetAnimationController()
     {
         AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/BTCBoy", typeof(AnimatorOverrideController));

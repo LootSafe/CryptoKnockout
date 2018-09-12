@@ -21,10 +21,6 @@ public class Doge : Character {
         this.hitWords.Add("WOOOOFFF!!");
     }
 
-    public override float CalculateDamage(float damage)
-    {
-        return damage;
-    }
 
     public override AnimatorOverrideController GetAnimationController()
     {

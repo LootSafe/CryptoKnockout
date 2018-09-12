@@ -21,11 +21,6 @@ public class EthBot : Character {
         this.hitWords.Add("CACHUNK!!!");
     }
 
-    public override float CalculateDamage(float damage)
-    {
-        return damage;
-    }
-
     public override AnimatorOverrideController GetAnimationController()
     {
         AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/EthBot", typeof(AnimatorOverrideController));

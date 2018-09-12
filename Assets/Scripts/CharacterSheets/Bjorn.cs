@@ -22,11 +22,6 @@ public class Bjorn : Character {
         this.hitWords.Add("KAAPOOWW!");
     }
 
-    public override float CalculateDamage(float damage)
-    {
-        return damage;
-    }
-
     public override AnimatorOverrideController GetAnimationController()
     {
         AnimatorOverrideController p = (AnimatorOverrideController)Resources.Load("Animator/Characters/Bjorn", typeof(AnimatorOverrideController));

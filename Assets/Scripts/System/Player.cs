@@ -84,7 +84,7 @@ public class Player : MonoBehaviour {
 
         if (!alive) return 0;
         //Temp
-        float damageTake = character.CalculateDamage(damage);
+        float damageTake = character.CalculateDamageTaken(damage);
 
         if (game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER)
         {
