@@ -29,6 +29,8 @@ public class Player : MonoBehaviour {
     private bool blocking , ducking;
     private bool grounded = false;
 
+    private int playerNumber;
+
     public Sprite characterPortrait;
 
     void Start()
@@ -242,6 +244,16 @@ public class Player : MonoBehaviour {
         return GetHitWords()[Random.Range((int)0, GetHitWords().Count)];
     }
 
+    public int GetPlayerNumber()
+    {
+        return playerNumber;
+    }
+
+    public void SetPlayerNumber(int n)
+    {
+        playerNumber = n;
+    }
+
     public void notifyDeath()
     {
         lives--;
@@ -249,12 +261,17 @@ public class Player : MonoBehaviour {
         game.TriggerDeath(this);
     }
     
-    public void UseSuper()
+    public bool UseSuper()
     {
-        if (game.TriggerSuper(this))
+        if (special >= maxSpecial)
         {
-            special = 0;
+            if (game.TriggerSuper(this))
+            {
+                special = 0;
+                return true;
+            }
         }
+        return false;
     }
 
     public void respawn()

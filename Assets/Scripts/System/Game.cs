@@ -143,6 +143,17 @@ public class Game : MonoBehaviour {
         return GetPlayers().Length > 1 ? true : false;
     }
 
+    public int GetPlayerNumber(Player p)
+    {
+        
+
+        return 0;
+    }
+
+    public Player GetOpponent(int i)
+    {
+        return i == 0 ? GetPlayer(1) : GetPlayer(0);
+    }
     public void Pause()
     {
         if (gameMode == GameMode.LOCALMULTIPLAYER)
@@ -334,6 +345,8 @@ public class Game : MonoBehaviour {
                 }
                 break;
             case State.SUPER:
+                GetOpponent(superUser.GetPlayerNumber()).notifyDeath();
+                GetOpponent(superUser.GetPlayerNumber()).TakeDamage(99999999, superUser);
                 state = State.ROUND_ENDING;
                 break;
 
@@ -383,10 +396,12 @@ public class Game : MonoBehaviour {
             GameObject p1 = Instantiate(CharacterSwapper.GetCharacter(GlobalGameData.GetInstance().player1Char), spawnP1.position, spawnP1.rotation);
             localP1 = p1.GetComponentInChildren<Player>();
             localP1.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player1Char));
+            localP1.SetPlayerNumber(0);
 
             GameObject p2 = Instantiate(CharacterSwapper.GetCharacter(GlobalGameData.GetInstance().player2Char), spawnP2.position, spawnP2.rotation);
             localP2 = p2.GetComponentInChildren<Player>();
             localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
+            localP2.SetPlayerNumber(1);
 
             Vector3 p2LS = localP1.GetComponent<Transform>().localScale;
             localP2.GetComponent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);

@@ -61,6 +61,6 @@ public class Doge : Character {
 
     public override void MoveUltra()
     {
-        throw new System.NotImplementedException();
+        player.UseSuper();
     }
 }
