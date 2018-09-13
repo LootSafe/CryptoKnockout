@@ -6,7 +6,7 @@ public class Bjorn : Character {
 
     public Bjorn()
     {
-        this.health = 500;
+        this.health = 1000;
         this.strength = 35;
         this.defence = 8;
         this.moveSpeed = 10;

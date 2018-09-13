@@ -28,6 +28,8 @@ public class Player : MonoBehaviour {
     private float lastDamageDealt;
     private float lastDamageDealtTime;
 
+    private int score;
+
     public bool attacking = false;
     private bool blocking , ducking;
     private bool grounded = false;
@@ -293,6 +295,11 @@ public class Player : MonoBehaviour {
         game.TriggerDeath(this);
     }
     
+    public void AddToScore()
+    {
+        score += 1;
+    }
+
     public bool UseSuper()
     {
         if (special >= maxSpecial)

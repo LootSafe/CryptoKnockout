@@ -14,6 +14,7 @@ public class Game : MonoBehaviour {
     public int MaxPlayers = 2;
     private bool host = false;
     public GlobalGameData globalDataPrefab;
+    private int roundWinner;
 
     private NetworkHandler network;
     private GameMode gameMode;
@@ -78,7 +79,11 @@ public class Game : MonoBehaviour {
     /// <param name="player"></param>
     public void TriggerDeath(Player player)
     {
-        Debug.Log("Player " + player.name + " has died");
+        Player op = GetOpponent(player.GetPlayerNumber());
+        roundWinner = op.GetPlayerNumber();
+        op.AddToScore();
+
+        //Debug.Log("Player " + player.name + " has died");
         state = State.ROUND_ENDING;
         roundEndTimer = Time.time;
     }
@@ -151,6 +156,11 @@ public class Game : MonoBehaviour {
         
 
         return 0;
+    }
+
+    public int GetRoundWinner()
+    {
+        return roundWinner;
     }
 
     public Player GetOpponent(int i)
