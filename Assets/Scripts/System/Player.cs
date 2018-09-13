@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
 
     private float lastHit;
     private float damageDealt;
-    private int currentStreak;
+    public int currentStreak;
     private float lastDamageDealt;
     private float lastDamageDealtTime;
 
@@ -246,6 +246,7 @@ public class Player : MonoBehaviour {
     {
         lastDamageDealtTime = Time.time;
         lastDamageDealt = damageDealt;
+        currentStreak += 1;
     }
 
     public float GetLastDamageDealt()
