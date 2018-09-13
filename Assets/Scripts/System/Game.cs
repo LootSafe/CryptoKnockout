@@ -416,8 +416,8 @@ public class Game : MonoBehaviour {
 
         localP1.GetComponent<Transform>().position = spawnP1.position;
         localP2.GetComponent<Transform>().position = spawnP2.position;
-        Vector3 p2LS = localP2.GetComponentInParent<Transform>().localScale;
-        localP2.GetComponentInParent<Transform>().localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
+        Vector3 p2LS = localP2.transform.localScale;
+        localP2.transform.localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
 
         localP1.respawn();
         localP2.respawn();

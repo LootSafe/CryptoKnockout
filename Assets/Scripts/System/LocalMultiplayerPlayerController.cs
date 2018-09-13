@@ -101,14 +101,22 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //5
         float super = Input.GetAxis("P" + playerNumber + "_Super");
 
+
+        //Character Lock
+        if (player.IsBlocking() || player.IsAttacking() || player.IsDucking())
+        {
+            rigidbody.velocity = new Vector2(0, 0);
+            rigidbody.bodyType = RigidbodyType2D.Static;
+            
+        }
+        else
+        {
+            rigidbody.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+
+
         //Horizontal Changes
-        /*
-        Debug.Log("Player: " + playerNumber + "- " 
-            + "\n Alive: " + player.IsAlive()
-            + " NotAttacking: " + !player.IsAttacking() 
-            + " NotDucking: " + !player.IsDucking() 
-            + !player.IsDucking());
-         */
         if (xMovement != 0 && player.IsAlive() && !player.IsAttacking() && !player.IsDucking() && !player.IsDucking())
         {
             if (Time.time - lastMovements[playerNumber - 1] >= 0.01) 

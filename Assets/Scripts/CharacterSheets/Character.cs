@@ -17,7 +17,7 @@ public abstract class Character {
     /// <returns></returns>
     public virtual float CalculateDamageTaken(float damage)
     {
-        Debug.Log("Input Damage" + damage);
+        //Debug.Log("Input Damage" + damage);
         float block = 1;
         if (player.IsBlocking())
         {

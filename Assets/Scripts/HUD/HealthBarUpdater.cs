@@ -19,9 +19,12 @@ public class HealthBarUpdater : MonoBehaviour {
     public float damageBarDelay = 0.1f;
 
     public RectTransform specialBar;
+    private Color orgSpecColor;
     public float specialAnimateSpeed;
     public RectTransform specialContainer;
     public GameObject specialParticles;
+    private float specialUpdateTime;
+    public float specialBarColorChangeDelay = 0.3f;
 
     public GameObject damageBarParticles;
 
@@ -37,6 +40,7 @@ public class HealthBarUpdater : MonoBehaviour {
 	void Start () {
 
         originalHealthColor = healthShowBar.GetComponentInParent<Image>().color;
+        orgSpecColor = specialBar.GetComponent<Image>().color;
         game = Game.GetInstance();
 	}
 	
@@ -168,10 +172,18 @@ public class HealthBarUpdater : MonoBehaviour {
         if(specialPercent > .99)
         {
             specialParticles.SetActive(true);
+            if(Time.time >= specialUpdateTime + specialBarColorChangeDelay)
+            {
+                orgSpecColor = specialBar.GetComponent<Image>().color = Random.ColorHSV();
+                specialUpdateTime = Time.time;
+            }
         }
         else
         {
             specialParticles.SetActive(false);
+            specialBar.GetComponent<Image>().color = orgSpecColor;
         }
+
+
     }
 }

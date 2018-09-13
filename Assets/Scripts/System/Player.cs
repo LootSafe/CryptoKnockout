@@ -99,6 +99,7 @@ public class Player : MonoBehaviour {
             }
             else
             {
+                if (damageTake <= 0) return 0;
                 //Debug.Log("Ouch!");
                 health -= damageTake;
                 lastHit = Time.time;
