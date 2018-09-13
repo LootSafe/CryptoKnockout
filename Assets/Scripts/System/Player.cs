@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
 
     private float lastHit;
     private float damageDealt;
+    private int currentStreak;
 
     public bool attacking = false;
     private bool blocking , ducking;
@@ -219,6 +220,11 @@ public class Player : MonoBehaviour {
     public float GetMaxSpecial()
     {
         return maxSpecial;
+    }
+
+    public int GetStreak()
+    {
+        return currentStreak;
     }
 
 

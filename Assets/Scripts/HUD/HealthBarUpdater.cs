@@ -32,6 +32,13 @@ public class HealthBarUpdater : MonoBehaviour {
     public Text characterName;
     public Text healthTextDisplay;
 
+
+    public Text StreakCounter;
+    public int lastStreak;
+    public float streakFadeTime = 2f;
+    private float streakAnimationStarted;
+
+
     Game game;
     Player player;
     float lastHit;
@@ -58,6 +65,7 @@ public class HealthBarUpdater : MonoBehaviour {
         UpdateHealthBar();
         UpdateDamageBar();
         updateSpecialBar();
+        UpdateStreakCounter();
         if (healthTextDisplay) UpdateHealthText();
     }
 
@@ -185,5 +193,42 @@ public class HealthBarUpdater : MonoBehaviour {
         }
 
 
+    }
+
+    private void UpdateStreakCounter()
+    {
+        StreakCounter.text = "x" + 5;
+        
+        if(player.GetStreak() < 1 || player.GetStreak() < lastStreak)
+        {
+            StreakCounter.text = "x0";
+            StreakCounter.gameObject.SetActive(false);
+        }
+
+        if(player.GetStreak() > lastStreak)
+        {
+            //restart Animation
+            streakAnimationStarted = Time.time;
+
+        }
+        else
+        {
+            
+            float endTime = streakAnimationStarted + streakFadeTime;
+            float timeLeft = endTime - Time.time;
+            float percentage = timeLeft / streakFadeTime;
+
+            if(timeLeft > 0)
+            {
+                StreakCounter.gameObject.SetActive(true);
+                var c = StreakCounter.color;
+                c.a = percentage;
+            } else
+            {
+                StreakCounter.gameObject.SetActive(false);
+            }
+
+            //continue animation
+        }
     }
 }

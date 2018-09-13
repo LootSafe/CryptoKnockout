@@ -22239,5 +22239,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 3514115997484053732, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -419
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514115997484053732, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -291
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514115998049098771, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514115998049098771, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -440
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514115998049098771, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957835162491928822, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: frequency
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2741d15316b00e84b9b5b1c971f766de, type: 3}
