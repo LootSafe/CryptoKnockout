@@ -35,8 +35,9 @@ public class HealthBarUpdater : MonoBehaviour {
 
     public Text StreakCounter;
     public int lastStreak;
-    public float streakFadeTime = 2f;
+    public float streakFadeTime = 1f;
     private float streakAnimationStarted;
+    private Vector2 streakSize;
 
 
     Game game;
@@ -48,6 +49,7 @@ public class HealthBarUpdater : MonoBehaviour {
 
         originalHealthColor = healthShowBar.GetComponentInParent<Image>().color;
         orgSpecColor = specialBar.GetComponent<Image>().color;
+        streakSize = StreakCounter.rectTransform.sizeDelta;
         game = Game.GetInstance();
 	}
 	
@@ -197,44 +199,28 @@ public class HealthBarUpdater : MonoBehaviour {
 
     private void UpdateStreakCounter()
     {
-        
-        if(player.GetStreak() > lastStreak)
+        if (player.GetStreak() > lastStreak)
         {
             //restart Animation
             streakAnimationStarted = Time.time;
-            
+        }
 
+        float endTime = streakAnimationStarted + streakFadeTime;
+        float timeLeft = endTime - Time.time;
+        float percentage = timeLeft / streakFadeTime;
+
+        if (player.GetStreak() > 1 && timeLeft > 0)
+        {
+            StreakCounter.text = "x" + player.GetStreak();
+            StreakCounter.gameObject.SetActive(true);
+            var c = StreakCounter.color;
+            c.a = percentage;
+
+            StreakCounter.rectTransform.sizeDelta = new Vector2(streakSize.x * percentage, streakSize.y * percentage);
         }
         else
-        {
-            
-            float endTime = streakAnimationStarted + streakFadeTime;
-            float timeLeft = endTime - Time.time;
-            float percentage = timeLeft / streakFadeTime;
-
-            if(timeLeft > 0)
-            {
-                StreakCounter.gameObject.SetActive(true);
-                var c = StreakCounter.color;
-                c.a = percentage;
-            } else
-            {
-                StreakCounter.gameObject.SetActive(false);
-            }
-
-            //continue animation
-        }
-
-        if (player.GetStreak() < 1 || player.GetStreak() < lastStreak)
         {
             StreakCounter.gameObject.SetActive(false);
-            StreakCounter.text = "x0";
-
-        }
-        else
-        {
-            StreakCounter.gameObject.SetActive(true);
-            StreakCounter.text = "x" + player.GetStreak();
         }
     }
 }

@@ -327,5 +327,11 @@ public class Player : MonoBehaviour {
         {
             hurt = false;
         }
+
+        //Udate Streak Time
+        if(Time.time >= lastDamageDealtTime + game.streakTime)
+        {
+            currentStreak = 0;
+        }
 	}
 }
