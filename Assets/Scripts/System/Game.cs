@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -255,6 +256,19 @@ public class Game : MonoBehaviour {
         if (!player) return null;
         Player result = player.GetComponent<Player>();
         return result;
+    }
+
+
+    public int GetWinner()
+    {
+        if (GetPlayer(0).GetScore() < GetPlayer(1).GetScore())
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public Player[] GetPlayers()
