@@ -11051,6 +11051,8 @@ MonoBehaviour:
   StreakCounter: {fileID: 4425145517404166598}
   lastStreak: 0
   streakFadeTime: 2
+  kills: {fileID: 3866693713996433410}
+  score: {fileID: 2859759407551922320}
 --- !u!1 &9094768358479231331
 GameObject:
   m_ObjectHideFlags: 0

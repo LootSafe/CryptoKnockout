@@ -283,9 +283,19 @@ public class Player : MonoBehaviour {
         return playerNumber;
     }
 
+    public float GetDamageDealt()
+    {
+        return damageDealt;
+    }
+
     public void SetPlayerNumber(int n)
     {
         playerNumber = n;
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 
     public void notifyDeath()

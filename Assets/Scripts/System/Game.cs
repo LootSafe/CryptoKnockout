@@ -80,7 +80,7 @@ public class Game : MonoBehaviour {
     public void TriggerDeath(Player player)
     {
         Player op = GetOpponent(player.GetPlayerNumber());
-        roundWinner = op.GetPlayerNumber();
+        roundWinner = op.GetPlayerNumber() + 1;
         op.AddToScore();
 
         //Debug.Log("Player " + player.name + " has died");
@@ -358,8 +358,7 @@ public class Game : MonoBehaviour {
                 }
                 break;
             case State.SUPER:
-                GetOpponent(superUser.GetPlayerNumber()).TakeDamage(99999999, superUser);
-                GetOpponent(superUser.GetPlayerNumber()).notifyDeath();
+                GetOpponent(superUser.GetPlayerNumber()).TakeDamage(9999, superUser);
 
                 state = State.ROUND_ENDING;
                 break;

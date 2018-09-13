@@ -23,8 +23,12 @@ public class RoundVictoryUpdater : MonoBehaviour {
 
         if(game.GetState() == Game.State.ROUND_ENDING)
         {
-            text = "PLAYER # WINS";
+            text.gameObject.SetActive(true);
+            text.text = "PLAYER " + game.GetRoundWinner() + " WINS";
         }
-
+        else
+        {
+            text.gameObject.SetActive(false);
+        }
 	}
 }

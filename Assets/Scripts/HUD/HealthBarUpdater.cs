@@ -40,6 +40,9 @@ public class HealthBarUpdater : MonoBehaviour {
     private Vector2 streakSize;
 
 
+    public Text kills;
+    public Text score;
+
     Game game;
     Player player;
     float lastHit;
@@ -68,6 +71,7 @@ public class HealthBarUpdater : MonoBehaviour {
         UpdateDamageBar();
         updateSpecialBar();
         UpdateStreakCounter();
+        UpdateStats();
         if (healthTextDisplay) UpdateHealthText();
     }
 
@@ -222,5 +226,11 @@ public class HealthBarUpdater : MonoBehaviour {
         {
             StreakCounter.gameObject.SetActive(false);
         }
+    }
+
+    private void UpdateStats()
+    {
+        score.text = "" + (int)player.GetDamageDealt();
+        kills.text = "" + (int)player.GetScore();
     }
 }
