@@ -45,6 +45,9 @@ public class Game : MonoBehaviour {
     public GameObject escapeMenu;
     GameLoader gl;
 
+    //Streak System
+    public float streakTime = 0.3f;
+
     private bool respawnToggle = false;
     private float roundStartTime = 0;
     private float roundEndTimer = 0;

@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
     private float lastHit;
     private float damageDealt;
     private int currentStreak;
+    private float lastDamageDealt;
+    private float lastDamageDealtTime;
 
     public bool attacking = false;
     private bool blocking , ducking;
@@ -102,8 +104,10 @@ public class Player : MonoBehaviour {
             {
                 if (damageTake <= 0) return 0;
                 //Debug.Log("Ouch!");
+                currentStreak = 0;
                 health -= damageTake;
                 lastHit = Time.time;
+                lastDamageDealt = damageDealt;
                 hurt = true;
                 InterruptActions();
                 GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HURT);
@@ -226,8 +230,16 @@ public class Player : MonoBehaviour {
     {
         return currentStreak;
     }
+    public void AddSuccessfulHit(float damageDealt)
+    {
+        lastDamageDealtTime = Time.time;
+        lastDamageDealt = damageDealt;
+    }
 
-
+    public float GetLastDamageDealt()
+    {
+        return lastDamageDealt;
+    }
     public float GetLastHit()
     {
         return lastHit;
@@ -288,6 +300,8 @@ public class Player : MonoBehaviour {
         blocking = false;
         ducking = false;
         health = character.GetHealth();
+        lastDamageDealt = 0;
+        currentStreak = 0;
         //GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.ALIVE);
         special = 0;
 
