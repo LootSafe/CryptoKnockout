@@ -40,7 +40,7 @@ public abstract class Character {
 
         if (damage == 1) return 1;
 
-        float i = (block*damage) - (defence + Random.Range(1f, 20f));       
+        float i = (block*damage) - (defence + Random.Range(1f, 20f)) + (player.GetLastDamageDealt() * 0.1f);       
         return i < 0 ? 0 : i + 1;
     }
 
