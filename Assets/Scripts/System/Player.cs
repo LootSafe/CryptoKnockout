@@ -138,6 +138,12 @@ public class Player : MonoBehaviour {
 
     public void AddToScore(float damageDealt)
     {
+
+        if(damageDealt > 0 &&  Time.time < lastDamageDealtTime + game.streakTime)
+        {
+            AddSuccessfulHit(damageDealt);
+        }
+
         special += 10;
         this.damageDealt += damageDealt;
     }
