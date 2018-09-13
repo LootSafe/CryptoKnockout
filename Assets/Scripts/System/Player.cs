@@ -140,11 +140,11 @@ public class Player : MonoBehaviour {
     {
         if(damageDealt > 0 )
         {
-            if(Time.time < lastDamageDealtTime + game.streakTime || currentStreak == 0)
+            if (Time.time < lastDamageDealtTime + game.streakTime || currentStreak == 0)
             {
                 AddSuccessfulHit(damageDealt);
+
             }
-            
         } else
         {
             lastDamageDealt = 0;

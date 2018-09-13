@@ -197,18 +197,12 @@ public class HealthBarUpdater : MonoBehaviour {
 
     private void UpdateStreakCounter()
     {
-        StreakCounter.text = "x" + 5;
         
-        if(player.GetStreak() < 1 || player.GetStreak() < lastStreak)
-        {
-            StreakCounter.text = "x0";
-            StreakCounter.gameObject.SetActive(false);
-        }
-
         if(player.GetStreak() > lastStreak)
         {
             //restart Animation
             streakAnimationStarted = Time.time;
+            
 
         }
         else
@@ -229,6 +223,18 @@ public class HealthBarUpdater : MonoBehaviour {
             }
 
             //continue animation
+        }
+
+        if (player.GetStreak() < 1 || player.GetStreak() < lastStreak)
+        {
+            StreakCounter.gameObject.SetActive(false);
+            StreakCounter.text = "x0";
+
+        }
+        else
+        {
+            StreakCounter.gameObject.SetActive(true);
+            StreakCounter.text = "x" + player.GetStreak();
         }
     }
 }

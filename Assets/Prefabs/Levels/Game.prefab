@@ -61,6 +61,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 1729820886990980, guid: 715c02c2e3375e7418da3da2e1d99b67,
     type: 3}
   escapeMenu: {fileID: 0}
+  streakTime: 1.2
 --- !u!222 &222988028712984182
 CanvasRenderer:
   m_ObjectHideFlags: 0

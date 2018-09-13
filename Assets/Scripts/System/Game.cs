@@ -46,7 +46,7 @@ public class Game : MonoBehaviour {
     GameLoader gl;
 
     //Streak System
-    public float streakTime = 0.3f;
+    public float streakTime = 1f;
 
     private bool respawnToggle = false;
     private float roundStartTime = 0;
