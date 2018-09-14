@@ -22,11 +22,11 @@ public class PlayerDamage : MonoBehaviour {
             var p = transform.localPosition;
             if (state)
             {
-                p.x += 1;
+                p.x += 3;
             }
             else
             {
-                p.x -= 1;
+                p.x -= 3;
             }
         }
         if (lastHit != 0 && Time.time >= lastHit + delay)

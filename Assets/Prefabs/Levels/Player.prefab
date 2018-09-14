@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 114186994662308574}
-  delay: 0.02
+  delay: 0.1
   overrideDamage: 10
 --- !u!1 &1729820886990980
 GameObject:
@@ -5459,7 +5459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 114186994662308574}
-  delay: 0.02
+  delay: 0.1
   overrideDamage: 10
 --- !u!1 &4578912747115080338
 GameObject:

@@ -81,7 +81,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
     private void UpdatePlayer(Player player, int playerNumber)
     {
-
+        if (!player.IsAlive()) return;
         PlayerIndex pi;
         switch (playerNumber)
         {
@@ -157,8 +157,6 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-
-
 
         //Horizontal Changes
         if (xMovement != 0 && player.IsAlive() && !player.IsAttacking() && !player.IsDucking() && !player.IsDucking())
