@@ -7,6 +7,7 @@ public class PlayerDamage : MonoBehaviour {
     float lastHit;
     public float delay = .02f;
     public float overrideDamage = 10;
+    private bool state;
 
     void Start()
     {
@@ -15,6 +16,19 @@ public class PlayerDamage : MonoBehaviour {
 
     void Update()
     {
+
+        if (player)
+        {
+            var p = transform.localPosition;
+            if (state)
+            {
+                p.x += 1;
+            }
+            else
+            {
+                p.x -= 1;
+            }
+        }
         if (lastHit != 0 && Time.time >= lastHit + delay)
         {
             gameObject.SetActive(false);
