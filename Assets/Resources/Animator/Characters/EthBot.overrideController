@@ -4,7 +4,8 @@
 AnimatorOverrideController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: EthBot
   m_Controller: {fileID: 9100000, guid: bb2a6cd947ba1ce4391a7be9cfcdb15f, type: 2}
   m_Clips:
@@ -22,3 +23,9 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: 7400000, guid: be3ec8c16e2a0494f8851e07058c99f0, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 802cacaaa368ab94f9072b9e44952445, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: a1bff49c0ac445d47929b4602cb6bc14, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7c950e6df65083c4bbcae786eef49d90, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d8df3e5ed0260f249b2f92261ffe24e9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4850edf9b4117044f9925bb367ad1e84, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3bb005b5082a57b4bbe9a565c86cd43d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1908efa67e5b0934b8db26648688a257, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8e0f97d41f0c165419ba4aebff2439dd, type: 2}

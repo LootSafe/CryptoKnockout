@@ -11,8 +11,13 @@ TextureImporter:
     21300012: ether_jump_19
     21300014: ether_jump_23
     21300016: ether_jump_30
+    21300018: ether_jump_1
+    21300020: ether_jump_4
+    21300022: ether_jump_5
+    21300024: ether_jump_6
+    21300026: ether_jump_7
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -118,18 +123,38 @@ TextureImporter:
       name: ether_jump_0
       rect:
         serializedVersion: 2
-        x: 817
-        y: 6860
-        width: 924
-        height: 2014
+        x: 0
+        y: 6600
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fc675151317a1846bed3a8f82dcb560
+      spriteID: bc99c5ef6857b6840b999acf557e3585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_jump_1
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 6600
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8b664b5a50b1c4f97a1a02aedef068
       vertices: []
       indices: 
       edges: []
@@ -138,18 +163,18 @@ TextureImporter:
       name: ether_jump_2
       rect:
         serializedVersion: 2
-        x: 3111
-        y: 6859
-        width: 1378
-        height: 1680
+        x: 5100
+        y: 6600
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4646ddd4c6d60845b095f83ab593f8f
+      spriteID: 7463957f8ad347744aaa9a8f648d550a
       vertices: []
       indices: 
       edges: []
@@ -158,118 +183,98 @@ TextureImporter:
       name: ether_jump_3
       rect:
         serializedVersion: 2
-        x: 5895
-        y: 7398
-        width: 962
-        height: 2364
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07e656a20e0b27a478795a18661c868d
+      spriteID: 6834c41490543104ebed0531edaef723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_jump_12
+      name: ether_jump_4
       rect:
         serializedVersion: 2
-        x: 796
-        y: 4206
-        width: 946
-        height: 2255
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f54e85b63243ba4c8701b5a71818fa3
+      spriteID: 1258c2fbb161a4a4cbff64b83973c58b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_jump_14
+      name: ether_jump_5
       rect:
         serializedVersion: 2
-        x: 3365
-        y: 4450
-        width: 944
-        height: 2011
+        x: 5100
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a085338f150732a47a8bfa0d104fa823
+      spriteID: 86e14f0af5b21a14d99f29c2eed5b986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_jump_18
+      name: ether_jump_6
       rect:
         serializedVersion: 2
-        x: 5693
-        y: 4948
-        width: 1252
-        height: 1624
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1b8137a21ff36d43a9398a2fd9c0edf
+      spriteID: de53f2557a3373c4b8e08a37112e2df8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_jump_23
+      name: ether_jump_7
       rect:
         serializedVersion: 2
-        x: 809
-        y: 945
-        width: 913
-        height: 2165
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe93c8abdbeba840b8d683bf90f0931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_jump_30
-      rect:
-        serializedVersion: 2
-        x: 3331
-        y: 259
-        width: 958
-        height: 1681
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efdf3a514fb771d42b6d4917b38e1a05
+      spriteID: 0eb199af23886e744ad8165c481cc4b1
       vertices: []
       indices: 
       edges: []
@@ -283,8 +288,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
