@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -23,16 +24,16 @@ MonoBehaviour:
     Type: 2
     Min: -1
     Max: 1
-    Key1: 276
-    Key2: 275
+    Key1: 260
+    Key2: 262
   - Axis: 0
     Alternative: 0
-    Invert: 0
+    Invert: 1
     Type: 2
     Min: -1
     Max: 1
-    Key1: 273
-    Key2: 274
+    Key1: 261
+    Key2: 264
   - Axis: 0
     Alternative: 0
     Invert: 0
@@ -83,16 +84,16 @@ MonoBehaviour:
     Key2: 0
   Buttons:
   - Button: 0
+    Key: 265
+    Type: 1
+  - Button: 0
+    Key: 263
+    Type: 1
+  - Button: 0
+    Key: 259
+    Type: 1
+  - Button: 0
     Key: 257
-    Type: 1
-  - Button: 0
-    Key: 258
-    Type: 1
-  - Button: 0
-    Key: 260
-    Type: 1
-  - Button: 0
-    Key: 261
     Type: 1
   - Button: 0
     Key: 270

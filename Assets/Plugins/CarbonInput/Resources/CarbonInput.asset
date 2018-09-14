@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd6a205b4f3e8440b49c91f90e95ea2, type: 3}
   m_Name: CarbonInput
   m_EditorClassIdentifier: 
-  Behaviour: 2
+  Behaviour: 1
   InvertedAxis: 0001000100000000

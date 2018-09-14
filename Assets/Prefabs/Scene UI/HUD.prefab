@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!224 &255916243542288950 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9019058556262698641, guid: 50eb3984234aa49439601aaad8377c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 9126284676853097639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &255916243031229121 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9019058556262698641, guid: 50eb3984234aa49439601aaad8377c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 9126284676273359952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &884420935259053573
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8153129970127410757}
   - component: {fileID: 8115958524413091365}
-  - component: {fileID: 8116455792825825221}
+  - component: {fileID: 8016232516540031372}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -629,7 +641,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &8116455792825825221
+--- !u!114 &8016232516540031372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -638,13 +650,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8156169672749080037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: c23f78a1d53c00e469381bd390575be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
+  Player: 0
+  HorizontalAxis: 0
+  InvertHorizontal: 0
+  VerticalAxis: 1
+  InvertVertical: 0
+  SubmitButton: 0
+  CancelButton: 1
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
@@ -1632,12 +1647,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!224 &255916243542288950 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9019058556262698641, guid: 50eb3984234aa49439601aaad8377c1e,
-    type: 3}
-  m_PrefabInstance: {fileID: 9126284676853097639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9126284675707109592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,12 +2053,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 25465
---- !u!224 &255916243031229121 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9019058556262698641, guid: 50eb3984234aa49439601aaad8377c1e,
-    type: 3}
-  m_PrefabInstance: {fileID: 9126284676273359952}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9126284676037452641
 GameObject:
   m_ObjectHideFlags: 0

@@ -22240,5 +22240,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 8016232516540031372, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: m_ForceModuleActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016232516540031372, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: InvertVertical
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016232516540031372, guid: 2741d15316b00e84b9b5b1c971f766de,
+        type: 3}
+      propertyPath: InvertHorizontal
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2741d15316b00e84b9b5b1c971f766de, type: 3}

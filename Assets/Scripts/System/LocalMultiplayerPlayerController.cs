@@ -57,7 +57,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         }
 
         //Escape Menu
-        if (Input.GetAxisRaw("Cancel") != 0){
+        if (GamePad.GetButton(CButton.Start)){
             if (!pauseMenuLock)
             {
                 if(game.GetState() == Game.State.PAUSED)
