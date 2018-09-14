@@ -15903,7 +15903,7 @@ MonoBehaviour:
   HorizontalAxis: 0
   InvertHorizontal: 0
   VerticalAxis: 1
-  InvertVertical: 1
+  InvertVertical: 0
   SubmitButton: 0
   CancelButton: 1
   m_InputActionsPerSecond: 10

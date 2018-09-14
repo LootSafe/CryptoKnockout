@@ -78,6 +78,39 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
     private void UpdatePlayer(Player player, int playerNumber)
     {
+
+        PlayerIndex pi;
+        switch (playerNumber)
+        {
+            case 1:
+                pi = PlayerIndex.One;
+                break;
+            case 2:
+                pi = PlayerIndex.Two;
+                break;
+            case 3:
+                pi = PlayerIndex.Three;
+                break;
+            case 4:
+                pi = PlayerIndex.Four;
+                break;
+            case 5:
+                pi = PlayerIndex.Five;
+                break;
+            case 6:
+                pi = PlayerIndex.Six;
+                break;
+            case 7:
+                pi = PlayerIndex.Seven;
+                break;
+            case 8:
+                pi = PlayerIndex.Eight;
+                break;
+            default:
+                pi = PlayerIndex.Any;
+                break;
+        }
+
         if (!player) return;
         if (game.GetState() != Game.State.FIGHTING) return;
 
@@ -86,32 +119,39 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         PlayerAnimatorController pac = player.GetComponent<PlayerAnimatorController>();
 
 
-        float xMovement = Input.GetAxisRaw("P" + playerNumber + "_Horizontal");
+        //float xMovement = Input.GetAxisRaw("P" + playerNumber + "_Horizontal");
+        float xMovement = GamePad.GetAxis(CAxis.LX, pi);
 
         //4 -- For Crouch
-        float yMovement = Input.GetAxisRaw("P" + playerNumber + "_Vertical");
+        //float yMovement = Input.GetAxisRaw("P" + playerNumber + "_Vertical");
+        float yMovement = GamePad.GetAxis(CAxis.LY, pi);
         //0
+        //Deprecated
         float jump = Input.GetAxis("P" + playerNumber + "_Jump");
         //1
-        float punch = Input.GetAxis("P" + playerNumber + "_Punch");
+        //float punch = Input.GetAxis("P" + playerNumber + "_Punch");
+        bool punch = GamePad.GetButton(CButton.A, pi);
         //2
-        float kick = Input.GetAxis("P" + playerNumber + "_Kick");
+        //float kick = Input.GetAxis("P" + playerNumber + "_Kick");
+        bool kick = GamePad.GetButton(CButton.B, pi);
         //3
-        float block = Input.GetAxis("P" + playerNumber + "_Block");
+        //float block = Input.GetAxis("P" + playerNumber + "_Block");
+        bool block = GamePad.GetButton(CButton.X, pi);
         //5
-        float super = Input.GetAxis("P" + playerNumber + "_Super");
+        //float super = Input.GetAxis("P" + playerNumber + "_Super");
+        bool super = GamePad.GetButton(CButton.Y, pi);
 
 
         //Character Lock
         if (player.IsBlocking() || player.IsAttacking() || player.IsDucking())
         {
             rigidbody.velocity = new Vector2(0, 0);
-            rigidbody.bodyType = RigidbodyType2D.Static;
-            
+            rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
         }
         else
         {
-            rigidbody.bodyType = RigidbodyType2D.Dynamic;
+            rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
 
@@ -158,7 +198,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             }
             else if(yMovement < 0)
             {
-                if (controlLocks[playerNumber - 1, 4] == false)
+                if (controlLocks[playerNumber - 1, 4] == false && player.IsGrounded())
                 {
                     controlLocks[playerNumber - 1, 4] = true;
                     pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.DUCK);
@@ -185,7 +225,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         /*Player Moves*/
         //Punch
 
-        if (punch != 0)
+        if (punch)
         {
             if (controlLocks[playerNumber - 1, 1] == false && !player.IsHurt() && !player.IsAttacking())
             {
@@ -201,7 +241,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         
         
         //Kick
-        if (kick != 0)
+        if (kick)
         {
             if (controlLocks[playerNumber - 1, 2] == false && !player.IsHurt() && !player.IsAttacking())
             {
@@ -216,14 +256,14 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         }
 
         //Block
-        if (block != 0)
+        if (block)
         {
-            if (controlLocks[playerNumber - 1, 3] == false)
+            if (controlLocks[playerNumber - 1, 3] == false && player.IsGrounded())
             {
-                player.GetCharacter().MoveBlock();
-                pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.BLOCK);
-                controlLocks[playerNumber - 1, 3] = true;
-                player.StartBlocking();
+                    player.GetCharacter().MoveBlock();
+                    pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.BLOCK);
+                    controlLocks[playerNumber - 1, 3] = true;
+                    player.StartBlocking();
             }
         }
         else
@@ -236,7 +276,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Special2
 
         //Ultra
-        if (super != 0)
+        if (super)
         {
             if (controlLocks[playerNumber - 1, 5] == false && !player.IsHurt() && !player.IsAttacking())
             {
