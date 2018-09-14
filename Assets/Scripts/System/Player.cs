@@ -158,7 +158,7 @@ public class Player : MonoBehaviour {
             lastDamageDealt = 0;
         }
 
-        special += (5+ (damageDealt / 2) + (damageDealt * currentStreak));
+        special += (5+ (damageDealt / 2) + (damageDealt * currentStreak)) / 2;
         this.damageDealt += damageDealt;
     }
 

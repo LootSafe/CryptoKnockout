@@ -68,6 +68,7 @@ public class Game : MonoBehaviour {
 
     public void Start()
     {
+        Debug.Log("I was loaded Once");
         state = State.STARTING;
         escapeMenu = gl.escapeMenu;
         

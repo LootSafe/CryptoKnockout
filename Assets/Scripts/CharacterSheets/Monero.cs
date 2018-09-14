@@ -6,11 +6,11 @@ public class Monero : Character {
 
     public Monero()
     {
-        this.health = 90;
-        this.strength = 10;
-        this.defence = 10;
+        this.health = 1800;
+        this.strength = 25;
+        this.defence = 15;
         this.moveSpeed = 10;
-        this.name = "EthBot";
+        this.name = "Monero";
 
         this.hitWords = new List<string>();
         this.hitWords.Add("SWIISH!!");

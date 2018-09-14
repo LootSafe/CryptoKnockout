@@ -6,8 +6,8 @@ public class EthBot : Character {
 
     public EthBot()
     {
-        this.health = 90;
-        this.strength = 10;
+        this.health = 1100;
+        this.strength = 32;
         this.defence = 10;
         this.moveSpeed = 10;
         this.name = "EthBot";
