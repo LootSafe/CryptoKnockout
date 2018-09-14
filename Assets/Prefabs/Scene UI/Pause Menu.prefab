@@ -1,5 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!224 &5656071472861230919 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4165929989210214028, guid: 4718a53a7a72ab1468cd81c0a47f0bd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8623896622202927563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &485338428450526123
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +241,7 @@ GameObject:
   - component: {fileID: 7189439500422467336}
   - component: {fileID: 3067264871931615297}
   - component: {fileID: 521934714719675033}
+  - component: {fileID: 2653118011939088342}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -300,6 +307,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &2653118011939088342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3145058553975964378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6396ddb1b3d66b848a72767ec030c6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  e: {fileID: 0}
+  b: {fileID: 0}
 --- !u!1 &4361727480322770144
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,12 +545,6 @@ MonoBehaviour:
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!224 &5656071472861230919 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4165929989210214028, guid: 4718a53a7a72ab1468cd81c0a47f0bd2,
-    type: 3}
-  m_PrefabInstance: {fileID: 8623896622202927563}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8623896622202927563
 PrefabInstance:
   m_ObjectHideFlags: 0
