@@ -38,8 +38,4 @@ public class EthBot : Character {
         throw new System.NotImplementedException();
     }
 
-    public override void MoveUltra()
-    {
-        throw new System.NotImplementedException();
-    }
 }
