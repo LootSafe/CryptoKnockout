@@ -188,7 +188,7 @@ public class HealthBarUpdater : MonoBehaviour {
             specialParticles.SetActive(true);
             if(Time.time >= specialUpdateTime + specialBarColorChangeDelay)
             {
-                orgSpecColor = specialBar.GetComponent<Image>().color = Random.ColorHSV();
+                specialBar.GetComponent<Image>().color = Random.ColorHSV();
                 specialUpdateTime = Time.time;
             }
         }
