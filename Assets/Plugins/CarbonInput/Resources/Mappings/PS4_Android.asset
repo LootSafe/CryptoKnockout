@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c038c960b0ce7624993fdb8e9953dba8, type: 3}
+  m_Name: PS4_Android
+  m_EditorClassIdentifier: 
+  RegEx: Wireless
+  Platform: 16
+  Priority: 5000
+  Axes:
+  - Axis: 0
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 1
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 13
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 14
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 2
+    Alternative: 0
+    Invert: 0
+    Type: 5
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 3
+    Alternative: 0
+    Invert: 0
+    Type: 5
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 4
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 5
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  Buttons:
+  - Button: 1
+    Key: 0
+    Type: 0
+  - Button: 13
+    Key: 0
+    Type: 0
+  - Button: 0
+    Key: 0
+    Type: 0
+  - Button: 2
+    Key: 0
+    Type: 0
+  - Button: 8
+    Key: 0
+    Type: 0
+  - Button: 7
+    Key: 0
+    Type: 0
+  - Button: 3
+    Key: 0
+    Type: 0
+  - Button: 14
+    Key: 0
+    Type: 0
+  - Button: 11
+    Key: 0
+    Type: 0
+  - Button: 10
+    Key: 0
+    Type: 0

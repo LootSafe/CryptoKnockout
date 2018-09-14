@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3be0fab311c3f9646b6a78261d1e628a
+labels:
+- Gamepad
+- Input
+- Joystick
+timeCreated: 1455638035
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

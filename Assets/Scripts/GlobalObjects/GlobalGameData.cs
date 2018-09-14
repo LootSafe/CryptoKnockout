@@ -9,6 +9,8 @@ public class GlobalGameData : MonoBehaviour {
     public Character.Characters player1Char = Character.Characters.BJORN;
     public Character.Characters player2Char = Character.Characters.DOGE;
 
+    public float volume;
+
 
     private static bool created = false;
     private static GlobalGameData instance;
@@ -28,4 +30,8 @@ public class GlobalGameData : MonoBehaviour {
         return instance;
     }
 
+    public void SetVolume(float f)
+    {
+        volume = f;
+    }
 }

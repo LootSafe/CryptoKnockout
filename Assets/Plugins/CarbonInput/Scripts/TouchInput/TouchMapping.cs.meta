@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4fae99fbdd9f6aa47b8f0aedfa36d8b7
+labels:
+- Touchinput
+- Touch
+- Input
+- Gamepad
+- Joystick
+timeCreated: 1455827496
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

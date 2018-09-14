@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c038c960b0ce7624993fdb8e9953dba8, type: 3}
+  m_Name: PS4_bluetooth
+  m_EditorClassIdentifier: 
+  RegEx: wireless
+  Platform: 3
+  Priority: 5001
+  UseOnce: 0
+  Replacable: 0
+  Axes:
+  - Axis: 0
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 2
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 3
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 6
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 4
+    Alternative: 0
+    Invert: 0
+    Type: 5
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 5
+    Alternative: 0
+    Invert: 0
+    Type: 5
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 7
+    Alternative: 0
+    Invert: 0
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  - Axis: 8
+    Alternative: 0
+    Invert: 1
+    Type: 0
+    Min: 0
+    Max: 1
+    Key1: 0
+    Key2: 0
+  Buttons:
+  - Button: 1
+    Key: 0
+    Type: 0
+  - Button: 2
+    Key: 0
+    Type: 0
+  - Button: 0
+    Key: 0
+    Type: 0
+  - Button: 3
+    Key: 0
+    Type: 0
+  - Button: 13
+    Key: 0
+    Type: 0
+  - Button: 9
+    Key: 0
+    Type: 0
+  - Button: 4
+    Key: 0
+    Type: 0
+  - Button: 5
+    Key: 0
+    Type: 0
+  - Button: 10
+    Key: 0
+    Type: 0
+  - Button: 11
+    Key: 0
+    Type: 0
