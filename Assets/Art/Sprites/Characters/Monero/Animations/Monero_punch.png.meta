@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 846cb5626a3d6f8468aa300c4ce109b0
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Monero_punch_0
+    21300002: Monero_punch_1
+    21300004: Monero_punch_2
+    21300006: Monero_punch_3
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -104,7 +108,87 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Monero_punch_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516e73cc78242d0469d1179d3c9d5c72
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monero_punch_1
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5761b9db9241af489ca284d24df011f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monero_punch_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62be9f81882d684e841e9f5e5158c70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monero_punch_3
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b489fb34077ebe42b722061159748f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
