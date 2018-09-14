@@ -7,6 +7,7 @@ public class AvatarUpdator : MonoBehaviour {
 
     public InputHandler inputHandler;
     public int playerNumber;
+    public Text text;
 
     GameObject p1Selection, p2Selection;
 	// Use this for initialization
@@ -18,13 +19,17 @@ public class AvatarUpdator : MonoBehaviour {
 	void Update () {
         p1Selection = inputHandler.p1Selection;
         p2Selection = inputHandler.p2Selection;
+
+        
+
         if (playerNumber == 1)
         {
             if (p1Selection && p1Selection.GetComponent<CharacterSelectButtons>())
             {
                 Sprite sprite = p1Selection.GetComponent<CharacterSelectButtons>().avatar_left;
                 GetComponent<Image>().sprite = sprite;
-                
+                text.text = p1Selection.GetComponent<CharacterSelectButtons>().character.ToString();
+
             }
         }
         else if(playerNumber == 2)
@@ -34,6 +39,7 @@ public class AvatarUpdator : MonoBehaviour {
 
                 Sprite sprite = p2Selection.GetComponent<CharacterSelectButtons>().avatar_right;
                 GetComponent<Image>().sprite = sprite;
+                text.text = p2Selection.GetComponent<CharacterSelectButtons>().character.ToString();
             }
         }
 
