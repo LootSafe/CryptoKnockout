@@ -6,8 +6,8 @@ public class GlobalGameData : MonoBehaviour {
 
     public Game.GameMode selectedGameMode = Game.GameMode.LOCALMULTIPLAYER;
     public string selectedLevel = "Denver";
-    public Character.Characters player1Char = Character.Characters.BJORN;
-    public Character.Characters player2Char = Character.Characters.DOGE;
+    public Character.Characters player1Char = Character.Characters.BITCOINBOY;
+    public Character.Characters player2Char = Character.Characters.ETHBOT;
 
     public float volume;
 

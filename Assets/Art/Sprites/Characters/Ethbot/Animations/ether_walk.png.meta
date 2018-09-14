@@ -9,8 +9,9 @@ TextureImporter:
     21300008: ether_walk_9
     21300010: ether_walk_10
     21300012: ether_walk_14
+    21300014: ether_walk_3
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -116,10 +117,10 @@ TextureImporter:
       name: ether_walk_0
       rect:
         serializedVersion: 2
-        x: 824
-        y: 4005
-        width: 1052
-        height: 1927
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,7 +128,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73902598999dc7945a8c825f834b4ef9
+      spriteID: 212a89e2552d0664c9765a33b1530a28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_walk_1
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d138f9c68c4834195948ac369e5da5
       vertices: []
       indices: 
       edges: []
@@ -136,10 +157,10 @@ TextureImporter:
       name: ether_walk_2
       rect:
         serializedVersion: 2
-        x: 3281
-        y: 4065
-        width: 1250
-        height: 1889
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,19 +168,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85b07e5a25c33604b8a580ad6c58d4b3
+      spriteID: 20f56a5552248054abdd9ae629dbed80
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_walk_9
+      name: ether_walk_3
       rect:
         serializedVersion: 2
-        x: 890
-        y: 785
-        width: 838
-        height: 1849
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,27 +188,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e383c6a1ee77e142a42457d0180bf64
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_walk_10
-      rect:
-        serializedVersion: 2
-        x: 3199
-        y: 836
-        width: 1346
-        height: 1818
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f47c0a95aa0d5c746b56cea3b1c1f0cb
+      spriteID: e48fa78c217c23d46b22d8bb45ff13e0
       vertices: []
       indices: 
       edges: []
@@ -201,8 +202,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -7,8 +7,9 @@ TextureImporter:
     21300004: ether_kick_2
     21300006: ether_kick_7
     21300008: ether_kick_10
+    21300010: ether_kick_3
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -114,18 +115,38 @@ TextureImporter:
       name: ether_kick_0
       rect:
         serializedVersion: 2
-        x: 700
-        y: 4004
-        width: 912
-        height: 2027
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dc939219be0df34db04af3129e41c6f
+      spriteID: 069889786236a1d4fa67c5c7363c6e0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_kick_1
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bbf5097e856a545bd825cc12808c0f
       vertices: []
       indices: 
       edges: []
@@ -134,58 +155,38 @@ TextureImporter:
       name: ether_kick_2
       rect:
         serializedVersion: 2
-        x: 3069
-        y: 4111
-        width: 1088
-        height: 1891
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 022879b0515ffed438f51a0edf4cabff
+      spriteID: 7e2949e0e9576284d830d3f47bddcd94
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_kick_7
+      name: ether_kick_3
       rect:
         serializedVersion: 2
-        x: 683
-        y: 799
-        width: 1310
-        height: 1901
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f515060d01423241a752997c427416c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_kick_10
-      rect:
-        serializedVersion: 2
-        x: 3445
-        y: 811
-        width: 1096
-        height: 1901
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70592e2d88eb55e4790082f5f5ef8c78
+      spriteID: 0272eba0e87aaf343adfc8e64731d5c3
       vertices: []
       indices: 
       edges: []
@@ -199,8 +200,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

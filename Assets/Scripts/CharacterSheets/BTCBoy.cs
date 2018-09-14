@@ -27,20 +27,6 @@ public class BTCBoy : Character {
         return p;
     }
 
-    public override void MoveKick()
-    {
-        player.foot.GetComponent<PlayerDamage>().TriggerEnable();
-    }
-
-    public override void MoveBlock()
-    {
-        
-    }
-    public override void MovePunch()
-    {
-        player.fist.GetComponent<PlayerDamage>().TriggerEnable();
-    }
-
     public override void MoveSpecial1()
     {
         throw new System.NotImplementedException();
@@ -51,8 +37,4 @@ public class BTCBoy : Character {
         throw new System.NotImplementedException();
     }
 
-    public override void MoveUltra()
-    {
-        throw new System.NotImplementedException();
-    }
 }

@@ -44,8 +44,4 @@ public class Bjorn : Character {
         throw new System.NotImplementedException();
     }
 
-    public override void MoveUltra()
-    {
-        player.UseSuper();
-    }
 }

@@ -11,8 +11,14 @@ TextureImporter:
     21300012: ether_knockout_24
     21300014: ether_knockout_29
     21300016: ether_knockout_32
+    21300018: ether_knockout_2
+    21300020: ether_knockout_3
+    21300022: ether_knockout_4
+    21300024: ether_knockout_5
+    21300026: ether_knockout_6
+    21300028: ether_knockout_7
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -118,18 +124,18 @@ TextureImporter:
       name: ether_knockout_0
       rect:
         serializedVersion: 2
-        x: 2164
-        y: 7243
-        width: 908
-        height: 2009
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 22
+        y: 6600
+        width: 3414
+        height: 3300
+      alignment: 9
+      pivot: {x: 0.76578087, y: 0.5310443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5de0922910668d49b04b54af9c30eec
+      spriteID: f9f1476c0e01595499c931598e7f00b5
       vertices: []
       indices: 
       edges: []
@@ -138,138 +144,138 @@ TextureImporter:
       name: ether_knockout_1
       rect:
         serializedVersion: 2
-        x: 5402
-        y: 7278
-        width: 1086
-        height: 2128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3414
+        y: 6600
+        width: 3414
+        height: 3300
+      alignment: 9
+      pivot: {x: 0.76578087, y: 0.5310443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e76c8d1dfb8a7144b9ca2f90fe8a99b4
+      spriteID: 1e2b0faa067c98248bc1ab0f80ce6545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_knockout_8
+      name: ether_knockout_2
       rect:
         serializedVersion: 2
-        x: 8494
-        y: 7308
-        width: 1279
-        height: 2006
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 6828
+        y: 6600
+        width: 3414
+        height: 3300
+      alignment: 9
+      pivot: {x: 0.76578087, y: 0.5310443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9810d91ac8e1134da76f78998943138
+      spriteID: a4a2224504470fc4f8f87ab067f82427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_knockout_21
+      name: ether_knockout_3
       rect:
         serializedVersion: 2
-        x: 1225
-        y: 4000
-        width: 1698
-        height: 1683
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 7
+        y: 3300
+        width: 3414
+        height: 3300
+      alignment: 9
+      pivot: {x: 0.76578087, y: 0.5310443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e335134e7a39a24dbcb5855b29eb6cb
+      spriteID: 6b707d65fda32734f9f125de523cf7c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_knockout_22
+      name: ether_knockout_4
       rect:
         serializedVersion: 2
-        x: 4425
-        y: 3975
-        width: 1925
-        height: 1776
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3403
+        y: 3311
+        width: 3414
+        height: 3300
+      alignment: 9
+      pivot: {x: 0, y: 0.5310443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bf10a81c1b372a438e9b50ef967a30c
+      spriteID: ee6ff1c8ecedfe946968daa118753744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_knockout_24
+      name: ether_knockout_5
       rect:
         serializedVersion: 2
-        x: 7519
-        y: 3988
-        width: 2245
-        height: 1446
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 6817
+        y: 3300
+        width: 3414
+        height: 3300
+      alignment: 9
+      pivot: {x: 0.76578087, y: 0.5310443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c9e123691bc0be42b368ebfab1c7159
+      spriteID: 9ee07dd3be9409942a9ee3af44e59cbe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_knockout_29
+      name: ether_knockout_6
       rect:
         serializedVersion: 2
-        x: 428
-        y: 698
-        width: 2489
-        height: 1037
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 11
+        y: 0
+        width: 3414
+        height: 3300
+      alignment: 9
+      pivot: {x: 0.76578087, y: 0.5310443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f04c34a62d7fa68479db346d2f1c831f
+      spriteID: 701aa4fd1f02d474f836f5e02a9ac12b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_knockout_32
+      name: ether_knockout_7
       rect:
         serializedVersion: 2
-        x: 3625
-        y: 688
-        width: 2716
-        height: 1060
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3425
+        y: 0
+        width: 3414
+        height: 3300
+      alignment: 9
+      pivot: {x: 0.76578087, y: 0.5310443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96933cb66b8eb848ab65077632f4a6a
+      spriteID: bedce91ad9377bc4a8e0305e50f850c5
       vertices: []
       indices: 
       edges: []
@@ -283,8 +289,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

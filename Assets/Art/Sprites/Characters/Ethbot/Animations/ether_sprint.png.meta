@@ -8,8 +8,11 @@ TextureImporter:
     21300006: ether_sprint_8
     21300008: ether_sprint_10
     21300010: ether_sprint_12
+    21300012: ether_sprint_0
+    21300014: ether_sprint_1
+    21300016: ether_sprint_5
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -112,21 +115,61 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ether_sprint_2
+      name: ether_sprint_0
       rect:
         serializedVersion: 2
-        x: 581
-        y: 4010
-        width: 1124
-        height: 1852
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 188db3fcc6952ef4685a5bd95d255514
+      spriteID: 2275b5a5e3a48fb4ab14aaf958a88333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_sprint_1
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637309b02f0089443a2332d0fc69f546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_sprint_2
+      rect:
+        serializedVersion: 2
+        x: 5100
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faddea876ed46e64baf86ac5243fcf38
       vertices: []
       indices: 
       edges: []
@@ -135,18 +178,18 @@ TextureImporter:
       name: ether_sprint_3
       rect:
         serializedVersion: 2
-        x: 3190
-        y: 4163
-        width: 1563
-        height: 1826
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5652ae95d0d1a44eab9389aebbe6ae1
+      spriteID: 8948004667df0bf49a160b24f82c0db6
       vertices: []
       indices: 
       edges: []
@@ -155,78 +198,38 @@ TextureImporter:
       name: ether_sprint_4
       rect:
         serializedVersion: 2
-        x: 5833
-        y: 4163
-        width: 1478
-        height: 1826
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c92252944fad4a34a99818943ee1ee72
+      spriteID: c6ccfa32753ac50439148982fc605ada
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_sprint_8
+      name: ether_sprint_5
       rect:
         serializedVersion: 2
-        x: 869
-        y: 798
-        width: 773
-        height: 1781
+        x: 5100
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f266c09944d201342a942b08246b9081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_sprint_10
-      rect:
-        serializedVersion: 2
-        x: 3242
-        y: 928
-        width: 1425
-        height: 1774
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1dcfde07f7208a646b2f9ce87a23e613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_sprint_12
-      rect:
-        serializedVersion: 2
-        x: 5793
-        y: 928
-        width: 1442
-        height: 1774
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c6ebb59766a78f4294c8bd6e76c9fae
+      spriteID: b5427e667fa351c49b1b78ebc1ab8311
       vertices: []
       indices: 
       edges: []
@@ -240,8 +243,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -7,8 +7,9 @@ TextureImporter:
     21300004: ether_takedmg_3
     21300006: ether_takedmg_11
     21300008: ether_takedmg_13
+    21300010: ether_takedmg_2
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -114,18 +115,58 @@ TextureImporter:
       name: ether_takedmg_0
       rect:
         serializedVersion: 2
-        x: 901
-        y: 3946
-        width: 653
-        height: 2008
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e51e4f728ba88ec428e66778ef1afb23
+      spriteID: 8fb9f6725ef359d4e93d1709fe8e3538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_takedmg_1
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3ad99120ba9ac4d920889628d2f0eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_takedmg_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d06f41003c4dfd46824e293adda0585
       vertices: []
       indices: 
       edges: []
@@ -134,58 +175,18 @@ TextureImporter:
       name: ether_takedmg_3
       rect:
         serializedVersion: 2
-        x: 3158
-        y: 3946
-        width: 1094
-        height: 1971
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7bd0971fce98f84883a3fe3dd9b544c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_takedmg_11
-      rect:
-        serializedVersion: 2
-        x: 572
-        y: 646
-        width: 1081
-        height: 1966
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eed7dd20d4f4b3746af735211ba220e8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_takedmg_13
-      rect:
-        serializedVersion: 2
-        x: 3148
-        y: 646
-        width: 1119
-        height: 1971
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4534f3fb39ea85b4a85b0109deaff7aa
+      spriteID: 24102d63185a2724e86da7409909a069
       vertices: []
       indices: 
       edges: []
@@ -199,8 +200,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

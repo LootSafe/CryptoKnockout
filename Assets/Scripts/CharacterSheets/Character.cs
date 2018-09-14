@@ -93,7 +93,10 @@ public abstract class Character {
     }
     public abstract void MoveSpecial1();
     public abstract void MoveSpecial2();
-    public abstract void MoveUltra();
+    public virtual void MoveUltra()
+    {
+        player.UseSuper();
+    }
 
     public abstract AnimatorOverrideController GetAnimationController();
 

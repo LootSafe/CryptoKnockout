@@ -5,8 +5,10 @@ TextureImporter:
     21300000: ether_punch_0
     21300002: ether_punch_3
     21300004: ether_punch_10
+    21300006: ether_punch_1
+    21300008: ether_punch_2
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -112,58 +114,58 @@ TextureImporter:
       name: ether_punch_0
       rect:
         serializedVersion: 2
-        x: 734
-        y: 3946
-        width: 911
-        height: 2008
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9a2c995e243c9b43b587b32509bbb71
+      spriteID: 9b635dd0d1eca9a46b2ff5b9d671c4fd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_punch_3
+      name: ether_punch_1
       rect:
         serializedVersion: 2
-        x: 3021
-        y: 3962
-        width: 1263
-        height: 2021
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ec9cc0df181fac4d9b0c9266ee85f21
+      spriteID: e482923da7fa3a84ba21892163a3d85b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_punch_10
+      name: ether_punch_2
       rect:
         serializedVersion: 2
-        x: 654
-        y: 646
-        width: 1435
-        height: 1959
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dabea147a66e7634c8b54202857a6d6d
+      spriteID: f3e2fce5a4c503e40a2d9586c591611f
       vertices: []
       indices: 
       edges: []
@@ -177,8 +179,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

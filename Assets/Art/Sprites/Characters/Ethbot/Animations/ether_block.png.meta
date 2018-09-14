@@ -15,7 +15,7 @@ TextureImporter:
     21300020: ether_block_10
     21300022: ether_block_11
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -121,18 +121,38 @@ TextureImporter:
       name: ether_block_0
       rect:
         serializedVersion: 2
-        x: 902
-        y: 4036
-        width: 848
-        height: 2009
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39bef872920915b4b8b2f5fdbecbfe48
+      spriteID: 8b22387762aa588409531e687a0545c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_block_1
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814cc297e73c1e34eae294e6eef8187b
       vertices: []
       indices: 
       edges: []
@@ -141,18 +161,38 @@ TextureImporter:
       name: ether_block_2
       rect:
         serializedVersion: 2
-        x: 3450
-        y: 4036
-        width: 822
-        height: 2214
+        x: 5100
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d7ab3f19ddd76645b48f4d28f581d2b
+      spriteID: b58d95d5f2e920645834b29176d6d581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_block_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750717ae4692d2d4da8fdba4956ee946
       vertices: []
       indices: 
       edges: []
@@ -161,78 +201,38 @@ TextureImporter:
       name: ether_block_4
       rect:
         serializedVersion: 2
-        x: 6001
-        y: 4036
-        width: 656
-        height: 2068
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6cd87cdbdf9f884a8ef8811e839ff76
+      spriteID: 9f944bf8c212f3740909309150c79601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_block_8
+      name: ether_block_5
       rect:
         serializedVersion: 2
-        x: 902
-        y: 734
-        width: 654
-        height: 1561
+        x: 5100
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f0d19881f947a3468a2b2c526a2b10c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_block_9
-      rect:
-        serializedVersion: 2
-        x: 3450
-        y: 734
-        width: 657
-        height: 1561
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a89d82d5c2db1b419b6d5cc9fb0b486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_block_10
-      rect:
-        serializedVersion: 2
-        x: 6001
-        y: 734
-        width: 795
-        height: 2215
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee2ea060f127093469ec5b1425756466
+      spriteID: cf2a01f7c27c4444e9066368b60ffaa4
       vertices: []
       indices: 
       edges: []
@@ -246,8 +246,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

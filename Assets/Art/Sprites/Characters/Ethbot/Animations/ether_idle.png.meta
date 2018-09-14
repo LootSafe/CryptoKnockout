@@ -6,8 +6,10 @@ TextureImporter:
     21300002: ether_idle_2
     21300004: ether_idle_10
     21300006: ether_idle_13
+    21300008: ether_idle_1
+    21300010: ether_idle_3
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 6
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,10 +115,10 @@ TextureImporter:
       name: ether_idle_0
       rect:
         serializedVersion: 2
-        x: 867
-        y: 4046
-        width: 926
-        height: 2008
+        x: 0
+        y: 3300
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,7 +126,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df13b812a6a36d84eb8691b26c3c4126
+      spriteID: 1a88096543f09494693ee681abbce4df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ether_idle_1
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3300
+        width: 2550
+        height: 3300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94640075c788da840aee89660a37d581
       vertices: []
       indices: 
       edges: []
@@ -133,10 +155,10 @@ TextureImporter:
       name: ether_idle_2
       rect:
         serializedVersion: 2
-        x: 3411
-        y: 4046
-        width: 910
-        height: 2017
+        x: 0
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61d9f8865510ac84d9270e600c07da77
+      spriteID: 122e5e3314a4c074f81af01a05d4fb52
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ether_idle_10
+      name: ether_idle_3
       rect:
         serializedVersion: 2
-        x: 806
-        y: 746
-        width: 903
-        height: 2021
+        x: 2550
+        y: 0
+        width: 2550
+        height: 3300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,27 +186,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8387c42eea81c2c489675135a2c88714
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ether_idle_13
-      rect:
-        serializedVersion: 2
-        x: 3410
-        y: 746
-        width: 870
-        height: 2017
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07259c42b6d13db4f8952345ffb777ba
+      spriteID: e62b1dc06b4bb8442bcd44c4c03526ef
       vertices: []
       indices: 
       edges: []
@@ -198,8 +200,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
