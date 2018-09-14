@@ -187,7 +187,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Vertical Changes
         if (yMovement != 0 && !player.IsAttacking())
         {
-            if (yMovement > 0)
+            if (Mathf.RoundToInt(yMovement) > 0)
             {
                 if (controlLocks[playerNumber - 1, 0] == false)
                 {
@@ -196,7 +196,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                     controlLocks[playerNumber - 1, 0] = true;
                 }
             }
-            else if(yMovement < 0)
+            else if(Mathf.RoundToInt(yMovement) < 0)
             {
                 if (controlLocks[playerNumber - 1, 4] == false && player.IsGrounded())
                 {
