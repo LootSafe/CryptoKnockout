@@ -169,11 +169,12 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                 Vector3 rotation = transform.localScale;
                 Vector3 updatedHeading = rotation;
                 float quotient = xMovement / Mathf.Abs(xMovement);
+                updatedHeading = new Vector3(Mathf.Abs(rotation.x) * quotient, rotation.y, rotation.z);
+
                 //Heading Flip
                 if (quotient != lastHeadings[playerNumber - 1])
                 {
-                    updatedHeading = new Vector3(rotation.x * -1, rotation.y, rotation.z);
-                    rigidbody.velocity = new Vector2(-1 * rigidbody.velocity.x/2, rigidbody.velocity.y);
+                    rigidbody.velocity = new Vector2(quotient * Mathf.Abs(rigidbody.velocity.x / 2), rigidbody.velocity.y);
                     lastHeadings[playerNumber - 1] = quotient;
                 }
                 //Horizontal Movement

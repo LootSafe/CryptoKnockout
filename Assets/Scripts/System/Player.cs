@@ -74,7 +74,7 @@ public class Player : MonoBehaviour {
             if (!grounded)
             {
                 GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LAND);
-                Debug.Log("LANDED");
+                //Debug.Log("LANDED");
             }
             grounded = true;
         }
