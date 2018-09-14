@@ -8,7 +8,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     bool IDLE = false;
 
-    public enum ANIMATION_STATE {IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE, DUCK };
+    public enum ANIMATION_STATE {IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE, DUCK , LAND};
 
 
     Player player;
@@ -62,7 +62,7 @@ public class PlayerAnimatorController : MonoBehaviour
                     playerAnimator.SetTrigger("DIE");
                     return;
             case ANIMATION_STATE.DUCK:
-                    playerAnimator.SetTrigger("DUCK");
+                    if(!player.IsDucking()) playerAnimator.SetTrigger("DUCK");
                     return;
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("GROUNDED");
@@ -70,11 +70,15 @@ public class PlayerAnimatorController : MonoBehaviour
                 case ANIMATION_STATE.JUMP:
                     playerAnimator.SetTrigger("JUMP");
                     return;
-                case ANIMATION_STATE.HURT:
+            case ANIMATION_STATE.LAND:
+                playerAnimator.SetTrigger("LAND");
+                return;
+            case ANIMATION_STATE.HURT:
                     playerAnimator.SetTrigger("HURT");
                     return;
                 case ANIMATION_STATE.BLOCK:
-                    playerAnimator.SetTrigger("BLOCK");
+                if (!playerAnimator.GetBool("BLOCKING")) playerAnimator.SetTrigger("BLOCK");
+                
                     return;
                 case ANIMATION_STATE.LOWPUNCH:
                     return;

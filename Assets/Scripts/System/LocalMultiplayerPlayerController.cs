@@ -8,6 +8,8 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
     bool[,] controlLocks;
     float[] lastMovements;
 
+    bool jumpLock;
+
     bool pauseMenuLock = false;
 
     Game game;
@@ -30,8 +32,9 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
 
 
         //Initialize Control Locks
-        controlLocks = new bool[8, 6];
+        controlLocks = new bool[8, 7];
         lastMovements = new float[8];
+
 	}
 
     // Update is called once per frame
@@ -140,6 +143,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //5
         //float super = Input.GetAxis("P" + playerNumber + "_Super");
         bool super = GamePad.GetButton(CButton.Y, pi);
+        //6 Jump Lock
 
 
         //Character Lock
@@ -185,15 +189,29 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         }
 
         //Vertical Changes
-        if (yMovement != 0 && !player.IsAttacking())
+        if (yMovement != 0 && !player.IsAttacking() || controlLocks[playerNumber - 1, 6])
         {
-            if (Mathf.RoundToInt(yMovement) > 0)
+            if (Mathf.RoundToInt(yMovement) > 0 || controlLocks[playerNumber - 1, 6])
             {
                 if (controlLocks[playerNumber - 1, 0] == false)
                 {
-                    pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
-                    rigidbody.AddForce(new Vector2(0, 400));
-                    controlLocks[playerNumber - 1, 0] = true;
+                    if (!controlLocks[playerNumber - 1, 6])
+                    {
+                        pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.JUMP);
+                        controlLocks[playerNumber - 1, 6] = true;
+                    }
+                    else
+                    {
+                        rigidbody.AddForce(new Vector2(0, 400));
+                        controlLocks[playerNumber - 1, 0] = true;
+                        controlLocks[playerNumber - 1, 6] = false;
+                    }
+                    
+
+                }
+                else
+                {
+
                 }
             }
             else if(Mathf.RoundToInt(yMovement) < 0)

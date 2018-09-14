@@ -70,6 +70,11 @@ public class Player : MonoBehaviour {
     {
         if (other.tag == "Floor")
         {
+
+            if (!grounded)
+            {
+                GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LAND);
+            }
             grounded = true;
         }
     }
