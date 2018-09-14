@@ -25,10 +25,12 @@ public class InputHandler : MonoBehaviour {
     string stateName = "";
     EventSystem e;
 
-    public StandaloneInputModule p1;
-    public StandaloneInputModule p2;
+    public CarbonInput.CarbonInputModule p1;
+    public CarbonInput.CarbonInputModule p2;
 
     GlobalGameData data;
+
+    PlayerIndex pi;
 
     void Start()
     {
@@ -44,16 +46,19 @@ public class InputHandler : MonoBehaviour {
         {
             case State.p1:
                 stateName = "P1_";
+                pi = PlayerIndex.One;
                 p1.enabled = true;
                 p2.enabled = false;
                 break;
             case State.p2:
+                pi = PlayerIndex.Two;
                 p1.enabled = false;
                 p2.enabled = true;
                 stateName = "P2_";
                 break;
             default:
                 stateName = "P1_";
+                pi = PlayerIndex.One;
                 p1.enabled = true;
                 p2.enabled = false;
                 break;
@@ -63,7 +68,7 @@ public class InputHandler : MonoBehaviour {
             selected = false;
         }
         //Activate Selection
-        if(!e.currentSelectedGameObject && (Input.GetAxisRaw(stateName + "Vertical") != 0 || Input.GetAxisRaw(stateName + "Horizontal") != 0) && !selected)
+        if(!e.currentSelectedGameObject && (GamePad.GetAxis(CAxis.LY, pi) != 0 || GamePad.GetAxis(CAxis.LX, pi) != 0) && !selected)
         {
             e.SetSelectedGameObject(selectedObject);
             reticule.gameObject.SetActive(true);
@@ -109,7 +114,7 @@ public class InputHandler : MonoBehaviour {
         }
 
 
-        if (Input.GetAxisRaw(stateName + "Punch") != 0)
+        if (GamePad.GetButton(CButton.A))
         {
             if (!submitLock)
             {
@@ -147,7 +152,7 @@ public class InputHandler : MonoBehaviour {
             submitLock = false;
         }
 
-        if (Input.GetAxis(stateName + "Kick") > 0 && !cancelLock)
+        if ((GamePad.GetButton(CButton.B) || GamePad.GetButton(CButton.Back)) && !cancelLock)
         {
 
             if (!cancelLock)

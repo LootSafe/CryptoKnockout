@@ -14,7 +14,7 @@ public class ButtonHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Escape Key Handling
-        if (Input.GetAxis("Cancel") != 0 && !escapeLock)
+        if (GamePad.GetButton(CButton.Back) && !escapeLock)
         {
             escapeLock = true;
             SceneManager.LoadScene("Intro Screen");
