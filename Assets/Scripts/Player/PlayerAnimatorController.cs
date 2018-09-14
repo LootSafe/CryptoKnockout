@@ -61,38 +61,49 @@ public class PlayerAnimatorController : MonoBehaviour
                 case ANIMATION_STATE.DEAD:
                     playerAnimator.SetTrigger("DIE");
                     return;
-            case ANIMATION_STATE.DUCK:
+
+                case ANIMATION_STATE.DUCK:
                     if(!player.IsDucking()) playerAnimator.SetTrigger("DUCK");
                     return;
+
                 case ANIMATION_STATE.IDLE:
                     playerAnimator.SetTrigger("GROUNDED");
-                     return;
+                    return;
+
                 case ANIMATION_STATE.JUMP:
                     playerAnimator.SetTrigger("JUMP");
                     return;
-            case ANIMATION_STATE.LAND:
-                playerAnimator.SetTrigger("LAND");
-                return;
-            case ANIMATION_STATE.HURT:
+
+                case ANIMATION_STATE.LAND:
+                    playerAnimator.SetTrigger("LAND");
+                    return;
+
+                case ANIMATION_STATE.HURT:
                     playerAnimator.SetTrigger("HURT");
                     return;
+
                 case ANIMATION_STATE.BLOCK:
-                if (!playerAnimator.GetBool("BLOCKING")) playerAnimator.SetTrigger("BLOCK");
-                
+                    if (!playerAnimator.GetBool("BLOCKING")) playerAnimator.SetTrigger("BLOCK");
                     return;
+
                 case ANIMATION_STATE.LOWPUNCH:
                     return;
+
                 case ANIMATION_STATE.LOWKICK:
                     return;
+
                 case ANIMATION_STATE.HIGHPUNCH:
                     playerAnimator.SetTrigger("PUNCHING");
                     return;
+
                 case ANIMATION_STATE.HIGHKICK:
                     playerAnimator.SetTrigger("KICKING");
                     return;
+
                 case ANIMATION_STATE.SPECIALATTACKONE:
                     playerAnimator.SetTrigger("SPECIAL");
                     return;
+
                 default:
                     playerAnimator.SetTrigger("GROUNDED");
                     return;
