@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!224 &29043917 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4165929989210214028, guid: 4718a53a7a72ab1468cd81c0a47f0bd2,
-    type: 3}
-  m_PrefabInstance: {fileID: 29043916}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &2004849741 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7367432600247695630, guid: abb4c951411ed26478b0c6a66958c644,
-    type: 3}
-  m_PrefabInstance: {fileID: 7367432598883855683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &118424988
 GameObject:
   m_ObjectHideFlags: 0
@@ -15192,6 +15180,12 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!224 &29043917 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4165929989210214028, guid: 4718a53a7a72ab1468cd81c0a47f0bd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 29043916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1474107088
 GameObject:
   m_ObjectHideFlags: 0
@@ -16080,6 +16074,12 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!224 &2004849741 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7367432600247695630, guid: abb4c951411ed26478b0c6a66958c644,
+    type: 3}
+  m_PrefabInstance: {fileID: 7367432598883855683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1975323930
 GameObject:
   m_ObjectHideFlags: 0

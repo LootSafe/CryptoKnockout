@@ -50,11 +50,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             return;
         }
 
-        if (!player1 || !player2)
-        {
-            player1 = game.GetPlayer(0);
-            player2 = game.GetPlayer(1);
-        }
+
 
         //Escape Menu
         if (GamePad.GetButton(CButton.Start)){
@@ -73,6 +69,13 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         } else
         {
             pauseMenuLock = false;
+        }
+
+        if (!player1 || !player2)
+        {
+            player1 = game.GetPlayer(0);
+            player2 = game.GetPlayer(1);
+            return;
         }
 
         UpdatePlayer(player1, 1);
