@@ -5,44 +5,57 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterSelectButtons : MonoBehaviour {
-    private bool selected;
     Button button;
     public Sprite avatar_left;
     public Sprite avatar_right;
     public Character.Characters character;
+
+   
     public GameObject up;
     public GameObject down;
     public GameObject left;
     public GameObject right;
 
     public GameObject selectionIndicator;
+    public bool interactable;
+    public ButtonAppearance appearance;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (selected)
+    private int selectionCount = 0;
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (selectionCount > 0)
         {
             selectionIndicator.SetActive(true);
         }
-	}
-
-    void OnMouseEnter()
-    {
-        selected = true;
-    }
-    void OnMouseExit()
-    {
-        selected = false;
+        else
+        {
+            selectionIndicator.SetActive(false);
+        }
     }
 
-    void OnClick()
+    public void Select()
     {
-        Debug.Log("Clicked");
+        selectionCount++;
     }
 
-    
+    public void Deselect()
+    {
+        selectionCount--;
+    }
+
+    [System.Serializable]
+    public class ButtonAppearance
+    {
+        public Image targetGraphic;
+        public Color active;
+        public Color normal;
+        public Color disabled;
+    }
+
+
 }

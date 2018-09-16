@@ -34,7 +34,7 @@ public class CharacterSelector : MonoBehaviour {
     {
         //Horizontal
         GameObject s = selected[(int)pi - 1];
-        if (!s.GetComponent<Button>().interactable) s = starts[(int)pi - 1];
+        if (!s.GetComponent<CharacterSelectButtons>().interactable) s = starts[(int)pi - 1];
         CharacterSelectButtons b = s.GetComponent<CharacterSelectButtons>();
         if (!b) return;
 
@@ -46,34 +46,50 @@ public class CharacterSelector : MonoBehaviour {
         if (horizontal < 0 && !horizontalLock)
         {
             GameObject swap = s.GetComponent<CharacterSelectButtons>().left;
-            if (swap && swap.GetComponent<Button>().interactable) s = swap;
+            if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
         }
         else if(horizontal > 0 && !horizontalLock)
         {
             GameObject swap = s.GetComponent<CharacterSelectButtons>().right;
-            if (swap && swap.GetComponent<Button>().interactable) s = swap;
+            if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
+        }
+        else
+        {
+            Unlock(CAxis.LX, pi);
         }
 
         //Vertical
         if (vertical < 0 && !verticalLock)
         {
             GameObject swap = s.GetComponent<CharacterSelectButtons>().down;
-            if (swap && swap.GetComponent<Button>().interactable) s = swap;
+            if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
         }
         else if (vertical > 0 && !verticalLock)
         {
             GameObject swap = s.GetComponent<CharacterSelectButtons>().up;
-            if (swap && swap.GetComponent<Button>().interactable) s = swap;
+            if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
+        }
+        else
+        {
+            Unlock(CAxis.LY, pi);
         }
 
+        if (selected[(int)pi - 1] != s)
+        {
+            selected[(int)pi - 1].GetComponent<CharacterSelectButtons>().Deselect();
+            s.GetComponent<CharacterSelectButtons>().Select();
+        }
         selected[(int)pi - 1] = s;
-        s.GetComponent<Button>().Select();
-
     }
 
     public bool Locked(CAxis ca, PlayerIndex pi)
     {
         return locker.HasLock(ca, pi);
+    }
+
+    public void Unlock(CAxis ca, PlayerIndex pi)
+    {
+        locker.Unlock(ca, pi);
     }
 
     public GameObject[] GetSelected()
@@ -93,22 +109,19 @@ public class CharacterSelector : MonoBehaviour {
 
             if (axisLocks[(int)pi - 1, (int)ca])
             {
-                if (Time.time >= axisTimes[(int)pi - 1, (int)ca] + delay)
-                {
-                    axisTimes[(int)pi - 1, (int)ca] = Time.time;
-                    axisLocks[(int)pi - 1, (int)ca] = true;
-                    return false;  
-                }
-                else
-                {
-                    Debug.Log("Locked");
-                    return true;
-                    
-                }
-
-
+                return true;
             }
-            return false;
+            else
+            {
+                axisLocks[(int)pi - 1, (int)ca] = true;
+                return false;
+                    
+            }
+        }
+
+        public void Unlock(CAxis ca, PlayerIndex pi)
+        {
+            axisLocks[(int)pi - 1, (int)ca] = false;
         }
 
         public bool IsLocked(CAxis ca, PlayerIndex pi)

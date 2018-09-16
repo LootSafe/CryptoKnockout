@@ -229,9 +229,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224282369263127992}
   - component: {fileID: 222862283925920646}
-  - component: {fileID: 114408878146307288}
-  - component: {fileID: 114905106244093888}
   - component: {fileID: 114507366520482692}
+  - component: {fileID: 114408878146307288}
   m_Layer: 0
   m_Name: CharacterButton
   m_TagString: Untagged
@@ -268,6 +267,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808903156169858}
   m_CullTransparentMesh: 0
+--- !u!114 &114507366520482692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808903156169858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e013ccba8aee9d4ea9e4f21e87c9790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatar_left: {fileID: 21300000, guid: bd758faa5da68644589337d958057124, type: 3}
+  avatar_right: {fileID: 21300000, guid: 241eb5cc9dcfd5744b9512da68bf1892, type: 3}
+  character: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  selectionIndicator: {fileID: 7365938536412270406}
+  appearance:
+    targetGraphic: {fileID: 114630235468680194}
+    active: {r: 1, g: 1, b: 1, a: 0}
+    normal: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0}
 --- !u!114 &114408878146307288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,79 +319,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114905106244093888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808903156169858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 4
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.4308473, g: 0.6602106, b: 0.8867924, a: 1}
-    m_PressedColor: {r: 0.6037736, g: 0.06550375, b: 0.06550375, a: 1}
-    m_DisabledColor: {r: 0.4245283, g: 0.41451585, b: 0.41451585, a: 1}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 114385245689718224}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114507366520482692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808903156169858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e013ccba8aee9d4ea9e4f21e87c9790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatar_left: {fileID: 21300000, guid: bd758faa5da68644589337d958057124, type: 3}
-  avatar_right: {fileID: 21300000, guid: 241eb5cc9dcfd5744b9512da68bf1892, type: 3}
-  character: 0
-  up: {fileID: 0}
-  down: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
-  selectionIndicator: {fileID: 7365938536412270406}
 --- !u!1 &2743349592043337530
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5256557238665043192
 RectTransform:
   m_ObjectHideFlags: 0
@@ -756,5 +706,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee80b58c786b59e4e96717becd814a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1Tab: {fileID: 0}
-  p2Tab: {fileID: 0}
+  p1Tab: {fileID: 5824926572153819243}
+  p2Tab: {fileID: 2743349592043337530}

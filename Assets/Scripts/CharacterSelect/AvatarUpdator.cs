@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AvatarUpdator : MonoBehaviour {
 
-    public InputHandler inputHandler;
+    public CharacterSelector selections;
     public int playerNumber;
     public Text text;
 
@@ -17,8 +17,8 @@ public class AvatarUpdator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        p1Selection = inputHandler.p1Selection;
-        p2Selection = inputHandler.p2Selection;
+        p1Selection = selections.GetSelected()[0];
+        p2Selection = selections.GetSelected()[1];
 
         
 
