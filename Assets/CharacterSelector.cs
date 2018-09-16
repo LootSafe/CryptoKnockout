@@ -40,10 +40,12 @@ public class CharacterSelector : MonoBehaviour {
         if (!b) return;
         if (!b.interactable) s = starts[(int)pi - 1];
 
+        Control<CAxis> cHor = new Control<CAxis>(CAxis.LX, pi);
+        Control<CAxis> cVer = new Control<CAxis>(CAxis.LX, pi);
+
+
         float horizontal = GamePad.GetAxis(CAxis.LX, pi);
-        bool horizontalLock = Locked(CAxis.LX, pi);
         float vertical = GamePad.GetAxis(CAxis.LY, pi);
-        bool verticalLock = Locked(CAxis.LY, pi);
 
         //HORIZONTAL
         if(horizontal != 0)
@@ -101,19 +103,19 @@ public class CharacterSelector : MonoBehaviour {
         selected[(int)pi - 1] = s;
     }
 
-    public bool Locked(CAxis ca, PlayerIndex pi)
+    public bool Locked(Control<CAxis> control)
     {
-        return locker.HasLock(ca, pi);
+        return locker.HasLock(control);
     }
 
-    public void Unlock(CAxis ca, PlayerIndex pi)
+    public void Unlock(Control<CAxis> control)
     {
-        locker.Unlock(ca, pi);
+        locker.Unlock(control);
     }
 
-    public void Lock(CAxis ca, PlayerIndex pi)
+    public void Lock(Control<CAxis> control)
     {
-        locker.Lock(ca, pi);
+        locker.Lock(control);
     }
 
     public GameObject[] GetSelected()
@@ -125,33 +127,25 @@ public class CharacterSelector : MonoBehaviour {
     {
 
         private float delay = 1f;
-        bool[,] axisLocks = new bool[8,8];
-        float[,] axisTimes = new float[8,8];
+        bool[,] axisLocks = new bool[9,8];
+        float[,] axisTimes = new float[9,8];
 
-        public bool HasLock(CAxis ca, PlayerIndex pi)
+        public bool HasLock(Control<CAxis> control)
         {
-            return axisLocks[(int)pi - 1, (int)ca];
+            if (control.pi == PlayerIndex.Any) return false;
+            return axisLocks[(int)control.pi, (int)control.control];
         }
 
-        public void Unlock(CAxis ca, PlayerIndex pi)
+        public void Unlock(Control<CAxis> control)
         {
-            axisLocks[(int)pi - 1, (int)ca] = false;
+            if (control.pi == PlayerIndex.Any) return;
+            axisLocks[(int)control.pi, (int)control.control] = false;
         }
 
-        public void Lock(CAxis ca, PlayerIndex pi)
+        public void Lock(Control<CAxis> control)
         {
-            axisLocks[(int)pi - 1, (int)ca] = false;
+            if (control.pi == PlayerIndex.Any) return;
+            axisLocks[(int)control.pi, (int)control.control] = false;
         }
-
-        public bool IsLocked(CAxis ca, PlayerIndex pi)
-        {
-
-
-            return true;
-        }
-
-
-
-
     }
 }

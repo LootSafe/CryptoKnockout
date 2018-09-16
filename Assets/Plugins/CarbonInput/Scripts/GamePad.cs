@@ -207,6 +207,13 @@ public static class GamePad {
         if(Settings[axis]) return -GetAxisRaw(axis, id);
         return GetAxisRaw(axis, id);
     }
+
+    public static float GetAxis(Control<CAxis> control) {
+        if(!IsInitialized) Initialize();
+        if(Settings[control.control]) return -GetAxisRaw(control.control, control.pi);
+        return GetAxisRaw(control.control, control.pi);
+    }
+
     private static float GetAxisRaw(CAxis axis, PlayerIndex id) {
         if(id == PlayerIndex.Any) {
             switch(settings.Behaviour) {
@@ -298,23 +305,6 @@ public static class GamePad {
 
     //SANCHEZ ADDITIONS//
 
-    public class Control<T>
-    {
-        public T control;
-        public PlayerIndex pi;
-
-        Control(T control, PlayerIndex pi)
-        {
-            if(control.GetType() == typeof(CButton) || control.GetType() == typeof(CAxis))
-            {
-                this.control = control;
-            }
-            else
-            {
-                Debug.LogWarning("Control of type <T> should only be used to hold CAxis and CButton Types");
-            }
-
-        }
-    }
+   
     
 }
