@@ -185,6 +185,11 @@ public static class GamePad {
         return PlayerMappings[(int)id].GetButton(btn);
     }
 
+    public static bool GetButton(Control<CButton> control)
+    {
+        return GetButton(control.control , control.pi);
+    }
+
     /// <summary>
     /// Returns the state of button <paramref name="btn"/> of player <paramref name="id"/> using a playstation controller layout.
     /// </summary>

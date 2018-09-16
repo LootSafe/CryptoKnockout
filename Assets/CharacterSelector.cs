@@ -40,7 +40,8 @@ public class CharacterSelector : MonoBehaviour {
 
     void UpdateReady()
     {
-        if(ready[1] && ready[2])
+        Control<CButton> controlA = new Control<CButton>(CButton.A, PlayerIndex.One);
+        if (ready[1] && ready[2])
         {
             startToContinueText.SetActive(true);
 
@@ -50,9 +51,17 @@ public class CharacterSelector : MonoBehaviour {
                 ready[2] = false;
             }
 
+
             if (GamePad.GetButton(CButton.A) || GamePad.GetButton(CButton.Start))
             {
-                NextScene();
+                if (!Locked(controlA))
+                {
+                    NextScene();
+                }
+            }
+            else
+            {
+                Unlock(controlA);
             }
 
 
@@ -138,18 +147,26 @@ public class CharacterSelector : MonoBehaviour {
                 s.GetComponent<CharacterSelectButtons>().Select();
             }
             selected[(int)pi] = s;
-
-            if (GamePad.GetButton(CButton.A, pi))
+            Control<CButton> controlA = new Control<CButton>(CButton.A, pi);
+            if (GamePad.GetButton(controlA))
             {
-                if (pi == PlayerIndex.One)
+                if (!Locked(controlA))
                 {
-                    data.player1Char = selected[(int)pi].GetComponent<CharacterSelectButtons>().character;
-                    ready[(int)pi] = true;
+                    if (pi == PlayerIndex.One)
+                    {
+                        data.player1Char = selected[(int)pi].GetComponent<CharacterSelectButtons>().character;
+                        ready[(int)pi] = true;
+                    }
+                    else if (pi == PlayerIndex.Two)
+                    {
+                        data.player2Char = selected[(int)pi].GetComponent<CharacterSelectButtons>().character;
+                        ready[(int)pi] = true;
+                    }
+                    Lock(controlA);
                 }
-                else if (pi == PlayerIndex.Two)
+                else
                 {
-                    data.player2Char = selected[(int)pi].GetComponent<CharacterSelectButtons>().character;
-                    ready[(int)pi] = true;
+                    Unlock(controlA);
                 }
 
             }
@@ -182,6 +199,22 @@ public class CharacterSelector : MonoBehaviour {
         locker.Lock(control);
     }
 
+    public bool Locked(Control<CButton> control)
+    {
+        return locker.HasLock(control);
+    }
+
+    public void Unlock(Control<CButton> control)
+    {
+        locker.Unlock(control);
+    }
+
+    public void Lock(Control<CButton> control)
+    {
+        locker.Lock(control);
+    }
+
+
     public GameObject[] GetSelected()
     {
         return selected;
@@ -192,6 +225,7 @@ public class CharacterSelector : MonoBehaviour {
 
         private float delay = 1f;
         bool[,] axisLocks = new bool[9,8];
+        bool[,] buttonLocks = new bool[9, 10];
         float[,] axisTimes = new float[9,8];
 
         public bool HasLock(Control<CAxis> control)
@@ -211,6 +245,27 @@ public class CharacterSelector : MonoBehaviour {
         {
             if (control.pi == PlayerIndex.Any) return;
             axisLocks[(int)control.pi, (int)control.control] = true;
+        }
+
+
+
+        public bool HasLock(Control<CButton> control)
+        {
+            if (control.pi == PlayerIndex.Any) return false;
+            return buttonLocks[(int)control.pi, (int)control.control];
+        }
+
+        public void Unlock(Control<CButton> control)
+        {
+
+            if (control.pi == PlayerIndex.Any) return;
+            buttonLocks[(int)control.pi, (int)control.control] = false;
+        }
+
+        public void Lock(Control<CButton> control)
+        {
+            if (control.pi == PlayerIndex.Any) return;
+            buttonLocks[(int)control.pi, (int)control.control] = true;
         }
     }
 
