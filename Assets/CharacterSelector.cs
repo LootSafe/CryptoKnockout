@@ -50,9 +50,6 @@ public class CharacterSelector : MonoBehaviour {
         //HORIZONTAL
         if(horizontal != 0)
         {
-            if(pi == PlayerIndex.Two)
-            {
-            }
             if(!Locked(cHor))
             {
                 if (horizontal < 0)
@@ -143,6 +140,7 @@ public class CharacterSelector : MonoBehaviour {
 
         public void Unlock(Control<CAxis> control)
         {
+
             if (control.pi == PlayerIndex.Any) return;
             axisLocks[(int)control.pi, (int)control.control] = false;
         }
@@ -150,7 +148,7 @@ public class CharacterSelector : MonoBehaviour {
         public void Lock(Control<CAxis> control)
         {
             if (control.pi == PlayerIndex.Any) return;
-            axisLocks[(int)control.pi, (int)control.control] = false;
+            axisLocks[(int)control.pi, (int)control.control] = true;
         }
     }
 }
