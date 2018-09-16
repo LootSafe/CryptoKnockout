@@ -222,6 +222,7 @@ public static class GamePad {
         return PlayerMappings[(int)id].GetAxis(axis);
     }
 
+
     /// <summary>
     /// Returns a <see cref="Vector2"/> for the specified stick of player <paramref name="id"/>.
     /// </summary>
@@ -294,4 +295,26 @@ public static class GamePad {
         state.Update();
         return state;
     }
+
+    //SANCHEZ ADDITIONS//
+
+    public class Control<T>
+    {
+        public T control;
+        public PlayerIndex pi;
+
+        Control(T control, PlayerIndex pi)
+        {
+            if(control.GetType() == typeof(CButton) || control.GetType() == typeof(CAxis))
+            {
+                this.control = control;
+            }
+            else
+            {
+                Debug.LogWarning("Control of type <T> should only be used to hold CAxis and CButton Types");
+            }
+
+        }
+    }
+    
 }
