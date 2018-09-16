@@ -8,20 +8,19 @@ public class CharacterSelector : MonoBehaviour {
 
     public EventSystem player1E;
     public EventSystem player2E;
-    private GameObject[] selected;
-    public GameObject[] starts = new GameObject[8];
+    public GameObject[] selected = new GameObject[9];
+    public GameObject[] starts = new GameObject[9];
     private InputLocker locker;
 
     private static CharacterSelector instance;
     public static CharacterSelector GetInstance() { return instance; }
 
 	// Use this for initialization
-	void Start () {
-        selected = new GameObject[8];
-        selected[0] = starts[0];
-        selected[0].GetComponent<CharacterSelectButtons>().Select();
+	void Start () { 
         selected[1] = starts[1];
         selected[1].GetComponent<CharacterSelectButtons>().Select();
+        selected[2] = starts[2];
+        selected[2].GetComponent<CharacterSelectButtons>().Select();
         locker = new InputLocker();
         instance = this;
     }
@@ -30,77 +29,83 @@ public class CharacterSelector : MonoBehaviour {
 	void Update () {
         CheckForInput(PlayerIndex.One);
         CheckForInput(PlayerIndex.Two);
-	}
+    }
 
     void CheckForInput(PlayerIndex pi)
     {
         //Horizontal
-        GameObject s = selected[(int)pi - 1];
+        GameObject s = selected[(int)pi];
+        if (!s) s = starts[(int)pi];
         CharacterSelectButtons b = s.GetComponent<CharacterSelectButtons>();
         if (!b) return;
-        if (!b.interactable) s = starts[(int)pi - 1];
+        if (!b.interactable) ;
 
         Control<CAxis> cHor = new Control<CAxis>(CAxis.LX, pi);
-        Control<CAxis> cVer = new Control<CAxis>(CAxis.LX, pi);
+        Control<CAxis> cVer = new Control<CAxis>(CAxis.LY, pi);
 
-
-        float horizontal = GamePad.GetAxis(CAxis.LX, pi);
-        float vertical = GamePad.GetAxis(CAxis.LY, pi);
+    
+        float horizontal = GamePad.GetAxis(cHor);
+        float vertical = GamePad.GetAxis(cVer);
 
         //HORIZONTAL
         if(horizontal != 0)
         {
-            if(!Locked(CAxis.LX, pi))
+            if(pi == PlayerIndex.Two)
+            {
+            }
+            if(!Locked(cHor))
             {
                 if (horizontal < 0)
                 {
                     GameObject swap = s.GetComponent<CharacterSelectButtons>().left;
                     if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
-                    Lock(CAxis.LX, pi);
+                    Lock(cHor);
                 }
                 else if (horizontal > 0)
                 {
                     GameObject swap = s.GetComponent<CharacterSelectButtons>().right;
                     if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
-                    Lock(CAxis.LX, pi);
+                    Lock(cHor);
                 }
             }
         } 
         else
         {
-            Unlock(CAxis.LX, pi);
+            Unlock(cHor);
         }
 
         //VERTICAL
         if (vertical != 0)
         {
-            if(!Locked(CAxis.LY, pi))
+            if(!Locked(cVer))
             {
-                if (vertical < 0 && !verticalLock)
+                if (vertical < 0)
                 {
                     GameObject swap = s.GetComponent<CharacterSelectButtons>().down;
                     if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
-                    Lock(CAxis.LY, pi);
+                    Lock(cVer);
                 }
-                else if (vertical > 0 && !verticalLock)
+                else if (vertical > 0)
                 {
                     GameObject swap = s.GetComponent<CharacterSelectButtons>().up;
                     if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
-                    Locked(CAxis.LY, pi);
+                    Locked(cVer);
                 }
             }
         }
         else
         {
-            Unlock(CAxis.LY, pi);
+            Unlock(cVer);
         }
 
-        if (selected[(int)pi - 1] != s)
+
+
+        if (selected[(int)pi] != s)
         {
-            selected[(int)pi - 1].GetComponent<CharacterSelectButtons>().Deselect();
+            selected[(int)pi].GetComponent<CharacterSelectButtons>().Deselect();
             s.GetComponent<CharacterSelectButtons>().Select();
         }
-        selected[(int)pi - 1] = s;
+        selected[(int)pi] = s;
     }
 
     public bool Locked(Control<CAxis> control)

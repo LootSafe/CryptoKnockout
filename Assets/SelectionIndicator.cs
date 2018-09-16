@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelectionIndicator : MonoBehaviour {
     public GameObject p1Tab;
     public GameObject p2Tab;
-
+    public GameObject Root;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,7 +13,7 @@ public class SelectionIndicator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (CharacterSelector.GetInstance().GetSelected()[0] == gameObject)
+        if (CharacterSelector.GetInstance().GetSelected()[1] == Root)
         {
             p1Tab.SetActive(true);
         }
@@ -22,7 +22,7 @@ public class SelectionIndicator : MonoBehaviour {
             p1Tab.SetActive(false);
         }
 
-        if (CharacterSelector.GetInstance().GetSelected()[1] == gameObject)
+        if (CharacterSelector.GetInstance().GetSelected()[2] == Root)
         {
             p2Tab.SetActive(true);
         }

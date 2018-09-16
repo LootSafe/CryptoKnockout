@@ -12,6 +12,7 @@ public class Control<T>
         if (control.GetType() == typeof(CButton) || control.GetType() == typeof(CAxis))
         {
             this.control = control;
+            this.pi = pi;
         }
         else
         {

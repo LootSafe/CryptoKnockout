@@ -209,9 +209,7 @@ public static class GamePad {
     }
 
     public static float GetAxis(Control<CAxis> control) {
-        if(!IsInitialized) Initialize();
-        if(Settings[control.control]) return -GetAxisRaw(control.control, control.pi);
-        return GetAxisRaw(control.control, control.pi);
+        return GetAxis(control.control, control.pi);
     }
 
     private static float GetAxisRaw(CAxis axis, PlayerIndex id) {
