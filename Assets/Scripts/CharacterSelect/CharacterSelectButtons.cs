@@ -10,6 +10,13 @@ public class CharacterSelectButtons : MonoBehaviour {
     public Sprite avatar_left;
     public Sprite avatar_right;
     public Character.Characters character;
+    public GameObject up;
+    public GameObject down;
+    public GameObject left;
+    public GameObject right;
+
+    public GameObject selectionIndicator;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +24,10 @@ public class CharacterSelectButtons : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (selected)
+        {
+            selectionIndicator.SetActive(true);
+        }
 	}
 
     void OnMouseEnter()
