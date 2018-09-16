@@ -287,10 +287,12 @@ MonoBehaviour:
   left: {fileID: 0}
   right: {fileID: 0}
   selectionIndicator: {fileID: 7365938536412270406}
+  interactable: 1
   appearance:
     targetGraphic: {fileID: 114630235468680194}
     active: {r: 1, g: 1, b: 1, a: 0}
     normal: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0}
+    disabled: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114408878146307288
 MonoBehaviour:
   m_ObjectHideFlags: 0

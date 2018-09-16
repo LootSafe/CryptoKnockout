@@ -19,7 +19,9 @@ public class CharacterSelector : MonoBehaviour {
 	void Start () {
         selected = new GameObject[8];
         selected[0] = starts[0];
+        selected[0].GetComponent<CharacterSelectButtons>().Select();
         selected[1] = starts[1];
+        selected[1].GetComponent<CharacterSelectButtons>().Select();
         locker = new InputLocker();
         instance = this;
     }
@@ -34,40 +36,57 @@ public class CharacterSelector : MonoBehaviour {
     {
         //Horizontal
         GameObject s = selected[(int)pi - 1];
-        if (!s.GetComponent<CharacterSelectButtons>().interactable) s = starts[(int)pi - 1];
         CharacterSelectButtons b = s.GetComponent<CharacterSelectButtons>();
         if (!b) return;
+        if (!b.interactable) s = starts[(int)pi - 1];
 
         float horizontal = GamePad.GetAxis(CAxis.LX, pi);
         bool horizontalLock = Locked(CAxis.LX, pi);
         float vertical = GamePad.GetAxis(CAxis.LY, pi);
         bool verticalLock = Locked(CAxis.LY, pi);
 
-        if (horizontal < 0 && !horizontalLock)
+        //HORIZONTAL
+        if(horizontal != 0)
         {
-            GameObject swap = s.GetComponent<CharacterSelectButtons>().left;
-            if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
-        }
-        else if(horizontal > 0 && !horizontalLock)
-        {
-            GameObject swap = s.GetComponent<CharacterSelectButtons>().right;
-            if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
-        }
+            if(!Locked(CAxis.LX, pi))
+            {
+                if (horizontal < 0)
+                {
+                    GameObject swap = s.GetComponent<CharacterSelectButtons>().left;
+                    if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
+                    Lock(CAxis.LX, pi);
+                }
+                else if (horizontal > 0)
+                {
+                    GameObject swap = s.GetComponent<CharacterSelectButtons>().right;
+                    if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
+                    Lock(CAxis.LX, pi);
+                }
+            }
+        } 
         else
         {
             Unlock(CAxis.LX, pi);
         }
 
-        //Vertical
-        if (vertical < 0 && !verticalLock)
+        //VERTICAL
+        if (vertical != 0)
         {
-            GameObject swap = s.GetComponent<CharacterSelectButtons>().down;
-            if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
-        }
-        else if (vertical > 0 && !verticalLock)
-        {
-            GameObject swap = s.GetComponent<CharacterSelectButtons>().up;
-            if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
+            if(!Locked(CAxis.LY, pi))
+            {
+                if (vertical < 0 && !verticalLock)
+                {
+                    GameObject swap = s.GetComponent<CharacterSelectButtons>().down;
+                    if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
+                    Lock(CAxis.LY, pi);
+                }
+                else if (vertical > 0 && !verticalLock)
+                {
+                    GameObject swap = s.GetComponent<CharacterSelectButtons>().up;
+                    if (swap && swap.GetComponent<CharacterSelectButtons>()) s = swap;
+                    Locked(CAxis.LY, pi);
+                }
+            }
         }
         else
         {
@@ -92,6 +111,11 @@ public class CharacterSelector : MonoBehaviour {
         locker.Unlock(ca, pi);
     }
 
+    public void Lock(CAxis ca, PlayerIndex pi)
+    {
+        locker.Lock(ca, pi);
+    }
+
     public GameObject[] GetSelected()
     {
         return selected;
@@ -106,20 +130,15 @@ public class CharacterSelector : MonoBehaviour {
 
         public bool HasLock(CAxis ca, PlayerIndex pi)
         {
-
-            if (axisLocks[(int)pi - 1, (int)ca])
-            {
-                return true;
-            }
-            else
-            {
-                axisLocks[(int)pi - 1, (int)ca] = true;
-                return false;
-                    
-            }
+            return axisLocks[(int)pi - 1, (int)ca];
         }
 
         public void Unlock(CAxis ca, PlayerIndex pi)
+        {
+            axisLocks[(int)pi - 1, (int)ca] = false;
+        }
+
+        public void Lock(CAxis ca, PlayerIndex pi)
         {
             axisLocks[(int)pi - 1, (int)ca] = false;
         }
