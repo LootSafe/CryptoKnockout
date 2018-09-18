@@ -33,11 +33,21 @@ public class CharacterSelector : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        UpdateEscape();
         CheckForInput(PlayerIndex.One);
         CheckForInput(PlayerIndex.Two);
         UpdateReady();
     }
 
+    void UpdateEscape()
+    {
+
+        if (GamePad.GetButton(CButton.Back, PlayerIndex.One) && !ready[1])
+        {
+            Back();
+        }
+            
+    }
     void UpdateReady()
     {
         Control<CButton> controlA = new Control<CButton>(CButton.A, PlayerIndex.One);
@@ -273,5 +283,10 @@ public class CharacterSelector : MonoBehaviour {
     public void NextScene()
     {
         SceneManager.LoadScene("MapSelect");
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

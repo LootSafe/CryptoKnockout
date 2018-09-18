@@ -139,6 +139,9 @@ MonoBehaviour:
   ReadyIndicator: {fileID: 613943222}
   playerNumber: 2
   text: {fileID: 1141195609}
+  Abutton: {fileID: 21300000, guid: f373e8d213ae7f643b9bf3a57b6ad45b, type: 3}
+  KeyButton1: {fileID: 21300000, guid: 7c914ea33ed7cf143af14f2ab77b4dd4, type: 3}
+  KeyButton2: {fileID: 21300000, guid: a7a0de6c9b74fb84492c863e7c477a2b, type: 3}
   readyColor: {r: 0.4431373, g: 0.5764706, b: 0.04705883, a: 1}
 --- !u!1 &497899107 stripped
 GameObject:
@@ -1765,6 +1768,9 @@ MonoBehaviour:
   ReadyIndicator: {fileID: 497899107}
   playerNumber: 1
   text: {fileID: 1743643575}
+  Abutton: {fileID: 21300000, guid: f373e8d213ae7f643b9bf3a57b6ad45b, type: 3}
+  KeyButton1: {fileID: 21300000, guid: 7c914ea33ed7cf143af14f2ab77b4dd4, type: 3}
+  KeyButton2: {fileID: 21300000, guid: a7a0de6c9b74fb84492c863e7c477a2b, type: 3}
   readyColor: {r: 0.427451, g: 0.54509807, b: 0.09411766, a: 1}
 --- !u!1 &2132340774
 GameObject:
@@ -3823,6 +3829,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AButton1
       objectReference: {fileID: 0}
+    - target: {fileID: 2517794193239296981, guid: dd8aaaa8f2b4ade4b975bc410dcd0066,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c914ea33ed7cf143af14f2ab77b4dd4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8aaaa8f2b4ade4b975bc410dcd0066, type: 3}
 --- !u!1001 &8534784936230465516

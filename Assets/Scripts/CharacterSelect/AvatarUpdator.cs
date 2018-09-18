@@ -9,6 +9,9 @@ public class AvatarUpdator : MonoBehaviour {
     public GameObject ReadyIndicator;
     public int playerNumber;
     public Text text;
+    public Sprite Abutton;
+    public Sprite KeyButton1;
+    public Sprite KeyButton2;
 
     public Color readyColor;
 
@@ -22,9 +25,8 @@ public class AvatarUpdator : MonoBehaviour {
 	void Update () {
         p1Selection = selections.GetSelected()[1];
         p2Selection = selections.GetSelected()[2];
-
-        
-
+        Debug.Log(GamePad.GetMapping(PlayerIndex.One).Controller.name);
+        Debug.Log(GamePad.GetMapping(PlayerIndex.Two).Controller.name);
         if (playerNumber == 1)
         {
             if (p1Selection && p1Selection.GetComponent<CharacterSelectButtons>())
@@ -34,6 +36,18 @@ public class AvatarUpdator : MonoBehaviour {
                 text.text = p1Selection.GetComponent<CharacterSelectButtons>().character.ToString();
                 text.color = Color.white;
 
+                if (GamePad.GetMapping(PlayerIndex.One).Controller.name == "Keyboard")
+                {
+                    ReadyIndicator.GetComponent<Image>().sprite = KeyButton1;
+                }
+                else if (GamePad.GetMapping(PlayerIndex.One).Controller.name == "Keyboard1")
+                {
+                    ReadyIndicator.GetComponent<Image>().sprite = KeyButton2;
+                }
+                else
+                {
+                    ReadyIndicator.GetComponent<Image>().sprite = Abutton;
+                }
             }
 
             if (selections.ready[1])
@@ -41,6 +55,7 @@ public class AvatarUpdator : MonoBehaviour {
                 ReadyIndicator.SetActive(false);
                 text.text = "READY";
                 text.color = readyColor;
+
             }
             else
             {
@@ -56,6 +71,19 @@ public class AvatarUpdator : MonoBehaviour {
                 GetComponent<Image>().sprite = sprite;
                 text.text = p2Selection.GetComponent<CharacterSelectButtons>().character.ToString();
                 text.color = Color.white;
+
+                if (GamePad.GetMapping(PlayerIndex.Two).Controller.name.ToLower().Equals("keyboard"))
+                {
+                    ReadyIndicator.GetComponent<Image>().sprite = KeyButton1;
+                }
+                else if (GamePad.GetMapping(PlayerIndex.Two).Controller.name.ToLower().Equals("keyboard1"))
+                {
+                    ReadyIndicator.GetComponent<Image>().sprite = KeyButton2;
+                }
+                else
+                {
+                    ReadyIndicator.GetComponent<Image>().sprite = Abutton;
+                }
             }
 
             if (selections.ready[2])
@@ -63,6 +91,7 @@ public class AvatarUpdator : MonoBehaviour {
                 ReadyIndicator.SetActive(false);
                 text.text = "READY";
                 text.color = readyColor;
+
             }
             else
             {
