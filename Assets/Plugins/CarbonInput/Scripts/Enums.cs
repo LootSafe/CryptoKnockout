@@ -59,7 +59,8 @@ public enum CPlatform {
     XBoxOne = 1 << 9,
     PS3 = 1 << 10,
     PS4 = 1 << 11,
-    PSP2 = 1 << 12
+    PSP2 = 1 << 12,
+	WebGL = 1 << 13
 }
 
 /// <summary>

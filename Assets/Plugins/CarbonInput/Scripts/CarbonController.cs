@@ -167,6 +167,7 @@ namespace CarbonInput {
 		/// <returns></returns>
 		public bool SupportedOnThisPlatform() {
 			switch(Application.platform) {
+				case RuntimePlatform.WebGLPlayer: return Has(CPlatform.WebGL);
 				case RuntimePlatform.Android: return Has(CPlatform.Android);
 				case RuntimePlatform.IPhonePlayer: return Has(CPlatform.IOS);
 				case RuntimePlatform.LinuxPlayer: return Has(CPlatform.Linux);
