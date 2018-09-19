@@ -12,7 +12,7 @@ public class CharacterSelector : MonoBehaviour {
     public GameObject[] selected = new GameObject[9];
     public GameObject[] starts = new GameObject[9];
     public bool[] ready = new bool[9];
-    private InputLocker locker;
+
 
     GlobalGameData data;
 
@@ -20,15 +20,17 @@ public class CharacterSelector : MonoBehaviour {
     public static CharacterSelector GetInstance() { return instance; }
     public GameObject startToContinueText;
 
+    private InputLocker locker;
+
 	// Use this for initialization
 	void Start () { 
         selected[1] = starts[1];
         selected[1].GetComponent<CharacterSelectButtons>().Select();
         selected[2] = starts[2];
         selected[2].GetComponent<CharacterSelectButtons>().Select();
-        locker = new InputLocker();
         instance = this;
         data = GlobalGameData.GetInstance();
+        locker = new InputLocker();
     }
 	
 	// Update is called once per frame
@@ -41,8 +43,8 @@ public class CharacterSelector : MonoBehaviour {
 
     void UpdateEscape()
     {
-
-        if (GamePad.GetButton(CButton.Back, PlayerIndex.One) && !ready[1])
+        
+        if (GamePad.GetState(PlayerIndex.One).Released(CButton.B) && !ready[1])
         {
             Back();
         }
@@ -50,28 +52,24 @@ public class CharacterSelector : MonoBehaviour {
     }
     void UpdateReady()
     {
-        Control<CButton> controlA = new Control<CButton>(CButton.A, PlayerIndex.One);
+        
         if (ready[1] && ready[2])
         {
             startToContinueText.SetActive(true);
 
-            if (GamePad.GetButton(CButton.B))
+            if (GamePad.GetState().Released(CButton.B))
             {
                 ready[1] = false;
                 ready[2] = false;
             }
 
 
-            if (GamePad.GetButton(CButton.A) || GamePad.GetButton(CButton.Start))
+            if (GamePad.GetState().Released(CButton.A) || GamePad.GetState().Released(CButton.Start))
             {
-                if (!Locked(controlA))
-                {
                     NextScene();
-                }
             }
             else
             {
-                Unlock(controlA);
             }
 
 
@@ -84,6 +82,8 @@ public class CharacterSelector : MonoBehaviour {
 
     void CheckForInput(PlayerIndex pi)
     {
+
+
         GameObject s = selected[(int)pi];
         if (!s) s = starts[(int)pi];
         CharacterSelectButtons b = s.GetComponent<CharacterSelectButtons>();
@@ -93,9 +93,12 @@ public class CharacterSelector : MonoBehaviour {
         Control<CAxis> cHor = new Control<CAxis>(CAxis.LX, pi);
         Control<CAxis> cVer = new Control<CAxis>(CAxis.LY, pi);
 
+        GamePadState pad = GamePad.GetState(pi);
     
         float horizontal = GamePad.GetAxis(cHor);
         float vertical = GamePad.GetAxis(cVer);
+
+        
 
         if (!ready[(int)pi])
         {
@@ -138,7 +141,7 @@ public class CharacterSelector : MonoBehaviour {
                     {
                         GameObject swap = s.GetComponent<CharacterSelectButtons>().up;
                         if (swap && swap.GetComponent<CharacterSelectButtons>() && swap.GetComponent<CharacterSelectButtons>().interactable) s = swap;
-                        Locked(cVer);
+                        Lock(cVer);
                     }
                 }
             }
@@ -149,7 +152,7 @@ public class CharacterSelector : MonoBehaviour {
 
 
 
-
+            //Submit Selection
 
             if (selected[(int)pi] != s)
             {
@@ -157,11 +160,11 @@ public class CharacterSelector : MonoBehaviour {
                 s.GetComponent<CharacterSelectButtons>().Select();
             }
             selected[(int)pi] = s;
-            Control<CButton> controlA = new Control<CButton>(CButton.A, pi);
-            if (GamePad.GetButton(controlA))
+
+
+            //Check For Continue
+            if (pad.Released(CButton.A))
             {
-                if (!Locked(controlA))
-                {
                     if (pi == PlayerIndex.One)
                     {
                         data.player1Char = selected[(int)pi].GetComponent<CharacterSelectButtons>().character;
@@ -172,19 +175,12 @@ public class CharacterSelector : MonoBehaviour {
                         data.player2Char = selected[(int)pi].GetComponent<CharacterSelectButtons>().character;
                         ready[(int)pi] = true;
                     }
-                    Lock(controlA);
                 }
-                else
-                {
-                    Unlock(controlA);
-                }
-
-            }
 
         }
         else
         {
-            if (GamePad.GetButton(CButton.B, pi))
+            if (pad.Released(CButton.B))
             {
                 ready[(int)pi] = false;
             }
@@ -192,6 +188,17 @@ public class CharacterSelector : MonoBehaviour {
 
 
        
+    }
+
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene("MapSelect");
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public bool Locked(Control<CAxis> control)
@@ -234,9 +241,9 @@ public class CharacterSelector : MonoBehaviour {
     {
 
         private float delay = 1f;
-        bool[,] axisLocks = new bool[9,8];
+        bool[,] axisLocks = new bool[9, 8];
         bool[,] buttonLocks = new bool[9, 10];
-        float[,] axisTimes = new float[9,8];
+        float[,] axisTimes = new float[9, 8];
 
         public bool HasLock(Control<CAxis> control)
         {
@@ -253,6 +260,7 @@ public class CharacterSelector : MonoBehaviour {
 
         public void Lock(Control<CAxis> control)
         {
+            Debug.Log("Attempting TO Lock");
             if (control.pi == PlayerIndex.Any) return;
             axisLocks[(int)control.pi, (int)control.control] = true;
         }
@@ -277,16 +285,5 @@ public class CharacterSelector : MonoBehaviour {
             if (control.pi == PlayerIndex.Any) return;
             buttonLocks[(int)control.pi, (int)control.control] = true;
         }
-    }
-
-
-    public void NextScene()
-    {
-        SceneManager.LoadScene("MapSelect");
-    }
-
-    public void Back()
-    {
-        SceneManager.LoadScene("MainMenu");
     }
 }

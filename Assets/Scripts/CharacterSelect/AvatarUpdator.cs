@@ -25,8 +25,8 @@ public class AvatarUpdator : MonoBehaviour {
 	void Update () {
         p1Selection = selections.GetSelected()[1];
         p2Selection = selections.GetSelected()[2];
-        Debug.Log(GamePad.GetMapping(PlayerIndex.One).Controller.name);
-        Debug.Log(GamePad.GetMapping(PlayerIndex.Two).Controller.name);
+        //Debug.Log(GamePad.GetMapping(PlayerIndex.One).Controller.name);
+        //Debug.Log(GamePad.GetMapping(PlayerIndex.Two).Controller.name);
         if (playerNumber == 1)
         {
             if (p1Selection && p1Selection.GetComponent<CharacterSelectButtons>())
