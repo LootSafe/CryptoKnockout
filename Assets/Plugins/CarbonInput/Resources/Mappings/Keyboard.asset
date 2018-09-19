@@ -96,7 +96,7 @@ MonoBehaviour:
     Key: 122
     Type: 1
   - Button: 0
-    Key: 27
+    Key: 9
     Type: 1
   - Button: 0
     Key: 27
