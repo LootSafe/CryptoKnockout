@@ -13,6 +13,8 @@ public class CharacterSelector : MonoBehaviour {
     public GameObject[] starts = new GameObject[9];
     public bool[] ready = new bool[9];
 
+    private float startDelayTimer;
+
 
     GlobalGameData data;
 
@@ -23,7 +25,8 @@ public class CharacterSelector : MonoBehaviour {
     private InputLocker locker;
 
 	// Use this for initialization
-	void Start () { 
+	void Start () {
+        startDelayTimer = Time.time;
         selected[1] = starts[1];
         selected[1].GetComponent<CharacterSelectButtons>().Select();
         selected[2] = starts[2];
@@ -35,6 +38,7 @@ public class CharacterSelector : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!(Time.time >= startDelayTimer + 0.5)) return;
         UpdateEscape();
         CheckForInput(PlayerIndex.One);
         CheckForInput(PlayerIndex.Two);
