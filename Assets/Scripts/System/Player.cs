@@ -35,6 +35,7 @@ public class Player : MonoBehaviour {
     private bool grounded = false;
 
     private int playerNumber;
+    private AudioSource audioSource;
 
     public Sprite characterPortrait;
 
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour {
         game = Game.GetInstance();
         lives = game.GetLives();
         game.RegisterPlayer(this, GetComponent<NetworkIdentity>());
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void InitializeWithCharacter(Character character)
@@ -327,6 +329,15 @@ public class Player : MonoBehaviour {
             }
         }
         return false;
+    }
+
+    public void playSound(AudioClip audioClip)
+    {
+        audioSource.Stop();
+        audioSource.loop = false;
+        audioSource.clip = audioClip;
+        audioSource.time = 0;
+        audioSource.Play();
     }
 
     public void respawn()
