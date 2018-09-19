@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-[ExecuteInEditMode()]
 public class Game : MonoBehaviour {
 
     public float maxRoundTime = 120;
