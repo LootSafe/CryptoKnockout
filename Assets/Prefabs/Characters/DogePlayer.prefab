@@ -1,5 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!4 &1655406144163113001 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4468873815217638, guid: 715c02c2e3375e7418da3da2e1d99b67,
+    type: 3}
+  m_PrefabInstance: {fileID: 1654738013610720719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1535017510808085473
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,12 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1655406144163113001 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4468873815217638, guid: 715c02c2e3375e7418da3da2e1d99b67,
-    type: 3}
-  m_PrefabInstance: {fileID: 1654738013610720719}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1654738013610720719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,12 +150,12 @@ PrefabInstance:
     - target: {fileID: 61258840985077550, guid: 715c02c2e3375e7418da3da2e1d99b67,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.8803555
+      value: -0.88035536
       objectReference: {fileID: 0}
     - target: {fileID: 61258840985077550, guid: 715c02c2e3375e7418da3da2e1d99b67,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.17828941
+      value: -0.06348419
       objectReference: {fileID: 0}
     - target: {fileID: 61258840985077550, guid: 715c02c2e3375e7418da3da2e1d99b67,
         type: 3}
@@ -185,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 61258840985077550, guid: 715c02c2e3375e7418da3da2e1d99b67,
         type: 3}
       propertyPath: m_Size.y
-      value: 16.91539
+      value: 16.431843
       objectReference: {fileID: 0}
     - target: {fileID: 61810911731603384, guid: 715c02c2e3375e7418da3da2e1d99b67,
         type: 3}

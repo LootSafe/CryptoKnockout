@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedGameMode: 1
   selectedLevel: Denver
-  player1Char: 4
+  player1Char: 3
   player2Char: 3
   volume: 0
