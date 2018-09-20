@@ -26,8 +26,7 @@ public class RoundCountDown : MonoBehaviour {
 	
     void OnEnable()
     {
-        fightLock = false;
-        lastTime = (int)game.GetRemainingCountDownTime();
+
     }
 	// Update is called once per frame
 	void Update () {
@@ -68,6 +67,8 @@ public class RoundCountDown : MonoBehaviour {
             }
         } else
         {
+            fightLock = false;
+            lastTime = (int)game.GetRemainingCountDownTime();
             o.effectDistance = new Vector2(2, 2);
             display.gameObject.SetActive(false);
             particles.SetActive(false);
