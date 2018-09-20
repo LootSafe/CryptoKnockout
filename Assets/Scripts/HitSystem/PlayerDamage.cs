@@ -1,19 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[ExecuteInEditMode()]
+
 public class PlayerDamage : MonoBehaviour {
     public Player player;
     float lastHit;
     public float delay = .02f;
     public float overrideDamage = 10;
     private bool state;
+    public AudioSource audioSource;
+    public AudioClip damageSound;
+    //public AudioClip damageBlockedSound;
 
     void Start()
     {
         player = gameObject.GetComponentInParent<Player>();
     }
 
+    void OnEnable()
+    {
+        if (audioSource)
+        {
+            audioSource.Stop();
+        }
+    }
     void Update()
     {
 
@@ -61,10 +71,17 @@ public class PlayerDamage : MonoBehaviour {
     {
         if (other.tag == "Player" && other != player)
         {
+
             float damageDealt = other.GetComponent<Player>().TakeDamage(overrideDamage, player);
             gameObject.SetActive(false);
             if (player)
             {
+                Debug.Log("Damage Dealt  " + damageDealt);
+                if (damageDealt > 0)
+                {
+                    PlayAudio.Play(audioSource, damageSound);
+                }
+            
                 player.AddToScore(damageDealt);
                 player.StopAttacking();
             }

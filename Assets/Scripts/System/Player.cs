@@ -36,7 +36,7 @@ public class Player : MonoBehaviour {
 
     private int playerNumber;
     private AudioSource audioSource;
-
+    public AudioClip damageBlockSound;
     public Sprite characterPortrait;
 
     void Start()
@@ -112,8 +112,11 @@ public class Player : MonoBehaviour {
             }
             else
             {
-                if (damageTake <= 0) return 0;
-                //Debug.Log("Ouch!");
+                if (damageTake <= 0) {
+                    PlayAudio.Play(audioSource, damageBlockSound);
+                    return 0;
+
+                }
                 currentStreak = 0;
                 health -= damageTake;
                 lastHit = Time.time;
