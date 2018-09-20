@@ -9,7 +9,7 @@ public class GlobalGameData : MonoBehaviour {
     public Character.Characters player1Char = Character.Characters.BITCOINBOY;
     public Character.Characters player2Char = Character.Characters.ETHBOT;
 
-    public float volume;
+    public float volume = 0.007f;
 
 
     private static bool created = false;

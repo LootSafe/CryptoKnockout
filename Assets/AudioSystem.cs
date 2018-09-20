@@ -10,6 +10,7 @@ public class AudioSystem : MonoBehaviour {
     public static void Register(AudioSource source)
     {
         sources.Add(source);
+        source.volume = GlobalGameData.GetInstance().volume;
     }
 
     public void UpdateAudio(float volume)

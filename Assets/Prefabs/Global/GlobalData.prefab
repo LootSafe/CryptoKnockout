@@ -47,4 +47,4 @@ MonoBehaviour:
   selectedLevel: Denver
   player1Char: 3
   player2Char: 3
-  volume: 0
+  volume: 0.007
