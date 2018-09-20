@@ -633,6 +633,8 @@ MonoBehaviour:
   currentStreak: 0
   attacking: 1
   damageBlockSound: {fileID: 8300000, guid: 1c351785e23c416459fa616728d796f8, type: 3}
+  deathSound: {fileID: 0}
+  hurtSound: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: 56d9ce84c2cef054eb1d2128e27dada9, type: 3}
 --- !u!114 &114456718162601248
 MonoBehaviour:
@@ -677,7 +679,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.007
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5975,6 +5977,7 @@ GameObject:
   - component: {fileID: 5292007113453873638}
   - component: {fileID: 616699612071097925}
   - component: {fileID: 4601403268409388332}
+  - component: {fileID: 3932810826403293201}
   m_Layer: 9
   m_Name: GroundParticles
   m_TagString: Untagged
@@ -10589,15 +10592,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 75c61c459c3ccf44fae6640c84419db6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -10675,6 +10678,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3932810826403293201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060584255091514310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332ebc69f61f99b48b577c71fad1b067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8958415561675989871
 GameObject:
   m_ObjectHideFlags: 0
