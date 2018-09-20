@@ -16475,12 +16475,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!1 &1398047610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4165929989210214029, guid: 4718a53a7a72ab1468cd81c0a47f0bd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1778466352334424282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1778466352334424283 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4165929989210214028, guid: 4718a53a7a72ab1468cd81c0a47f0bd2,
     type: 3}
   m_PrefabInstance: {fileID: 1778466352334424282}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1398047611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398047610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ac4ed19b7293944a71a4bf4f0fe666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  selectSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!1 &1438229481
 GameObject:
   m_ObjectHideFlags: 0
@@ -42014,6 +42035,7 @@ GameObject:
   - component: {fileID: 5012859151303108944}
   - component: {fileID: 7511464504257401736}
   - component: {fileID: 5463316283223807687}
+  - component: {fileID: 4946399243707544524}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -42095,6 +42117,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   e: {fileID: 3420629264007955158}
   b: {fileID: 6077214870440281969}
+--- !u!82 &4946399243707544524
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4946399243707544523}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5669339610083823133
 GameObject:
   m_ObjectHideFlags: 0
@@ -42297,6 +42415,7 @@ GameObject:
   - component: {fileID: 7661553670541043495}
   - component: {fileID: 7650286537622579725}
   - component: {fileID: 6077214870440281969}
+  - component: {fileID: 5898693761748630290}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -42414,6 +42533,21 @@ MonoBehaviour:
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5898693761748630290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898693761748630289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ac4ed19b7293944a71a4bf4f0fe666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  selectSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!1 &6018961913491928561
 GameObject:
   m_ObjectHideFlags: 0
@@ -57323,6 +57457,7 @@ GameObject:
   - component: {fileID: 1257334789254307985}
   - component: {fileID: 8497022731049186904}
   - component: {fileID: 6557969957719153482}
+  - component: {fileID: 8289532195674761865}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -57440,6 +57575,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &8289532195674761865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289532195674761864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ac4ed19b7293944a71a4bf4f0fe666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  selectSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!1 &8291902299466096015
 GameObject:
   m_ObjectHideFlags: 0

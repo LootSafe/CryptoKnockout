@@ -11,6 +11,9 @@ public class GlobalGameData : MonoBehaviour {
 
     public float volume = 0.007f;
 
+    public AudioClip clickSound;
+    public AudioClip selectSound;
+    public AudioClip errorSound;
 
     private static bool created = false;
     private static GlobalGameData instance;

@@ -48,3 +48,6 @@ MonoBehaviour:
   player1Char: 3
   player2Char: 3
   volume: 0.007
+  clickSound: {fileID: 8300000, guid: f84b75aa0e1a44741b71be5ff940b484, type: 3}
+  selectSound: {fileID: 8300000, guid: 8b64c38c46d867144a7debaa4fd45648, type: 3}
+  errorSound: {fileID: 0}
