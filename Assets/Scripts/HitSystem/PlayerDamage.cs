@@ -15,6 +15,7 @@ public class PlayerDamage : MonoBehaviour {
     void Start()
     {
         player = gameObject.GetComponentInParent<Player>();
+        AudioSystem.Register(audioSource);
     }
 
     void OnEnable()

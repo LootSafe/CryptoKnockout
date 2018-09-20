@@ -37,6 +37,8 @@ public class Player : MonoBehaviour {
     private int playerNumber;
     private AudioSource audioSource;
     public AudioClip damageBlockSound;
+    public AudioClip deathSound;
+    public AudioClip hurtSound;
     public Sprite characterPortrait;
 
     void Start()
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour {
         lives = game.GetLives();
         game.RegisterPlayer(this, GetComponent<NetworkIdentity>());
         audioSource = GetComponent<AudioSource>();
+        AudioSystem.Register(audioSource);
     }
 
     public void InitializeWithCharacter(Character character)

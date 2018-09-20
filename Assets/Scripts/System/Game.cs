@@ -70,6 +70,7 @@ public class Game : MonoBehaviour {
         Debug.Log("I was loaded Once");
         state = State.STARTING;
         //escapeMenu = gl.escapeMenu;
+
         
     }
     /*************************************************************************/

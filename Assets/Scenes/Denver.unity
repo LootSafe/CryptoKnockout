@@ -5624,6 +5624,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5694,6 +5695,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea6306985ebb3249a89daa27d76afaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &555397902
 GameObject:
   m_ObjectHideFlags: 0
@@ -16462,6 +16475,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!224 &1778466352334424283 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4165929989210214028, guid: 4718a53a7a72ab1468cd81c0a47f0bd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1778466352334424282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1438229481
 GameObject:
   m_ObjectHideFlags: 0
@@ -16540,6 +16559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1548493624}
   - component: {fileID: 1548493623}
+  - component: {fileID: 1548493625}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -16571,11 +16591,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 19686f04349583e4281ee05868db75da, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -16657,6 +16677,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1548493625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548493622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f10fce969266745b177c782fef5431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  tracks:
+  - {fileID: 8300000, guid: 19686f04349583e4281ee05868db75da, type: 3}
+  - {fileID: 8300000, guid: d5f31d9b0c625d8408583eed5586b3ae, type: 3}
+  - {fileID: 8300000, guid: 66eb1c9196e6fb343ac13afec90e73dc, type: 3}
 --- !u!1 &1603334887
 GameObject:
   m_ObjectHideFlags: 0
@@ -21906,12 +21943,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!224 &1778466352334424283 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4165929989210214028, guid: 4718a53a7a72ab1468cd81c0a47f0bd2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1778466352334424282}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1952009671
 GameObject:
   m_ObjectHideFlags: 0
