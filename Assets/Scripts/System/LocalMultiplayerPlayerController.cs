@@ -148,11 +148,11 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         bool super = GamePad.GetButton(CButton.Y, pi);
         //6 Jump Lock
 
-
+        
         //Character Lock
-        if (player.IsBlocking() || player.IsAttacking() || player.IsDucking())
+        if (player.IsBlocking() || (player.IsAttacking() && player.IsGrounded()) || player.IsDucking())
         {
-            rigidbody.velocity = new Vector2(0, 0);
+            rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
             rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 
         }
@@ -160,7 +160,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-
+        
         //Horizontal Changes
         if (xMovement != 0 && player.IsAlive() && !player.IsAttacking() && !player.IsDucking() && !player.IsDucking())
         {
