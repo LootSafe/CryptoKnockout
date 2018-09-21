@@ -301,7 +301,12 @@ public class Player : MonoBehaviour {
 
     public bool AnyLock()
     {
-        return locks.AnyLocks();
+        return locks.AnyLock();
+    }
+
+    public ActionLocks Locks()
+    {
+        return locks;
     }
 
     public float GetDamageDealt()

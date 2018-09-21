@@ -13,7 +13,7 @@ public class ActionLocks {
         player = parent;
     }
 
-    public bool anyLock()
+    public bool AnyLock()
     {
         return punch || kick || block || super;
     }

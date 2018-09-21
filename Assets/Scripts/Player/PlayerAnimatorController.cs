@@ -83,7 +83,11 @@ public class PlayerAnimatorController : MonoBehaviour
                     return;
 
                 case ANIMATION_STATE.BLOCK:
-                    if (!playerAnimator.GetBool("BLOCKING")) playerAnimator.SetTrigger("BLOCK");
+                    if (!playerAnimator.GetBool("BLOCKING") && !player.AnyLock())
+                    {
+                        playerAnimator.SetTrigger("BLOCK");
+                        player.Locks().Lock(ActionLocks.Locks.BLOCK);
+                    }
                     return;
 
                 case ANIMATION_STATE.LOWPUNCH:
@@ -93,15 +97,27 @@ public class PlayerAnimatorController : MonoBehaviour
                     return;
 
                 case ANIMATION_STATE.HIGHPUNCH:
-                    playerAnimator.SetTrigger("PUNCHING");
+                    if (!player.AnyLock())
+                    {
+                        playerAnimator.SetTrigger("PUNCHING");
+                        player.Locks().Lock(ActionLocks.Locks.PUNCH);
+                    }
                     return;
 
                 case ANIMATION_STATE.HIGHKICK:
-                    playerAnimator.SetTrigger("KICKING");
+                    if (!player.AnyLock())
+                    {
+                        playerAnimator.SetTrigger("KICKING");
+                        player.Locks().Lock(ActionLocks.Locks.KICK);
+                    }
                     return;
 
                 case ANIMATION_STATE.SPECIALATTACKONE:
-                    playerAnimator.SetTrigger("SPECIAL");
+                    if (!player.AnyLock())
+                    {
+                        playerAnimator.SetTrigger("SPECIAL");
+                        player.Locks().Lock(ActionLocks.Locks.SUPER);
+                    }
                     return;
 
                 default:
