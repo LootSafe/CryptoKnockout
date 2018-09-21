@@ -249,9 +249,13 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             if (controlLocks[playerNumber - 1, 1] == false && !player.IsHurt() && !player.IsAttacking())
             {
-                player.GetCharacter().MovePunch();
-                pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
-                controlLocks[playerNumber - 1, 1] = true;
+                if(!player.AnyLock())
+                {
+                    player.GetCharacter().MovePunch();
+                    pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHPUNCH);
+                    controlLocks[playerNumber - 1, 1] = true;
+                    player.Locks().Lock(ActionLocks.Locks.PUNCH);
+                }
             }
         }
         else
@@ -265,9 +269,13 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             if (controlLocks[playerNumber - 1, 2] == false && !player.IsHurt() && !player.IsAttacking())
             {
-                player.GetCharacter().MoveKick();
-                pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHKICK);
-                controlLocks[playerNumber - 1, 2] = true;
+                if (!player.AnyLock())
+                {
+                    player.GetCharacter().MoveKick();
+                    pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.HIGHKICK);
+                    controlLocks[playerNumber - 1, 2] = true;
+                    player.Locks().Lock(ActionLocks.Locks.KICK);
+                }
             }
         }
         else
@@ -280,10 +288,14 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         {
             if (controlLocks[playerNumber - 1, 3] == false && player.IsGrounded())
             {
+                if (!player.AnyLock())
+                {
                     player.GetCharacter().MoveBlock();
                     pac.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.BLOCK);
                     controlLocks[playerNumber - 1, 3] = true;
                     player.StartBlocking();
+                    player.Locks().Lock(ActionLocks.Locks.BLOCK);
+                }
             }
         }
         else
@@ -298,10 +310,15 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         //Ultra
         if (super)
         {
+
             if (controlLocks[playerNumber - 1, 5] == false && !player.IsHurt() && !player.IsAttacking())
             {
-                player.GetCharacter().MoveUltra();
-                controlLocks[playerNumber - 1, 5] = true;
+                if (!player.AnyLock())
+                {
+                    player.GetCharacter().MoveUltra();
+                    controlLocks[playerNumber - 1, 5] = true;
+                    player.Locks().Lock(ActionLocks.Locks.SUPER);
+                }
             }
         }
         else
