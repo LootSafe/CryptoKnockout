@@ -41,6 +41,8 @@ public class Player : MonoBehaviour {
     public AudioClip hurtSound;
     public Sprite characterPortrait;
 
+    private ActionLocks locks;
+
     void Start()
     {
         game = Game.GetInstance();
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour {
         game.RegisterPlayer(this, GetComponent<NetworkIdentity>());
         audioSource = GetComponent<AudioSource>();
         AudioSystem.Register(audioSource);
+        locks = new ActionLocks(this);
     }
 
     public void InitializeWithCharacter(Character character)
@@ -295,6 +298,11 @@ public class Player : MonoBehaviour {
     public int GetPlayerNumber()
     {
         return playerNumber;
+    }
+
+    public bool AnyLock()
+    {
+        return locks.AnyLocks();
     }
 
     public float GetDamageDealt()

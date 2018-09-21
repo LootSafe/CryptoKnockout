@@ -121,7 +121,8 @@ public abstract class Character {
         BITCOINBOY,
         DOGE,
         ETHBOT,
-        MONERO
+        MONERO,
+        RANDOM
     }
 
     public static Character Get(Characters c)

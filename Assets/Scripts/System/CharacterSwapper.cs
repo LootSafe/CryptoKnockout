@@ -20,6 +20,12 @@ public class CharacterSwapper : MonoBehaviour {
         return instance;
     }
 
+    private static Character.Characters GetRandom()
+    {
+        int choice = Random.Range((int)0, System.Enum.GetNames(typeof(Character.Characters)).Length);
+        return (Character.Characters)choice;
+    }
+
     public static GameObject GetCharacter(Character.Characters c)
     {
         switch (c)
@@ -34,6 +40,9 @@ public class CharacterSwapper : MonoBehaviour {
                 return GetInstance().BTCBoy;
             case Character.Characters.MONERO:
                 return GetInstance().Monero;
+            case Character.Characters.RANDOM:
+                return GetCharacter(GetRandom());
+
             default:
                 throw new System.Exception();
         }
