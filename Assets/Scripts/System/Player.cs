@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-[ExecuteInEditMode()]
 public class Player : MonoBehaviour {
     private float lives = 1;
     private bool alive = false;
