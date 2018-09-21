@@ -18,7 +18,7 @@ public class ActionLocks {
         return punch || kick || block || super;
     }
 
-    public void reset()
+    public void Reset()
     {
         punch = false;
         kick = false;
@@ -31,7 +31,8 @@ public class ActionLocks {
         PUNCH,
         KICK,
         BLOCK,
-        SUPER
+        SUPER,
+        ALL
     }
 
     public void Lock(Locks action){
@@ -68,6 +69,9 @@ public class ActionLocks {
                 break;
             case Locks.SUPER:
                 super = false;
+                break;
+            case Locks.ALL:
+                Reset();
                 break;
         }
         return;
