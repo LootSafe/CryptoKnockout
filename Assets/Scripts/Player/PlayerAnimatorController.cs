@@ -103,12 +103,15 @@ public class PlayerAnimatorController : MonoBehaviour
                 case ANIMATION_STATE.SUPER:
                     playerAnimator.SetTrigger("Super");
                     return;
+
                 case ANIMATION_STATE.MIDSUPER:
                     playerAnimator.SetTrigger("MidSuper");
                     return;
+
                 case ANIMATION_STATE.POSTSUPER:
                     playerAnimator.SetTrigger("PostSuper");
                     return;
+
                 default:
                     playerAnimator.SetTrigger("GROUNDED");
                     return;
