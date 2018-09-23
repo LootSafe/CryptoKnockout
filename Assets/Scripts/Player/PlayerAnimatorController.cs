@@ -8,7 +8,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     bool IDLE = false;
 
-    public enum ANIMATION_STATE {IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SPECIALATTACKONE, DUCK , LAND};
+    public enum ANIMATION_STATE {IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SUPER, MIDSUPER, POSTSUPER, DUCK , LAND};
 
 
     Player player;
@@ -100,8 +100,14 @@ public class PlayerAnimatorController : MonoBehaviour
                         playerAnimator.SetTrigger("KICKING");
                     return;
 
-                case ANIMATION_STATE.SPECIALATTACKONE:
-                    playerAnimator.SetTrigger("SPECIAL");
+                case ANIMATION_STATE.SUPER:
+                    playerAnimator.SetTrigger("Super");
+                    return;
+                case ANIMATION_STATE.MIDSUPER:
+                    playerAnimator.SetTrigger("MidSuper");
+                    return;
+                case ANIMATION_STATE.POSTSUPER:
+                    playerAnimator.SetTrigger("PostSuper");
                     return;
                 default:
                     playerAnimator.SetTrigger("GROUNDED");

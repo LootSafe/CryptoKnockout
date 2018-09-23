@@ -343,6 +343,7 @@ public class Player : MonoBehaviour {
             if (game.TriggerSuper(this))
             {
                 special = 0;
+                GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.SUPER);
                 return true;
             }
         }

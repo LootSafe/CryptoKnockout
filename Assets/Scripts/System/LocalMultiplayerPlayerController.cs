@@ -305,8 +305,6 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
             player.StopBlocking();
         }
 
-        //Special2
-
         //Ultra
         if (super)
         {
