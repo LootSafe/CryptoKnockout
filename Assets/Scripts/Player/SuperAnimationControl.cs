@@ -50,7 +50,7 @@ public class SuperAnimationControl : MonoBehaviour {
     {
         if(Time.time >= midTime)
         {
-            CompleteSequence();
+            NextSequence();
         }
     }
 
@@ -58,7 +58,7 @@ public class SuperAnimationControl : MonoBehaviour {
     {
         if(Time.time >= postTime)
         {
-            CompleteSequence();
+            NextSequence();
         }
     }
 
@@ -66,7 +66,7 @@ public class SuperAnimationControl : MonoBehaviour {
     {
         if (Time.time >= endTime)
         {
-            CompleteSequence();
+            NextSequence();
         }
     }
 
@@ -75,20 +75,33 @@ public class SuperAnimationControl : MonoBehaviour {
         state = SuperStates.WAITING;
     }
 
-    public void CompleteSequence()
+    public void StartSequence()
+    {
+        NextSequence(SuperStates.WAITING);
+    }
+
+    public void NextSequence()
+    {
+        NextSequence(this.state);
+    }
+
+    public void NextSequence(SuperStates state)
     {
         switch (state)
         {
-            case SuperStates.INTRO:
+            case SuperStates.WAITING:
                 PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.SUPER);
+                state = SuperStates.INTRO;
+                break;
+            case SuperStates.INTRO:
+                PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.MIDSUPER);
                 state = SuperStates.MID;
                 break;
             case SuperStates.MID:
-                PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.MIDSUPER);
+                PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.POSTSUPER);
                 state = SuperStates.POST;
                 break;
             case SuperStates.POST:
-                PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.POSTSUPER);
                 state = SuperStates.END;
                 break;
             case SuperStates.END:
