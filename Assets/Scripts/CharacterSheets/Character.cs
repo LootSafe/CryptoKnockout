@@ -8,7 +8,7 @@ public abstract class Character {
     protected string name;
     protected List<string> hitWords;
     protected Player player;
-
+    protected SuperAnimationControl SAC;
     /// <summary>
     /// This should be implemented to calculate damage taken based on characters special attributes, strength,
     /// defence, and a small bit of chance. 
@@ -123,6 +123,11 @@ public abstract class Character {
         ETHBOT,
         MONERO,
         RANDOM
+    }
+
+    public SuperAnimationControl GetSuperAnimationControl()
+    {
+        return SAC;
     }
 
     public static Character Get(Characters c)

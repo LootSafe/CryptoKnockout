@@ -77,7 +77,7 @@ public class PlayerDamage : MonoBehaviour {
             gameObject.SetActive(false);
             if (player)
             {
-                Debug.Log("Damage Dealt  " + damageDealt);
+                //Debug.Log("Damage Dealt  " + damageDealt);
                 if (damageDealt > 0)
                 {
                     PlayAudio.Play(audioSource, damageSound);

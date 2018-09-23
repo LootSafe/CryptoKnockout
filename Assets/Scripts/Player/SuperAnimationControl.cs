@@ -4,29 +4,31 @@ using UnityEngine;
 
 public class SuperAnimationControl : MonoBehaviour {
 
-    SuperStates state;
+    public SuperStates state;
     public float postLenth;
     public float midLength;
     public float introLength;
     public GameObject AnimationObject;
 
     private PlayerAnimatorController PAC;
+    private Player player;
 
     private float midTime;
     private float postTime;
     private float endTime;
 	// Use this for initialization
 	void Start () {
+        player = GetComponent<Player>();
         PAC = GetComponent<PlayerAnimatorController>();
         midTime = Time.time + introLength;
         postTime = midTime + midLength;
         endTime = postTime + postLenth;
+        state = SuperStates.WAITING;
 
 	}
 
 	// Update is called once per frame
 	void Update () {
-
         switch (state) {
             case SuperStates.INTRO:
                 UpdateIntro();
@@ -72,16 +74,20 @@ public class SuperAnimationControl : MonoBehaviour {
 
     public virtual void UpdateEnd()
     {
-        state = SuperStates.WAITING;
+        NextSequence();
     }
 
     public void StartSequence()
     {
+        Debug.Log("Sequence Initiated...");
+        Start();
         NextSequence(SuperStates.WAITING);
+
     }
 
     public void NextSequence()
     {
+        Debug.Log("Trying to Update State");
         NextSequence(this.state);
     }
 
@@ -91,21 +97,27 @@ public class SuperAnimationControl : MonoBehaviour {
         {
             case SuperStates.WAITING:
                 PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.SUPER);
-                state = SuperStates.INTRO;
+                Debug.Log("Starting Super");
+                this.state = SuperStates.INTRO;
                 break;
             case SuperStates.INTRO:
                 PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.MIDSUPER);
-                state = SuperStates.MID;
+                Debug.Log("Holding States");
+                this.state = SuperStates.MID;
                 break;
             case SuperStates.MID:
                 PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.POSTSUPER);
-                state = SuperStates.POST;
+                Debug.Log("Ending Sper");
+                this.state = SuperStates.POST;
                 break;
             case SuperStates.POST:
-                state = SuperStates.END;
+                Debug.Log("Super Has Ended");
+                this.state = SuperStates.END;
                 break;
             case SuperStates.END:
-                state = SuperStates.WAITING;
+                Debug.Log("Resetting Super and Notifying Player");
+                player.NotifySuperComplete();
+                this.state = SuperStates.WAITING;
                 break;
             default:
                 break;

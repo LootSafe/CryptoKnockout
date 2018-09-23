@@ -40,6 +40,8 @@ public class Player : MonoBehaviour {
     public AudioClip hurtSound;
     public Sprite characterPortrait;
 
+    public SuperAnimationControl superAnimationControl;
+    private bool superFinished;
     private ActionLocks locks;
 
     void Start()
@@ -343,11 +345,26 @@ public class Player : MonoBehaviour {
             if (game.TriggerSuper(this))
             {
                 special = 0;
-                GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.SUPER);
+                superAnimationControl.StartSequence();
                 return true;
             }
         }
         return false;
+    }
+
+    public bool IsSuperFinished()
+    {
+        if (superFinished)
+        {
+            superFinished = false;
+            return true;
+        }
+        return false;
+    }
+
+    public void NotifySuperComplete()
+    {
+        superFinished = true;
     }
 
     public void playSound(AudioClip audioClip)

@@ -7,7 +7,6 @@ public class Bjorn : Character {
     public Bjorn()
     {
         this.name = "Bjorn";
-
         this.hitWords = new List<string>();
         this.hitWords.Add("BAAAM!!");
         this.hitWords.Add("POOOWW!!");
