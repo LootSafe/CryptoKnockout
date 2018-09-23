@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Character {
 
-    protected float health = 100, special = 1000, defence = 10, strength = 20, moveSpeed = 10, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
+    protected float health = 700, special = 400, defence = 10, strength = 20, moveSpeed = 10, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
     protected string name;
     protected List<string> hitWords;
     protected Player player;

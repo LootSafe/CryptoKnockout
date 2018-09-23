@@ -6,10 +6,6 @@ public class Monero : Character {
 
     public Monero()
     {
-        this.health = 1800;
-        this.strength = 25;
-        this.defence = 15;
-        this.moveSpeed = 10;
         this.name = "Monero";
 
         this.hitWords = new List<string>();

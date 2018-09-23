@@ -6,10 +6,6 @@ public class BTCBoy : Character {
 
     public BTCBoy()
     {
-        this.health = 90;
-        this.strength = 10;
-        this.defence = 10;
-        this.moveSpeed = 10;
         this.name = "Bitcoin Boy";
 
         this.hitWords = new List<string>();
