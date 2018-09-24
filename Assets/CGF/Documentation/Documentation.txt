@@ -1,0 +1,17 @@
+User manual
+http://chloroplastgames.com/cg-framework-user-manual/
+
+API reference
+http://chloroplastgames.com/wp-content/documentation/cgf/
+
+Ask anything in the Unity forum topic
+https://forum.unity3d.com/threads/release-editor-utilities-custom-inspector-builder.456704/
+
+Support forum topic
+http://chloroplastgames.com/forums/forum/support/
+
+Contact information here
+http://chloroplastgames.com/contact/
+
+Contact us to suggest new features
+http://chloroplastgames.com/contact/
