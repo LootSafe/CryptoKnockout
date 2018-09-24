@@ -324,6 +324,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   delay: 0.02
+  overrideDamage: 10
+  audioSource: {fileID: 0}
+  damageSound: {fileID: 0}
 --- !u!1 &1633664159556462
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +447,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   delay: 0.02
+  overrideDamage: 10
+  audioSource: {fileID: 0}
+  damageSound: {fileID: 0}
 --- !u!1 &1729820886990980
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +687,7 @@ Animator:
   m_GameObject: {fileID: 1729820886990980}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f7ecc0d6a7bd2c247861778ee9c2ca53, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa6ce3b4cddeedc429c8936035ade35e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -709,8 +715,13 @@ MonoBehaviour:
   foot: {fileID: 1633664159556462}
   specialSource: {fileID: 1420809114905940}
   timeIncapacitated: 0.2
+  currentStreak: 0
   attacking: 0
+  damageBlockSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  hurtSound: {fileID: 0}
   characterPortrait: {fileID: 0}
+  superAnimationControl: {fileID: 0}
 --- !u!114 &114037795989249596
 MonoBehaviour:
   m_ObjectHideFlags: 0
