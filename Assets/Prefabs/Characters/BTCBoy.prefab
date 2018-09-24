@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  postLenth: 0
-  midLength: 0
-  introLength: 0
+  postLenth: 2
+  midLength: 2
+  introLength: 2
   AnimationObject: {fileID: 8555954343344747112}
 --- !u!1 &8555954343344747112 stripped
 GameObject:

@@ -69,9 +69,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  postLenth: 0
-  midLength: 0
-  introLength: 0
+  postLenth: 1
+  midLength: 4
+  introLength: 1
   AnimationObject: {fileID: 8761358577868139536}
 --- !u!1001 &8881097120964261128
 PrefabInstance:
