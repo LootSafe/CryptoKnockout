@@ -5,28 +5,28 @@ using UnityEngine;
 public class DogeSuper : SuperAnimationControl {
 
     Transform target;
-    AudioSource audioSource;
+    public AudioSource audioSource;
 
     public AudioClip laserWarmUp;
     public AudioClip laserFire;
     public AudioClip chainFall;
 
+
+
     private int xDirection, yDirection;
     public override void Start()
     {
-        audioSource = animationObject.GetComponent<AudioSource>();
-        target = Game.GetInstance().GetOpponent(player.GetPlayerNumber()).transform;
+
         base.Start();
     }
 
     public override void StartSequence()
     {
         PlayAudio.Play(audioSource, laserWarmUp);
-        GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 
 
-        if (target.position.y < transform.position.y)
+        if (opponent.transform.position.y < transform.position.y)
         {
             yDirection = -1;
         }
@@ -35,7 +35,7 @@ public class DogeSuper : SuperAnimationControl {
             yDirection = 1;
         }
 
-        if (target.position.x < transform.position.x)
+        if (opponent.transform.position.x < transform.position.x)
         {
             xDirection = -1;
         }
@@ -43,11 +43,13 @@ public class DogeSuper : SuperAnimationControl {
         {
             xDirection = 1;
         }
+        Debug.Log("Just Here");
         base.StartSequence();
     }
 
     public override void UpdateIntro()
     {
+        Debug.Log("I'm Here");
         if (Time.time >= midTime)
         {
             AudioSystem.Play(audioSource, laserFire, true);
@@ -70,6 +72,7 @@ public class DogeSuper : SuperAnimationControl {
         if (Time.time >= endTime)
         {
             animationObject.SetActive(false);
+            player.NotifySuperComplete();
             NextSequence();
         }
     }

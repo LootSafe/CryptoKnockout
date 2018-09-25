@@ -19,6 +19,9 @@ public class SuperAnimationControl : MonoBehaviour {
     protected float endTime;
     protected float waitTime;
 
+    protected Player opponent;
+    protected Game game;
+
 	// Use this for initialization
 	public virtual void Start () {
         player = GetComponent<Player>();
@@ -33,6 +36,17 @@ public class SuperAnimationControl : MonoBehaviour {
 
 	// Update is called once per frame
 	public virtual void Update () {
+        if(!game)
+        {
+            game = Game.GetInstance();
+            return;
+        }
+
+        if (!opponent)
+        {
+            opponent = game.GetOpponent(player.GetPlayerNumber());
+        }
+
         switch (state) {
             case SuperStates.INTRO:
                 UpdateIntro();

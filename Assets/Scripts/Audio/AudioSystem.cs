@@ -35,6 +35,7 @@ public class AudioSystem : MonoBehaviour {
 
     public static void Play(AudioSource audioSource, AudioClip clip, bool loop)
     {
+        if (!audioSource || !clip) return;
         audioSource.Stop();
         audioSource.clip = clip;
         audioSource.time = 0;
