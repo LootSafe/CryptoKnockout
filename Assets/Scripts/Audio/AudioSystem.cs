@@ -27,8 +27,29 @@ public class AudioSystem : MonoBehaviour {
             }
         }
     }
-	// Use this for initialization
-	void Start () {
+
+    public static void Play(AudioSource audioSource, AudioClip clip)
+    {
+        Play(audioSource, clip, false);
+    }
+
+    public static void Play(AudioSource audioSource, AudioClip clip, bool loop)
+    {
+        audioSource.Stop();
+        audioSource.clip = clip;
+        audioSource.time = 0;
+        audioSource.loop = loop;
+        audioSource.Play();
+    }
+
+
+
+
+
+
+
+    // Use this for initialization
+    void Start () {
         		
 	}
 
@@ -40,4 +61,6 @@ public class AudioSystem : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
 }

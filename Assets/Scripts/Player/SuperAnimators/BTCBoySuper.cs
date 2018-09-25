@@ -20,7 +20,7 @@ public class BTCBoySuper : SuperAnimationControl {
     {
         base.Start();
         target = GameObject.Find("btcJumpTarget").transform;
-        audioSource = AnimationObject.GetComponent<AudioSource>();
+        audioSource = animationObject.GetComponent<AudioSource>();
     }
 
     public override void StartSequence()
@@ -29,7 +29,7 @@ public class BTCBoySuper : SuperAnimationControl {
         originalGravity = GetComponent<Rigidbody2D>().gravityScale;
         GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        AnimationObject.SetActive(true);
+        animationObject.SetActive(true);
 
         if(target.position.y < transform.position.y)
         {
@@ -98,7 +98,7 @@ public class BTCBoySuper : SuperAnimationControl {
     {
         if (Time.time >= waitTime)
         {
-            AnimationObject.SetActive(false);
+            animationObject.SetActive(false);
             NextSequence();
         }
     }

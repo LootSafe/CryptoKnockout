@@ -9,7 +9,7 @@ public class SuperAnimationControl : MonoBehaviour {
     public float midLength;
     public float introLength;
     public float waitLength = 1f;
-    public GameObject AnimationObject;
+    public GameObject animationObject;
 
     private PlayerAnimatorController PAC;
     protected Player player;
