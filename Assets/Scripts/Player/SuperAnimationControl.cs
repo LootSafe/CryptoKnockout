@@ -13,9 +13,9 @@ public class SuperAnimationControl : MonoBehaviour {
     private PlayerAnimatorController PAC;
     protected Player player;
 
-    private float midTime;
-    private float postTime;
-    private float endTime;
+    protected float midTime;
+    protected float postTime;
+    protected float endTime;
 	// Use this for initialization
 	public virtual void Start () {
         player = GetComponent<Player>();
