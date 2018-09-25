@@ -113,6 +113,7 @@ public class PlayerAnimatorController : MonoBehaviour
                     return;
                 case ANIMATION_STATE.ENDSUPER:
                     playerAnimator.SetTrigger("EndSuper");
+                    Debug.Log("triggering end of super");
                     return;
                 default:
                     playerAnimator.SetTrigger("GROUNDED");

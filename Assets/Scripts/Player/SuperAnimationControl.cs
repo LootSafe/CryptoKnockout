@@ -68,6 +68,7 @@ public class SuperAnimationControl : MonoBehaviour {
     {
         if (Time.time >= endTime)
         {
+            player.NotifySuperComplete();
             NextSequence();
         }
     }
@@ -112,11 +113,11 @@ public class SuperAnimationControl : MonoBehaviour {
                 break;
             case SuperStates.POST:
                 Debug.Log("Super Has Ended");
+                PAC.SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.ENDSUPER);
                 this.state = SuperStates.END;
                 break;
             case SuperStates.END:
                 Debug.Log("Resetting Super and Notifying Player");
-                player.NotifySuperComplete();
                 this.state = SuperStates.WAITING;
                 break;
             default:
