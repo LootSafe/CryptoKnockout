@@ -72,6 +72,7 @@ MonoBehaviour:
   postLenth: 1
   midLength: 4
   introLength: 1
+  waitLength: 1
   AnimationObject: {fileID: 8761358577868139536}
 --- !u!1001 &8881097120964261128
 PrefabInstance:
@@ -365,5 +366,11 @@ PrefabInstance:
       propertyPath: superAnimationControl
       value: 
       objectReference: {fileID: 8855651756398707749}
+    - target: {fileID: 114186994662308574, guid: 715c02c2e3375e7418da3da2e1d99b67,
+        type: 3}
+      propertyPath: characterPortrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 65943ef4449e75846a37f4921c91cc7b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 715c02c2e3375e7418da3da2e1d99b67, type: 3}
