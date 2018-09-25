@@ -10,16 +10,25 @@ public class BTCBoySuper : SuperAnimationControl {
     float originalGravity;
     public float animationSpeed = 1;
 
+    private AudioSource audioSource;
+    public AudioClip soundRising;
+    public AudioClip soundDing;
+    public AudioClip soundFalling;
+    public AudioClip soundEnd;
+
     public override void Start()
     {
         base.Start();
         target = GameObject.Find("btcJumpTarget").transform;
+        audioSource = AnimationObject.GetComponent<AudioSource>();
     }
 
     public override void StartSequence()
     {
+        PlayAudio.Play(audioSource, soundRising);
         originalGravity = GetComponent<Rigidbody2D>().gravityScale;
         GetComponent<Rigidbody2D>().simulated = false;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         AnimationObject.SetActive(true);
 
         if(target.position.y < transform.position.y)
@@ -55,6 +64,7 @@ public class BTCBoySuper : SuperAnimationControl {
         {
             if (Time.time >= midTime)
             {
+                PlayAudio.Play(audioSource, soundDing);
                 Debug.Log("It's Time");
                 transform.position = new Vector2(Game.GetInstance().GetOpponent(player.GetPlayerNumber()).transform.position.x, transform.position.y);
                 NextSequence();
@@ -68,6 +78,7 @@ public class BTCBoySuper : SuperAnimationControl {
     {
         if (Time.time >= postTime)
         {
+            PlayAudio.Play(audioSource, soundFalling);
             NextSequence();
             GetComponent<Rigidbody2D>().simulated = true;
         }
@@ -77,6 +88,7 @@ public class BTCBoySuper : SuperAnimationControl {
     {
         if (Time.time >= endTime)
         {
+            PlayAudio.Play(audioSource, soundEnd);
             NextSequence();
             player.NotifySuperComplete();
         }
