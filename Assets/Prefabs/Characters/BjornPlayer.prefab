@@ -73,7 +73,7 @@ MonoBehaviour:
   midLength: 4
   introLength: 1
   waitLength: 1
-  AnimationObject: {fileID: 8761358577868139536}
+  animationObject: {fileID: 8761358577868139536}
 --- !u!1001 &8881097120964261128
 PrefabInstance:
   m_ObjectHideFlags: 0

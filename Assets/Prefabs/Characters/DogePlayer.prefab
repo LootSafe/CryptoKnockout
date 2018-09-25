@@ -180,10 +180,10 @@ MonoBehaviour:
   midLength: 2
   introLength: 2
   waitLength: 1
-  AnimationObject: {fileID: 1468077302275204311}
-  laserWarmUp: {fileID: 0}
-  laserFire: {fileID: 0}
-  ChainFall: {fileID: 0}
+  animationObject: {fileID: 1468077302275204311}
+  laserWarmUp: {fileID: 8300000, guid: c31e1830b1b42894cba602764bbd6e3b, type: 3}
+  laserFire: {fileID: 8300000, guid: a820587db79a16342b1bc6cf453cb3d3, type: 3}
+  chainFall: {fileID: 8300000, guid: 8016d228272f5154482a2a85ed31537b, type: 3}
 --- !u!1001 &1654738013610720719
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!224 &8577383788256830476 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224407898414862204, guid: 715c02c2e3375e7418da3da2e1d99b67,
+    type: 3}
+  m_PrefabInstance: {fileID: 8364799515134356336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &466571321978064752
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,12 +372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432420da805c422428e5e28dffec27e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &8577383788256830476 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224407898414862204, guid: 715c02c2e3375e7418da3da2e1d99b67,
-    type: 3}
-  m_PrefabInstance: {fileID: 8364799515134356336}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8364197795695946740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1729820886990980, guid: 715c02c2e3375e7418da3da2e1d99b67,
@@ -401,7 +401,7 @@ MonoBehaviour:
   midLength: 0.9
   introLength: 1.5
   waitLength: 1
-  AnimationObject: {fileID: 7497236429876350478}
+  animationObject: {fileID: 7497236429876350478}
   animationSpeed: 1
   soundRising: {fileID: 8300000, guid: 7747ff4b506637e43801c5f4a8176812, type: 3}
   soundDing: {fileID: 8300000, guid: 7c37c34dc4fc2fd469323902d1b6ed5b, type: 3}
