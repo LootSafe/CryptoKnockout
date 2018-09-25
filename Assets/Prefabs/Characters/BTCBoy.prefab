@@ -274,9 +274,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  postLenth: 1.5
-  midLength: 0.3
+  postLenth: 1.3
+  midLength: 0.9
   introLength: 1.5
+  waitLength: 1
   AnimationObject: {fileID: 7497236429876350478}
   animationSpeed: 1
 --- !u!1001 &8364799515134356336

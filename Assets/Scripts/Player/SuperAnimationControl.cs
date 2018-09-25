@@ -8,6 +8,7 @@ public class SuperAnimationControl : MonoBehaviour {
     public float postLenth;
     public float midLength;
     public float introLength;
+    public float waitLength = 1f;
     public GameObject AnimationObject;
 
     private PlayerAnimatorController PAC;
@@ -16,6 +17,8 @@ public class SuperAnimationControl : MonoBehaviour {
     protected float midTime;
     protected float postTime;
     protected float endTime;
+    protected float waitTime;
+
 	// Use this for initialization
 	public virtual void Start () {
         player = GetComponent<Player>();
@@ -23,6 +26,7 @@ public class SuperAnimationControl : MonoBehaviour {
         midTime = Time.time + introLength;
         postTime = midTime + midLength;
         endTime = postTime + postLenth;
+        waitTime = endTime + waitLength;
         state = SuperStates.WAITING;
 
 	}
@@ -75,7 +79,10 @@ public class SuperAnimationControl : MonoBehaviour {
 
     public virtual void UpdateEnd()
     {
-        NextSequence();
+        if (Time.time >= waitTime)
+        {
+            NextSequence();
+        }
     }
 
     public virtual void StartSequence()

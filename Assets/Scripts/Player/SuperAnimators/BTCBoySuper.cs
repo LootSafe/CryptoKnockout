@@ -75,18 +75,20 @@ public class BTCBoySuper : SuperAnimationControl {
 
     public override void UpdatePost()
     {
-        
         if (Time.time >= endTime)
         {
-            AnimationObject.SetActive(false);
-            player.NotifySuperComplete();
             NextSequence();
+            player.NotifySuperComplete();
         }
     }
 
     public override void UpdateEnd()
     {
-        base.UpdateEnd();
+        if (Time.time >= waitTime)
+        {
+            AnimationObject.SetActive(false);
+            NextSequence();
+        }
     }
 
 }
