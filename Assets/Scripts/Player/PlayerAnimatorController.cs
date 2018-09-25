@@ -102,7 +102,8 @@ public class PlayerAnimatorController : MonoBehaviour
 
                 case ANIMATION_STATE.SUPER:
                     playerAnimator.SetTrigger("Super");
-                    return;
+                    playerAnimator.SetBool("IsSuper", true);
+                return;
 
                 case ANIMATION_STATE.MIDSUPER:
                     playerAnimator.SetTrigger("MidSuper");
@@ -113,8 +114,8 @@ public class PlayerAnimatorController : MonoBehaviour
                     return;
                 case ANIMATION_STATE.ENDSUPER:
                     playerAnimator.SetTrigger("EndSuper");
-                    Debug.Log("triggering end of super");
-                    return;
+                    playerAnimator.SetBool("IsSuper", false);
+                return;
                 default:
                     playerAnimator.SetTrigger("GROUNDED");
                     return;

@@ -65,7 +65,8 @@ public class Player : MonoBehaviour {
         health = character.GetHealth();
         maxSpecial = character.GetSpecial();
         maxHealth = character.GetHealth();
-        this.name = character.GetName();        
+        this.name = character.GetName();
+        special = 1;
     }
 
     public void OnDestroy()

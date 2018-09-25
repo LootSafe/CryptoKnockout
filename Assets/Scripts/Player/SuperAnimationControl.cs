@@ -11,13 +11,13 @@ public class SuperAnimationControl : MonoBehaviour {
     public GameObject AnimationObject;
 
     private PlayerAnimatorController PAC;
-    private Player player;
+    protected Player player;
 
     private float midTime;
     private float postTime;
     private float endTime;
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
         player = GetComponent<Player>();
         PAC = GetComponent<PlayerAnimatorController>();
         midTime = Time.time + introLength;
@@ -28,7 +28,7 @@ public class SuperAnimationControl : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
         switch (state) {
             case SuperStates.INTRO:
                 UpdateIntro();
@@ -78,7 +78,7 @@ public class SuperAnimationControl : MonoBehaviour {
         NextSequence();
     }
 
-    public void StartSequence()
+    public virtual void StartSequence()
     {
         Debug.Log("Sequence Initiated...");
         Start();
