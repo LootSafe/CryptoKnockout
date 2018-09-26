@@ -383,7 +383,7 @@ public class Game : MonoBehaviour {
             case State.ROUND_ENDING:
                 if (Time.time - roundEndTimer < roundEndDelay) break;
 
-                if(currentRound >= rounds)
+                if(!NeedNextRound(GetPlayer(0), GetPlayer(1)))
                 {
                     state = State.COMPLETED;
                 } else
@@ -450,6 +450,20 @@ public class Game : MonoBehaviour {
 
         localP1.respawn();
         localP2.respawn();
+    }
+
+    private bool NeedNextRound(Player p1, Player p2)
+    {
+        bool odd = rounds % 2 > 0;
+        if (Mathf.FloorToInt(p1.GetScore()) > rounds / 2)
+        {
+            return false;
+        }
+        else if(Mathf.FloorToInt(p2.GetScore()) > rounds / 2)
+        {
+            return false;
+        }
+        return true;
     }
 
     /*************************************************************************/
