@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[SerializeField]
 public abstract class Character {
-
-    protected float health = 700, special = 1, defence = 10, strength = 20, moveSpeed = 10, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
-    protected string name;
+    
+    public float health = 700, special = 230, defence = 10, strength = 20, moveSpeed = 10, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
+    public string name;
     protected List<string> hitWords;
     protected Player player;
     protected SuperAnimationControl SAC;

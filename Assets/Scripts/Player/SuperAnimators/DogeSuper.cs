@@ -11,6 +11,8 @@ public class DogeSuper : SuperAnimationControl {
     public AudioClip laserFire;
     public AudioClip chainFall;
 
+    public GameObject hitObject;
+
 
 
     private int xDirection, yDirection;
@@ -52,6 +54,7 @@ public class DogeSuper : SuperAnimationControl {
         Debug.Log("I'm Here");
         if (Time.time >= midTime)
         {
+            hitObject.transform.position = opponent.transform.position;
             AudioSystem.Play(audioSource, laserFire, true);
             animationObject.SetActive(true);
             NextSequence();

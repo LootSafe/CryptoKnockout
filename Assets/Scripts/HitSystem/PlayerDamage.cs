@@ -70,8 +70,9 @@ public class PlayerDamage : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Player" && other != player)
+        if (other.tag == "Player")
         {
+            if (other.gameObject == player.gameObject) return;
 
             float damageDealt = other.GetComponent<Player>().TakeDamage(overrideDamage, player);
             gameObject.SetActive(false);

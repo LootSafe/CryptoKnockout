@@ -12,7 +12,8 @@ public class Player : MonoBehaviour {
     private float maxSpecial = 100;
     private float maxHealth;
     private Game game;
-    private Character character;
+    [SerializeField]
+    public Character character;
 
     public GameObject fist;
     public GameObject foot;
@@ -66,6 +67,8 @@ public class Player : MonoBehaviour {
         maxSpecial = character.GetSpecial();
         maxHealth = character.GetHealth();
         this.name = character.GetName();
+        Debug.Log(name);
+        Debug.Log(character.GetName());
         special = 1;
     }
 

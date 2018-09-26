@@ -7,7 +7,6 @@ public class Monero : Character {
     public Monero()
     {
         this.name = "Monero";
-
         this.hitWords = new List<string>();
         this.hitWords.Add("SWIISH!!");
         this.hitWords.Add("SLAASH!!");

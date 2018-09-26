@@ -49,10 +49,10 @@ public class SummaryScript : MonoBehaviour {
             kill1.text = game.GetPlayer(0).GetScore() + "";
             kill2.text = game.GetPlayer(1).GetScore() + "";
 
-            score2.text = game.GetPlayer(1).GetDamageDealt() + "";
+            score2.text = game.GetPlayer(0).GetDamageDealt() + "";
             score2.text = game.GetPlayer(1).GetDamageDealt() + "";
 
-            name1.text = game.GetPlayer(1).name + "";
+            name1.text = game.GetPlayer(0).name + "";
             name2.text = game.GetPlayer(1).name + "";
         }
 
