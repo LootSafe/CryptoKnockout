@@ -101,7 +101,7 @@ public class SuperAnimationControl : MonoBehaviour {
 
     public virtual void StartSequence()
     {
-        Debug.Log("Sequence Initiated...");
+        Debug.Log("Super Sequence Initiated...");
         Start();
         NextSequence(SuperStates.WAITING);
 
@@ -109,7 +109,7 @@ public class SuperAnimationControl : MonoBehaviour {
 
     public void NextSequence()
     {
-        Debug.Log("Trying to Update State");
+        //Debug.Log("Trying to Update State");
         NextSequence(this.state);
     }
 

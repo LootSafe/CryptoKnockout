@@ -7,14 +7,17 @@ public class BTCBoySuper : SuperAnimationControl {
     Transform target;
     int yDirection;
     int xDirection;
-    float originalGravity;
-    public float animationSpeed = 1;
 
+    public float animationSpeed = 1;
+    
     private AudioSource audioSource;
     public AudioClip soundRising;
     public AudioClip soundDing;
     public AudioClip soundFalling;
     public AudioClip soundEnd;
+
+    public BTCExplosionManager explosion;
+    bool explosionTrigger;
 
     public override void Start()
     {
@@ -25,11 +28,12 @@ public class BTCBoySuper : SuperAnimationControl {
 
     public override void StartSequence()
     {
+        animationObject.SetActive(true);
         PlayAudio.Play(audioSource, soundRising);
-        originalGravity = GetComponent<Rigidbody2D>().gravityScale;
         GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        animationObject.SetActive(true);
+
+        explosion.Reset();
 
         if(target.position.y < transform.position.y)
         {
@@ -57,7 +61,7 @@ public class BTCBoySuper : SuperAnimationControl {
         if (Mathf.Abs(transform.position.y - target.position.y) > 2)
         {
             transform.position = new Vector2(0, yDirection * animationSpeed) + (Vector2)transform.position;
-            Debug.Log("trying this thing");
+            //Debug.Log("trying this thing");
 
         }
         else
@@ -86,11 +90,14 @@ public class BTCBoySuper : SuperAnimationControl {
 
     public override void UpdatePost()
     {
-        if (Time.time >= endTime)
+        if (explosion.HasLanded())
         {
+            explosion.TriggerExplosion();
+            Debug.Log("Alright BTC BOy Landed");
             PlayAudio.Play(audioSource, soundEnd);
-            NextSequence();
+            waitTime = Time.time + waitLength;
             player.NotifySuperComplete();
+            NextSequence();
         }
     }
 
@@ -98,7 +105,9 @@ public class BTCBoySuper : SuperAnimationControl {
     {
         if (Time.time >= waitTime)
         {
+            explosion.Reset();
             animationObject.SetActive(false);
+            explosionTrigger = false;
             NextSequence();
         }
     }
