@@ -12,6 +12,12 @@ public class EthbotSuper : SuperAnimationControl {
     public AudioClip explosionAudio;
     public AudioClip hahaAudio;
 
+    public float explosionLength = 0.1f;
+    private float explosionTime;
+
+    public GameObject explosion;
+    private bool hasExploded;
+
     public override void Start()
     {
         base.Start();
@@ -41,6 +47,7 @@ public class EthbotSuper : SuperAnimationControl {
             xDirection = 1;
         }
         AudioSystem.Play(audioSource, chargingAudio);
+        hasExploded = false;
         base.StartSequence();
     }
 
@@ -50,22 +57,30 @@ public class EthbotSuper : SuperAnimationControl {
         {
             Debug.Log(runSpeed * xDirection);
             rigidbody.AddForce(new Vector2(runSpeed * xDirection, 0));
+            player.SetOppositeHeading(opponent.GetHeading());
         }
         else
         {
+            animationObject.SetActive(true);
+            opponentHit.transform.position = opponent.transform.position + new Vector3(0, 0.6f, 0);
             AudioSystem.Play(audioSource, explosionAudio);
             rigidbody.velocity = Vector2.zero;
             NextSequence();
+            explosionTime = Time.time + explosionLength;
         }
     }
     public override void UpdateMid()
     {
+        if (!hasExploded && Time.time >= explosionTime)
+        {
+            hasExploded = true;
+            explosion.SetActive(true);
+        }
 
         if (Time.time >= postTime)
         {
-            AudioSystem.Play(audioSource, explosionAudio, true);
-            opponentHit.transform.position = opponent.transform.position + new Vector3(0, 0.6f, 0);
-            animationObject.SetActive(true);
+            AudioSystem.Play(audioSource, explosionAudio);
+            animationObject.SetActive(false);
             NextSequence();
         }
     }
@@ -73,15 +88,21 @@ public class EthbotSuper : SuperAnimationControl {
     {
         if (Time.time >= endTime)
         {
-            animationObject.SetActive(false);
-            player.NotifySuperComplete();
+            explosion.SetActive(false);
+            opponentHit.SetActive(true);
             NextSequence();
         }
     }
 
     public override void UpdateEnd()
     {
-        AudioSystem.Play(audioSource, hahaAudio);
-        base.UpdateEnd();
+
+        if (Time.time >= waitTime)
+        {
+            opponentHit.SetActive(false);
+            player.NotifySuperComplete();
+            AudioSystem.Play(audioSource, hahaAudio);
+            NextSequence();
+        }
     }
 }
