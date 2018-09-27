@@ -21,6 +21,7 @@ public class SuperAnimationControl : MonoBehaviour {
 
     protected Player opponent;
     protected Game game;
+    protected Rigidbody2D rigidbody;
 
 	// Use this for initialization
 	public virtual void Start () {
@@ -31,6 +32,7 @@ public class SuperAnimationControl : MonoBehaviour {
         endTime = postTime + postLenth;
         waitTime = endTime + waitLength;
         state = SuperStates.WAITING;
+        rigidbody = GetComponent<Rigidbody2D>();
 
 	}
 

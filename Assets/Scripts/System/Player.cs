@@ -67,8 +67,6 @@ public class Player : MonoBehaviour {
         maxSpecial = character.GetSpecial();
         maxHealth = character.GetHealth();
         this.name = character.GetName();
-        Debug.Log(name);
-        Debug.Log(character.GetName());
         special = 1;
     }
 
