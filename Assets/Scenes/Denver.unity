@@ -22390,7 +22390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRoundTime: 300
   roundEndDelay: 5
-  rounds: 9
+  rounds: 3
   lives: 2
   MaxPlayers: 2
   globalDataPrefab: {fileID: 114664089178248270, guid: 77d32bb0ffd267041a0c34d293e5b267,

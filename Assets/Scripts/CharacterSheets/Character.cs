@@ -5,7 +5,7 @@ using UnityEngine;
 [SerializeField]
 public abstract class Character {
     
-    public float health = 700, special = 1, defence = 10, strength = 20, moveSpeed = 10, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
+    public float health = 400, special = 250, defence = 10, strength = 20, moveSpeed = 10, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
     public string name;
     protected List<string> hitWords;
     protected Player player;
