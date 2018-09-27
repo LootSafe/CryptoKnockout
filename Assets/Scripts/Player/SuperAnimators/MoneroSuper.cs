@@ -21,6 +21,10 @@ public class MoneroSuper : SuperAnimationControl {
     private int xDirection, yDirection;
     public GameObject hitObject;
 
+    public float hitLength = 0.2f;
+    private float hitTime;
+    private bool hitCheck;
+
     public override void Start()
     {
         
@@ -51,6 +55,8 @@ public class MoneroSuper : SuperAnimationControl {
         }
         base.StartSequence();
         portalSet = false;
+        hitCheck = false;
+        hitObject.SetActive(false);
         portalLocation = new Vector2(opponent.transform.position.x - (1 * xDirection), portalObject.transform.position.y);
         portalWaitTime = Time.time + portalWaitLength;
         portalObject.transform.position = new Vector2(transform.position.x, portalObject.transform.position.y);
@@ -62,22 +68,39 @@ public class MoneroSuper : SuperAnimationControl {
     {
         if(Time.time >= portalWaitTime && !portalSet)
         {
+            int direction;
+            if(opponent.GetHeading() == Headings.LEFT)
+            {
+                direction = 1;
+            }
+            else
+            {
+                direction = -1;
+            }
+
+
             portalSet = true;
             //PortalObject.transform.position = portalLocation;
-            transform.position = new Vector2(portalLocation.x, transform.position.y);
+            transform.position = new Vector2(opponent.transform.position.x + (direction ) , transform.position.y);
+            player.SetOppositeHeading(opponent.GetHeading());
         }
         if(Time.time >= midTime)
         {
-            AudioSystem.Play(audioSource, firing);
+            hitTime = Time.time + hitLength;
             NextSequence();
         }
     }
     public override void UpdateMid()
     {
+        if(!hitCheck && Time.time >= hitTime)
+        {
+            hitObject.SetActive(true);
+            hitObject.transform.position = opponent.transform.position;
+            AudioSystem.Play(audioSource, firing, true);
+            hitCheck = true;
+        }
         if(Time.time >= postTime)
         {
-            
-            
             portalObject.SetActive(false);
             NextSequence();
         }
@@ -86,9 +109,11 @@ public class MoneroSuper : SuperAnimationControl {
     {
         if(Time.time >= endTime)
         {
+            hitObject.SetActive(false);
             transform.position = originalLocation;
             NextSequence();
             player.NotifySuperComplete();
+            AudioSystem.Play(audioSource, witchLaugh);
         }
     }
 

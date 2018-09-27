@@ -406,4 +406,48 @@ public class Player : MonoBehaviour {
             currentStreak = 0;
         }
 	}
+
+    public void SetHeading(Headings heading)
+    {
+        Transform transform = GetComponentInParent<Transform>();
+        switch (heading)
+        {
+            case Headings.LEFT:
+                transform.localScale = new Vector3(-1 * (Mathf.Abs(transform.localScale.x)), transform.localScale.y, transform.localScale.z);
+                break;
+            case Headings.RIGHT:
+                GetComponentInParent<Transform>().localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                break;
+        }
+    }
+
+    public void SetOppositeHeading(Headings heading)
+    {
+        Transform transform = GetComponentInParent<Transform>();
+        switch (heading)
+        {
+            case Headings.LEFT:
+                transform.localScale = new Vector3((Mathf.Abs(transform.localScale.x)), transform.localScale.y, transform.localScale.z);
+                break;
+            case Headings.RIGHT:
+                GetComponentInParent<Transform>().localScale = new Vector3( -1 * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                break;
+        }
+    }
+
+    public Headings GetHeading()
+    {
+        if(GetComponentInParent<Transform>().localScale.x > 0)
+        {
+            Debug.Log("Player is facing Right");
+            return Headings.RIGHT;
+        }
+        else
+        {
+            return Headings.LEFT;
+        }
+    }
+
+
+   
 }
