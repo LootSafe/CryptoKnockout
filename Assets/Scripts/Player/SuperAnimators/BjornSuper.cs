@@ -66,7 +66,7 @@ public class BjornSuper : SuperAnimationControl{
         if(Time.time >= postTime)
         {
             AudioSystem.Play(audioSource, energyAudio, true);
-            opponentHit.transform.position = opponent.transform.position;
+            opponentHit.transform.position = opponent.transform.position + new Vector3(0,0.6f,0);
             animationObject.SetActive(true);
             NextSequence();
         }
