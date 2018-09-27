@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedGameMode: 1
   selectedLevel: Denver
-  player1Char: 4
+  player1Char: 3
   player2Char: 0
   volume: 0.02
   clickSound: {fileID: 8300000, guid: f84b75aa0e1a44741b71be5ff940b484, type: 3}
