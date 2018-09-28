@@ -42,7 +42,8 @@ public class MenuButtonExtension : MonoBehaviour, ISelectHandler, IPointerEnterH
 
     // Use this for initialization
     void Start () {
-        oscillator = GetComponent<Oscillator>();b = GetComponent<Button>();
+        oscillator = GetComponent<Oscillator>();
+        b = GetComponent<Button>();
         originalPosition = b.GetComponent<RectTransform>().position;
 	}
 	
