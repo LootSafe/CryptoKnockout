@@ -116,15 +116,6 @@ public abstract class Character {
     {
         return hitWords;
     }
-    public enum Characters
-    {
-        BJORN,
-        BITCOINBOY,
-        DOGE,
-        ETHBOT,
-        MONERO,
-        RANDOM
-    }
 
     public SuperAnimationControl GetSuperAnimationControl()
     {
