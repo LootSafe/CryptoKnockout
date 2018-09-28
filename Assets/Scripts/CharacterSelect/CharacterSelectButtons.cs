@@ -8,7 +8,7 @@ public class CharacterSelectButtons : MonoBehaviour {
     Button button;
     public Sprite avatar_left;
     public Sprite avatar_right;
-    public Character.Characters character;
+    public Characters character;
 
    
     public GameObject up;
