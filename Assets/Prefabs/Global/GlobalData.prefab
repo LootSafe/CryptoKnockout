@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30772b626fd5ec540a78304c0ddcf80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedGameMode: 1
+  selectedGameMode: 2
   selectedLevel: Denver
   player1Char: 3
   player2Char: 0
