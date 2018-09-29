@@ -439,6 +439,11 @@ public class Game : MonoBehaviour {
         }
     }
 
+    public Transform GetSpawnPosition()
+    {
+        return spawnP1;
+    }
+
 
     private void respawnOpponents()
     {
