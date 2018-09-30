@@ -10,7 +10,7 @@ public class NetworkGameData : NetworkBehaviour{
 
     public static NetworkGameData instance;
 
-    public NetworkGameData()
+    public void Start()
     {
         instance = this;
     }
