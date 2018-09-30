@@ -13,7 +13,7 @@ public class SelectionIndicatorMP : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (CharacterSelector.GetInstance().GetSelected()[1] == Root)
+        if (CharacterSelectorMP.GetInstance().GetSelected()[1] == Root)
         {
             p1Tab.SetActive(true);
         }
@@ -22,7 +22,7 @@ public class SelectionIndicatorMP : MonoBehaviour {
             p1Tab.SetActive(false);
         }
 
-        if (CharacterSelector.GetInstance().GetSelected()[2] == Root)
+        if (CharacterSelectorMP.GetInstance().GetSelected()[2] == Root)
         {
             p2Tab.SetActive(true);
         }
