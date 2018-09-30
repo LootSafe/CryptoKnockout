@@ -10,9 +10,9 @@ public class CharacterSelectorMP : NetworkBehaviour {
 
 
     public EventSystem player1E;
-    public GameObject[] selected = new GameObject[9];
-    public GameObject[] starts = new GameObject[9];
-    public bool[] ready = new bool[9];
+    public GameObject[] selected = new GameObject[2];
+    public GameObject[] starts = new GameObject[2];
+    public bool[] ready = new bool[2];
 
     //NW
     [SyncVar]
