@@ -36,8 +36,8 @@ public class NetworkCustom : NetworkManager
 
         }
 
-        player.GetComponent<Player>().InitializeWithCharacter(Character.Get(selectedCharacter));
-        player.GetComponent<Player>().respawn();
+        player.GetComponentInChildren<Player>().InitializeWithCharacter(Character.Get(selectedCharacter));
+        player.GetComponentInChildren<Player>().respawn();
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
 
