@@ -49,7 +49,7 @@ public class Player : MonoBehaviour {
     {
         game = Game.GetInstance();
         lives = game.GetLives();
-        game.RegisterPlayer(this, GetComponent<NetworkIdentity>());
+        game.RegisterPlayer(this, GetComponentInParent<NetworkIdentity>());
         audioSource = GetComponent<AudioSource>();
         AudioSystem.Register(audioSource);
         locks = new ActionLocks(this);
