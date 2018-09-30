@@ -5603,8 +5603,9 @@ GameObject:
   - component: {fileID: 2957719142568132846}
   - component: {fileID: 1846148736213893305}
   - component: {fileID: 984213508998879937}
+  - component: {fileID: 4933267051775883111}
   m_Layer: 9
-  m_Name: Player (1) 1
+  m_Name: Doge
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5947,6 +5948,39 @@ MonoBehaviour:
   laserFire: {fileID: 8300000, guid: a820587db79a16342b1bc6cf453cb3d3, type: 3}
   chainFall: {fileID: 8300000, guid: 8016d228272f5154482a2a85ed31537b, type: 3}
   hitObject: {fileID: 5619280341687186217}
+--- !u!114 &4933267051775883111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926116147126519698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &3041308060641074702
 GameObject:
   m_ObjectHideFlags: 0

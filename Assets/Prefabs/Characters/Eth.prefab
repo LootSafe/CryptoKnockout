@@ -9535,8 +9535,9 @@ GameObject:
   - component: {fileID: 5665897678241380091}
   - component: {fileID: 9094021599668795052}
   - component: {fileID: 5578758388371940380}
+  - component: {fileID: 8688120564909872231}
   m_Layer: 9
-  m_Name: Player (1) 2
+  m_Name: Eth
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9882,6 +9883,39 @@ MonoBehaviour:
   hahaAudio: {fileID: 8300000, guid: 79341afeff452f247af72310bc33eac7, type: 3}
   explosionLength: 0.1
   explosion: {fileID: 1107144580315184680}
+--- !u!114 &8688120564909872231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5706347876681970055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &5706598264788639419
 GameObject:
   m_ObjectHideFlags: 0
