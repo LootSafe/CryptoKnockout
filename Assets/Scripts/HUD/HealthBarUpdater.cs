@@ -58,7 +58,7 @@ public class HealthBarUpdater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!game) return;
+        if (!game || !game.gameObject.activeSelf) return;
         if (!player)
         {
             //May need Reworking for "Hotswap" Multiplayer if ever more than 2p

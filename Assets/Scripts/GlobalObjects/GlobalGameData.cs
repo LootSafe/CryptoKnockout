@@ -24,7 +24,7 @@ public class GlobalGameData : MonoBehaviour {
             DontDestroyOnLoad(this.gameObject);
             instance = this;
             created = true;
-            Debug.Log("Awake: " + this.gameObject);
+            //Debug.Log("Awake: " + this.gameObject);
         }
     }
 

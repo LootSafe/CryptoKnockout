@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class Game : MonoBehaviour {
+public class Game : NetworkBehaviour {
 
     public float maxRoundTime = 120;
     public float roundEndDelay = 3;
@@ -34,8 +34,11 @@ public class Game : MonoBehaviour {
     private State lastState;
 
     //State
+    [SyncVar]
     public State state = State.WAITING;
+    [SyncVar]
     private int currentRound = 0;
+    [SyncVar]
     private float countDownTimer = 0;
 
     //Super
@@ -53,6 +56,23 @@ public class Game : MonoBehaviour {
     private float roundStartTime = 0;
     private float roundEndTimer = 0;
 
+    /*
+     * Fuck unity
+     */
+    public class SyncListPlayerRecord : SyncListStruct<PlayerRecord> { }
+    public SyncListPlayerRecord networkPlayers;
+
+    public struct PlayerRecord
+    {
+        public NetworkIdentity id;
+        public PlayerRecord(NetworkIdentity id)
+        {
+            this.id = id;
+        }
+    }
+    /*
+     * Fuck unity
+     */
 
     public void Awake()
     {
@@ -67,15 +87,8 @@ public class Game : MonoBehaviour {
 
     public void Start()
     {
-        Debug.Log("I was loaded Once");
         state = State.WAITING;
-        //escapeMenu = gl.escapeMenu;
-
-        if(gameMode == GameMode.NETWORKMULTIPLAYER)
-        {
-            networkGameData = new NetworkGameData();
-        }
-        
+        //escapeMenu = gl.escapeMenu;        
     }
     /*************************************************************************/
 
@@ -111,11 +124,11 @@ public class Game : MonoBehaviour {
     {
         //Temp
         if (gameMode == GameMode.LOCALMULTIPLAYER) return;
-
+        if (!isServer) return;
         Debug.Log("Registering Player with game id = " + id.netId.ToString());
-        if (networkGameData.networkPlayers.Count < MaxPlayers)
+        if (networkPlayers.Count < MaxPlayers)
         {
-            networkGameData.networkPlayers.Add(new NetworkGameData.PlayerRecord(id));
+            networkPlayers.Add(new PlayerRecord(id));
         }
     }
 
@@ -124,7 +137,7 @@ public class Game : MonoBehaviour {
         //Temp
         if (gameMode == GameMode.LOCALMULTIPLAYER) return;
 
-        networkGameData.networkPlayers.Remove(new NetworkGameData.PlayerRecord(id));
+        networkPlayers.Remove(new PlayerRecord(id));
 
     }
 
@@ -173,6 +186,7 @@ public class Game : MonoBehaviour {
     {
         return i == 0 ? GetPlayer(1) : GetPlayer(0);
     }
+
     public void Pause()
     {
         if (gameMode == GameMode.LOCALMULTIPLAYER)
@@ -263,8 +277,8 @@ public class Game : MonoBehaviour {
         }
         else
         {
-            if (playerNumber >= networkGameData.networkPlayers.Count) return null;
-            GameObject player = ClientScene.FindLocalObject(networkGameData.networkPlayers[playerNumber].id.netId);
+            if (playerNumber >= networkPlayers.Count) return null;
+            GameObject player = ClientScene.FindLocalObject(networkPlayers[playerNumber].id.netId);
             if (!player) return null;
             Player result = player.GetComponentInChildren<Player>();
             return result;
@@ -297,8 +311,8 @@ public class Game : MonoBehaviour {
         {
             GameObject tempPlayer;
             int i = 0;
-            p = new Player[networkGameData.networkPlayers.Count];
-            foreach(NetworkGameData.PlayerRecord playerRecord in networkGameData.networkPlayers)
+            p = new Player[networkPlayers.Count];
+            foreach(PlayerRecord playerRecord in networkPlayers)
             {
                 tempPlayer = ClientScene.FindLocalObject(playerRecord.id.netId);
                 p[i] = tempPlayer.GetComponent<Player>();
@@ -314,7 +328,7 @@ public class Game : MonoBehaviour {
     {
         if (gameMode == GameMode.LOCALMULTIPLAYER) return 2;
 
-        return networkGameData.networkPlayers.Count;
+        return networkPlayers.Count;
     }
     /// <summary>
     /// Used to get the local instance of a player
@@ -331,32 +345,21 @@ public class Game : MonoBehaviour {
     /// <returns> Single instance of the client game</returns>
     public static Game GetInstance()
     {
-        if (instance == null)
-        {
-           //Debug.Log("Game was not properly instantiated");
-        }
-        //Debug.Log("Offering Game");
         return instance;
     }
 
     void Update()
     {
-        /*foreach (NetworkGameData.PlayerRecord record in networkGameData.networkPlayers)
-        {
-            //Debug.Log("I have a player - " + record.id.netId.ToString());
-        }
-        */
-        //TODO Updates based on inputs and notifications - Biggest being death notfication
+        if (!isServer) return;
         switch (state)
         {
             case State.WAITING:
-                if(networkGameData.networkPlayers.Count > 0)
+                if(networkPlayers.Count > 0)
                 {
                     state = State.STARTING;
                 }
                 return;
             case State.PAUSED:
-                //Need To Save Round Time
                 break;
 
             case State.STARTING:

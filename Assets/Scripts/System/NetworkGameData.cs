@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class NetworkGameData : NetworkBehaviour{
 
     public class SyncListPlayerRecord : SyncListStruct<PlayerRecord> { }
-    public SyncListPlayerRecord networkPlayers = new SyncListPlayerRecord();
+    public SyncListPlayerRecord networkPlayers;
 
     public static NetworkGameData instance;
 
@@ -22,4 +22,6 @@ public class NetworkGameData : NetworkBehaviour{
             this.id = id;
         }
     }
+
+ 
 }
