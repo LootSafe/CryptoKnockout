@@ -22048,11 +22048,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888db4e8fb62e8f4893cd6e8574ffc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Doge: {fileID: 1535017510808085473, guid: ec2809ade43433b4a9c6d56c092ccbe6, type: 3}
-  Bjorn: {fileID: 6903247362080215574, guid: 3813c517dd8df994fb873df3352a4c62, type: 3}
-  EthBot: {fileID: 1989421226341838, guid: f874a17e21a95d647a0a694c4a532091, type: 3}
-  BTCBoy: {fileID: 6838849166252220265, guid: 24654edb35e9c1b4497be7fe273acdaa, type: 3}
-  Monero: {fileID: 1338820219904830, guid: 847b0b69584ece94fbea440b00e6f066, type: 3}
+  Doge: {fileID: 7123634422004252758, guid: f991e29791f64cb4cb4e6455133a4f2d, type: 3}
+  Bjorn: {fileID: 2804820810006378988, guid: 9292813d8ebd5564a90e21bf4c0f102e, type: 3}
+  EthBot: {fileID: 7498384677324316619, guid: 4d33c8fb74a52554ba84231de8ea4f5c, type: 3}
+  BTCBoy: {fileID: 2056548056450588650, guid: 94297bba3cebbde4ea1f5b8429c23c98, type: 3}
+  Monero: {fileID: 855315202219406893, guid: af603a9babb6e7a44b7e837de3d752d9, type: 3}
 --- !u!1 &1808449335
 GameObject:
   m_ObjectHideFlags: 0
