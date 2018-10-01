@@ -1,11 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!4 &4964708733487380825 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4349541102688524, guid: 4fec606286238164e9df858503faa518,
-    type: 3}
-  m_PrefabInstance: {fileID: 4965574468229914709}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989421226341838
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4227851838793622}
-  - component: {fileID: 6073124005586851987}
   m_Layer: 0
   m_Name: EthPlayer
   m_TagString: Untagged
@@ -38,39 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6073124005586851987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989421226341838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!1 &4014614009573701553 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 112794, guid: ec998bfabd66e44568be0df427a8af96,
@@ -88,6 +48,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4349541102688524, guid: 4fec606286238164e9df858503faa518,
     type: 3}
   m_PrefabInstance: {fileID: 4339807521151361010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4964708733487380825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4349541102688524, guid: 4fec606286238164e9df858503faa518,
+    type: 3}
+  m_PrefabInstance: {fileID: 4965574468229914709}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7370358498690700437
 GameObject:

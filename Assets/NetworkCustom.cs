@@ -24,7 +24,7 @@ public class NetworkCustom : NetworkManager
         Debug.Log("server add with message " + chosenCharacter);
         GameObject player;
         GameObject prefab = CharacterSwapper.GetCharacter(selectedCharacter);
-        Transform startPos = GameObject.FindGameObjectWithTag("P1Spawn").GetComponent<Transform>();
+        Transform startPos = Game.GetInstance().GetSpawnPosition();
 
         if (startPos != null)
         {

@@ -68,13 +68,9 @@ public class Game : MonoBehaviour {
     public void Start()
     {
         Debug.Log("I was loaded Once");
-        state = State.WAITING;
+        state = State.STARTING;
         //escapeMenu = gl.escapeMenu;
 
-        if(gameMode == GameMode.NETWORKMULTIPLAYER)
-        {
-            networkGameData = new NetworkGameData();
-        }
         
     }
     /*************************************************************************/
@@ -254,7 +250,7 @@ public class Game : MonoBehaviour {
 
             }
         }
-       
+
 
         if (playerNumber >= networkGameData.networkPlayers.Count) return null;
         GameObject player = ClientScene.FindLocalObject(networkGameData.networkPlayers[playerNumber].id.netId);
@@ -341,12 +337,6 @@ public class Game : MonoBehaviour {
         //TODO Updates based on inputs and notifications - Biggest being death notfication
         switch (state)
         {
-            case State.WAITING:
-                if(networkGameData.networkPlayers.Count > 0)
-                {
-                    state = State.STARTING;
-                }
-                return;
             case State.PAUSED:
                 //Need To Save Round Time
                 break;
@@ -484,7 +474,6 @@ public class Game : MonoBehaviour {
     /*************************************************************************/
     public enum State
     {
-        WAITING,
         PAUSED,
         STARTING,
         ROUND_BEGINING,
@@ -492,7 +481,7 @@ public class Game : MonoBehaviour {
         SUPER,
         ROUND_ENDING,
         SUMMARIZING,
-        COMPLETED,
+        COMPLETED
     }
 
     public enum GameMode
