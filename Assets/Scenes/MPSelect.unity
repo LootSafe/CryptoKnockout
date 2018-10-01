@@ -3015,8 +3015,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224282369072679188}
   - component: {fileID: 222862284937404202}
+  - component: {fileID: 114507366713814824}
   - component: {fileID: 114408877150552180}
-  - component: {fileID: 1808903502592047}
   m_Layer: 0
   m_Name: Bjorn
   m_TagString: Untagged
@@ -3054,6 +3054,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808903502592046}
   m_CullTransparentMesh: 0
+--- !u!114 &114507366713814824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808903502592046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e013ccba8aee9d4ea9e4f21e87c9790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatar_left: {fileID: 21300004, guid: 30046de5a260dee42a33e714d053f701, type: 3}
+  avatar_right: {fileID: 21300006, guid: 6616a3d366012bf459b19488b4ed7699, type: 3}
+  character: 0
+  up: {fileID: 1808903641052406}
+  down: {fileID: 1808903658758376}
+  left: {fileID: 1808904128172339}
+  right: {fileID: 1808903641052406}
+  selectionIndicator: {fileID: 7365938537021885418}
+  interactable: 1
+  appearance:
+    targetGraphic: {fileID: 114630236466530478}
+    active: {r: 1, g: 1, b: 1, a: 0}
+    normal: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0}
+    disabled: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114408877150552180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3082,21 +3108,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &1808903502592047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808903502592046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3640b3f730e8a99479d7a0fe425865e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p1Tab: {fileID: 5824926573015094471}
-  p2Tab: {fileID: 2743349592787432342}
-  Root: {fileID: 0}
 --- !u!1 &1808903641052406
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,7 +5331,7 @@ GameObject:
   - component: {fileID: 5171799423596673569}
   - component: {fileID: 6007050538088735455}
   - component: {fileID: 5653873500007893913}
-  - component: {fileID: 7365938536891909939}
+  - component: {fileID: 7415935829595790311}
   m_Layer: 0
   m_Name: SelectionIndicator
   m_TagString: Untagged
@@ -5402,7 +5413,7 @@ MonoBehaviour:
   minMultiplier: 1
   randomize: 1
   frequency: 5
---- !u!114 &7365938536891909939
+--- !u!114 &7415935829595790311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5411,7 +5422,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365938536891909938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3640b3f730e8a99479d7a0fe425865e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ee80b58c786b59e4e96717becd814a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1Tab: {fileID: 5824926572608296991}
@@ -5429,7 +5440,7 @@ GameObject:
   - component: {fileID: 5171799423578730047}
   - component: {fileID: 6007050537985341121}
   - component: {fileID: 5653873499958239111}
-  - component: {fileID: 7365938536983024429}
+  - component: {fileID: 7415935829707608057}
   m_Layer: 0
   m_Name: SelectionIndicator
   m_TagString: Untagged
@@ -5511,7 +5522,7 @@ MonoBehaviour:
   minMultiplier: 1
   randomize: 1
   frequency: 5
---- !u!114 &7365938536983024429
+--- !u!114 &7415935829707608057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5520,7 +5531,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365938536983024428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3640b3f730e8a99479d7a0fe425865e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ee80b58c786b59e4e96717becd814a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1Tab: {fileID: 5824926572657462273}
@@ -5538,7 +5549,7 @@ GameObject:
   - component: {fileID: 5171799424003602169}
   - component: {fileID: 6007050537690230279}
   - component: {fileID: 5653873500406302529}
-  - component: {fileID: 7365938537021885419}
+  - component: {fileID: 7415935830002718527}
   m_Layer: 0
   m_Name: SelectionIndicator
   m_TagString: Untagged
@@ -5620,7 +5631,7 @@ MonoBehaviour:
   minMultiplier: 1
   randomize: 1
   frequency: 5
---- !u!114 &7365938537021885419
+--- !u!114 &7415935830002718527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5629,7 +5640,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365938537021885418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3640b3f730e8a99479d7a0fe425865e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ee80b58c786b59e4e96717becd814a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1Tab: {fileID: 5824926573015094471}
@@ -5647,7 +5658,7 @@ GameObject:
   - component: {fileID: 5171799424451977188}
   - component: {fileID: 6007050538172155674}
   - component: {fileID: 5653873500897422940}
-  - component: {fileID: 7365938537646433016}
+  - component: {fileID: 7415935831693409826}
   m_Layer: 0
   m_Name: SelectionIndicator
   m_TagString: Untagged
@@ -5729,7 +5740,7 @@ MonoBehaviour:
   minMultiplier: 1
   randomize: 1
   frequency: 5
---- !u!114 &7365938537646433016
+--- !u!114 &7415935831693409826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5738,7 +5749,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365938537646433015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3640b3f730e8a99479d7a0fe425865e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ee80b58c786b59e4e96717becd814a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1Tab: {fileID: 5824926573597703642}
@@ -5756,7 +5767,7 @@ GameObject:
   - component: {fileID: 5171799425035740571}
   - component: {fileID: 6007050538670538085}
   - component: {fileID: 5653873501453980707}
-  - component: {fileID: 7365938538205026441}
+  - component: {fileID: 7415935831203480669}
   m_Layer: 0
   m_Name: SelectionIndicator
   m_TagString: Untagged
@@ -5838,7 +5849,7 @@ MonoBehaviour:
   minMultiplier: 1
   randomize: 1
   frequency: 5
---- !u!114 &7365938538205026441
+--- !u!114 &7415935831203480669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5847,7 +5858,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365938538205026440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3640b3f730e8a99479d7a0fe425865e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ee80b58c786b59e4e96717becd814a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1Tab: {fileID: 5824926574114408357}
@@ -5865,7 +5876,7 @@ GameObject:
   - component: {fileID: 5171799424966692807}
   - component: {fileID: 6007050538869331769}
   - component: {fileID: 5653873501389340287}
-  - component: {fileID: 7365938538278597333}
+  - component: {fileID: 7415935830996233729}
   m_Layer: 0
   m_Name: SelectionIndicator
   m_TagString: Untagged
@@ -5947,7 +5958,7 @@ MonoBehaviour:
   minMultiplier: 1
   randomize: 1
   frequency: 5
---- !u!114 &7365938538278597333
+--- !u!114 &7415935830996233729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5956,7 +5967,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365938538278597332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3640b3f730e8a99479d7a0fe425865e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ee80b58c786b59e4e96717becd814a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1Tab: {fileID: 5824926573911092729}
