@@ -33,8 +33,8 @@ public class Game : MonoBehaviour {
     private float pauseTime;
     private State lastState;
 
-    //State
-    public State state = State.WAITING;
+   //State
+    private State state = State.STARTING;
     private int currentRound = 0;
     private float countDownTimer = 0;
 
@@ -264,9 +264,14 @@ public class Game : MonoBehaviour {
         else
         {
             if (playerNumber >= networkGameData.networkPlayers.Count) return null;
+            
             GameObject player = ClientScene.FindLocalObject(networkGameData.networkPlayers[playerNumber].id.netId);
+
             if (!player) return null;
+
+            
             Player result = player.GetComponentInChildren<Player>();
+            Debug.Log(result);
             return result;
         }
     }
@@ -465,24 +470,14 @@ public class Game : MonoBehaviour {
 
     private void respawnOpponents()
     {
-        if (gameMode == GameMode.LOCALMULTIPLAYER)
-        {
-            localP1.GetComponent<Transform>().position = spawnP1.position;
-            localP2.GetComponent<Transform>().position = spawnP2.position;
-            Vector3 p2LS = localP2.transform.localScale;
-            localP2.transform.localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
-            localP1.respawn();
-            localP2.respawn();
-        }
-        else
-        {
-            Player p;
-            p = GetPlayer(0);
-            if (p) p.respawn();
-            p = GetPlayer(1);
-            if (p) p.respawn();
-        }
 
+        localP1.GetComponent<Transform>().position = spawnP1.position;
+        localP2.GetComponent<Transform>().position = spawnP2.position;
+        Vector3 p2LS = localP2.transform.localScale;
+        localP2.transform.localScale = new Vector3(-1 * Mathf.Abs(p2LS.x), p2LS.y, p2LS.z);
+
+        localP1.respawn();
+        localP2.respawn();
     }
 
     private bool NeedNextRound(Player p1, Player p2)

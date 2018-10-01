@@ -55,28 +55,20 @@ public class PlayerInputHandler : MonoBehaviour {
             pauseMenuLock = false;
         }
 
-
+        if (!player1 || !player2)
+        {
+            player1 = game.GetPlayer(0);
+            player2 = game.GetPlayer(1);
+            return;
+        }
 
         if(game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER)
         {
-            if (!player1 || !player2)
-            {
-                player1 = game.GetPlayer(0);
-                player2 = game.GetPlayer(1);
-                return;
-            }
             UpdatePlayer(player1, 1);
             UpdatePlayer(player2, 2);
         }
         else
         {
-            Debug.Log("IM HERE");
-            if (!player1)
-            {
-                player1 = game.GetPlayer(0);
-                return;
-            }
-            Debug.Log("AND HERE");
             UpdatePlayer(player1, 1);
         }
 
@@ -86,9 +78,7 @@ public class PlayerInputHandler : MonoBehaviour {
     private void UpdatePlayer(Player player, int playerNumber)
     {
         if (!player) return;
-        Debug.Log("1");
         if (!player.IsAlive()) return;
-        Debug.Log("2");
         PlayerIndex pi;
         switch (playerNumber)
         {
@@ -123,7 +113,7 @@ public class PlayerInputHandler : MonoBehaviour {
 
         player.IsAttacking();
         if (game.GetState() != Game.State.FIGHTING) return;
-        Debug.Log("HMMM");
+
         Transform transform = player.GetComponentInParent<Transform>();
         Rigidbody2D rigidbody = player.GetComponentInParent<Rigidbody2D>();
         PlayerAnimatorController pac = player.GetComponent<PlayerAnimatorController>();
