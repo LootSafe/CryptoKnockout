@@ -181,9 +181,6 @@ public class Game : MonoBehaviour {
             state = State.PAUSED;
             pauseTime = Time.time;
             escapeMenu.SetActive(true);
-        } else
-        {
-            escapeMenu.SetActive(true);
         }
     }
 
@@ -193,10 +190,6 @@ public class Game : MonoBehaviour {
         {
             state = lastState;
             roundStartTime = roundStartTime + (Time.time - pauseTime);
-            escapeMenu.SetActive(false);
-        }
-        else
-        {
             escapeMenu.SetActive(false);
         }
     }
@@ -248,7 +241,7 @@ public class Game : MonoBehaviour {
     public Player GetPlayer(int playerNumber)
     {
         //Temp
-        if (gameMode == GameMode.LOCALMULTIPLAYER)
+        if(gameMode == GameMode.LOCALMULTIPLAYER)
         {
             switch (playerNumber)
             {
@@ -261,19 +254,13 @@ public class Game : MonoBehaviour {
 
             }
         }
-        else
-        {
-            if (playerNumber >= networkGameData.networkPlayers.Count) return null;
-            
-            GameObject player = ClientScene.FindLocalObject(networkGameData.networkPlayers[playerNumber].id.netId);
+       
 
-            if (!player) return null;
-
-            
-            Player result = player.GetComponentInChildren<Player>();
-            Debug.Log(result);
-            return result;
-        }
+        if (playerNumber >= networkGameData.networkPlayers.Count) return null;
+        GameObject player = ClientScene.FindLocalObject(networkGameData.networkPlayers[playerNumber].id.netId);
+        if (!player) return null;
+        Player result = player.GetComponent<Player>();
+        return result;
     }
 
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInputHandler : MonoBehaviour {
+public class LocalMultiplayerPlayerController : MonoBehaviour {
 
     float[] lastHeadings = new float[8];
     bool[,] controlLocks = new bool[8, 7];
@@ -36,6 +36,15 @@ public class PlayerInputHandler : MonoBehaviour {
         //Run Only if Local Multiplayer
         if (!game) return;
 
+        if (game.GetGameMode() != Game.GameMode.LOCALMULTIPLAYER)
+        {
+            Debug.Log("Game is not in Local Multiplayer Mode");
+            Destroy(this);
+            return;
+        }
+
+
+
         //Escape Menu
         if (GamePad.GetButton(CButton.Back) ||GamePad.GetButton(CButton.Start)){
             if (!pauseMenuLock)
@@ -62,22 +71,12 @@ public class PlayerInputHandler : MonoBehaviour {
             return;
         }
 
-        if(game.GetGameMode() == Game.GameMode.LOCALMULTIPLAYER)
-        {
-            UpdatePlayer(player1, 1);
-            UpdatePlayer(player2, 2);
-        }
-        else
-        {
-            UpdatePlayer(player1, 1);
-        }
-
-
+        UpdatePlayer(player1, 1);
+        UpdatePlayer(player2, 2);
     }
 
     private void UpdatePlayer(Player player, int playerNumber)
     {
-        if (!player) return;
         if (!player.IsAlive()) return;
         PlayerIndex pi;
         switch (playerNumber)
@@ -112,6 +111,7 @@ public class PlayerInputHandler : MonoBehaviour {
         }
 
         player.IsAttacking();
+        if (!player) return;
         if (game.GetState() != Game.State.FIGHTING) return;
 
         Transform transform = player.GetComponentInParent<Transform>();
