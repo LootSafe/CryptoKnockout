@@ -445,12 +445,12 @@ public class Game : NetworkBehaviour {
             Debug.Log("Spawning ---");
             //Spawn Players 1 and 2
             GameObject p1 = Instantiate(CharacterSwapper.GetCharacter(GlobalGameData.GetInstance().player1Char), spawnP1.position, spawnP1.rotation);
-            localP1 = p1.GetComponent<Player>();
+            localP1 = p1.GetComponentInChildren<Player>();
             localP1.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player1Char));
             localP1.SetPlayerNumber(0);
 
             GameObject p2 = Instantiate(CharacterSwapper.GetCharacter(GlobalGameData.GetInstance().player2Char), spawnP2.position, spawnP2.rotation);
-            localP2 = p2.GetComponent<Player>();
+            localP2 = p2.GetComponentInChildren<Player>();
             localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
             localP2.SetPlayerNumber(1);
 
