@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LocalMultiplayerPlayerController : MonoBehaviour {
 
-    float[] lastHeadings = new float[8];
-    bool[,] controlLocks = new bool[8, 7];
-    float[] lastMovements = new float[8];
+    float[] lastHeadings;
+    bool[,] controlLocks;
+    float[] lastMovements;
 
     bool jumpLock;
 
@@ -21,14 +21,21 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
     void Start () {
         game = Game.GetInstance();
         Debug.Log("Starting Up Game Controller");
+
+
+        //Initialize Player Headings
+        lastHeadings = new float[8];
         //P1
         lastHeadings[0] = 1;
         //P2
         lastHeadings[1] = -1;
 
+
+        //Initialize Control Locks
+        controlLocks = new bool[8, 7];
+        lastMovements = new float[8];
+
 	}
-
-
 
     // Update is called once per frame
     void FixedUpdate() {
@@ -110,7 +117,6 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
                 break;
         }
 
-        player.IsAttacking();
         if (!player) return;
         if (game.GetState() != Game.State.FIGHTING) return;
 
