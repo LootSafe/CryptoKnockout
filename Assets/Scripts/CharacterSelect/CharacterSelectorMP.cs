@@ -35,6 +35,8 @@ public class CharacterSelectorMP : NetworkBehaviour {
         startDelayTimer = Time.time;
         selected[1] = starts[1];
         selected[1].GetComponent<CharacterSelectButtons>().Select();
+        selected[2] = starts[2];
+        selected[2].GetComponent<CharacterSelectButtons>().Select();
         instance = this;
         data = GlobalGameData.GetInstance();
         locker = new InputLocker();

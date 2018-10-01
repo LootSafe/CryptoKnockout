@@ -33,8 +33,7 @@ public class ButtonHandler : MonoBehaviour {
 
     public void BtnMultiplayerPlay()
     {
-        GlobalGameData.GetInstance().selectedGameMode = Game.GameMode.NETWORKMULTIPLAYER;
-        SceneManager.LoadScene("MPSelect");
+        SceneManager.LoadScene("CharacterSelect");
     }
 
     public void BtnQuit()
