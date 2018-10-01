@@ -1,11 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!4 &1304679623323030659 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4815243918191540, guid: dc10d8de8491f5643bc2f3dff05b8575,
-    type: 3}
-  m_PrefabInstance: {fileID: 1299917705785917239}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1211478544407716763
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,9 +73,8 @@ GameObject:
   - component: {fileID: 1243185194860678107}
   - component: {fileID: 2438019442991909772}
   - component: {fileID: 7179359174312839732}
-  - component: {fileID: 8245996124128676450}
   m_Layer: 9
-  m_Name: Monero
+  m_Name: Player (1) 3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,39 +421,6 @@ MonoBehaviour:
   portalSet: 0
   hitObject: {fileID: 9106183813096165425}
   hitLength: 1
---- !u!114 &8245996124128676450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211719655720570023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!1 &1212466899887218051
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +868,12 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!4 &1304679623323030659 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4815243918191540, guid: dc10d8de8491f5643bc2f3dff05b8575,
+    type: 3}
+  m_PrefabInstance: {fileID: 1299917705785917239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1332966722107118907
 GameObject:
   m_ObjectHideFlags: 0
