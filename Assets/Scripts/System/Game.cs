@@ -321,7 +321,7 @@ public class Game : MonoBehaviour {
     {
         if (instance == null)
         {
-            Debug.Log("Game was not properly instantiated");
+           //Debug.Log("Game was not properly instantiated");
         }
         //Debug.Log("Offering Game");
         return instance;

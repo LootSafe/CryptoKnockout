@@ -20,27 +20,27 @@ public class CharacterSwapper : MonoBehaviour {
         return instance;
     }
 
-    private static Character.Characters GetRandom()
+    private static Characters GetRandom()
     {
-        int choice = Random.Range((int)0, System.Enum.GetNames(typeof(Character.Characters)).Length);
-        return (Character.Characters)choice;
+        int choice = Random.Range((int)0, System.Enum.GetNames(typeof(Characters)).Length);
+        return (Characters)choice;
     }
 
-    public static GameObject GetCharacter(Character.Characters c)
+    public static GameObject GetCharacter(Characters c)
     {
         switch (c)
         {
-            case Character.Characters.BJORN:
+            case Characters.BJORN:
                 return GetInstance().Bjorn;
-            case Character.Characters.DOGE:
+            case Characters.DOGE:
                 return GetInstance().Doge;
-            case Character.Characters.ETHBOT:
+            case Characters.ETHBOT:
                 return GetInstance().EthBot;
-            case Character.Characters.BITCOINBOY:
+            case Characters.BITCOINBOY:
                 return GetInstance().BTCBoy;
-            case Character.Characters.MONERO:
+            case Characters.MONERO:
                 return GetInstance().Monero;
-            case Character.Characters.RANDOM:
+            case Characters.RANDOM:
                 return GetCharacter(GetRandom());
 
             default:
