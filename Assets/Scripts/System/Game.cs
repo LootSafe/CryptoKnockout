@@ -20,12 +20,12 @@ public class Game : MonoBehaviour {
     private GameMode gameMode;
     private NetworkGameData networkGameData;
     private static Game instance;
-    private static Player localPlayer;
+    private static PlayerEntity localPlayer;
 
     //Temp
     public GameObject playerPrefab;
-    private Player localP1;
-    private Player localP2;
+    private PlayerEntity localP1;
+    private PlayerEntity localP2;
     Transform spawnP1;
     Transform spawnP2;
 
@@ -39,7 +39,7 @@ public class Game : MonoBehaviour {
     private float countDownTimer = 0;
 
     //Super
-    private Player superUser;
+    private PlayerEntity superUser;
     private bool superUsed;
 
     //Escape Menu
@@ -79,9 +79,9 @@ public class Game : MonoBehaviour {
     /// Notifies game of a player death - If not hosting Notifies host
     /// </summary>
     /// <param name="player"></param>
-    public void TriggerDeath(Player player)
+    public void TriggerDeath(PlayerEntity player)
     {
-        Player op = GetOpponent(player.GetPlayerNumber());
+        PlayerEntity op = GetOpponent(player.GetPlayerNumber());
         roundWinner = op.GetPlayerNumber() + 1;
         op.AddToScore();
 
@@ -90,7 +90,7 @@ public class Game : MonoBehaviour {
         roundEndTimer = Time.time;
     }
 
-    public bool TriggerSuper(Player player)
+    public bool TriggerSuper(PlayerEntity player)
     {
         if (!superUsed)
         {
@@ -103,7 +103,7 @@ public class Game : MonoBehaviour {
         superUsed = false;
         return false;
     }
-    public void RegisterPlayer(Player player, NetworkIdentity id)
+    public void RegisterPlayer(PlayerEntity player, NetworkIdentity id)
     {
         //Temp
         if (gameMode == GameMode.LOCALMULTIPLAYER) return;
@@ -115,7 +115,7 @@ public class Game : MonoBehaviour {
         }
     }
 
-    public void UnregisterPlayer(Player player, NetworkIdentity id)
+    public void UnregisterPlayer(PlayerEntity player, NetworkIdentity id)
     {
         //Temp
         if (gameMode == GameMode.LOCALMULTIPLAYER) return;
@@ -153,7 +153,7 @@ public class Game : MonoBehaviour {
         return GetPlayers().Length > 1 ? true : false;
     }
 
-    public int GetPlayerNumber(Player p)
+    public int GetPlayerNumber(PlayerEntity p)
     {
         
 
@@ -165,7 +165,7 @@ public class Game : MonoBehaviour {
         return roundWinner;
     }
 
-    public Player GetOpponent(int i)
+    public PlayerEntity GetOpponent(int i)
     {
         return i == 0 ? GetPlayer(1) : GetPlayer(0);
     }
@@ -234,7 +234,7 @@ public class Game : MonoBehaviour {
     /// </summary>
     /// <param name="playerNumber"></param>
     /// <returns></returns>
-    public Player GetPlayer(int playerNumber)
+    public PlayerEntity GetPlayer(int playerNumber)
     {
         //Temp
         if(gameMode == GameMode.LOCALMULTIPLAYER)
@@ -255,7 +255,7 @@ public class Game : MonoBehaviour {
         if (playerNumber >= networkGameData.networkPlayers.Count) return null;
         GameObject player = ClientScene.FindLocalObject(networkGameData.networkPlayers[playerNumber].id.netId);
         if (!player) return null;
-        Player result = player.GetComponent<Player>();
+        PlayerEntity result = player.GetComponent<PlayerEntity>();
         return result;
     }
 
@@ -272,12 +272,12 @@ public class Game : MonoBehaviour {
         }
     }
 
-    public Player[] GetPlayers()
+    public PlayerEntity[] GetPlayers()
     {
-        Player[] p;
+        PlayerEntity[] p;
         if (gameMode == GameMode.LOCALMULTIPLAYER)
         {
-            p = new Player[2];
+            p = new PlayerEntity[2];
             p[0] = localP1;
             p[1] = localP2;
         }
@@ -285,11 +285,11 @@ public class Game : MonoBehaviour {
         {
             GameObject tempPlayer;
             int i = 0;
-            p = new Player[networkGameData.networkPlayers.Count];
+            p = new PlayerEntity[networkGameData.networkPlayers.Count];
             foreach(NetworkGameData.PlayerRecord playerRecord in networkGameData.networkPlayers)
             {
                 tempPlayer = ClientScene.FindLocalObject(playerRecord.id.netId);
-                p[i] = tempPlayer.GetComponent<Player>();
+                p[i] = tempPlayer.GetComponent<PlayerEntity>();
                 i++;
 
             }
@@ -308,7 +308,7 @@ public class Game : MonoBehaviour {
     /// Used to get the local instance of a player
     /// </summary>
     /// <returns> Local Player -> 1 Per Client </returns>
-    public static Player GetLocalPlayer()
+    public static PlayerEntity GetLocalPlayer()
     {
         return localPlayer;
     }
@@ -424,12 +424,12 @@ public class Game : MonoBehaviour {
             Debug.Log("Spawning ---");
             //Spawn Players 1 and 2
             GameObject p1 = Instantiate(CharacterSwapper.GetCharacter(GlobalGameData.GetInstance().player1Char), spawnP1.position, spawnP1.rotation);
-            localP1 = p1.GetComponentInChildren<Player>();
+            localP1 = p1.GetComponentInChildren<PlayerEntity>();
             localP1.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player1Char));
             localP1.SetPlayerNumber(0);
 
             GameObject p2 = Instantiate(CharacterSwapper.GetCharacter(GlobalGameData.GetInstance().player2Char), spawnP2.position, spawnP2.rotation);
-            localP2 = p2.GetComponentInChildren<Player>();
+            localP2 = p2.GetComponentInChildren<PlayerEntity>();
             localP2.InitializeWithCharacter(Character.Get(GlobalGameData.GetInstance().player2Char));
             localP2.SetPlayerNumber(1);
 
@@ -452,7 +452,7 @@ public class Game : MonoBehaviour {
         localP2.respawn();
     }
 
-    private bool NeedNextRound(Player p1, Player p2)
+    private bool NeedNextRound(PlayerEntity p1, PlayerEntity p2)
     {
         bool odd = rounds % 2 > 0;
         if (Mathf.FloorToInt(p1.GetScore()) > rounds / 2)

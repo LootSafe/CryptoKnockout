@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour {
-    public Player player;
+    public PlayerEntity player;
     float lastHit;
     public float delay = .02f;
     public float overrideDamage = 10;
@@ -14,7 +14,7 @@ public class PlayerDamage : MonoBehaviour {
 
     void Start()
     {
-        player = gameObject.GetComponentInParent<Player>();
+        player = gameObject.GetComponentInParent<PlayerEntity>();
         AudioSystem.Register(audioSource);
     }
 
@@ -74,7 +74,7 @@ public class PlayerDamage : MonoBehaviour {
         {
             if (other.gameObject == player.gameObject) return;
 
-            float damageDealt = other.GetComponent<Player>().TakeDamage(overrideDamage, player);
+            float damageDealt = other.GetComponent<PlayerEntity>().TakeDamage(overrideDamage, player);
             gameObject.SetActive(false);
             if (player)
             {

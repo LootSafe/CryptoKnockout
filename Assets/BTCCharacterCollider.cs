@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BTCCharacterCollider : MonoBehaviour {
     private bool landed;
-    public Player player;
+    public PlayerEntity player;
     private Vector3 explosionLocation;
 
 	// Use this for initialization

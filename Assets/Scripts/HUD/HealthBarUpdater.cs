@@ -44,7 +44,7 @@ public class HealthBarUpdater : MonoBehaviour {
     public Text score;
 
     Game game;
-    Player player;
+    PlayerEntity player;
     float lastHit;
 
 	

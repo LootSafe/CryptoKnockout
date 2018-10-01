@@ -8,7 +8,7 @@ public class DamageIndicatorController : MonoBehaviour {
     public GameObject player;
     public Vector2 randomRange;
 
-    public void TriggerIndicator(float damage, Player source, bool critical)
+    public void TriggerIndicator(float damage, PlayerEntity source, bool critical)
     {
         RectTransform parent = GetComponentInParent<RectTransform>();
         Vector2 pLocation = player.transform.position;
@@ -27,7 +27,7 @@ public class DamageIndicatorController : MonoBehaviour {
         instance.GetComponent<DamageIndicator>().transform.SetParent(parent.transform, false);
         instance.transform.position = position;
 
-        instance.GetComponent<DamageIndicator>().Init(damage, player.GetComponent<Player>(), critical, source);
+        instance.GetComponent<DamageIndicator>().Init(damage, player.GetComponent<PlayerEntity>(), critical, source);
 
     }
 

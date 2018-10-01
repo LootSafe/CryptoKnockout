@@ -3,13 +3,13 @@ using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour
 {
-    Player player;
+    PlayerEntity player;
     Game game;
     float p1lastHeading = 1;
     void Start()
     {
         game = Game.GetInstance();
-        player = GetComponent<Player>();
+        player = GetComponent<PlayerEntity>();
     }
     void Update()
     {

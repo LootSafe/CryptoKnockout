@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ActionLocks {
 
-    Player player;
+    PlayerEntity player;
 
     bool punch, kick, block, super;
 
-    public ActionLocks(Player parent)
+    public ActionLocks(PlayerEntity parent)
     {
         player = parent;
     }

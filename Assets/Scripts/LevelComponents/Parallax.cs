@@ -181,7 +181,7 @@ public class Parallax : MonoBehaviour
         return false;
     }
     
-    private Player GetPlayer(int index)
+    private PlayerEntity GetPlayer(int index)
     {
         return game.GetPlayer(index);
     }

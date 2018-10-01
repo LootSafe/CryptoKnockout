@@ -13,7 +13,7 @@ public class DamageIndicator : MonoBehaviour {
         startTime = Time.time;  
     }
     
-    public void Init(float Damage, Player player, bool critical, Player source)
+    public void Init(float Damage, PlayerEntity player, bool critical, PlayerEntity source)
     {
         if (critical)
         {   

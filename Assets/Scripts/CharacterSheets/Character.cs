@@ -8,7 +8,7 @@ public abstract class Character {
     public float health = 400, special = 250, defence = 10, strength = 20, moveSpeed = 10, punchDamage, kickDamage, special1Damage, special2Damage, ultraDamage;
     public string name;
     protected List<string> hitWords;
-    protected Player player;
+    protected PlayerEntity player;
     protected SuperAnimationControl SAC;
     /// <summary>
     /// This should be implemented to calculate damage taken based on characters special attributes, strength,
@@ -51,7 +51,7 @@ public abstract class Character {
         return strength + Random.Range(1f, 21f);
     }
 
-    public void initializePlayer(Player player)
+    public void initializePlayer(PlayerEntity player)
     {
         this.player = player;
         //Debug.Log("Player reference has been updated for " + name);

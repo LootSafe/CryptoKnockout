@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Player : MonoBehaviour {
+public class PlayerEntity : MonoBehaviour {
     private float lives = 1;
     private bool alive = false;
     public float health = 0;
@@ -101,7 +101,7 @@ public class Player : MonoBehaviour {
 
 
             //To be done only by server
-    public float TakeDamage(float damage, Player source)
+    public float TakeDamage(float damage, PlayerEntity source)
     {
 
         if (!alive) return 0;

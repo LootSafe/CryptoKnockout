@@ -13,7 +13,7 @@ public class LaserRandomScript : MonoBehaviour {
     public Transform LaserSource;
     private float lastFire;
     private bool active;
-    private Player[] players;
+    private PlayerEntity[] players;
     public Transform currentTarget;
 
     public int fireChance;
@@ -57,7 +57,7 @@ public class LaserRandomScript : MonoBehaviour {
     {
         List<Transform> viableTargets = new List<Transform>();
         //Check for Radius
-        foreach (Player p in players)
+        foreach (PlayerEntity p in players)
         {
             if (Vector2.Distance(LaserSource.position, p.transform.position) <= targetRange)
             {
@@ -139,7 +139,7 @@ public class LaserRandomScript : MonoBehaviour {
             players = game.GetPlayers();
             return;
         }
-       foreach(Player p in players)
+       foreach(PlayerEntity p in players)
         {
             if (!p)
             {

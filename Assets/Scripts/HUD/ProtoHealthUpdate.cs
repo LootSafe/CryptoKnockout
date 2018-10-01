@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ProtoHealthUpdate : MonoBehaviour {
-    public Player player;
+    public PlayerEntity player;
 	// Use this for initialization
 	void Start () {
 		

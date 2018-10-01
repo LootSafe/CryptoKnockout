@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DeathTrapScript : MonoBehaviour {
 
-    public Player player;
+    public PlayerEntity player;
     public float damage = 10f;
     float lastHit;
     public float delay = .02f;
 
     void Start()
     {
-        player = gameObject.GetComponentInParent<Player>();
+        player = gameObject.GetComponentInParent<PlayerEntity>();
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class DeathTrapScript : MonoBehaviour {
     {
         if (other.tag == "Player" && other != player)
         {
-            float damageDealt = other.GetComponent<Player>().TakeDamage(damage, player);
+            float damageDealt = other.GetComponent<PlayerEntity>().TakeDamage(damage, player);
             if (player) player.AddToScore(damageDealt);
         }
     }

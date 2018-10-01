@@ -48,7 +48,7 @@ public class HorseLaserCast : MonoBehaviour {
 
             if(hit.collider.tag == "Player")
             {
-                hit.collider.GetComponent<Player>().TakeDamage(1, null);
+                hit.collider.GetComponent<PlayerEntity>().TakeDamage(1, null);
             }
             
             

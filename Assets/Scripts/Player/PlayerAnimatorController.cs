@@ -11,7 +11,7 @@ public class PlayerAnimatorController : MonoBehaviour
     public enum ANIMATION_STATE {IDLE, BLOCK, DEAD, JUMP, HURT, LOWPUNCH, LOWKICK, HIGHPUNCH, HIGHKICK, SUPER, MIDSUPER, POSTSUPER, ENDSUPER, DUCK , LAND};
 
 
-    Player player;
+    PlayerEntity player;
     /* Animator Object */
 
     Animator playerAnimator;
@@ -44,7 +44,7 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         UpdateController();
         SetAnimationState(ANIMATION_STATE.IDLE);
-        player = GetComponent<Player>();
+        player = GetComponent<PlayerEntity>();
         rgbody = GetComponent<Rigidbody2D>();
     }
 

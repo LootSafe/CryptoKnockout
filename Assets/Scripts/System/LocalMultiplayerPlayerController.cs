@@ -13,8 +13,8 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
     bool pauseMenuLock = false;
 
     Game game;
-    Player player1;
-    Player player2;
+    PlayerEntity player1;
+    PlayerEntity player2;
 
 
     // Use this for initialization
@@ -75,7 +75,7 @@ public class LocalMultiplayerPlayerController : MonoBehaviour {
         UpdatePlayer(player2, 2);
     }
 
-    private void UpdatePlayer(Player player, int playerNumber)
+    private void UpdatePlayer(PlayerEntity player, int playerNumber)
     {
         if (!player.IsAlive()) return;
         PlayerIndex pi;

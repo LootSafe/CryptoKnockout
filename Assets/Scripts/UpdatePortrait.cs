@@ -7,7 +7,7 @@ public class UpdatePortrait : MonoBehaviour {
     private Image image;
     public HealthBarUpdater hbu;
     private Game game;
-    Player player;
+    PlayerEntity player;
 	// Use this for initialization
 	void Start () {
         image = GetComponent<Image>();

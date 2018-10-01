@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlaySound : StateMachineBehaviour {
 
-    private Player player;
+    private PlayerEntity player;
     public AudioClip audioClip;
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         if (audioClip)
         {
-            player = animator.gameObject.GetComponent<Player>();
+            player = animator.gameObject.GetComponent<PlayerEntity>();
             player.playSound(audioClip);
         }
 	}

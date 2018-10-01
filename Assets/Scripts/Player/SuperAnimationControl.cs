@@ -12,20 +12,20 @@ public class SuperAnimationControl : MonoBehaviour {
     public GameObject animationObject;
 
     private PlayerAnimatorController PAC;
-    protected Player player;
+    protected PlayerEntity player;
 
     protected float midTime;
     protected float postTime;
     protected float endTime;
     protected float waitTime;
 
-    protected Player opponent;
+    protected PlayerEntity opponent;
     protected Game game;
     protected Rigidbody2D rigidbody;
 
 	// Use this for initialization
 	public virtual void Start () {
-        player = GetComponent<Player>();
+        player = GetComponent<PlayerEntity>();
         PAC = GetComponent<PlayerAnimatorController>();
         midTime = Time.time + introLength;
         postTime = midTime + midLength;
