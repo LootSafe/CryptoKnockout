@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Player : NetworkBehaviour {
-    [SyncVar]
+public class Player : MonoBehaviour {
     private float lives = 1;
-    [SyncVar]
     private bool alive = false;
-    [SyncVar]
     public float health = 0;
     public Transform target;
-    [SyncVar]
     public float special = 0;
     private float maxSpecial = 100;
     private float maxHealth;
@@ -27,20 +23,15 @@ public class Player : NetworkBehaviour {
     public float timeIncapacitated = 0.2f;
 
     private float lastHit;
-    [SyncVar]
     private float damageDealt;
-    [SyncVar]
     public int currentStreak;
     private float lastDamageDealt;
-    [SyncVar]
     private float lastDamageDealtTime;
-    [SyncVar]
+
     private int score;
-    [SyncVar]
+
     public bool attacking = false;
-    [SyncVar]
     private bool blocking , ducking;
-    [SyncVar]
     private bool grounded = false;
 
     private int playerNumber;
@@ -56,8 +47,6 @@ public class Player : NetworkBehaviour {
 
     void Start()
     {
-        //NetworkManager.singleton.numPlayers;
-
         game = Game.GetInstance();
         lives = game.GetLives();
         game.RegisterPlayer(this, GetComponentInParent<NetworkIdentity>());
@@ -68,6 +57,7 @@ public class Player : NetworkBehaviour {
 
     public void InitializeWithCharacter(Character character)
     {
+
         //Animation Controller
         //GetComponent<Animator>().runtimeAnimatorController = character.GetAnimationController();
         //Debug.Log("Test");
@@ -94,10 +84,7 @@ public class Player : NetworkBehaviour {
 
             if (!grounded)
             {
-                if (!isServer)
-                {
-                    GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LAND);
-                }
+                GetComponent<PlayerAnimatorController>().SetAnimationState(PlayerAnimatorController.ANIMATION_STATE.LAND);
                 //Debug.Log("LANDED");
             }
             grounded = true;
@@ -106,7 +93,6 @@ public class Player : NetworkBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (!isServer) return;
         if (other.tag == "Floor")
         {
             grounded = false;
@@ -117,7 +103,6 @@ public class Player : NetworkBehaviour {
             //To be done only by server
     public float TakeDamage(float damage, Player source)
     {
-        if (!isServer) return 0;
 
         if (!alive) return 0;
         //Temp
@@ -164,8 +149,7 @@ public class Player : NetworkBehaviour {
 
     void KnockBack(float sourcePositionX)
     {
-        if (!isServer) return;
-        if (sourcePositionX < transform.position.x)
+        if(sourcePositionX < transform.position.x)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(300, 100));
         } else
@@ -176,8 +160,7 @@ public class Player : NetworkBehaviour {
 
     public void AddToScore(float damageDealt)
     {
-        if (!isServer) return;
-        if (damageDealt > 0 )
+        if(damageDealt > 0 )
         {
             if (Time.time < lastDamageDealtTime + game.streakTime || currentStreak == 0)
             {
@@ -195,7 +178,6 @@ public class Player : NetworkBehaviour {
 
     public void InterruptActions()
     {
-        if (!isServer) return;
         fist.SetActive(false);
         foot.SetActive(false);
         attacking = false;
@@ -213,7 +195,7 @@ public class Player : NetworkBehaviour {
 
     public void StartAttacking()
     {
-        if (isServer) attacking = true;
+        attacking = true;
     }
 
     public void StopAttacking()
@@ -228,12 +210,12 @@ public class Player : NetworkBehaviour {
 
     public void StartBlocking()
     {
-        if (isServer) blocking = true;
+        blocking = true;
     }
 
     public void StopBlocking()
     {
-        if (isServer)  blocking = false;
+        blocking = false;
     }
 
     public bool IsDucking()
@@ -243,7 +225,7 @@ public class Player : NetworkBehaviour {
 
     public void StartDucking()
     {
-        if(isServer) ducking = true;
+        ducking = true;
     }
 
     public void StopDucking()
@@ -284,7 +266,6 @@ public class Player : NetworkBehaviour {
     }
     public void AddSuccessfulHit(float damageDealt)
     {
-        if (!isServer) return;
         lastDamageDealtTime = Time.time;
         lastDamageDealt = damageDealt;
         currentStreak += 1;
@@ -349,7 +330,6 @@ public class Player : NetworkBehaviour {
 
     public void notifyDeath()
     {
-        if (!isServer) return;
         lives--;
         alive = false;
         game.TriggerDeath(this);
@@ -357,7 +337,7 @@ public class Player : NetworkBehaviour {
     
     public void AddToScore()
     {
-        if(isServer) score += 1;
+        score += 1;
     }
 
     public bool UseSuper()
@@ -366,10 +346,7 @@ public class Player : NetworkBehaviour {
         {
             if (game.TriggerSuper(this))
             {
-                if (isServer)
-                {
-                    special = 0;
-                }
+                special = 0;
                 superAnimationControl.StartSequence();
                 return true;
             }
@@ -403,7 +380,6 @@ public class Player : NetworkBehaviour {
 
     public void respawn()
     {
-        if (!isServer) return;
         alive = true;
         attacking = false;
         blocking = false;
@@ -417,7 +393,7 @@ public class Player : NetworkBehaviour {
     }
     // Update is called once per frame
 	void Update () {
-        if (!isServer) return;
+		
         //Update Hurt Interruption
         if(Time.time >= lastHit + timeIncapacitated)
         {

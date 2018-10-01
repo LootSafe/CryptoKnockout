@@ -39,6 +39,8 @@ public class NetworkCustom : NetworkManager
         player.GetComponentInChildren<Player>().InitializeWithCharacter(Character.Get(selectedCharacter));
         player.GetComponentInChildren<Player>().respawn();
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+        
+
     }
 
     public override void OnClientConnect(NetworkConnection conn)
@@ -47,12 +49,6 @@ public class NetworkCustom : NetworkManager
         spawnCharacter.chosenCharacter = GlobalGameData.GetInstance().player1Char;
 
         ClientScene.AddPlayer(conn, 0, spawnCharacter);
-    }
-
-    public override void OnStartClient(NetworkClient client)
-    {
-        
-        base.OnStartClient(client);
     }
 
 

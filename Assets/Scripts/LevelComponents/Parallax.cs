@@ -25,7 +25,8 @@ public class Parallax : MonoBehaviour
     Vector3 cameraStartPos;
 
     /* Methods */
-    void Start()
+
+    void Awake()
     {
         cameraStartPos = Camera.main.transform.position;
 
@@ -50,7 +51,7 @@ public class Parallax : MonoBehaviour
         /* Uncomment me later */
 
         //currentGameMode = Game.GetInstance().GetGameMode();
-        if (!game || !game.gameObject.activeSelf)
+        if (!game)
         {
             game = Game.GetInstance();
             return;
@@ -78,7 +79,7 @@ public class Parallax : MonoBehaviour
 
     void Update ()
     {
-        if (!game || !game.gameObject.activeSelf)
+        if (!game)
         {
             game = Game.GetInstance();
             return;
