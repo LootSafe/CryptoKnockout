@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AvatarUpdatorMP : MonoBehaviour {
 
-    public CharacterSelectorMP selections;
+    public CharacterSelector selections;
     public GameObject ReadyIndicator;
     public int playerNumber;
     public Text text;
