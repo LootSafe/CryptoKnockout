@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputLocker
 {
 
-    private float delay = 1f;
+    //private float delay = 1f;
     bool[,] axisLocks = new bool[9, 8];
     bool[,] buttonLocks = new bool[9, 10];
     float[,] axisTimes = new float[9, 8];

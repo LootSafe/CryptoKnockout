@@ -4,13 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UpdatePortrait : MonoBehaviour {
 
-    private Image image;
+
     public HealthBarUpdater hbu;
     private Game game;
     PlayerEntity player;
 	// Use this for initialization
 	void Start () {
-        image = GetComponent<Image>();
 
 	}
 	

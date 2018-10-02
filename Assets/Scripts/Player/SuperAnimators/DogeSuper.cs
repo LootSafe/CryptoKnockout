@@ -13,9 +13,6 @@ public class DogeSuper : SuperAnimationControl {
 
     public GameObject hitObject;
 
-
-
-    private int xDirection, yDirection;
     public override void Start()
     {
 
@@ -27,24 +24,6 @@ public class DogeSuper : SuperAnimationControl {
         PlayAudio.Play(audioSource, laserWarmUp);
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 
-
-        if (opponent.transform.position.y < transform.position.y)
-        {
-            yDirection = -1;
-        }
-        else
-        {
-            yDirection = 1;
-        }
-
-        if (opponent.transform.position.x < transform.position.x)
-        {
-            xDirection = -1;
-        }
-        else
-        {
-            xDirection = 1;
-        }
         Debug.Log("Just Here");
         base.StartSequence();
     }

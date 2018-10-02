@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Pun.Demo.PunBasics;
 /// <summary>
 /// Player manager.
 /// Handles fire Input and Beams.
 /// </summary>
-public class LaserPlayerAnimator : MonoBehaviourPunCallbacks
+public class LaserPlayerAnimator : MonoBehaviourPunCallbacks, IPunObservable
 {
 
+    [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
+    public static GameObject LocalPlayerInstance;
+
+
+    [Tooltip("The Player's UI GameObject Prefab")]
+    [SerializeField]
+    private GameObject playerUiPrefab;
     #region Private Fields
     [Tooltip("The current Health of Our Player")]
     public float Health = 1f;
@@ -23,10 +31,56 @@ public class LaserPlayerAnimator : MonoBehaviourPunCallbacks
     #region MonoBehaviour CallBacks
 
     /// <summary>
+    /// MonoBehaviour method called on GameObject by Unity during initialization phase.
+    /// </summary>
+    void Start()
+    {
+        CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
+
+
+        if (_cameraWork != null)
+        {
+            if (photonView.IsMine)
+            {
+                _cameraWork.OnStartFollowing();
+            }
+        }
+        else
+        {
+            Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
+        }
+
+        #if UNITY_5_4_OR_NEWER
+                // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
+                UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene, loadingMode) =>
+                {
+                    this.CalledOnLevelWasLoaded(scene.buildIndex);
+                };
+        #endif
+
+        if (playerUiPrefab != null)
+        {
+            GameObject _uiGo = Instantiate(playerUiPrefab);
+            _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+        }
+        else
+        {
+            Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
+        }
+
+    }
+
+    /// <summary>
     /// MonoBehaviour method called on GameObject by Unity during early initialization phase.
     /// </summary>
     void Awake()
     {
+        if (photonView.IsMine)
+        {
+            PlayerManager.LocalPlayerInstance = this.gameObject;
+        }
+        DontDestroyOnLoad(this.gameObject);
+
         if (beams == null)
         {
             Debug.LogError("<Color=Red><a>Missing</a></Color> Beams Reference.", this);
@@ -42,7 +96,10 @@ public class LaserPlayerAnimator : MonoBehaviourPunCallbacks
     /// </summary>
     void Update()
     {
-        ProcessInputs();
+        if (photonView.IsMine)
+        {
+            ProcessInputs();
+        }
         // trigger Beams active state
         if (beams != null && IsFiring != beams.activeSelf)
         {
@@ -85,6 +142,27 @@ public class LaserPlayerAnimator : MonoBehaviourPunCallbacks
         Health -= 0.1f * Time.deltaTime;
     }
 
+
+        #if !UNITY_5_4_OR_NEWER
+        /// <summary>See CalledOnLevelWasLoaded. Outdated in Unity 5.4.</summary>
+        void OnLevelWasLoaded(int level)
+        {
+            this.CalledOnLevelWasLoaded(level);
+        }
+        #endif
+
+
+    void CalledOnLevelWasLoaded(int level)
+    {
+        // check if we are outside the Arena and if it's the case, spawn around the center of the arena in a safe zone
+        if (!Physics.Raycast(transform.position, -Vector3.up, 5f))
+        {
+            transform.position = new Vector3(0f, 5f, 0f);
+        }
+
+        GameObject _uiGo = Instantiate(this.playerUiPrefab);
+        _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+    }
     #endregion
 
     #region Custom
@@ -107,6 +185,26 @@ public class LaserPlayerAnimator : MonoBehaviourPunCallbacks
             }
         }
     }
+
+    #endregion
+
+    #region IPunObservable implementation
+
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(IsFiring);
+            stream.SendNext(Health);
+        }
+        else
+        {
+            this.IsFiring = (bool)stream.ReceiveNext();
+            this.Health = (float)stream.ReceiveNext();
+        }
+    }
+
 
     #endregion
 }
