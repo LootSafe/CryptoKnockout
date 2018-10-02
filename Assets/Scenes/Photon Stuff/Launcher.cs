@@ -32,6 +32,8 @@ public class Launcher : MonoBehaviourPunCallbacks
     /// </summary>
     string gameVersion = "1";
 
+    bool connecting;
+
 
     #endregion
 
@@ -74,6 +76,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     /// </summary>
     public void Connect()
     {
+        connecting = true;
         progressLabel.SetActive(true);
         controlPanel.SetActive(false);
         // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
@@ -96,9 +99,12 @@ public class Launcher : MonoBehaviourPunCallbacks
     #region MonoBehaviourPunCallbacks Callbacks
     public override void OnConnectedToMaster()
     {
-        Debug.Log("PUN Basic --- OnConnectedToMater() was called by pun");
-        // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
-        PhotonNetwork.JoinRandomRoom();
+        if (connecting)
+        {
+            Debug.Log("PUN Basic --- OnConnectedToMater() was called by pun");
+            // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
+            PhotonNetwork.JoinRandomRoom();
+        }
     }
     public override void OnDisconnected(DisconnectCause cause)
     {
@@ -116,6 +122,15 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        {
+            Debug.Log("We load the 'Room for 1' ");
+
+
+            // #Critical
+            // Load the Room Level.
+            PhotonNetwork.LoadLevel("Room for 1");
+        }
         Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
     }
     #endregion

@@ -6,7 +6,6 @@ public class ScaleLoop : MonoBehaviour
 {
 
     public float speed = 0.0001f;
-    float direction = 1;
     public float maxMultiplier = 1.5f;
     public float minMultiplier = 0.9f;
     public bool randomize;
