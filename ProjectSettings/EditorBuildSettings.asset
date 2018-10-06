@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Photon Stuff/Launcher.unity
+    guid: daef9b27783dd4e4a8edec0d9df83d86
+  - enabled: 1
     path: Assets/Scenes/Intro Screen.unity
     guid: f0383916be31aef4b9f189a0b4979133
   - enabled: 1
@@ -32,7 +35,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Photon Stuff/Room for 4.unity
     guid: dd64745460ec2d1488b52389af53aa07
-  - enabled: 1
-    path: Assets/Scenes/Photon Stuff/Launcher.unity
-    guid: daef9b27783dd4e4a8edec0d9df83d86
   m_configObjects: {}
