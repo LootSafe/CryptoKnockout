@@ -62,7 +62,7 @@ public class EthbotSuper : SuperAnimationControl {
         else
         {
             animationObject.SetActive(true);
-            opponentHit.transform.position = opponent.transform.position + new Vector3(0, 0.6f, 0);
+            opponentHit.transform.position = opponent.transform.position;
             AudioSystem.Play(audioSource, explosionAudio);
             rigidbody.velocity = Vector2.zero;
             NextSequence();
